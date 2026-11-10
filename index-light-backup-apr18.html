@@ -1,0 +1,3420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Longevity Life Academy — Design the Life Ahead of You</title>
+<meta name="description" content="A longevity and biohacking course. Read your body's signals, build your personal protocol, and live longer, stronger, better.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/codec-pro" rel="stylesheet">
+<style>
+/* ==================================================
+   RESET
+   ================================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #FFFFFF;
+  color: #111111;
+  line-height: 1.55;
+  font-size: 17px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img, video { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button, input { font-family: inherit; border: none; outline: none; cursor: pointer; }
+ul, ol { list-style: none; }
+
+/* ==================================================
+   DESIGN TOKENS
+   ================================================== */
+:root {
+  --blue: #006EFF;
+  --blue-strong: #0051CC;
+  --blue-light: #E8F1FF;
+  --blue-hover: #0059D6;
+  --ink: #111111;
+  --ink-2: #2A2F36;
+  --ink-3: #5A6472;
+  --ink-4: #8892A0;
+  --bg: #FFFFFF;
+  --surface: #F5F7FA;
+  --surface-2: #EEF1F6;
+
+  /* Phase colors */
+  --phase-1: #6FA8FF;
+  --phase-2: #E8A75A;
+  --phase-3: #5FB6B0;
+  --phase-4: #3B3F91;
+
+  --font-display: 'Codec Pro', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition: 0.4s var(--ease);
+}
+
+/* ==================================================
+   LAYOUT UTILITIES
+   ================================================== */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.container-wide {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+@media (max-width: 720px) {
+  .container, .container-wide { padding: 0 20px; }
+}
+
+/* Typography primitives */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 16px;
+  display: inline-block;
+}
+.eyebrow.on-blue { color: rgba(255, 255, 255, 0.85); }
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(44px, 6vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 1.3vw, 20px);
+  color: var(--ink-3);
+  line-height: 1.55;
+  max-width: 680px;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ==================================================
+   NAVIGATION
+   ================================================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 18px 0;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: background var(--transition);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--ink);
+}
+.nav-logo svg { width: 28px; height: 28px; }
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+  transition: color var(--transition);
+}
+.nav-links a:hover { color: var(--blue); }
+.nav-cta {
+  background: var(--blue);
+  color: #fff;
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all var(--transition);
+  box-shadow: 0 4px 14px rgba(0, 110, 255, 0.25);
+}
+.nav-cta:hover {
+  background: var(--blue-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 110, 255, 0.35);
+}
+@media (max-width: 900px) {
+  .nav-links > a { display: none; }
+}
+
+/* ==================================================
+   FOLD 1 — HERO
+   ================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #001F4D;
+  color: #fff;
+  padding: 120px 0 100px;
+}
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  /* Boost the blue saturation and depth */
+  filter: saturate(1.6) contrast(1.08) brightness(0.92) hue-rotate(-8deg);
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(0, 110, 255, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 60%, rgba(0, 81, 204, 0.5) 0%, transparent 65%),
+    linear-gradient(180deg, rgba(0, 30, 80, 0.25) 0%, rgba(0, 30, 80, 0.55) 100%);
+  mix-blend-mode: normal;
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 1100px;
+  padding: 0 24px;
+}
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 32px;
+}
+.hero-kicker-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #7EC8FF;
+  box-shadow: 0 0 12px #7EC8FF;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(56px, 10vw, 148px);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 32px;
+  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.25);
+}
+.hero-title .accent-word {
+  font-style: italic;
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+}
+.hero-title .accent-word::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6%;
+  height: 10%;
+  background: rgba(126, 200, 255, 0.28);
+  border-radius: 8px;
+  z-index: -1;
+}
+.hero-sub {
+  font-size: clamp(17px, 1.6vw, 22px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 720px;
+  margin: 0 auto 44px;
+  line-height: 1.55;
+}
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: var(--blue);
+  padding: 20px 40px;
+  border-radius: 999px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.35);
+}
+.btn-primary svg {
+  transition: transform var(--transition);
+}
+.btn-primary:hover svg { transform: translateX(4px); }
+.btn-primary--lg {
+  padding: 24px 52px;
+  font-size: 19px;
+  box-shadow: 0 12px 44px rgba(0, 110, 255, 0.3);
+  background: linear-gradient(135deg, #006EFF, #338BFF);
+  color: #fff;
+}
+.btn-primary--lg:hover {
+  box-shadow: 0 18px 56px rgba(0, 110, 255, 0.45);
+}
+
+.trustpilot {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+.trustpilot-stars {
+  display: flex;
+  gap: 2px;
+}
+.trustpilot-star {
+  width: 16px;
+  height: 16px;
+  background: #00B67A;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.trustpilot-star svg { width: 11px; height: 11px; }
+.trustpilot-score {
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ==================================================
+   FOLD 2 — EXPLORE LONGEVITY TOPICS
+   ================================================== */
+@keyframes topic-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes topic-glow-pulse {
+  0%, 100% { box-shadow: 0 8px 40px rgba(0,110,255,0.06), inset 0 1px 0 rgba(255,255,255,0.7); }
+  50% { box-shadow: 0 12px 50px rgba(0,110,255,0.14), inset 0 1px 0 rgba(255,255,255,0.9); }
+}
+@keyframes topics-bg-drift {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  50% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.8; }
+}
+@keyframes topics-bg-drift2 {
+  0%, 100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.4; }
+  50% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+}
+@keyframes topic-number-pulse {
+  0%, 100% { opacity: 0.07; }
+  50% { opacity: 0.14; }
+}
+@keyframes topic-border-travel {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 200%; }
+}
+@keyframes topic-shine-sweep {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(200%) rotate(25deg); }
+}
+.topics {
+  padding: 140px 0 120px;
+  background: linear-gradient(180deg, #f0f4ff 0%, #fafbff 40%, #f0f4ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+/* Animated background orbs */
+.topics::before {
+  content: '';
+  position: absolute;
+  top: 30%; left: 20%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(0,110,255,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: topics-bg-drift 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+.topics::after {
+  content: '';
+  position: absolute;
+  top: 50%; right: 15%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(51,139,255,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: topics-bg-drift2 10s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+.topics-header {
+  text-align: center;
+  margin-bottom: 72px;
+  position: relative;
+  z-index: 1;
+}
+.topics-header .section-title {
+  font-size: clamp(52px, 6vw, 82px);
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+.topics-header .section-subtitle {
+  font-size: 19px;
+  max-width: 620px;
+}
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 900px) {
+  .topics-grid { grid-template-columns: repeat(2, 1fr); }
+  .topics-header .section-title { font-size: clamp(38px, 8vw, 56px); }
+}
+/* 3D Tilt wrapper — perspective container */
+.topic-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 36px 30px;
+  min-height: 240px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(28px) saturate(1.6);
+  -webkit-backdrop-filter: blur(28px) saturate(1.6);
+  border: 1.5px solid rgba(0, 110, 255, 0.12);
+  border-radius: 24px;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease, background 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  transform-style: preserve-3d;
+  will-change: transform;
+  animation: topic-glow-pulse 5s ease-in-out infinite;
+}
+/* Stagger glow pulse */
+.topic-card:nth-child(1) { animation-delay: 0s; }
+.topic-card:nth-child(2) { animation-delay: 0.5s; }
+.topic-card:nth-child(3) { animation-delay: 1s; }
+.topic-card:nth-child(4) { animation-delay: 1.5s; }
+.topic-card:nth-child(5) { animation-delay: 0.25s; }
+.topic-card:nth-child(6) { animation-delay: 0.75s; }
+.topic-card:nth-child(7) { animation-delay: 1.25s; }
+.topic-card:nth-child(8) { animation-delay: 1.75s; }
+/* Big watermark number */
+.topic-number {
+  position: absolute;
+  top: -10px; right: 6px;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 120px;
+  line-height: 1;
+  color: rgba(0,110,255,0.07);
+  pointer-events: none;
+  z-index: 0;
+  animation: topic-number-pulse 5s ease-in-out infinite;
+  user-select: none;
+  transform: translateZ(20px);
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+.topic-card:nth-child(2) .topic-number { animation-delay: 0.6s; }
+.topic-card:nth-child(3) .topic-number { animation-delay: 1.2s; }
+.topic-card:nth-child(4) .topic-number { animation-delay: 1.8s; }
+.topic-card:nth-child(5) .topic-number { animation-delay: 0.3s; }
+.topic-card:nth-child(6) .topic-number { animation-delay: 0.9s; }
+.topic-card:nth-child(7) .topic-number { animation-delay: 1.5s; }
+.topic-card:nth-child(8) .topic-number { animation-delay: 2.1s; }
+/* Shimmer sweep */
+.topic-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(110deg, transparent 25%, rgba(255,255,255,0.35) 50%, transparent 75%);
+  background-size: 200% 100%;
+  animation: topic-shimmer 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+.topic-card:nth-child(2)::before { animation-delay: 0.7s; }
+.topic-card:nth-child(3)::before { animation-delay: 1.4s; }
+.topic-card:nth-child(4)::before { animation-delay: 2.1s; }
+.topic-card:nth-child(5)::before { animation-delay: 0.35s; }
+.topic-card:nth-child(6)::before { animation-delay: 1.05s; }
+.topic-card:nth-child(7)::before { animation-delay: 1.75s; }
+.topic-card:nth-child(8)::before { animation-delay: 2.45s; }
+/* Animated bottom border glow */
+.topic-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 10%; right: 10%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #006EFF, #338BFF, #5AA3FF, #338BFF, #006EFF, transparent);
+  border-radius: 3px;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+/* 3D Shine overlay — moves with tilt */
+.topic-card .topic-shine {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at var(--shine-x, 50%) var(--shine-y, 50%), rgba(255,255,255,0.35) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 24px;
+}
+.topic-card:hover .topic-shine { opacity: 1; }
+/* Hover state — enhanced for 3D */
+.topic-card:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 110, 255, 0.3);
+  box-shadow: 0 30px 70px rgba(0, 110, 255, 0.18), 0 0 0 1px rgba(0,110,255,0.12), 0 0 80px -20px rgba(0,110,255,0.15);
+}
+.topic-card:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+  left: 0; right: 0;
+}
+.topic-card:hover .topic-number {
+  color: rgba(0,110,255,0.12);
+  transform: translateZ(40px);
+}
+.topic-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(0,110,255,0.1), rgba(51,139,255,0.16));
+  color: var(--blue);
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 3;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 4px 16px rgba(0,110,255,0.1), inset 0 1px 0 rgba(255,255,255,0.5);
+  transform: translateZ(30px);
+}
+.topic-card:hover .topic-icon {
+  background: linear-gradient(135deg, #006EFF, #338BFF);
+  color: #fff;
+  box-shadow: 0 14px 36px rgba(0,110,255,0.35);
+  transform: translateZ(50px) scale(1.1) rotate(-3deg);
+}
+.topic-label {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  position: relative;
+  z-index: 3;
+  margin-bottom: 8px;
+  transform: translateZ(20px);
+  transition: transform 0.4s ease;
+}
+.topic-card:hover .topic-label { transform: translateZ(35px); }
+.topic-desc {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  position: relative;
+  z-index: 3;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.4s ease;
+  transform: translateZ(15px);
+}
+.topic-card:hover .topic-desc { opacity: 1; transform: translateZ(25px); }
+/* Arrow indicator */
+.topic-arrow {
+  position: absolute;
+  top: 30px; right: 26px;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: rgba(0,110,255,0.06);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0;
+  transform: translateX(-10px) scale(0.8) translateZ(30px);
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 3;
+}
+.topic-card:hover .topic-arrow {
+  opacity: 1;
+  transform: translateX(0) scale(1) translateZ(40px);
+  background: rgba(0,110,255,0.12);
+}
+
+/* ==================================================
+   FOLD 3 — SIX LONGEVITY SKILLS (blog-driven cards)
+   ================================================== */
+.skills {
+  padding: 130px 0;
+  background: var(--surface);
+}
+.skills-header {
+  text-align: left;
+  margin-bottom: 64px;
+  max-width: 900px;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.skill-card {
+  position: relative;
+  display: block;
+  height: 340px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  color: #fff;
+  isolation: isolate;
+}
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 26px 60px rgba(0, 30, 90, 0.18),
+    0 0 0 2px rgba(0, 110, 255, 0.35);
+}
+.skill-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transition: transform 0.8s var(--ease);
+  background: #0a1020;
+}
+.skill-card:hover .skill-bg { transform: scale(1.04); }
+.skill-bg video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.skill-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.55) 85%, rgba(0,0,0,0.75) 100%);
+  z-index: 1;
+}
+.skill-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.skill-eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #A8C7FF;
+  margin-bottom: 12px;
+}
+.skill-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.skill-sub {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.88);
+  max-width: 320px;
+}
+.skill-arrow {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+.skill-card:hover .skill-arrow {
+  background: #fff;
+  color: #006EFF;
+  transform: translate(4px, -4px);
+}
+.skill-arrow svg { width: 16px; height: 16px; stroke: currentColor; }
+@media (max-width: 1000px) {
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .skills-grid { grid-template-columns: 1fr; }
+  .skill-card { height: 300px; }
+}
+
+/* ==================================================
+   FOLD 4 — SYLLABUS PHASES
+   ================================================== */
+.syllabus {
+  padding: 140px 0;
+  background: var(--surface);
+}
+.syllabus-header {
+  margin-bottom: 80px;
+}
+.phases {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.phase {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #fff;
+  transition: box-shadow var(--transition);
+}
+.phase:hover { box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08); }
+.phase-head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 32px;
+  padding: 36px 44px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  border: none;
+}
+.phase-head::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background: var(--phase-color, var(--blue));
+}
+.phase[data-phase="1"] { --phase-color: var(--phase-1); }
+.phase[data-phase="2"] { --phase-color: var(--phase-2); }
+.phase[data-phase="3"] { --phase-color: var(--phase-3); }
+.phase[data-phase="4"] { --phase-color: var(--phase-4); }
+
+.phase-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 28px;
+  color: var(--phase-color);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--phase-color) 12%, white);
+  border: 2px solid color-mix(in srgb, var(--phase-color) 25%, white);
+}
+.phase-title-wrap {
+  min-width: 0;
+}
+.phase-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--phase-color);
+  margin-bottom: 6px;
+}
+.phase-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(30px, 3vw, 44px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.phase-toggle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-2);
+  transition: all var(--transition);
+}
+.phase-toggle svg { transition: transform var(--transition); }
+.phase.open .phase-toggle { background: var(--phase-color); color: #fff; }
+.phase.open .phase-toggle svg { transform: rotate(180deg); }
+
+.phase-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s var(--ease);
+}
+.phase.open .phase-body { max-height: 900px; }
+.sessions {
+  padding: 0 44px 36px 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.session {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 18px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+.session:first-child { border-top: none; padding-top: 6px; }
+.session-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--ink-4);
+  padding-top: 2px;
+}
+.session-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.session-desc {
+  font-size: 15px;
+  color: var(--ink-3);
+  line-height: 1.55;
+}
+
+@media (max-width: 720px) {
+  .phase-head { padding: 24px; gap: 16px; }
+  .phase-num { width: 52px; height: 52px; font-size: 20px; }
+  .sessions { padding: 0 24px 28px 24px; }
+}
+
+/* ==================================================
+   FOLD 5 — DEEP DIVE (Interactive Hexagonal Chart)
+   ================================================== */
+.deepdive {
+  padding: 140px 0 160px;
+  background: linear-gradient(165deg, #001233 0%, #001a3d 30%, #002966 60%, #003d99 100%);
+  position: relative;
+  overflow: hidden;
+}
+.deepdive::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 900px 700px at 50% 45%, rgba(0, 110, 255, 0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 20% 80%, rgba(51, 139, 255, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 500px at 80% 20%, rgba(0, 180, 255, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+.deepdive-header {
+  text-align: center;
+  margin-bottom: 72px;
+  position: relative;
+  z-index: 2;
+}
+.deepdive .eyebrow { color: rgba(255, 255, 255, 0.55); }
+.deepdive .section-title { color: #fff; }
+.deepdive .section-subtitle { color: rgba(255, 255, 255, 0.65); max-width: 560px; margin: 0 auto; }
+
+/* --- Hex Chart Container --- */
+.hex-chart {
+  position: relative;
+  width: 840px;
+  height: 780px;
+  margin: 0 auto;
+  z-index: 2;
+}
+/* Orbit ring — animated rotating dashed circle */
+.hex-orbit {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 560px; height: 560px;
+  border-radius: 50%;
+  border: 2px dashed rgba(51,139,255,0.25);
+  z-index: 0;
+  animation: orbitSpin 60s linear infinite;
+  pointer-events: none;
+}
+@keyframes orbitSpin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+/* Center ring */
+.hex-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: rgba(0,110,255,0.12);
+  backdrop-filter: blur(40px) saturate(1.6);
+  -webkit-backdrop-filter: blur(40px) saturate(1.6);
+  border: 2px solid rgba(51,139,255,0.45);
+  box-shadow: 0 0 60px rgba(0,110,255,0.3), 0 0 120px rgba(0,110,255,0.12), inset 0 0 60px rgba(0,110,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  z-index: 10;
+  transition: all 0.5s var(--ease);
+  animation: centerPulse 3s ease-in-out infinite;
+}
+@keyframes centerPulse {
+  0%, 100% { box-shadow: 0 0 60px rgba(0,110,255,0.3), 0 0 120px rgba(0,110,255,0.12), inset 0 0 60px rgba(0,110,255,0.08); }
+  50% { box-shadow: 0 0 80px rgba(0,110,255,0.5), 0 0 160px rgba(0,110,255,0.2), inset 0 0 80px rgba(0,110,255,0.12); }
+}
+.hex-center-label {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  line-height: 1.2;
+}
+.hex-center-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  margin-top: 5px;
+  text-align: center;
+}
+/* Connector lines — thick glowing beams */
+.hex-line {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 180px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(51,139,255,0.15), rgba(51,139,255,0.4), rgba(51,139,255,0.15));
+  transform-origin: 0 0;
+  z-index: 1;
+  transition: all 0.5s var(--ease);
+  box-shadow: 0 0 12px rgba(51,139,255,0.15);
+}
+.hex-line.active {
+  height: 4px;
+  background: linear-gradient(90deg, rgba(51,139,255,0.3), #338BFF, rgba(51,139,255,0.3));
+  box-shadow: 0 0 20px rgba(0,110,255,0.6), 0 0 50px rgba(0,110,255,0.3), 0 0 80px rgba(0,110,255,0.1);
+  animation: lineGlow 1.5s ease-in-out infinite;
+}
+@keyframes lineGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0,110,255,0.6), 0 0 50px rgba(0,110,255,0.3), 0 0 80px rgba(0,110,255,0.1); }
+  50% { box-shadow: 0 0 30px rgba(0,110,255,0.8), 0 0 70px rgba(51,139,255,0.5), 0 0 100px rgba(0,110,255,0.2); }
+}
+/* Hex nodes — strong frosted glass with colored borders */
+.hex-node {
+  position: absolute;
+  width: 130px; height: 130px;
+  border-radius: 50%;
+  backdrop-filter: blur(32px) saturate(1.5);
+  -webkit-backdrop-filter: blur(32px) saturate(1.5);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.5s var(--ease);
+  z-index: 5;
+  animation: nodeFloat 5s ease-in-out infinite;
+}
+/* Stagger float animations */
+.hex-node[data-hex="0"] { animation-delay: 0s; }
+.hex-node[data-hex="1"] { animation-delay: -0.8s; }
+.hex-node[data-hex="2"] { animation-delay: -1.6s; }
+.hex-node[data-hex="3"] { animation-delay: -2.5s; }
+.hex-node[data-hex="4"] { animation-delay: -3.3s; }
+.hex-node[data-hex="5"] { animation-delay: -4.1s; }
+@keyframes nodeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+/* Each node gets a distinct color — all blue family but clearly different */
+.hex-node[data-hex="0"] {
+  background: rgba(0,110,255,0.2);
+  border: 2px solid rgba(0,110,255,0.55);
+  box-shadow: 0 0 30px rgba(0,110,255,0.25), inset 0 0 30px rgba(0,110,255,0.08);
+}
+.hex-node[data-hex="1"] {
+  background: rgba(51,180,255,0.18);
+  border: 2px solid rgba(51,180,255,0.5);
+  box-shadow: 0 0 30px rgba(51,180,255,0.2), inset 0 0 30px rgba(51,180,255,0.06);
+}
+.hex-node[data-hex="2"] {
+  background: rgba(100,160,255,0.18);
+  border: 2px solid rgba(100,160,255,0.5);
+  box-shadow: 0 0 30px rgba(100,160,255,0.2), inset 0 0 30px rgba(100,160,255,0.06);
+}
+.hex-node[data-hex="3"] {
+  background: rgba(140,190,255,0.15);
+  border: 2px solid rgba(140,190,255,0.45);
+  box-shadow: 0 0 30px rgba(140,190,255,0.2), inset 0 0 30px rgba(140,190,255,0.06);
+}
+.hex-node[data-hex="4"] {
+  background: rgba(0,80,200,0.22);
+  border: 2px solid rgba(0,80,200,0.55);
+  box-shadow: 0 0 30px rgba(0,80,200,0.25), inset 0 0 30px rgba(0,80,200,0.08);
+}
+.hex-node[data-hex="5"] {
+  background: rgba(70,140,255,0.18);
+  border: 2px solid rgba(70,140,255,0.5);
+  box-shadow: 0 0 30px rgba(70,140,255,0.2), inset 0 0 30px rgba(70,140,255,0.06);
+}
+.hex-node:hover, .hex-node.active {
+  background: rgba(0,110,255,0.35) !important;
+  border-color: #338BFF !important;
+  box-shadow: 0 0 40px rgba(0,110,255,0.6), 0 0 80px rgba(0,110,255,0.3), 0 0 120px rgba(0,110,255,0.1), inset 0 0 50px rgba(0,110,255,0.15) !important;
+  transform: scale(1.15) translateY(0) !important;
+  animation: none;
+}
+.hex-node-icon {
+  width: 40px; height: 40px;
+  margin-bottom: 8px;
+  color: rgba(255,255,255,0.85);
+  transition: color 0.4s var(--ease);
+}
+.hex-node:hover .hex-node-icon, .hex-node.active .hex-node-icon { color: #fff; }
+.hex-node-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.8; }
+.hex-node-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+  line-height: 1.15;
+  transition: color 0.4s var(--ease);
+}
+.hex-node:hover .hex-node-label, .hex-node.active .hex-node-label { color: #fff; }
+/* Detail panel — strong frosted glass (outside chart) */
+.hex-detail {
+  width: 620px;
+  max-width: 90%;
+  margin: 48px auto 0;
+  padding: 40px 44px;
+  background: rgba(0,60,180,0.15);
+  backdrop-filter: blur(48px) saturate(1.6);
+  -webkit-backdrop-filter: blur(48px) saturate(1.6);
+  border: 2px solid rgba(51,139,255,0.35);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 64px rgba(0,20,80,0.4), 0 0 40px rgba(0,110,255,0.1), inset 0 1px 0 rgba(255,255,255,0.1);
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: all 0.6s var(--ease);
+  min-height: 180px;
+}
+.hex-detail.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.hex-detail-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #5AA0FF;
+  margin-bottom: 10px;
+}
+.hex-detail-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.hex-detail-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 18px;
+}
+.hex-detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5AA0FF;
+  transition: gap 0.3s var(--ease);
+}
+.hex-detail-link:hover { gap: 10px; }
+/* Responsive: stack for mobile */
+@media (max-width: 900px) {
+  .hex-chart { width: 100%; height: auto; min-height: 500px; }
+  .hex-node { width: 100px !important; height: 100px !important; }
+  .hex-center { width: 130px; height: 130px; }
+  .hex-center-label { font-size: 14px; }
+  .hex-node-icon { width: 30px; height: 30px; }
+  .hex-node-label { font-size: 11px; }
+  .hex-detail { width: 92%; max-width: 92%; padding: 28px 24px; }
+  .hex-line { display: none; }
+}
+.placeholder-note {
+  text-align: center;
+  padding: 24px;
+  color: var(--blue);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ==================================================
+   FOLD 6 — BIO AGE QUIZ
+   ================================================== */
+.bioquiz {
+  padding: 80px 0 100px;
+  background: var(--bg);
+}
+.bioquiz-card {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 72px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, var(--blue) 0%, #003A99 100%);
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 64px;
+  align-items: center;
+  box-shadow: 0 40px 100px rgba(0, 110, 255, 0.35);
+}
+.bioquiz-card::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -10%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.22), transparent 60%);
+  pointer-events: none;
+}
+.bioquiz-card::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  right: -10%;
+  width: 70%;
+  height: 100%;
+  background: radial-gradient(ellipse, rgba(0, 30, 80, 0.5), transparent 60%);
+  pointer-events: none;
+}
+.bioquiz-text {
+  position: relative;
+  z-index: 1;
+}
+.bioquiz-eyebrow {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+}
+.bioquiz-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+.bioquiz-body {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.55;
+  margin-bottom: 32px;
+  max-width: 540px;
+}
+.bioquiz-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: var(--blue);
+  padding: 18px 32px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all var(--transition);
+}
+.bioquiz-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+.bioquiz-visual {
+  position: relative;
+  z-index: 1;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bioquiz-badge {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 20px 60px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 24px;
+}
+.bioquiz-badge-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 80px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+.bioquiz-badge-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.bioquiz-badge::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  animation: rotate-slow 30s linear infinite;
+}
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@media (max-width: 900px) {
+  .bioquiz-card { grid-template-columns: 1fr; padding: 48px 32px; gap: 36px; }
+  .bioquiz-badge-num { font-size: 56px; }
+}
+
+/* ==================================================
+   FOLD 7 — HOW IT WORKS (Animated Cards)
+   ================================================== */
+.how {
+  padding: 140px 0 160px;
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+}
+.how-inner { position: relative; z-index: 1; }
+.how-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 32px;
+}
+.how-logo {
+  display: block;
+  height: 72px;
+  margin: 0 auto 40px;
+  object-fit: contain;
+}
+.how-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(44px, 6vw, 80px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.how-sub {
+  font-size: clamp(16px, 1.2vw, 19px);
+  color: var(--ink-3);
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+/* --- Step cards container --- */
+.how-track {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0;
+  margin-top: 64px;
+  position: relative;
+}
+/* Animated step cards */
+.how-card {
+  position: relative;
+  width: 300px;
+  min-height: 400px;
+  border-radius: var(--radius-xl);
+  padding: 40px 32px 36px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s var(--ease);
+  cursor: default;
+  z-index: 1;
+  overflow: hidden;
+  margin-left: -24px;
+}
+.how-card:first-child { margin-left: 0; }
+.how-card:nth-child(1) {
+  background: linear-gradient(135deg, #001a3d, #002966);
+  z-index: 4;
+  transform: rotate(-3deg);
+}
+.how-card:nth-child(2) {
+  background: linear-gradient(135deg, #002966, #003d99);
+  z-index: 3;
+  transform: rotate(-1deg) translateY(12px);
+}
+.how-card:nth-child(3) {
+  background: linear-gradient(135deg, #003d99, #0051CC);
+  z-index: 2;
+  transform: rotate(1deg) translateY(8px);
+}
+.how-card:nth-child(4) {
+  background: linear-gradient(135deg, #0051CC, #006EFF);
+  z-index: 1;
+  transform: rotate(3deg);
+}
+.how-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255,255,255,0.08);
+  pointer-events: none;
+}
+.how-card:hover {
+  transform: rotate(0deg) translateY(-16px) scale(1.04);
+  z-index: 10;
+  box-shadow: 0 32px 80px rgba(0, 30, 100, 0.4), 0 0 0 1px rgba(0,110,255,0.3);
+}
+.how-card-num {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 80px;
+  line-height: 1;
+  color: #338BFF;
+  opacity: 0.35;
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  transition: all 0.5s var(--ease);
+}
+.how-card:hover .how-card-num {
+  opacity: 0.6;
+  color: #5AA0FF;
+}
+.how-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  color: #fff;
+  transition: all 0.4s var(--ease);
+}
+.how-card:hover .how-card-icon {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.3);
+}
+.how-card-icon svg { width: 26px; height: 26px; stroke: currentColor; fill: none; }
+.how-card-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 14px;
+}
+.how-card-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.7);
+  flex-grow: 1;
+}
+.how-card-detail {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.how-card-detail svg { width: 14px; height: 14px; stroke: currentColor; fill: none; }
+/* Responsive */
+@media (max-width: 1100px) {
+  .how-card { width: 260px; min-height: 360px; padding: 32px 24px; }
+}
+@media (max-width: 900px) {
+  .how-track { flex-wrap: wrap; gap: 20px; }
+  .how-card { width: calc(50% - 10px); margin-left: 0; transform: none; }
+  .how-card:nth-child(1), .how-card:nth-child(2), .how-card:nth-child(3), .how-card:nth-child(4) { transform: none; }
+}
+@media (max-width: 540px) {
+  .how-card { width: 100%; min-height: auto; }
+}
+
+/* ==================================================
+   FOLD 8 — INSTRUCTORS & CREDENTIALS
+   ================================================== */
+.instructors {
+  padding: 120px 0 60px;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.instructors::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 110, 255, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.instructors-header {
+  text-align: center;
+  margin-bottom: 72px;
+  position: relative;
+  z-index: 1;
+}
+.instructors-bridge {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--ink-3);
+  margin-bottom: 12px;
+  letter-spacing: 0.2px;
+}
+.teachers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.teacher-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 110, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 48px 32px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+.teacher-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 110, 255, 0.25);
+  box-shadow: 0 20px 48px rgba(0, 110, 255, 0.1);
+  transform: translateY(-6px);
+}
+.teacher-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 32px;
+  color: var(--blue);
+  background: rgba(0, 110, 255, 0.05);
+  border: 2px solid rgba(0, 110, 255, 0.12);
+  overflow: hidden;
+}
+.teacher-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.teacher-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.teacher-role {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+.teacher-bio {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+@media (max-width: 900px) {
+  .teachers-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+}
+
+/* Cert badges below teacher cards */
+.certs {
+  padding: 60px 0 120px;
+  background: var(--bg);
+}
+.certs-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 48px;
+}
+.certs-strip {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  padding: 32px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+@media (max-width: 900px) { .certs-strip { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 540px) { .certs-strip { grid-template-columns: repeat(2, 1fr); } }
+
+.cert-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 16px;
+  background: #fff;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all var(--transition);
+  text-align: center;
+}
+.cert-badge:hover {
+  transform: translateY(-3px);
+  border-color: var(--blue);
+  box-shadow: 0 14px 32px rgba(0, 110, 255, 0.1);
+}
+.cert-shield {
+  width: 52px;
+  height: 52px;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+.cert-abbr {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.cert-name {
+  font-size: 11px;
+  color: var(--ink-3);
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+/* ==================================================
+   FOLD 9 — WHAT MAKES THIS DIFFERENT
+   ================================================== */
+.value {
+  padding: 120px 0;
+  background: var(--surface);
+  overflow: hidden;
+}
+.value-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.value-nav { display: flex; gap: 12px; }
+.value-arrow {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+.value-arrow:hover:not(:disabled) {
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+}
+.value-arrow:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.value-track-wrap { overflow: hidden; }
+.value-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.6s var(--ease);
+}
+.value-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  position: relative;
+  padding: 40px 32px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  overflow: hidden;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+}
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--card-accent, var(--blue));
+}
+.value-card[data-accent="1"] { --card-accent: #006EFF; }
+.value-card[data-accent="2"] { --card-accent: var(--phase-3); }
+.value-card[data-accent="3"] { --card-accent: var(--phase-4); }
+.value-card[data-accent="4"] { --card-accent: var(--phase-2); }
+
+.value-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--card-accent) 12%, white);
+  color: var(--card-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.value-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+.value-desc {
+  font-size: 15px;
+  color: var(--ink-3);
+  line-height: 1.6;
+  flex: 1;
+}
+
+@media (max-width: 1000px) { .value-card { flex: 0 0 calc((100% - 24px) / 2); } }
+@media (max-width: 720px) { .value-card { flex: 0 0 100%; } }
+
+/* ==================================================
+   FOLD 10 — TESTIMONIALS
+   ================================================== */
+.testimonials {
+  padding: 140px 0;
+  background:
+    radial-gradient(ellipse at top, rgba(0, 110, 255, 0.05), transparent 60%),
+    var(--bg);
+}
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+@media (max-width: 900px) { .testimonials-grid { grid-template-columns: 1fr; } }
+
+.quote-card {
+  position: relative;
+  padding: 44px 36px 36px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(22px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 20px 50px rgba(0, 60, 180, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+}
+.quote-card[data-tint="1"] {
+  background: linear-gradient(135deg, rgba(0, 110, 255, 0.06), rgba(255, 255, 255, 0.8));
+}
+.quote-card[data-tint="2"] {
+  background: linear-gradient(135deg, rgba(232, 167, 90, 0.08), rgba(255, 255, 255, 0.8));
+}
+.quote-card[data-tint="3"] {
+  background: linear-gradient(135deg, rgba(95, 182, 176, 0.08), rgba(255, 255, 255, 0.8));
+}
+
+.quote-mark {
+  font-family: var(--font-display);
+  font-size: 72px;
+  line-height: 0.5;
+  color: var(--blue);
+  opacity: 0.25;
+  margin-bottom: 8px;
+  height: 32px;
+}
+.quote-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 18px;
+}
+.quote-stars svg { width: 18px; height: 18px; color: #FFB800; }
+.quote-text {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin-bottom: 28px;
+  flex: 1;
+  font-weight: 400;
+}
+.quote-meta {
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 13px;
+  color: var(--ink-4);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ==================================================
+   FOLD 11 — FAQs
+   ================================================== */
+@keyframes faq-slide-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes faq-border-glow {
+  0%, 100% { border-color: rgba(0,110,255,0.15); }
+  50% { border-color: rgba(0,110,255,0.3); }
+}
+.faq {
+  padding: 140px 0 120px;
+  background: linear-gradient(180deg, var(--surface) 0%, #f0f4ff 50%, var(--surface) 100%);
+  position: relative;
+  overflow: hidden;
+}
+/* Subtle background orb */
+.faq::before {
+  content: '';
+  position: absolute;
+  top: 40%; left: 50%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(0,110,255,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.faq-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.faq-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.faq-header .section-title {
+  font-size: clamp(42px, 5vw, 64px);
+  letter-spacing: -0.03em;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.faq-item {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-radius: 20px;
+  border: 1.5px solid rgba(0, 110, 255, 0.08);
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+}
+.faq-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(0,110,255,0.02), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  border-radius: 20px;
+}
+.faq-item:hover::before { opacity: 1; }
+.faq-item:hover {
+  border-color: rgba(0,110,255,0.15);
+  box-shadow: 0 16px 50px rgba(0, 110, 255, 0.08), 0 0 0 1px rgba(0,110,255,0.05);
+  transform: translateY(-2px);
+}
+.faq-item.open {
+  border-color: rgba(0, 110, 255, 0.25);
+  box-shadow: 0 24px 60px rgba(0, 110, 255, 0.12), 0 0 0 1px rgba(0,110,255,0.1);
+  background: rgba(255,255,255,0.95);
+}
+.faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 36px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  width: 100%;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+.faq-item:hover .faq-q { color: #006EFF; }
+.faq-item.open .faq-q { color: var(--ink); }
+/* FAQ number indicator */
+.faq-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--blue);
+  opacity: 0.5;
+  margin-right: 18px;
+  flex-shrink: 0;
+  transition: opacity 0.3s ease;
+}
+.faq-item:hover .faq-num,
+.faq-item.open .faq-num { opacity: 1; }
+.faq-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0,110,255,0.08), rgba(0,110,255,0.04));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 24px;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  z-index: 1;
+}
+.faq-icon svg { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+.faq-item.open .faq-icon {
+  background: linear-gradient(135deg, #006EFF, #338BFF);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0,110,255,0.3);
+  transform: scale(1.05);
+}
+.faq-item.open .faq-icon svg { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.faq-item.open .faq-a { max-height: 600px; }
+.faq-a-inner {
+  padding: 0 36px 32px;
+  padding-left: 72px;
+  font-size: 18px;
+  color: var(--ink-2);
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 540px) {
+  .faq-q { padding: 24px; font-size: 20px; }
+  .faq-a-inner { padding: 0 24px 24px; padding-left: 24px; }
+  .faq-num { display: none; }
+  .faq-header .section-title { font-size: clamp(32px, 8vw, 48px); }
+}
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+.footer {
+  background: #0A0F1A;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 80px 0 40px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 56px;
+  margin-bottom: 56px;
+}
+@media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+
+.footer-brand .brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.footer-brand .brand-mark svg { width: 32px; height: 32px; color: #fff; }
+.footer-brand p {
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 360px;
+}
+.footer-col h4 {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 18px;
+}
+.footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+.footer-col a {
+  font-size: 14px;
+  transition: color var(--transition);
+}
+.footer-col a:hover { color: #fff; }
+.footer-bottom {
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+/* ==================================================
+   FOLD 12 — FINAL CTA STRIP
+   ================================================== */
+.final-cta {
+  padding: 120px 0;
+  background: var(--bg);
+}
+.final-cta-card {
+  padding: 100px 56px;
+  border-radius: var(--radius-xl);
+  background: #0a1628;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 110, 255, 0.35);
+}
+.final-cta-video {
+  position: absolute;
+  top: 50%; left: 50%;
+  min-width: 100%; min-height: 100%;
+  width: auto; height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.85;
+}
+.final-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,10,30,0.35) 0%, rgba(0,20,55,0.3) 50%, rgba(0,10,30,0.45) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.final-cta-title {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(36px, 5vw, 72px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin-bottom: 22px;
+  color: #fff;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4), 0 4px 40px rgba(0,0,0,0.2);
+}
+.final-cta-sub {
+  position: relative;
+  z-index: 2;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 560px;
+  margin: 0 auto 40px;
+  line-height: 1.55;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.4);
+}
+.final-cta .btn-primary { position: relative; z-index: 2; }
+
+/* ==================================================
+   FOLD 13 — LEAD GEN FORM
+   ================================================== */
+.lead-gen { position: relative; padding: 100px 0; background: #FAFBFD; overflow: hidden; }
+.lead-gen::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(0,110,255,0.15), transparent); }
+.lead-gen-inner { max-width: 580px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+.lead-gen-headline { font-family: var(--font-display); font-weight: 800; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; color: #111; margin-bottom: 40px; letter-spacing: -0.5px; }
+.lead-gen-headline span { color: #006EFF; }
+.lead-gen-form { display: flex; flex-direction: column; gap: 14px; max-width: 440px; margin: 0 auto 20px; }
+.lead-gen-row { display: flex; gap: 14px; }
+.lead-gen-form input { flex: 1; padding: 16px 20px; font-size: 16px; font-family: 'Inter', sans-serif; border: 1.5px solid rgba(0,0,0,0.1); border-radius: 12px; background: #fff; color: #111; outline: none; transition: all 0.25s ease; }
+.lead-gen-form input:focus { border-color: #006EFF; box-shadow: 0 0 0 3px rgba(0,110,255,0.1); }
+.lead-gen-form input::placeholder { color: #A0AEC0; }
+.lead-gen-form button { width: 100%; padding: 18px 32px; font-size: 17px; font-weight: 700; font-family: 'Codec Pro', sans-serif; letter-spacing: 0.3px; background: linear-gradient(135deg, #006EFF, #338BFF); color: #fff; border: none; border-radius: 12px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(0,110,255,0.25); }
+.lead-gen-form button:hover { background: linear-gradient(135deg, #338BFF, #5AA3FF); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,110,255,0.35); }
+.lead-gen-trust { font-size: 14px; color: #718096; margin-top: 6px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.lead-gen-trust svg { width: 16px; height: 16px; color: #006EFF; flex-shrink: 0; }
+@media (max-width: 600px) { .lead-gen-row { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<!-- ==============================================
+     NAV
+     ============================================== -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="/blueprint-november-r4x9/" class="nav-logo">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Longevity Life Academy">
+        <path d="M16 3 L26 9 V23 L16 29 L6 23 V9 Z" stroke="currentColor" stroke-width="2" fill="none"/>
+        <path d="M16 10 V22 M10 16 H22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Longevity Life Academy
+    </a>
+    <div class="nav-links">
+      <a href="#skills">Skills</a>
+      <a href="#syllabus">Syllabus</a>
+      <a href="#faq">FAQ</a>
+      <a href="#lead-gen" class="nav-cta">Apply Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==============================================
+     FOLD 1 — HERO
+     ============================================== -->
+<!--
+  Headline options (best shown as default):
+  A) "Your Life. Optimized."
+  B) "Design the Life Ahead of You"   <-- DEFAULT (chosen)
+  C) "Live Your Longest, Strongest Life"
+-->
+<section class="hero" id="hero">
+  <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-longevity.jpg">
+    <source src="assets/hero-light-bg.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">
+      <span class="hero-kicker-dot"></span>
+      Longevity Life Academy
+    </div>
+    <h1 class="hero-title">
+      Design the <span class="accent-word">life</span><br>ahead of you.
+    </h1>
+    <p class="hero-sub">
+      A longevity and biohacking course that teaches you to read your body's signals,
+      build a personal protocol, and turn the next decades into your strongest.
+    </p>
+    <div class="hero-cta-row">
+      <a href="#lead-gen" class="btn-primary btn-primary--lg">
+        Reserve Your Seat
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M13 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+    <div class="trustpilot">
+      <div class="trustpilot-stars">
+        <span class="trustpilot-star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <span class="trustpilot-star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <span class="trustpilot-star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <span class="trustpilot-star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <span class="trustpilot-star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+      </div>
+      <span><span class="trustpilot-score">4.6 / 5</span> on Trustpilot · 600+ reviews</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+     FOLD 2 — EXPLORE LONGEVITY TOPICS
+     ============================================== -->
+<section class="topics">
+  <div class="container">
+    <div class="topics-header reveal">
+      <span class="eyebrow">Explore</span>
+      <h2 class="section-title">Longevity, organized.</h2>
+      <p class="section-subtitle" style="margin:0 auto;">Eight areas of practice that shape how long and how well you live. Start anywhere.</p>
+    </div>
+    <div class="topics-grid">
+      <a href="/blueprint-november-r4x9/topics/nutrition.html" class="topic-card reveal">
+        <div class="topic-shine"></div>
+        <span class="topic-number">01</span>
+        <div class="topic-arrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#006EFF" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <div class="topic-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a10 10 0 0 0-4 19.2M12 2a10 10 0 0 1 4 19.2M12 2v20"/>
+            <path d="M6 8c2 2 4 2 6 0M18 8c-2 2-4 2-6 0"/>
+          </svg>
+        </div>
+        <div>
+          <div class="topic-label">Nutrition</div>
+          <div class="topic-desc">Fuel strategies for cellular health and metabolic optimization.</div>
+        </div>
+      </a>
+      <a href="/blueprint-november-r4x9/topics/sleep.html" class="topic-card reveal">
+        <div class="topic-shine"></div>
+        <span class="topic-number">02</span>
+        <div class="topic-arrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#006EFF" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <div class="topic-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="topic-label">Sleep</div>
+          <div class="topic-desc">Circadian rhythm and deep recovery protocols.</div>
+        </div>
+      </a>
+      <a href="/blueprint-november-r4x9/topics/supplements.html" class="topic-card reveal">
+        <div class="topic-shine"></div>
+        <span class="topic-number">03</span>
+        <div class="topic-arrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#006EFF" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <div class="topic-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="8" width="18" height="8" rx="4"/>
+            <path d="M12 8v8"/>
+          </svg>
+        </div>
+        <div>
+          <div class="topic-label">Supplements</div>
+          <div class="topic-desc">Evidence-based compounds, doses, and timing.</div>
+        </div>
+      </a>
+      <a href="/blueprint-november-r4x9/topics/exercise.html" class="topic-card reveal">
+        <div class="topic-shine"></div>
+        <span class="topic-number">04</span>
+        <div class="topic-arrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#006EFF" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <div class="topic-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 8v8M18 8v8M2 10v4M22 10v4M6 12h12"/>
+          </svg>
+        </div>
+        <div>
+          <div class="topic-label">Exercise & Movement</div>
+          <div class="topic-desc">Zone 2, strength, VO2 max, and mobility practices.</div>
+        </div>
+      </a>
+      <a href="/blueprint-november-r4x9/topics/mental-health.html" class="topic-card reveal">
+        <div class="topic-shine"></div>
+        <span class="topic-number">05</span>
+        <div class="topic-arrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#006EFF" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <div class="topic-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-7-4.5-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.5-7 10-7 10Z" opacity=".3"/>
+            <path d="M12 21s-7-4.5-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.5-7 10-7 10Z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="topic-label">Mental & Emotional</div>
+          <div class="topic-desc">Stress resilience, cognitive health, and emotional regulation.</div>
+        </div>
+      </a>
+      <a href="/blueprint-november-r4x9/topics/metabolic.html" class="topic-card reveal">
+        <div class="topic-shine"></div>
+        <span class="topic-number">06</span>
+        <div class="topic-arrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#006EFF" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <div class="topic-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12h3l3-8 4 16 3-8h5"/>
+          </svg>
+        </div>
+        <div>
+          <div class="topic-label">Metabolic Health</div>
+          <div class="topic-desc">Glucose, insulin, and metabolic flexibility decoded.</div>
+        </div>
+      </a>
+      <a href="/blueprint-november-r4x9/topics/biomarkers.html" class="topic-card reveal">
+        <div class="topic-shine"></div>
+        <span class="topic-number">07</span>
+        <div class="topic-arrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#006EFF" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <div class="topic-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 3v18M3 12h18"/>
+          </svg>
+        </div>
+        <div>
+          <div class="topic-label">Biomarkers & Testing</div>
+          <div class="topic-desc">Blood panels, biological age, and what to track.</div>
+        </div>
+      </a>
+      <a href="/blueprint-november-r4x9/topics/protocols.html" class="topic-card reveal">
+        <div class="topic-shine"></div>
+        <span class="topic-number">08</span>
+        <div class="topic-arrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#006EFF" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <div class="topic-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11l3 3L22 4"/>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+        </div>
+        <div>
+          <div class="topic-label">Protocols & Habits</div>
+          <div class="topic-desc">Daily systems that compound into lasting change.</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+     FOLD 3 — SIX LONGEVITY SKILLS
+     ============================================== -->
+<section class="skills" id="skills">
+  <div class="container">
+    <div class="skills-header reveal">
+      <span class="eyebrow">Six Longevity Skills</span>
+      <h2 class="section-title">Six areas of longevity<br>you can act on today.</h2>
+      <p class="section-subtitle">Each one is backed by research, covered in our course, and explored in depth on our blog.</p>
+    </div>
+    <div class="skills-grid">
+      <a class="skill-card reveal" href="/blueprint-november-r4x9/topics/mental-emotional-health.html" aria-label="Turn Back the Clock — brain aging and cognition">
+        <div class="skill-bg brain"><video autoplay muted loop playsinline><source src="assets/skill-clock.mp4" type="video/mp4"></video></div>
+        <div class="skill-overlay"></div>
+        <span class="skill-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </span>
+        <div class="skill-content">
+          <div class="skill-eyebrow">Brain &amp; Cognition</div>
+          <h3 class="skill-title">Turn Back the Clock</h3>
+          <p class="skill-sub">Why your brain feels older than the calendar.</p>
+        </div>
+      </a>
+      <a class="skill-card reveal" href="/blueprint-november-r4x9/topics/mental-emotional-health.html" aria-label="Rewrite Your Mental OS — mindset and beliefs about aging">
+        <div class="skill-bg mindset"><video autoplay muted loop playsinline><source src="assets/skill-biometric.mp4" type="video/mp4"></video></div>
+        <div class="skill-overlay"></div>
+        <span class="skill-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </span>
+        <div class="skill-content">
+          <div class="skill-eyebrow">Mindset &amp; Beliefs</div>
+          <h3 class="skill-title">Rewrite Your Mental OS</h3>
+          <p class="skill-sub">How beliefs become biology.</p>
+        </div>
+      </a>
+      <a class="skill-card reveal" href="/blueprint-november-r4x9/topics/protocols-habits.html" aria-label="Your Skin Tells a Story — skin as a longevity organ">
+        <div class="skill-bg skin"><video autoplay muted loop playsinline><source src="assets/skill-skin.mp4" type="video/mp4"></video></div>
+        <div class="skill-overlay"></div>
+        <span class="skill-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </span>
+        <div class="skill-content">
+          <div class="skill-eyebrow">Skin &amp; Barrier</div>
+          <h3 class="skill-title">Your Skin Tells a Story</h3>
+          <p class="skill-sub">The frontline organ of longevity.</p>
+        </div>
+      </a>
+      <a class="skill-card reveal" href="/blueprint-november-r4x9/topics/supplements-health-tech.html" aria-label="Supplements That Actually Matter — evidence-based supplements">
+        <div class="skill-bg supplements"><video autoplay muted loop playsinline><source src="assets/skill-pill.mp4" type="video/mp4"></video></div>
+        <div class="skill-overlay"></div>
+        <span class="skill-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </span>
+        <div class="skill-content">
+          <div class="skill-eyebrow">Supplements</div>
+          <h3 class="skill-title">Supplements That Actually Matter</h3>
+          <p class="skill-sub">Five non-trendy supplements that quietly work.</p>
+        </div>
+      </a>
+      <a class="skill-card reveal" href="/blueprint-november-r4x9/topics/biomarkers-testing.html" aria-label="The Silent Threat in Your Arteries — cardiovascular health">
+        <div class="skill-bg arteries"><video autoplay muted loop playsinline><source src="assets/skill-eating.mp4" type="video/mp4"></video></div>
+        <div class="skill-overlay"></div>
+        <span class="skill-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </span>
+        <div class="skill-content">
+          <div class="skill-eyebrow">Cardiovascular</div>
+          <h3 class="skill-title">The Silent Threat in Your Arteries</h3>
+          <p class="skill-sub">What you can't feel can still change your future.</p>
+        </div>
+      </a>
+      <a class="skill-card reveal" href="/blueprint-november-r4x9/topics/nutrition-longevity.html" aria-label="Eat for Your Eyes — nutrition for lifelong vision">
+        <div class="skill-bg eyes"><video autoplay muted loop playsinline><source src="assets/skill-berries.mp4" type="video/mp4"></video></div>
+        <div class="skill-overlay"></div>
+        <span class="skill-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </span>
+        <div class="skill-content">
+          <div class="skill-eyebrow">Vision &amp; Nutrition</div>
+          <h3 class="skill-title">Eat for Your Eyes</h3>
+          <p class="skill-sub">Nutrition for lifelong vision.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+     FOLD 4 — SYLLABUS PHASES
+     ============================================== -->
+<section class="syllabus" id="syllabus">
+  <div class="container">
+    <div class="syllabus-header reveal">
+      <span class="eyebrow">The Syllabus</span>
+      <h2 class="section-title">Twelve sessions.<br>Four phases.</h2>
+      <p class="section-subtitle">Each phase builds on the last, ending with a protocol you wrote and tested yourself.</p>
+    </div>
+    <div class="phases">
+
+      <div class="phase open" data-phase="1">
+        <button class="phase-head" data-toggle>
+          <div class="phase-num">01</div>
+          <div class="phase-title-wrap">
+            <div class="phase-label">Phase One · Sessions 1–3</div>
+            <div class="phase-title">Foundations.</div>
+          </div>
+          <div class="phase-toggle">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </button>
+        <div class="phase-body">
+          <div class="sessions">
+            <div class="session">
+              <div class="session-num">01</div>
+              <div>
+                <h4 class="session-title">Reframing Aging</h4>
+                <p class="session-desc">Healthspan vs lifespan, compression of morbidity, your personal healthspan goals, and the Longevity Lens — metabolism, muscle, sleep, stress, and connection.</p>
+              </div>
+            </div>
+            <div class="session">
+              <div class="session-num">02</div>
+              <div>
+                <h4 class="session-title">Metabolic Health</h4>
+                <p class="session-desc">Blood sugar as the central signal of metabolic health. Glucose variability, flexibility, and a first look at CGM.</p>
+              </div>
+            </div>
+            <div class="session">
+              <div class="session-num">03</div>
+              <div>
+                <h4 class="session-title">Nutrition for Longevity</h4>
+                <p class="session-desc">Protein needs as you age, fiber, ultra-processed food, meal deconstruction, and the principles of a personalized plate.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase" data-phase="2">
+        <button class="phase-head" data-toggle>
+          <div class="phase-num">02</div>
+          <div class="phase-title-wrap">
+            <div class="phase-label">Phase Two · Sessions 4–6</div>
+            <div class="phase-title">Data &amp; Discovery.</div>
+          </div>
+          <div class="phase-toggle">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </button>
+        <div class="phase-body">
+          <div class="sessions">
+            <div class="session">
+              <div class="session-num">04</div>
+              <div>
+                <h4 class="session-title">CGM: Seeing the Invisible</h4>
+                <p class="session-desc">How continuous glucose monitoring works, reading real datasets, and the observation checklist you'll use throughout the course.</p>
+              </div>
+            </div>
+            <div class="session">
+              <div class="session-num">05</div>
+              <div>
+                <h4 class="session-title">Food Order &amp; Glucose Curves</h4>
+                <p class="session-desc">Fiber and protein first, fat's role, liquid vs solid carbs, and designing food experiments you can run at home.</p>
+              </div>
+            </div>
+            <div class="session">
+              <div class="session-num">06</div>
+              <div>
+                <h4 class="session-title">Movement as a Glucose Tool</h4>
+                <p class="session-desc">Muscle as a glucose sink, post-meal walking, resistance training fundamentals, and building a weekly movement plan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase" data-phase="3">
+        <button class="phase-head" data-toggle>
+          <div class="phase-num">03</div>
+          <div class="phase-title-wrap">
+            <div class="phase-label">Phase Three · Sessions 7–9</div>
+            <div class="phase-title">Lifestyle Integration.</div>
+          </div>
+          <div class="phase-toggle">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </button>
+        <div class="phase-body">
+          <div class="sessions">
+            <div class="session">
+              <div class="session-num">07</div>
+              <div>
+                <h4 class="session-title">Sleep &amp; Circadian Rhythm</h4>
+                <p class="session-desc">Circadian misalignment, cortisol rhythm, sleep debt, overnight glucose, and sleep experiments you can run this week.</p>
+              </div>
+            </div>
+            <div class="session">
+              <div class="session-num">08</div>
+              <div>
+                <h4 class="session-title">Stress &amp; Emotions</h4>
+                <p class="session-desc">The cortisol–glucose loop, emotional glucose spikes, nervous system regulation, and mapping your personal triggers.</p>
+              </div>
+            </div>
+            <div class="session">
+              <div class="session-num">09</div>
+              <div>
+                <h4 class="session-title">Supplements, Tests &amp; Health Tech</h4>
+                <p class="session-desc">An evidence hierarchy, HbA1c vs CGM, the supplements that actually matter, and a decision framework for new tools.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase" data-phase="4">
+        <button class="phase-head" data-toggle>
+          <div class="phase-num">04</div>
+          <div class="phase-title-wrap">
+            <div class="phase-label">Phase Four · Sessions 10–12</div>
+            <div class="phase-title">Your Protocol.</div>
+          </div>
+          <div class="phase-toggle">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </button>
+        <div class="phase-body">
+          <div class="sessions">
+            <div class="session">
+              <div class="session-num">10</div>
+              <div>
+                <h4 class="session-title">Social Health &amp; Purpose</h4>
+                <p class="session-desc">Psychosocial predictors of longevity, isolation and mortality, purpose and values reflection.</p>
+              </div>
+            </div>
+            <div class="session">
+              <div class="session-num">11</div>
+              <div>
+                <h4 class="session-title">Personal Longevity Blueprint</h4>
+                <p class="session-desc">Integration week. Peer coaching, draft protocol review, and planning for the moments you'll fall off track.</p>
+              </div>
+            </div>
+            <div class="session">
+              <div class="session-num">12</div>
+              <div>
+                <h4 class="session-title">Reflection &amp; the Next 90 Days</h4>
+                <p class="session-desc">Before and after. Your CGM synthesis, your written protocol, and your commitment statements.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+     FOLD 5 — DEEP DIVE INTO CLASSES
+     ============================================== -->
+<!--
+  Section headline options:
+  A) "A Taste of Our Classes"
+  B) "Explore What You'll Learn"   <-- DEFAULT
+  C) "Preview Our Sessions"
+-->
+<section class="deepdive">
+  <div class="container">
+    <div class="deepdive-header reveal">
+      <span class="eyebrow">Inside the Course</span>
+      <h2 class="section-title">Explore what<br>you'll learn.</h2>
+      <p class="section-subtitle">Real lessons, real data, real protocols. Hover each node to explore.</p>
+    </div>
+    <div class="hex-chart reveal" id="hexChart">
+      <!-- Orbit ring -->
+      <div class="hex-orbit"></div>
+      <!-- Center hub -->
+      <div class="hex-center">
+        <div class="hex-center-label">Your<br>Protocol</div>
+        <div class="hex-center-sub">12 sessions</div>
+      </div>
+      <!-- Connector lines (JS positions them) -->
+      <div class="hex-line" data-line="0"></div>
+      <div class="hex-line" data-line="1"></div>
+      <div class="hex-line" data-line="2"></div>
+      <div class="hex-line" data-line="3"></div>
+      <div class="hex-line" data-line="4"></div>
+      <div class="hex-line" data-line="5"></div>
+      <!-- 6 orbital nodes -->
+      <div class="hex-node" data-hex="0">
+        <div class="hex-node-icon"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></div>
+        <div class="hex-node-label">Metabolic<br>Health</div>
+      </div>
+      <div class="hex-node" data-hex="1">
+        <div class="hex-node-icon"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+        <div class="hex-node-label">Exercise &amp;<br>Movement</div>
+      </div>
+      <div class="hex-node" data-hex="2">
+        <div class="hex-node-icon"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg></div>
+        <div class="hex-node-label">Sleep &amp;<br>Circadian</div>
+      </div>
+      <div class="hex-node" data-hex="3">
+        <div class="hex-node-icon"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 0 20 10 10 0 0 1 0-20z"/><path d="M12 8v4l3 3"/></svg></div>
+        <div class="hex-node-label">Stress &amp;<br>Emotions</div>
+      </div>
+      <div class="hex-node" data-hex="4">
+        <div class="hex-node-icon"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="hex-node-label">Supplements<br>&amp; Tools</div>
+      </div>
+      <div class="hex-node" data-hex="5">
+        <div class="hex-node-icon"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <div class="hex-node-label">Protocols<br>&amp; Habits</div>
+      </div>
+    </div>
+    <!-- Detail panel (outside hex-chart so it doesn't overlap nodes) -->
+    <div class="hex-detail reveal" id="hexDetail">
+      <div class="hex-detail-tag" id="hexDetailTag"></div>
+      <h3 class="hex-detail-title" id="hexDetailTitle"></h3>
+      <p class="hex-detail-desc" id="hexDetailDesc"></p>
+      <a class="hex-detail-link" id="hexDetailLink" href="#">
+        Explore topic
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+     FOLD 6 — BIO AGE QUIZ
+     ============================================== -->
+<section class="bioquiz">
+  <div class="container">
+    <div class="bioquiz-card reveal">
+      <div class="bioquiz-text">
+        <span class="bioquiz-eyebrow">Free · 2 Minutes</span>
+        <h2 class="bioquiz-title">What's your true<br>biological age?</h2>
+        <p class="bioquiz-body">Your birthday is one number. Your body tells a different story. Answer twelve questions about your sleep, energy, and habits — get an estimate of how your biology compares to your calendar age.</p>
+        <a href="biological-age-light.html" class="bioquiz-cta">
+          Take the 2-Minute Quiz
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="bioquiz-visual">
+        <div class="bioquiz-badge">
+          <div class="bioquiz-badge-num">?</div>
+          <div class="bioquiz-badge-label">Your Bio-Age</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+     FOLD 7 — HOW IT WORKS
+     ============================================== -->
+<section class="how">
+  <div class="container how-inner">
+    <div class="how-header reveal">
+      <img src="assets/eteacher-group-logo.jpg" alt="eTeacher Group" class="how-logo">
+      <span class="eyebrow">How It Works</span>
+      <h2 class="how-title">From enrollment<br>to your own protocol.</h2>
+      <p class="how-sub">Four phases. Twelve weeks. Each step builds on the last, ending with a protocol you wrote and tested yourself.</p>
+    </div>
+    <div class="how-track reveal">
+      <div class="how-card">
+        <span class="how-card-num">01</span>
+        <div class="how-card-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="how-card-title">Apply &amp; Match</h3>
+        <p class="how-card-desc">Submit a short application. We review your background and goals, then place you in a cohort of 8–15 people with compatible interests and schedules.</p>
+        <div class="how-card-detail">
+          <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Takes about 5 minutes
+        </div>
+      </div>
+      <div class="how-card">
+        <span class="how-card-num">02</span>
+        <div class="how-card-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+        </div>
+        <h3 class="how-card-title">Baseline Assessment</h3>
+        <p class="how-card-desc">Complete a health intake questionnaire and share any existing lab work. This becomes your personal starting point — the data you'll track against over twelve weeks.</p>
+        <div class="how-card-detail">
+          <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+          Health data + lab review
+        </div>
+      </div>
+      <div class="how-card">
+        <span class="how-card-num">03</span>
+        <div class="how-card-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3 class="how-card-title">Learn Live Weekly</h3>
+        <p class="how-card-desc">Attend 90-minute live online sessions with your cohort and instructor. Each week covers a new longevity topic — with real data, case studies, and hands-on exercises.</p>
+        <div class="how-card-detail">
+          <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          12 weeks · 90 min each
+        </div>
+      </div>
+      <div class="how-card">
+        <span class="how-card-num">04</span>
+        <div class="how-card-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3 class="how-card-title">Build Your Protocol</h3>
+        <p class="how-card-desc">In the final phase, you assemble everything you've learned into a written, personalized longevity protocol — tested, peer-reviewed by your cohort, and yours to keep.</p>
+        <div class="how-card-detail">
+          <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          Your personal blueprint
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+     FOLD 8 — INSTRUCTORS & CREDENTIALS
+     ============================================== -->
+<section class="instructors" id="teachers">
+  <div class="container">
+    <div class="instructors-header reveal">
+      <p class="instructors-bridge">The teachers and clinicians behind your longevity education</p>
+      <span class="eyebrow" style="margin-bottom: 16px; display: block;">Your Instructors</span>
+      <h2 class="section-title">Teachers and Clinicians<br>at the Frontier of Longevity.</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">Not celebrity doctors — credible, dedicated instructors who practice what the research says, work directly with you, and answer the questions your GP can’t.</p>
+    </div>
+    <div class="teachers-grid">
+      <div class="teacher-card reveal reveal-delay-1">
+        <div class="teacher-avatar"><img src="assets/maya-elhalal.jpg" alt="Maya Elhalal"></div>
+        <h3 class="teacher-name">Maya Elhalal</h3>
+        <p class="teacher-role">Lead Instructor &amp; Longevity Educator</p>
+        <p class="teacher-bio">Founder of Longevity Science. Experienced in aging science workshops, glucose management, and lifestyle optimization. Leads longevity strategy programs and retreats across three continents.</p>
+      </div>
+      <div class="teacher-card reveal reveal-delay-2">
+        <div class="teacher-avatar"><img src="assets/david-barzilai.jpg" alt="David Barzilai, MD, PhD"></div>
+        <h3 class="teacher-name">David Barzilai, MD, PhD</h3>
+        <p class="teacher-role">Healthspan Coach</p>
+        <p class="teacher-bio">Physician and healthspan coaching specialist. Focuses on metabolic health, stress, sleep, and daily habits — grounded in longevity science, not expensive clinical interventions.</p>
+      </div>
+      <div class="teacher-card reveal reveal-delay-3">
+        <div class="teacher-avatar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:40px;height:40px"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3 class="teacher-name">Guest Faculty</h3>
+        <p class="teacher-role">xLongevity Certified Coaches</p>
+        <p class="teacher-bio">Certified longevity coaches trained in age-related biology, lifestyle optimization, and behavior change. Specialists in translating complex science into daily practice you can sustain.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="certs">
+  <div class="container">
+    <div class="certs-header reveal">
+      <span class="eyebrow">Certifications</span>
+      <h2 class="section-title">Backed by leading<br>health credentials.</h2>
+    </div>
+    <div class="certs-strip reveal">
+      <div class="cert-badge">
+        <svg class="cert-shield" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M24 4L8 10v13c0 9.5 6.7 18.3 16 21 9.3-2.7 16-11.5 16-21V10L24 4z"/>
+          <path d="M16 24l5 5 11-11" stroke-width="2.5"/>
+        </svg>
+        <div class="cert-abbr">ACE</div>
+        <div class="cert-name">American Council<br>on Exercise</div>
+      </div>
+      <div class="cert-badge">
+        <svg class="cert-shield" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M24 4L8 10v13c0 9.5 6.7 18.3 16 21 9.3-2.7 16-11.5 16-21V10L24 4z"/>
+          <path d="M18 28V18l6 10 6-10v10" stroke-width="2.5"/>
+        </svg>
+        <div class="cert-abbr">NASM</div>
+        <div class="cert-name">National Academy<br>of Sports Medicine</div>
+      </div>
+      <div class="cert-badge">
+        <svg class="cert-shield" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M24 4L8 10v13c0 9.5 6.7 18.3 16 21 9.3-2.7 16-11.5 16-21V10L24 4z"/>
+          <circle cx="24" cy="23" r="5"/>
+          <path d="M24 12v3M24 31v3M13 23h3M32 23h3" stroke-width="2.5"/>
+        </svg>
+        <div class="cert-abbr">IFM</div>
+        <div class="cert-name">Institute for<br>Functional Medicine</div>
+      </div>
+      <div class="cert-badge">
+        <svg class="cert-shield" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M24 4L8 10v13c0 9.5 6.7 18.3 16 21 9.3-2.7 16-11.5 16-21V10L24 4z"/>
+          <path d="M15 26c2-6 5-9 9-9s7 3 9 9" stroke-width="2.5"/>
+          <circle cx="24" cy="17" r="2.5" fill="currentColor"/>
+        </svg>
+        <div class="cert-abbr">NBHWC</div>
+        <div class="cert-name">Board-Certified<br>Health &amp; Wellness Coaches</div>
+      </div>
+      <div class="cert-badge">
+        <svg class="cert-shield" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M24 4L8 10v13c0 9.5 6.7 18.3 16 21 9.3-2.7 16-11.5 16-21V10L24 4z"/>
+          <path d="M16 22h4l3-6 3 12 3-6h4" stroke-width="2.5"/>
+        </svg>
+        <div class="cert-abbr">PN</div>
+        <div class="cert-name">Precision<br>Nutrition</div>
+      </div>
+      <div class="cert-badge">
+        <svg class="cert-shield" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M24 4L8 10v13c0 9.5 6.7 18.3 16 21 9.3-2.7 16-11.5 16-21V10L24 4z"/>
+          <path d="M18 30l6-14 6 14M20 26h8" stroke-width="2.5"/>
+        </svg>
+        <div class="cert-abbr">xLA</div>
+        <div class="cert-name">xLongevity<br>Academy</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+     FOLD 9 — WHAT MAKES THIS DIFFERENT
+     ============================================== -->
+<section class="value">
+  <div class="container">
+    <div class="value-header reveal">
+      <div>
+        <span class="eyebrow">What Makes This Different</span>
+        <h2 class="section-title">Built for practice,<br>not just theory.</h2>
+      </div>
+      <div class="value-nav">
+        <button class="value-arrow" id="valPrev" aria-label="Previous">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="value-arrow" id="valNext" aria-label="Next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="value-track-wrap">
+      <div class="value-track" id="valTrack">
+        <div class="value-card reveal" data-accent="1">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9"/>
+              <path d="M14 3h7v7"/>
+              <path d="M10 14L21 3"/>
+            </svg>
+          </div>
+          <h3 class="value-title">Live, not recorded.</h3>
+          <p class="value-desc">Every session is live with a certified instructor and your cohort. You ask questions in real time. You get real answers. Recordings are available if you miss one, but the live room is where the learning happens.</p>
+        </div>
+        <div class="value-card reveal" data-accent="2">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18"/>
+              <path d="M7 14l4-4 3 3 5-6"/>
+            </svg>
+          </div>
+          <h3 class="value-title">Your data, your curriculum.</h3>
+          <p class="value-desc">You don't memorize facts about glucose or sleep — you watch them move in your own body. CGM readings, lifestyle logs, and food experiments shape every session you attend.</p>
+        </div>
+        <div class="value-card reveal" data-accent="3">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3 class="value-title">Small cohorts, real accountability.</h3>
+          <p class="value-desc">Eight to fifteen people. You'll know your classmates' names and they'll know yours. Peer coaching in the final weeks builds the accountability that keeps the protocol alive.</p>
+        </div>
+        <div class="value-card reveal" data-accent="4">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </div>
+          <h3 class="value-title">A written protocol you'll keep.</h3>
+          <p class="value-desc">The course ends with a document — your personal longevity blueprint, tested against your body over twelve weeks. It's the one deliverable designed to outlast the course itself.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+     FOLD 10 — TESTIMONIALS
+     ============================================== -->
+<section class="testimonials">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <span class="eyebrow">Student Voices</span>
+      <h2 class="section-title">What our<br>students say.</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="quote-card reveal" data-tint="1">
+        <div class="quote-mark">"</div>
+        <div class="quote-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="quote-text">So happy finding eTeacher Group. They are genuinely concerned that you learn what you want to learn. They listen to what you want to learn and why, and then give thoughtful recommendations. Excellent classes and teachers.</p>
+        <div class="quote-meta">Trustpilot · 5 stars · Sept 2025</div>
+      </div>
+      <div class="quote-card reveal" data-tint="2">
+        <div class="quote-mark">"</div>
+        <div class="quote-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="quote-text">Our teacher is patient and kind. She does great. Even when I can't attend a session, the recording helps me catch up, and the materials mean I can learn at a time that's convenient.</p>
+        <div class="quote-meta">Trustpilot · 5 stars · May 2025</div>
+      </div>
+      <div class="quote-card reveal" data-tint="3">
+        <div class="quote-mark">"</div>
+        <div class="quote-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" opacity="0.25"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="quote-text">At first I was finding logistics difficult, but I got a phone call from a staff member checking in on me and she opened up a clear path forward. I really appreciate that personal touch — staff who stay with students to keep their learning moving.</p>
+        <div class="quote-meta">Trustpilot · 4 stars · June 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+     FOLD 11 — FAQs
+     ============================================== -->
+<section class="faq" id="faq">
+  <div class="container faq-inner">
+    <div class="faq-header reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title">Questions<br>worth answering.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" data-faq><span class="faq-num">01</span>Who is this course for?
+          <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Adults who want to take longevity seriously — practical people who'd rather understand their own biology than chase the latest headline. No medical background needed. If you're willing to read your own data and try small experiments, you'll thrive here.
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" data-faq><span class="faq-num">02</span>Do I need any medical background?
+          <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          No. The course is built for a general audience. We teach you to read the few biomarkers and signals that actually matter for healthspan, starting from first principles. Every concept is grounded in your own lifestyle logs and CGM observations.
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" data-faq><span class="faq-num">03</span>What happens in a typical session?
+          <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          A 90-minute live class with your cohort and a certified instructor. Expect a mix of teaching, real data walkthroughs (including CGM examples), and small-group discussion. Each session ends with a between-session practice — a food experiment, a movement plan, a sleep log — so the next week starts with your own data.
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" data-faq><span class="faq-num">04</span>Is this medical advice?
+          <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          No. This is education, not clinical care. We don't diagnose or treat. Our teachers help you understand research, interpret your own signals, and design lifestyle practices. For anything clinical, keep working with your physician.
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" data-faq><span class="faq-num">05</span>What do I get when I complete the course?
+          <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Your Personal Longevity Blueprint — a written protocol covering nutrition, movement, sleep, stress, supplements, and the signals you'll keep watching. You also finish with a CGM synthesis, a set of food and sleep experiments you can re-run, and commitment statements for the next ninety days.
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" data-faq><span class="faq-num">06</span>How much time commitment is required?
+          <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Plan on the weekly 90-minute session plus two to three hours of between-session practice — lifestyle logs, food experiments, CGM observation, sleep tracking. Most students find the between-session work fits into daily life rather than sitting on top of it.
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" data-faq><span class="faq-num">07</span>What technology or equipment do I need?
+          <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          A laptop or tablet for live sessions and a smartphone for lifestyle logs. A continuous glucose monitor (CGM) is part of Phase Two — we'll guide you through access. Anything else you might want (sleep tracker, scale, cuff) is optional and covered in the Health Tech session.
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" data-faq><span class="faq-num">08</span>Can I catch up if I miss a session?
+          <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Yes. Every session is recorded and materials are posted for on-your-own-time review. We still encourage live attendance — the cohort discussion is where a lot of the best learning happens — but life gets in the way, and the recording is there when it does.
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+     FOLD 12 — FINAL CTA
+     ============================================== -->
+<section class="final-cta" id="apply">
+  <div class="container">
+    <div class="final-cta-card reveal">
+      <video class="final-cta-video" autoplay muted loop playsinline>
+        <source src="assets/cta-bg.mp4" type="video/mp4">
+      </video>
+      <div class="final-cta-overlay"></div>
+      <h2 class="final-cta-title">Design the life<br>ahead of you.</h2>
+      <p class="final-cta-sub">Applications are open for the next cohort. A written protocol. The rest of your life.</p>
+      <a href="#lead-gen" class="btn-primary">
+        Apply Now
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M13 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+     FOLD 13 — LEAD GEN FORM
+     ============================================== -->
+<section class="lead-gen" id="lead-gen">
+  <div class="container">
+    <div class="lead-gen-inner reveal">
+      <h2 class="lead-gen-headline">Ready to Start? <span>Reserve Your Seat</span></h2>
+      <form class="lead-gen-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='You\'re on the list ✓'; this.querySelector('button').style.background='#10B981';">
+        <div class="lead-gen-row">
+          <input type="text" placeholder="First name" required aria-label="First name">
+          <input type="email" placeholder="Email address" required aria-label="Email address">
+        </div>
+        <button type="submit">Get Early Access to the Next Cohort →</button>
+      </form>
+      <p class="lead-gen-trust">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Join 400,000+ students learning with us — trusted since 2000
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+     FOOTER
+     ============================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 3 L26 9 V23 L16 29 L6 23 V9 Z" fill="none"/>
+            <path d="M16 10 V22 M10 16 H22" stroke-linecap="round"/>
+          </svg>
+          Longevity Life Academy
+        </div>
+        <p>A longevity and biohacking course from eTeacher Group. Read your own signals. Build your own protocol. Live your longest, strongest life.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Course</h4>
+        <ul>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#syllabus">Syllabus</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#lead-gen">Apply</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Topics</h4>
+        <ul>
+          <li><a href="/blueprint-november-r4x9/topics/nutrition.html">Nutrition</a></li>
+          <li><a href="/blueprint-november-r4x9/topics/sleep.html">Sleep</a></li>
+          <li><a href="/blueprint-november-r4x9/topics/metabolic.html">Metabolic</a></li>
+          <li><a href="/blueprint-november-r4x9/topics/protocols.html">Protocols</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 eTeacher Group · Longevity Life Academy</div>
+      <div>Not medical advice. Education only.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ==================================================
+   Scroll reveal
+   ================================================== */
+(function() {
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(e => e.classList.add('visible'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(e => io.observe(e));
+})();
+
+/* ==================================================
+   Phase accordion (syllabus)
+   ================================================== */
+(function() {
+  const phases = document.querySelectorAll('.phase');
+  phases.forEach(phase => {
+    const head = phase.querySelector('[data-toggle]');
+    head.addEventListener('click', () => {
+      const wasOpen = phase.classList.contains('open');
+      phases.forEach(p => p.classList.remove('open'));
+      if (!wasOpen) phase.classList.add('open');
+    });
+  });
+})();
+
+/* ==================================================
+   Value slider
+   ================================================== */
+(function() {
+  const track = document.getElementById('valTrack');
+  const prev = document.getElementById('valPrev');
+  const next = document.getElementById('valNext');
+  if (!track) return;
+  const cards = track.querySelectorAll('.value-card');
+  let index = 0;
+
+  function getVisible() {
+    if (window.innerWidth <= 720) return 1;
+    if (window.innerWidth <= 1000) return 2;
+    return 3;
+  }
+  function update() {
+    const visible = getVisible();
+    const maxIndex = Math.max(0, cards.length - visible);
+    if (index > maxIndex) index = maxIndex;
+    const card = cards[0];
+    const cardWidth = card.getBoundingClientRect().width;
+    const gap = 24;
+    track.style.transform = `translateX(-${index * (cardWidth + gap)}px)`;
+    prev.disabled = index === 0;
+    next.disabled = index >= maxIndex;
+  }
+  prev.addEventListener('click', () => { index = Math.max(0, index - 1); update(); });
+  next.addEventListener('click', () => {
+    const visible = getVisible();
+    const maxIndex = Math.max(0, cards.length - visible);
+    index = Math.min(maxIndex, index + 1);
+    update();
+  });
+  window.addEventListener('resize', update);
+  setTimeout(update, 50);
+})();
+
+/* ==================================================
+   FAQ accordion — one open at a time
+   ================================================== */
+(function() {
+  const items = document.querySelectorAll('.faq-item');
+  items.forEach(item => {
+    const q = item.querySelector('[data-faq]');
+    q.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('open');
+      items.forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+})();
+
+/* ==================================================
+   Nav shadow on scroll
+   ================================================== */
+(function() {
+  const nav = document.getElementById('nav');
+  if (!nav) return;
+  const onScroll = () => {
+    if (window.scrollY > 20) {
+      nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.05)';
+      nav.style.background = 'rgba(255, 255, 255, 0.9)';
+    } else {
+      nav.style.boxShadow = 'none';
+      nav.style.background = 'rgba(255, 255, 255, 0.72)';
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+/* ==================================================
+   Hex Chart — Interactive Orbital Diagram
+   ================================================== */
+(function() {
+  const chart = document.getElementById('hexChart');
+  if (!chart) return;
+  const nodes = chart.querySelectorAll('.hex-node');
+  const lines = chart.querySelectorAll('.hex-line');
+  const detail = document.getElementById('hexDetail');
+  const detailTag = document.getElementById('hexDetailTag');
+  const detailTitle = document.getElementById('hexDetailTitle');
+  const detailDesc = document.getElementById('hexDetailDesc');
+  const detailLink = document.getElementById('hexDetailLink');
+
+  const data = [
+    { tag: 'Metabolic Health', title: 'Read your own blood work.', desc: 'Learn to interpret glucose, lipids, and inflammation markers. Understand what your labs actually mean — and which numbers matter most for longevity.', link: '/topics/metabolic-health-blood-sugar.html' },
+    { tag: 'Exercise & Movement', title: 'Train for the next forty years.', desc: 'Strength, zone 2 cardio, stability, and VO2 max — the exercise patterns that extend healthspan, not just fitness.', link: '/topics/exercise-movement.html' },
+    { tag: 'Sleep & Circadian', title: 'Circadian rhythm, decoded.', desc: 'How sleep architecture, light exposure, and timing reshape your recovery, cognition, and hormone regulation.', link: '/topics/sleep-circadian-health.html' },
+    { tag: 'Stress & Emotions', title: 'Regulate the cortisol loop.', desc: 'Chronic stress accelerates biological aging. Learn evidence-based techniques to interrupt the cycle and build resilience.', link: '/topics/mental-emotional-health.html' },
+    { tag: 'Supplements & Tools', title: 'Evidence over hype.', desc: 'Cut through marketing noise. Learn which supplements have real data behind them — and which are just packaging.', link: '/topics/supplements-health-tech.html' },
+    { tag: 'Protocols & Habits', title: 'Build a blueprint that sticks.', desc: 'Design a personalized longevity protocol grounded in your own data, habits, and goals — tested and peer-reviewed by your cohort.', link: '/topics/protocols-habits.html' }
+  ];
+
+  // Position nodes in a circle — bigger chart
+  const cx = 420, cy = 350, radius = 280;
+  const nodeSize = 130;
+
+  function positionChart() {
+    const w = chart.offsetWidth;
+    const scale = Math.min(1, w / 840);
+    const sCx = w / 2;
+    const sCy = 350 * scale;
+    const sR = radius * scale;
+    const sNode = nodeSize * scale;
+
+    nodes.forEach((node, i) => {
+      const angle = (Math.PI * 2 * i / 6) - Math.PI / 2;
+      const x = sCx + sR * Math.cos(angle) - sNode / 2;
+      const y = sCy + sR * Math.sin(angle) - sNode / 2;
+      node.style.left = x + 'px';
+      node.style.top = y + 'px';
+      node.style.width = sNode + 'px';
+      node.style.height = sNode + 'px';
+    });
+
+    // Position lines
+    lines.forEach((line, i) => {
+      const angle = (Math.PI * 2 * i / 6) - Math.PI / 2;
+      const lineLen = sR - sNode / 2 + 10;
+      line.style.width = (lineLen > 0 ? lineLen : 0) + 'px';
+      line.style.transform = 'rotate(' + (angle * 180 / Math.PI) + 'deg)';
+      line.style.left = sCx + 'px';
+      line.style.top = sCy + 'px';
+    });
+
+    // Center
+    const center = chart.querySelector('.hex-center');
+    center.style.left = sCx + 'px';
+    center.style.top = sCy + 'px';
+    const centerSize = 180 * scale;
+    center.style.width = centerSize + 'px';
+    center.style.height = centerSize + 'px';
+
+    // Orbit ring
+    const orbit = chart.querySelector('.hex-orbit');
+    if (orbit) {
+      const orbitSize = (sR * 2 + sNode * 0.4);
+      orbit.style.width = orbitSize + 'px';
+      orbit.style.height = orbitSize + 'px';
+      orbit.style.top = sCy + 'px';
+      orbit.style.left = sCx + 'px';
+    }
+
+    // Chart height — detail panel is now outside the chart container
+    chart.style.height = (sCy + sR + sNode / 2 + 40) + 'px';
+  }
+
+  positionChart();
+  window.addEventListener('resize', positionChart);
+
+  let activeIndex = -1;
+
+  function showDetail(i) {
+    if (activeIndex === i) return;
+    activeIndex = i;
+    nodes.forEach((n, j) => {
+      n.classList.toggle('active', j === i);
+    });
+    lines.forEach((l, j) => {
+      l.classList.toggle('active', j === i);
+    });
+    detailTag.textContent = data[i].tag;
+    detailTitle.textContent = data[i].title;
+    detailDesc.textContent = data[i].desc;
+    detailLink.href = data[i].link;
+    detail.classList.add('visible');
+  }
+
+  function hideDetail() {
+    activeIndex = -1;
+    nodes.forEach(n => n.classList.remove('active'));
+    lines.forEach(l => l.classList.remove('active'));
+    detail.classList.remove('visible');
+  }
+
+  nodes.forEach((node, i) => {
+    node.addEventListener('mouseenter', () => showDetail(i));
+    node.addEventListener('click', () => showDetail(i));
+  });
+
+  // Keep detail visible — don't hide on mouseleave since detail is below chart.
+  // Only reset when user scrolls away (handled by IntersectionObserver).
+  const deepdiveSection = chart.closest('.deepdive');
+  if (deepdiveSection) {
+    const obs = new IntersectionObserver((entries) => {
+      if (!entries[0].isIntersecting) hideDetail();
+    }, { threshold: 0.1 });
+    obs.observe(deepdiveSection);
+  }
+
+  // Show first node by default after a short delay
+  setTimeout(() => showDetail(0), 1200);
+})();
+
+/* ==================================================
+   3D Tilt Effect for Topic Cards
+   ================================================== */
+(function() {
+  const cards = document.querySelectorAll('.topic-card');
+  if (!cards.length) return;
+
+  // Perspective wrapper on the grid
+  const grid = document.querySelector('.topics-grid');
+  if (grid) grid.style.perspective = '1200px';
+
+  const MAX_TILT = 12; // degrees
+  const TRANSITION_OUT = 'transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.6s ease';
+
+  cards.forEach(card => {
+    const shine = card.querySelector('.topic-shine');
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Normalized -1 to 1
+      const rotateY = ((x - centerX) / centerX) * MAX_TILT;
+      const rotateX = ((centerY - y) / centerY) * MAX_TILT;
+
+      card.style.transition = 'none';
+      card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px) scale(1.02)`;
+
+      // Move shine highlight
+      if (shine) {
+        const pctX = (x / rect.width) * 100;
+        const pctY = (y / rect.height) * 100;
+        shine.style.setProperty('--shine-x', pctX + '%');
+        shine.style.setProperty('--shine-y', pctY + '%');
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transition = TRANSITION_OUT;
+      card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) translateZ(0px) scale(1)';
+    });
+  });
+})();
+
+/* ==================================================
+   FAQ Stagger Animation
+   ================================================== */
+(function() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  if (!faqItems.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const item = entry.target;
+        const idx = Array.from(faqItems).indexOf(item);
+        item.style.animationDelay = (idx * 0.08) + 's';
+        item.style.animation = 'faq-slide-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards';
+        item.style.opacity = '0';
+        // Force reflow to apply animation
+        void item.offsetHeight;
+        observer.unobserve(item);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  faqItems.forEach(item => {
+    item.style.opacity = '0';
+    observer.observe(item);
+  });
+})();
+</script>
+</body>
+</html>

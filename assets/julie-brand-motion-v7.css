@@ -1,0 +1,9 @@
+/* The host logo owns its size. These rules never touch CTAs or their alignment. */
+.bm-v7-lockup{position:relative;display:inline-block;vertical-align:middle;max-width:100%;line-height:0}
+.bm-v7-lockup>.bm-v7-original{display:block;clip-path:inset(0 0 26% 0)}
+.nav-logo .bm-v7-lockup>.bm-v7-original{width:158.74px;height:auto!important;max-width:100%}
+.bm-v7-lockup>.bm-v7-byline{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;margin:0!important;object-fit:fill;clip-path:inset(74% 0 0 0);pointer-events:none}
+@media(prefers-reduced-motion:reduce){
+  .bm-v7-lockup>.bm-v7-original{clip-path:none}
+  .bm-v7-lockup>.bm-v7-byline{display:none!important}
+}

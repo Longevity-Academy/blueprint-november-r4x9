@@ -1,0 +1,42 @@
+/* 2026-11-09 (Omri): Enroll buttons in the French Atelier structure (solid gradient pill, dark text, arrow, lit shadow),
+   Longevity light-blue palette. WhatsApp floater in the Culture Capsules look. Presentation only. */
+:root{--lla-cta-a:#BFE3FF;--lla-cta-b:#7EC8FF;--lla-cta-c:#4FAEF5;--lla-cta-ink:#06243F}
+body#lpRoot .section-cta-btn,body#lpRoot .nav-cta,body#lpRoot .mobile-nav-cta,body#lpRoot .pk-btn,body#lpRoot .lg-buy,body#lpRoot .lg-buy-main,
+body#lpRoot #emGo1,body#lpRoot #emGo2{
+  position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:56px;padding:0 28px;border:0;border-radius:999px;cursor:pointer;text-decoration:none;
+  font-family:'Inter','Codec Pro',system-ui,sans-serif;font-size:17px;font-weight:700;letter-spacing:.005em;
+  color:var(--lla-cta-ink)!important;
+  background:linear-gradient(180deg,var(--lla-cta-a) 0%,var(--lla-cta-b) 52%,var(--lla-cta-c) 100%);
+  box-shadow:0 0 0 1px rgba(255,255,255,.35) inset,0 18px 36px -16px rgba(79,174,245,.85),0 0 28px -6px rgba(126,200,255,.55);
+  transition:transform .2s ease,box-shadow .2s ease,filter .2s ease;
+}
+body#lpRoot .section-cta-btn::before,body#lpRoot #emGo1::before,body#lpRoot #emGo2::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.45),rgba(255,255,255,0) 55%);pointer-events:none}
+body#lpRoot .section-cta-btn:hover,body#lpRoot .nav-cta:hover,body#lpRoot .pk-btn:hover,body#lpRoot .lg-buy:hover,body#lpRoot .lg-buy-main:hover,body#lpRoot #emGo1:hover,body#lpRoot #emGo2:hover{
+  transform:translateY(-2px);filter:saturate(1.08);
+  box-shadow:0 0 0 1px rgba(255,255,255,.45) inset,0 22px 40px -16px rgba(79,174,245,.95),0 0 36px -6px rgba(126,200,255,.75);color:var(--lla-cta-ink)!important}
+body#lpRoot .section-cta-btn svg{width:18px;height:18px;stroke:currentColor;stroke-width:2.4;fill:none;transition:transform .2s ease}
+body#lpRoot .section-cta-btn:hover svg{transform:translateX(3px)}
+body#lpRoot .nav-cta{min-height:44px;padding:0 22px;font-size:15px}
+body#lpRoot .mobile-nav-cta{width:100%;margin-top:8px}
+body#lpRoot #emGo1,body#lpRoot #emGo2{width:100%;min-height:58px;font-size:18px;border-radius:16px}
+@media (max-width:720px){
+  body#lpRoot .section-cta-btn{width:100%;min-height:58px;font-size:17px}
+}
+/* WhatsApp floater: Culture Capsules look */
+#et-bumpyard-widget{padding:0 20px 20px!important;bottom:calc(0px + env(safe-area-inset-bottom))!important}
+#et-bumpyard-widget .widget-trigger-btn{
+  height:48px!important;line-height:1!important;padding:0 22px 0 18px!important;gap:10px;
+  background:linear-gradient(180deg,#2FBE57 0%,#0E8A3A 100%)!important;font-family:'Inter',system-ui,sans-serif!important;font-size:15px!important;font-weight:600!important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.18) inset,0 14px 30px -10px rgba(14,138,58,.85),0 0 26px -4px rgba(47,190,87,.55)!important;
+  transition:transform .2s ease,box-shadow .2s ease}
+#et-bumpyard-widget .widget-trigger-btn:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,255,255,.22) inset,0 18px 36px -10px rgba(14,138,58,.95),0 0 36px -4px rgba(47,190,87,.75)!important}
+#et-bumpyard-widget .widget-trigger-btn img{width:22px!important;height:22px!important;margin:0!important}
+#et-bumpyard-widget .widget-trigger-btn::after{width:11px!important;height:11px!important;top:1px!important;right:3px!important;border:2px solid #fff;box-shadow:0 0 10px rgba(248,41,77,.8)}
+@media (min-width:721px) and (max-width:1180px){ body:has(.lla-float-cta.is-visible) #et-bumpyard-widget{bottom:calc(84px + env(safe-area-inset-bottom))!important} }
+@media (max-width:768px){
+  #et-bumpyard-widget{padding:0 14px 16px!important}
+  #et-bumpyard-widget .widget-trigger-btn{width:60px!important;height:60px!important;padding:0!important;margin:0!important;justify-content:center;border-radius:50%!important}
+  #et-bumpyard-widget .widget-trigger-btn img{width:30px!important;height:30px!important}
+  #et-bumpyard-widget .widget-trigger-btn .label{display:none!important}
+}

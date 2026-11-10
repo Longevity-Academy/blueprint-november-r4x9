@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="robots" content="noindex,nofollow">
+<script>
+/* 2026-09-27 speed-up (Roberto): for CRM links (?stid=&orderid=) ask the CRM for the order the moment the HTML arrives,
+ * in parallel with the rest of the page. A masterclass order (283/1823) is forwarded right away, before the payment
+ * SDK and the page assets load, and the order details are handed to the masterclass page through sessionStorage
+ * (same origin) so it does not need to ask the CRM again before opening the Pay screen. Blueprint orders reuse the
+ * same response below. Same routing rule, same query string, same loop guard as LLA_COURSE_ROUTER. */
+(function(){try{
+  var q=new URLSearchParams(location.search), stid=q.get('stid'), oid=q.get('orderid');
+  if(!stid||!oid)return;
+  var prefix=(q.get('env')==='staging')?'/staging':'';
+  var TARGET='https://www.longevitylifeacademy.com/blueprint-november-r4x9/julie-masterclass/';
+  window.__llaEarlyDetails=fetch('https://eteacher-leads-proxy.gitter-omri.workers.dev'+prefix+'/api/checkout/details',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({studentId:String(stid),orderId:String(oid)})})
+    .then(function(r){return r.text();}).then(function(t){try{return JSON.parse(t);}catch(e){return null;}})
+    .then(function(d){
+      try{
+        var cp=(d&&d.CoursePrice)||{};
+        if(Number(cp.MainAbroadCourseID)===283||Number(cp.AbroadCourseID)===1823){
+          var key='lla_course_routed_'+String(oid);
+          if(sessionStorage.getItem(key)!=='1'){
+            sessionStorage.setItem(key,'1');
+            try{sessionStorage.setItem('lla_crm_details_'+String(oid),JSON.stringify({ts:Date.now(),d:d}));}catch(e){}
+            location.replace(TARGET+(location.search||'')+(location.hash||''));
+          }
+        }
+      }catch(e){}
+      return d;
+    }).catch(function(){return null;});
+}catch(e){}})();
+</script>
+
+<script src="/blueprint-november-r4x9/assets/lla-clickid-v20260922.js"></script>
+<script>/* 2026-09-21 14:05: production pixel + CAPI relay fire ONLY on the live hosts.
+   Preview deployments (*.pages.dev hashes, branch previews) and other hosts got a
+   silent fbq and a no-op relay, so test traffic never lands in Events Manager.
+   Override for controlled tests: ?llapixel=1 */
+(function(){var h=location.hostname,s=location.search;
+window.LLA_LIVE=(h==='longevitylifeacademy.pages.dev'||/(^|\.)longevitylifeacademy\.com$/.test(h)||/[?&]llapixel=1(?:&|$)/.test(s))&&!/[?&](llatest|qa)=1(?:&|$)/.test(s);
+window.__llaRelay=function(body){if(!window.LLA_LIVE)return;var done=false;function go(){if(done)return;done=true;try{body=window.__llaRefreshClickPayload?window.__llaRefreshClickPayload(body):body;fetch('https://lla-ac-events.vercel.app/api/meta/capi',{method:'POST',headers:{'Content-Type':'text/plain'},body:body,keepalive:true}).catch(function(){});}catch(e){}}
+/* 2026-09-21 17:05: server copy leaves 1.5 s AFTER the Pixel copy (Meta keeps the first event per event_id; the Pixel copy carries the real _fbc click cookie). Flushed at once if the page is being left. */
+setTimeout(go,1500);try{window.addEventListener('pagehide',go,{once:true});}catch(e){}};
+if(!window.LLA_LIVE){var q=function(){};q.callMethod=null;q.queue=[];q.loaded=true;q.version='2.0';q.push=q;window.fbq=window._fbq=q;
+var of=window.fetch;window.fetch=function(u){if(typeof u==='string'&&u.indexOf('lla-ac-events.vercel.app')>-1)return Promise.resolve(new Response('',{status:204}));return of.apply(this,arguments);};}
+})();</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Place your order, The Longevity Blueprint | Longevity Life Academy</title>
+<meta name="description" content="Place your order for The Longevity Blueprint at Longevity Life Academy." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.cdnfonts.com/css/codec-pro" rel="stylesheet" />
+<!-- PayPal Smart Buttons: identical SDK + client-id to eTeacher's other schools (israelbiblicalstudies.com checkout), currency USD. -->
+<link rel="preconnect" href="https://checkout.airwallex.com" /><link rel="preconnect" href="https://eteacher-leads-proxy.gitter-omri.workers.dev" /><link rel="preconnect" href="https://www.paypal.com" />
+<script async src="https://www.paypal.com/sdk/js?client-id=AXL1tqJTVoHQ2RltFz9SUVu8EM5ZTKDLCviVev-lOPQEEX1ScBii9d5MSo3_dxGjemVjTQJr7hpztwkQ&currency=USD&disable-funding=credit,card" onload="window.LLA_PAYPAL_SDK_READY=true;if(window.LLA_RENDER_PAYPAL_PENDING&&window.LLA_RENDER_PAYPAL)window.LLA_RENDER_PAYPAL();"></script>
+<style>
+:root{
+  --blue:#006EFF; --blue-strong:#0051CC; --blue-hover:#0059D6; --blue-light:#E8F1FF;
+  --ink:#111111; --ink-2:#2A2F36; --ink-3:#5A6472; --ink-4:#8892A0;
+  --bg:#FFFFFF; --surface:#F5F7FA; --line:#E3E7EE;
+  --navy:#12355B; --accent:#E2571E;
+  --font-display:'Codec Pro','Inter',sans-serif; --font-body:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font-body);background:#fff;color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+
+/* ---------- HEADER ---------- */
+.co-head{background:#fff;border-bottom:1px solid var(--line);padding:13px 26px;display:flex;align-items:center;gap:24px;position:sticky;top:0;z-index:20;min-height:68px}
+.co-head .logo img{height:48px;width:auto;display:block}
+.stepper{flex:1;display:flex;justify-content:center;align-items:center;align-self:center}
+.stepper-in{display:flex;align-items:center;height:28px}
+.stepper .st{display:flex;align-items:center;gap:9px}
+.stepper .dot{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;background:#fff;border:1.5px solid #C9D2DE;color:#98A3B3;flex:none}
+.stepper .lbl{font-size:14.5px;color:#98A3B3;font-weight:500;white-space:nowrap}
+.stepper .st.done .dot{background:var(--blue);border-color:var(--blue);color:#fff}
+.stepper .st.done .lbl{color:var(--ink);font-weight:600}
+.stepper .bar{width:62px;height:1.5px;background:#D7DEE8;margin:0 11px;flex:none}
+.stepper .bar.done{background:var(--blue)}
+.callus{font-size:14.5px;color:var(--ink-2);white-space:nowrap}
+.callus a{font-weight:700}
+
+/* ---------- LAYOUT ---------- */
+.wrap{max-width:900px;margin:0 auto;padding:26px 18px 70px}
+.demo{display:flex;justify-content:center;margin-bottom:18px}
+.demo span{background:var(--blue-light);color:var(--blue-strong);font-size:12.5px;font-weight:600;padding:7px 15px;border-radius:99px}
+.cols{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:22px;align-items:start}
+.cols>div{min-width:0}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.card-pad{padding:17px 19px}
+.ln{font-size:14px;color:var(--ink-2);margin-bottom:5px}
+.ln b{font-weight:700;color:var(--ink)}
+.ln:last-child{margin-bottom:0}
+.course-name{color:var(--accent);font-weight:700}
+
+.tband{background:var(--navy);color:#fff;padding:15px 19px;display:flex;align-items:center;gap:12px}
+.tband svg{flex:none}
+.tband .t-lbl{font-size:13.5px;font-weight:600;opacity:.92;margin-bottom:2px}
+.tband .t-val{font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:.1px}
+.tband .t-val s{font-weight:600;opacity:.5;margin-right:7px;text-decoration-thickness:1.5px}
+.tband .t-off{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;background:#3DDC97;color:#06231a;font-family:var(--font-body);font-size:11.5px;font-weight:800;letter-spacing:.3px;vertical-align:2px}
+.tband .t-sub{font-family:var(--font-body);font-size:12.5px;font-weight:600;opacity:.85;margin-top:3px}
+
+.foot-note{font-size:12.5px;color:var(--ink-3);font-style:italic;margin:11px 0 18px;line-height:1.45}
+
+/* ---------- PAYMENT ---------- */
+.pay-tabs{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.pay-tab{display:flex;align-items:center;justify-content:center;gap:7px;padding:15px 10px;cursor:pointer;background:#F4F6F9;border-bottom:1px solid var(--line);transition:.15s}
+.pay-tab.active{background:#fff;border-bottom:1px solid #fff}
+.pay-tab img{height:25px;display:block}
+.pay-tab .pp{height:30px}
+.pay-body{padding:19px}
+.gpay{width:100%;background:#000;color:#fff;border:none;border-radius:6px;padding:14px;font-family:var(--font-body);font-weight:600;font-size:15.5px;display:flex;align-items:center;justify-content:center;gap:7px;cursor:pointer}
+.gpay img{height:19px;display:block}
+.orpay{text-align:center;font-size:13.5px;color:var(--ink-3);margin:17px 0 14px}
+.f-lbl{font-size:13px;color:var(--ink-2);font-weight:600;margin-bottom:7px}
+.cardbox{border:1px solid #D5DCE6;border-radius:7px;overflow:hidden;margin-bottom:14px}
+.cardbox .row{display:flex;align-items:center;border-bottom:1px solid #D5DCE6}
+.cardbox .row:last-child{border-bottom:none}
+.cardbox input{flex:1;border:none;outline:none;padding:12px 13px;font-size:14.5px;font-family:var(--font-body);color:var(--ink);background:#fff;min-width:0}
+.cardbox input::placeholder{color:#A9B3C1}
+.brandrow{display:flex;gap:3px;padding-right:11px;flex:none}
+.brandrow img{height:15px;display:block}
+.split{display:flex}
+.split .half{flex:1;display:flex;align-items:center}
+.split .half:first-child{border-right:1px solid #D5DCE6}
+.input{width:100%;border:1px solid #D5DCE6;border-radius:7px;padding:12px 13px;font-size:14.5px;font-family:var(--font-body);outline:none}
+.input::placeholder{color:#A9B3C1}
+.input:focus,.cardbox input:focus{border-color:var(--blue)}
+.proceed{width:100%;margin-top:16px;background:var(--blue);color:#fff;border:none;border-radius:7px;padding:14px;font-family:var(--font-body);font-weight:700;font-size:15.5px;cursor:pointer;transition:.15s}
+.proceed:hover{background:var(--blue-hover)}
+
+/* ---------- SUMMARY ---------- */
+.sum{background:#fff;border:1px solid var(--line);border-radius:9px;padding:19px;position:sticky;top:88px}
+.sum-row{display:flex;justify-content:space-between;gap:14px;margin-bottom:5px}
+.sum-row .k{font-size:14.5px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:6px;min-width:0}
+.sum-row .v{font-size:14.5px;font-weight:600;color:var(--ink);white-space:nowrap}
+.tip{width:15px;height:15px;border-radius:50%;border:1.2px solid #A9B3C1;color:#8C97A6;font-size:10px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;cursor:help;flex:none}
+.sum-note{font-size:12.5px;color:var(--ink-3);font-style:italic;line-height:1.45;max-width:82%;margin-bottom:16px}
+.sum hr{border:none;border-top:1px solid var(--line);margin:4px 0 15px}
+.sum p{font-size:13px;color:var(--ink-2);line-height:1.6;margin-bottom:12px}
+.sum p:last-child{margin-bottom:0}
+
+.voices{margin-top:26px;text-align:center}
+.voices h3{font-family:var(--font-display);font-size:25px;font-weight:800;line-height:1.2;letter-spacing:-.4px;margin-bottom:16px}
+.tcard{background:#F4F6F9;border:1px solid var(--line);border-radius:9px;padding:17px;text-align:left}
+.tcard .stars{color:#00B67A;font-size:13px;letter-spacing:1px;margin-bottom:8px}
+.tcard blockquote{font-size:13.5px;color:var(--ink-2);line-height:1.6;font-style:italic}
+.tcard cite{display:block;margin-top:9px;font-size:12px;color:var(--ink-3);font-style:normal}
+
+/* ---------- DONE ---------- */
+.done{max-width:520px;margin:70px auto;text-align:center;padding:0 20px}
+.done h1{font-family:var(--font-display);font-size:34px;font-weight:800;letter-spacing:-.8px;margin-bottom:12px}
+.done p{color:var(--ink-3);font-size:15.5px;margin-bottom:22px}
+.done a{font-weight:700}
+#screen-done{display:none}
+
+@media(max-width:820px){
+  .cols{grid-template-columns:1fr}
+  .sum{position:static}
+  .stepper .bar{width:34px;margin:0 7px}
+  .stepper .lbl{display:none}
+  .co-head{padding:10px 14px 8px;gap:10px;flex-wrap:wrap;row-gap:4px;min-height:0}
+  .co-head .logo img{height:38px}
+  .stepper{flex:1 1 auto;min-width:0;justify-content:flex-end}
+  .callus{flex:1 0 100%;font-size:13px;text-align:right;line-height:1.2}
+}
+/* r1: PayPal button placeholder while the PayPal SDK renders */
+#paypal-button-container:empty{min-height:55px;border:1px dashed #C9D2DE;border-radius:6px;display:flex;align-items:center;justify-content:center;background:#F8FAFC}
+#paypal-button-container:empty::before{content:'Loading PayPal\2026';font-size:14px;font-weight:600;color:#5A6472}
+</style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq.disablePushState = true; /* 2026-11-05: no automatic un-ID'd PageView on hash/pushState navigation (Meta SPA util); keeps PageView paired with the server copy */
+/* Advanced matching on the very first call. Meta scores every event on how
+ * many match keys it carries, so the identity captured earlier in the funnel
+ * is read out of storage BEFORE init and attached to this page's PageView.
+ * Without this the checkout PageView scores 6.1 with ip/ua/fbp only. */
+(function(){
+  function letters(s){ return String(s||'').toLowerCase().replace(/[^a-z]/g,''); }
+  var ud={};
+  try{
+    var x=localStorage.getItem('lla_xid_v1');
+    if(!x){ x='lla'+Date.now().toString(36)+Math.random().toString(36).slice(2,12); localStorage.setItem('lla_xid_v1',x); }
+    ud.external_id=x;
+    var i=null;
+    try{ i=JSON.parse(sessionStorage.getItem('lla_buyer_v1')||'null'); }catch(e){}
+    if(!i||!i.email){ try{ i=JSON.parse(localStorage.getItem('lla_identity_v1')||'null'); }catch(e){} }
+    if(i){
+      if(i.email) ud.em=String(i.email).trim().toLowerCase();
+      if(i.phone) ud.ph=String(i.phone).replace(/[^0-9]/g,'');
+      if(i.fn) ud.fn=letters(i.fn);
+      if(i.ln) ud.ln=letters(i.ln);
+      if(i.st) ud.st=String(i.st).trim().toLowerCase();
+      if(i.country) ud.country=String(i.country).trim().toLowerCase();
+    }
+  }catch(e){}
+  fbq('init','1440305917310328',ud);
+})();
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1440305917310328&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<script>
+/* Catalogue product id for this course. Meta's diagnostics flagged AddToCart
+ * and Purchase as missing content_ids, contents and content_type, which is why
+ * "Pixel has low event source match rate" and "Pixel Missing Parameter in DPA
+ * Events" both read FAILED. This id must match the item id in the LLA catalogue. */
+var LLA_CONTENT_ID = 'lla-longevity-blueprint';
+window.LLA_META=(function(){
+  /* Cookie read WITHOUT decoding. decodeURIComponent mutates the _fbc value
+   * (its fbclid segment often contains percent-encoded bytes), and Meta then
+   * reports "Server sending modified fbclid value in fbc parameter" and drops
+   * attribution. The _fbc cookie must travel byte-for-byte as the Pixel wrote it.
+   * Non-clickid cookies (_fbp) also parse fine without decoding. */
+  function ck(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]+)'));return m?m[1]:'';}
+  /* Meta click id (fbc). Prefer the _fbc cookie; if the Pixel did not set it,
+   * rebuild it from the fbclid the store page saved in localStorage
+   * (lla_attribution_v1) or from the current URL, in Meta's documented
+   * format fb.1.<first-seen ms>.<fbclid>. Without this, a purchase cannot be
+   * matched to the ad click and Ads Manager shows 0 purchases. */
+  /* Read a query parameter WITHOUT decoding it. URLSearchParams.get() percent-decodes
+   * and converts '+' to a space, which corrupts an fbclid. Meta then reports
+   * "Server sending modified fbclid value in fbc parameter" and refuses to attribute
+   * the conversion. The fbclid must travel byte-for-byte as it appeared in the URL. */
+  function rawq(n){
+    try{
+      var m=String(location.search||'').match(new RegExp('[?&]'+n+'=([^&#]*)'));
+      return m?m[1]:'';
+    }catch(e){return '';}
+  }
+  function fbc(){
+    /* 2026-09-21 17:05: only the Pixel's own _fbc cookie, byte for byte. No self-built fb.1.<ts>.<fbclid> (Meta flagged "modified fbclid" on the server copy). No cookie = no fbc. */
+    /* 2026-09-24: Meta spec fallback. Pixel cookie first; else fb.1.<landing ms>.<fbclid RAW from location.search (never URL-decoded)>, stored on first landing for 90d. */
+    var c=ck('_fbc'); if(c) return c;
+    try{ var m=/[?&]fbclid=([^&#]+)/.exec(location.search||'');
+      if(m){ var v='fb.1.'+Date.now()+'.'+m[1]; var o=JSON.parse(localStorage.getItem('lla_fbc_v1')||'null');
+        if(!o||o.raw!==m[1]){ o={v:v,raw:m[1],ts:Date.now()}; localStorage.setItem('lla_fbc_v1',JSON.stringify(o)); } return o.v; }
+      var s=JSON.parse(localStorage.getItem('lla_fbc_v1')||'null'); if(s&&s.v&&(Date.now()-s.ts)<7776000000) return s.v;
+    }catch(e){}
+    return '';
+  }
+  /* Stable pseudonymous id for this browser. Meta counts external_id as a
+   * match key in its own right, so a persistent one lifts Event Match Quality
+   * on every event, including anonymous PageViews where no email exists yet. */
+  function xid(){
+    try{
+      var v=localStorage.getItem('lla_xid_v1');
+      if(!v){ v='lla'+Date.now().toString(36)+Math.random().toString(36).slice(2,12); localStorage.setItem('lla_xid_v1',v); }
+      return v;
+    }catch(e){return '';}
+  }
+  function digits(s){ return String(s||'').replace(/[^0-9]/g,''); }
+  /* Meta requires fn/ln as lowercase letters only. Apostrophes and hyphens in
+   * names such as O'Brien or Smith-Jones must be removed or the hash will not
+   * match Meta's own normalisation of the same name. */
+  function letters(s){ return String(s||'').toLowerCase().replace(/[^a-z]/g,''); }
+  /* Country from the E.164 mobile the CRM already validated. The funnel sells
+   * to the United States and the form enforces a US number, so +1 resolves to
+   * 'us'. Anything else returns empty rather than a guess. */
+  function countryOf(phone){
+    var d=digits(phone);
+    if(d.length===11&&d.charAt(0)==='1') return 'us';
+    if(d.length===10) return 'us';
+    return '';
+  }
+  /* Buyer identity for matching. The store page stages the lead in
+   * sessionStorage (lla_ecomm_pending) and removes it once the order is
+   * created, and mirrors it into localStorage (lla_identity_v1) so the
+   * identity survives the hop between store page and checkout. Every match
+   * key Meta accepts is filled here, not only email. */
+  function identity(){
+    var out={email:'',phone:'',fn:'',ln:'',st:'',country:'',external_id:xid()};
+    function absorb(o){
+      if(!o) return;
+      if(!out.email&&o.email) out.email=String(o.email).trim().toLowerCase();
+      if(!out.phone&&o.phone) out.phone=String(o.phone).trim();
+      if(!out.fn&&o.fn) out.fn=letters(o.fn);
+      if(!out.ln&&o.ln) out.ln=letters(o.ln);
+      if(!out.st&&o.st) out.st=String(o.st).trim().toLowerCase();
+      if(!out.st&&o.State) out.st=String(o.State).trim().toLowerCase();
+    }
+    try{ absorb(JSON.parse(sessionStorage.getItem('lla_buyer_v1')||'null')); }catch(e){}
+    try{
+      var p=JSON.parse(sessionStorage.getItem('lla_ecomm_pending')||'null');
+      var pl=p&&p.payload;
+      if(pl) absorb({email:pl.Email,phone:pl.MobilePhone,fn:pl.FirstName,ln:pl.LastName,st:pl.State});
+    }catch(e){}
+    try{ absorb(JSON.parse(localStorage.getItem('lla_identity_v1')||'null')); }catch(e){}
+    out.country=countryOf(out.phone);
+    if(out.email){
+      try{ sessionStorage.setItem('lla_buyer_v1',JSON.stringify(out)); }catch(e){}
+      try{ localStorage.setItem('lla_identity_v1',JSON.stringify(out)); }catch(e){}
+    }
+    return out;
+  }
+  /* Kept so existing callers of LLA_META.buyer() keep working unchanged. */
+  function buyer(){ return identity(); }
+  /* Re-initialising the Pixel with user data is Meta's documented way to set
+   * advanced matching after the fact. It attaches the match keys to every
+   * later browser-side event on this page without firing anything itself. */
+  var amLast='';
+  function applyAdvancedMatching(){
+    try{
+      var i=identity();
+      var ud={external_id:i.external_id};
+      if(i.email) ud.em=i.email;
+      if(i.phone) ud.ph=digits(i.phone);
+      if(i.fn) ud.fn=letters(i.fn);
+      if(i.ln) ud.ln=letters(i.ln);
+      if(i.st) ud.st=i.st;
+      if(i.country) ud.country=i.country;
+      var sig=JSON.stringify(ud);
+      if(sig===amLast) return;
+      amLast=sig;
+      if(window.fbq) fbq('init','1440305917310328',ud);
+    }catch(e){}
+  }
+  try{ applyAdvancedMatching(); setInterval(applyAdvancedMatching,2000); }catch(e){}
+  function track(name,data,email){
+    try{
+      if(window.LLA_LIVE===false||/[?&](llatest|qa)=1(?:&|$)/.test(location.search))return;
+      if(window.LLA_ECOMM_CONFIG&&window.LLA_ECOMM_CONFIG.env==='staging')return;
+      var i=identity();
+      if(email&&!i.email) i.email=String(email).trim().toLowerCase();
+      applyAdvancedMatching();
+      try{ var _cl=sessionStorage.getItem('lla_cta_location')||''; if(_cl){ data=data||{}; if(!data.cta_location) data.cta_location=_cl; } }catch(e){}
+      var id='lla_'+name.toLowerCase()+'_'+Date.now()+'_'+Math.random().toString(36).slice(2,8);
+      try{if(window.fbq)fbq('track',name,data||{},{eventID:id});}catch(e){}
+      var payload=JSON.stringify({event_name:name,event_id:id,
+        email:i.email||'',phone:i.phone||'',fn:i.fn||'',ln:i.ln||'',
+        st:i.st||'',country:i.country||'',external_id:i.external_id||'',
+        value:(data&&data.value)||0,currency:(data&&data.currency)||'USD',
+        content_name:(data&&data.content_name)||'',order_id:(data&&data.order_id)||'',
+        content_type:(data&&data.content_type)||'',
+        content_ids:(data&&data.content_ids)||[],
+        contents:(data&&data.contents)||[],
+        cta_location:(data&&data.cta_location)||'',
+        event_time:Math.floor(Date.now()/1000),
+        user_agent:navigator.userAgent,
+        url:location.href,fbp:ck('_fbp'),fbc:fbc()});
+      window.__llaRelay(payload);
+    }catch(e){}
+  }
+  return {track:track,buyer:buyer,identity:identity,applyAdvancedMatching:applyAdvancedMatching};
+})();
+</script>
+<!-- Microsoft Clarity (session recordings + heatmaps). Paste your Clarity project ID between the quotes below. Inert until pasted. -->
+<script>(function(c,l,a,r,i,t,y){if(!i||i==="PASTE_CLARITY_ID")return;c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","PASTE_CLARITY_ID");</script>
+<style id="et-bumpyard-css">
+#et-bumpyard-widget{font-family:"Open Sans","Inter",system-ui,sans-serif;position:fixed;right:0;bottom:var(--et-wa-bottom,0px);z-index:99999;padding:0 20px 20px;font-style:normal}
+#et-bumpyard-widget .flex{display:flex;flex-direction:row;align-items:center;justify-content:flex-start}
+#et-bumpyard-widget .chat-box{display:block;background:#fff;box-shadow:0 0 24px rgba(0,0,0,.2);border-radius:10px;overflow:hidden;position:relative;max-width:360px;width:0;height:0;transform:translateX(110%);opacity:0;transition:.3s cubic-bezier(.19,1,.22,1);border:1px solid #e2e2e2;margin:0 0 10px auto;text-align:left;color:#222}
+#et-bumpyard-widget.show .chat-box{transform:translateX(0);opacity:1;width:340px;height:auto}
+#et-bumpyard-widget .chat-box .close{position:absolute;top:15px;right:15px;width:15px;height:15px;cursor:pointer;z-index:2}
+#et-bumpyard-widget .chat-box .close::before,#et-bumpyard-widget .chat-box .close::after{content:"";width:2px;height:16px;position:absolute;left:calc(50% - 1px);background:#919295;display:block;border-radius:2px}
+#et-bumpyard-widget .chat-box .close::before{transform:rotate(45deg)}#et-bumpyard-widget .chat-box .close::after{transform:rotate(-45deg)}
+#et-bumpyard-widget .chat-box header{background:#f9f9f9;padding:20px;margin:0;border:0}
+#et-bumpyard-widget .chat-box header div{line-height:1.2;font-size:14px;color:#222}
+#et-bumpyard-widget .chat-box header div.name{font-size:16px;font-weight:600}
+#et-bumpyard-widget .chat-box header .avatar{margin-right:10px}
+#et-bumpyard-widget .chat-box .avatar{position:relative}
+#et-bumpyard-widget .chat-box .avatar img{border-radius:50%;box-shadow:0 0 30px rgba(0,0,0,.1);width:55px;height:55px;object-fit:cover;display:block}
+#et-bumpyard-widget .chat-box header .avatar::after{content:"";display:block;width:10px;height:10px;background:#4ecf5e;position:absolute;bottom:0;right:0;border:2px solid #f9f9f9;border-radius:50%}
+#et-bumpyard-widget .chat-box main{padding:20px;position:relative;border-bottom:1px solid #f3f0f0;display:block}
+#et-bumpyard-widget .chat-box main .time{font-size:12px;color:#919295;text-align:center;margin:0 0 20px;min-height:14px}
+#et-bumpyard-widget .chat-box main .message{align-items:flex-start;opacity:0;transition:.4s}
+#et-bumpyard-widget .chat-box main .message .avatar{margin-right:10px}
+#et-bumpyard-widget .chat-box main .message .avatar img{width:30px;height:30px;box-shadow:none}
+#et-bumpyard-widget .chat-box main .message .chat-message{background:#edecec;padding:10px;border-radius:0 10px 10px 10px;font-size:14px;line-height:1.3;transform:translateY(100%);transition:.4s;color:#222}
+#et-bumpyard-widget.loaded .chat-box main .message{opacity:1}#et-bumpyard-widget.loaded .chat-box main .message .chat-message{transform:translateY(0)}
+#et-bumpyard-widget .chat-box footer{text-align:center;padding:10px 20px 20px;background:#fff;margin:0;border:0}
+#et-bumpyard-widget .chat-box footer .title{font-size:14px;font-weight:600;margin:0 0 10px;color:#454545}
+.et-bump-btn.bump-whatsapp{border-radius:4px;background:#4ecf5e;color:#fff!important;text-decoration:none!important;padding:0 8px;line-height:40px;display:flex;justify-content:center;align-items:center;font-size:15px;font-weight:600;text-transform:none;font-family:"Open Sans","Inter",system-ui,sans-serif;font-style:normal}
+.et-bump-btn.bump-whatsapp img{margin:0 10px -2px 0;width:17px;height:17px}
+#et-bumpyard-widget .et-bump-btn-holder{text-align:right}
+#et-bumpyard-widget .widget-trigger-btn{position:relative;color:#fff!important;text-decoration:none!important;border-radius:500px;background:#025d17;line-height:40px;color:#fff;text-decoration:none;padding:0 20px;font-weight:600;display:inline-flex;align-items:center;box-shadow:0 0 24px rgba(0,0,0,.2);cursor:pointer;font-size:15px;user-select:none}
+#et-bumpyard-widget .widget-trigger-btn img{margin-right:10px;height:20px;width:20px}
+#et-bumpyard-widget .widget-trigger-btn::after{content:"";display:block;width:10px;height:10px;background:#f8294d;position:absolute;top:0;right:0;border-radius:50%}
+#et-bumpyard-widget .chat-box header .et-about{background:none!important;padding:0!important;margin:0!important;border:0!important;box-shadow:none!important;width:auto!important;min-height:0!important;display:block!important;color:#222!important;text-align:left}#et-bumpyard-widget .chat-box header .et-about div{color:#222!important;background:none!important;padding:0!important}#et-bumpyard-widget .chat-box footer{background:#fff!important;color:#454545!important;padding:10px 20px 20px!important;margin:0!important;border:0!important;display:block!important;width:auto!important;min-height:0!important}#et-bumpyard-widget .chat-box footer .title{color:#454545!important;background:none!important}#et-bumpyard-widget .chat-box header{display:flex!important;background:#f9f9f9!important;padding:20px!important;position:static!important;width:auto!important;height:auto!important;min-height:0!important;box-shadow:none!important;border:0!important}#et-bumpyard-widget .chat-box main{background:#fff!important;padding:20px!important;width:auto!important;min-height:0!important;margin:0!important}#et-bumpyard-widget img{max-width:none}
+#et-bumpyard-widget .chat-box main{min-height:70px!important}#et-bumpyard-widget .sw-loader{display:flex;justify-content:center;gap:6px;padding:6px 0 4px}#et-bumpyard-widget .sw-loader i{width:7px;height:7px;border-radius:50%;background:#b9b9b9;display:block;animation:etdot 1.2s infinite ease-in-out}#et-bumpyard-widget .sw-loader i:nth-child(2){animation-delay:.2s}#et-bumpyard-widget .sw-loader i:nth-child(3){animation-delay:.4s}@keyframes etdot{0%,80%,100%{opacity:.35;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.lla-wa-inline{margin:14px 0 4px}
+@media screen and (max-width:768px){#et-bumpyard-widget{padding:0 20px 20px;bottom:var(--et-wa-bottom-m,var(--et-wa-bottom,0px))}#et-bumpyard-widget .widget-trigger-btn{padding:15px;margin:10px 0 0}#et-bumpyard-widget .widget-trigger-btn img{height:28px;width:28px;margin:0}#et-bumpyard-widget .widget-trigger-btn .label{display:none}#et-bumpyard-widget.show .chat-box{width:min(340px,calc(100vw - 28px))}}
+#et-bumpyard-widget{--et-wa-bottom:0px;--et-wa-bottom-m:0px}</style>
+<style id="lla-r6-ck">@media(min-width:900px){.lla-vip-ck{grid-template-columns:1fr!important}.lla-vip-ck img{height:230px!important;object-position:50% 15%!important}}@media(max-width:899px){.lla-vip-ck{grid-template-columns:1fr!important}.lla-vip-ck img{height:230px!important;object-position:50% 15%!important}}</style><style id="lla-r7-logo-ck">
+/* ============================================================
+   A3 LOGO FIX — Longevity Life Academy (live: longevitylifeacademy.pages.dev)
+   Audit date: 2026-09-20. Apply to index.html (inline <style>) and checkout.
+   Do NOT edit dist_live directly — copy these rules + asset swaps into the build.
+   ============================================================ */
+
+/* ---------- ASSET SWAP (not CSS, do this in HTML) ----------
+   1) checkout.html  header.co-head > a.logo > img
+      FROM: assets/lla-logo-dark-text@2x.png   (hard-thresholded recolor: aliased,
+            bloated "Life Academy" letterforms, no anti-aliasing — see
+            parts/a3_asset_darktext_crop.png)
+      TO:   assets/lla-logo-dark-text-clean@2x.png
+            (copy from parts/logo/lla-logo-dark-text-clean@2x.png, 1314x596 RGBA,
+             true anti-aliased serif, open counters, navy #0B1F3F text,
+             royal-blue "Longevity", transparent background)
+      Keep width="1314" height="596" attributes (aspect 2.2:1) so CLS stays 0.
+   2) No SVG master exists anywhere (dist_live/assets, assets/brand, assets/eteacher,
+      or on www.longevitylifeacademy.com — production also serves
+      assets/lla-logo-exact-transparent@2x.png). PNG @2x is the best available.
+   3) index.html nav / drawer / footer keep assets/lla-logo-nav.png (640x290).
+      It is crisp at every measured size on desktop (128x58 nav = 5x oversupply),
+      BUT it has navy-filled letter counters + navy fringe (see
+      parts/a3_asset_nav_on_white.png). Only ever place it on navy
+      (#040D24–#071A3D). Never reuse it on a light background.
+   ------------------------------------------------------------ */
+
+/* [FIX 1] Mobile drawer logo blow-up (BUG, ≤768px).
+   Live: #fnDrawer .fn-drawer-top img renders 350x158 CSS px (parent box is 50px
+   tall), top = -38px → cut off above the viewport and collides with the close X.
+   Cause: the reset rule
+   `html body#lpRoot×8 img:not(.nav-logo-img):not(.pdp-cine-wordmark){height:auto!important;max-width:100%!important}`
+   has higher specificity (8 ids + 2 :not classes) than the intended
+   `html body#lpRoot×8 .fn-drawer-top img{height:44px!important}` (8 ids + 1 class).
+   Fix: out-specify it with 9 ids + #fnDrawer. Rendered 44px tall → ~97px wide;
+   640px natural = 6.6x oversupply → crisp at DPR 3. */
+@media (max-width: 768px) {
+  html body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #fnDrawer .fn-drawer-top img {
+    height: 44px !important;
+    width: auto !important;
+    max-width: 60vw !important;
+    display: block !important;
+  }
+}
+
+/* [FIX 2] Mobile footer logo oversize/soft (≤768px).
+   Live at 390px: .pr-footer-lockup img renders 350x158 (full column width) because
+   the same reset rule forces height:auto/max-width:100%. 640px natural vs
+   350x3 = 1050px needed at DPR 3 (700px at DPR 2) → upscaled, visibly soft.
+   Desktop renders 141x64 and is crisp. Cap mobile at 180px wide (= 3.5x oversupply). */
+@media (max-width: 768px) {
+  html body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .pr-footer-lockup img {
+    height: auto !important;
+    width: 180px !important;
+    max-width: 60vw !important;
+    margin-bottom: 18px !important;
+  }
+}
+
+/* [FIX 3] Checkout header logo — pair with asset swap #1 above.
+   Rendered 108x48 (desktop) / 85.5x38 (390px) on white header.co-head (#fff).
+   1292/1314px natural = 12x oversupply — resolution is not the issue, edge quality is.
+   Enlarge slightly to 52px so the "by eTeacher Group" line (~9px tall today) is
+   legible on mobile, and switch to the clean asset. */
+header.co-head .logo img {
+  height: 52px;
+  width: auto;
+  display: block;
+  image-rendering: auto;              /* let the browser downsample smoothly */
+}
+@media (max-width: 480px) {
+  header.co-head .logo img { height: 40px; }
+}
+
+/* [FIX 4] eTeacher "Powered by" mark (#institution .hp-about-powered-logo-img).
+   Box is 295x52 with object-fit:contain, so the drawn image is ~146x52; natural
+   438x156 → 3x oversupply → crisp. White-on-navy contrast OK. No change required;
+   rule below only pins the intent so a later reset cannot stretch it. */
+.hp-about-powered-logo-img {
+  height: 52px;
+  max-height: 52px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* [NOTE] Homepage nav logo (header#fnNav img.nav-logo-img) — no fix needed.
+   128x58 rendered on linear-gradient(rgba(4,13,36,.74)→.44) + blur(20px); when
+   stuck: rgba(4,13,36,.88). 640x290 natural = 5x. Crisp, no halo, no dark box,
+   no cut-off at 1440 or 390 (101x46 at 390). Weakest element is the ~10px
+   "by eTeacher Group" line (royal blue #0A5FE0 on navy ≈ 3.2:1) — acceptable for a
+   logo mark, not body text. */
+
+</style><style id="lla-www-head">
+/* www checkout header matches the site nav: navy ground, official logo (same file as the homepage nav). */
+.co-head{background:#0B1730!important;border-bottom:1px solid rgba(255,255,255,.08)!important;box-shadow:0 8px 30px rgba(3,10,30,.25)!important}
+.co-head .logo img{height:52px!important;width:auto!important}
+.co-head .stepper .lbl{color:rgba(255,255,255,.55)!important}
+.co-head .stepper .st.done .lbl{color:#fff!important}
+.co-head .stepper .dot{background:transparent!important;border-color:rgba(255,255,255,.35)!important;color:rgba(255,255,255,.7)!important}
+.co-head .stepper .st.done .dot{background:#006EFF!important;border-color:#006EFF!important;color:#fff!important}
+.co-head .stepper .bar{background:rgba(255,255,255,.18)!important}
+.co-head .stepper .bar.done{background:#006EFF!important}
+.co-head .callus{color:rgba(255,255,255,.8)!important}
+.co-head .callus a{color:#5EB6FF!important}
+@media(max-width:640px){
+.co-head{display:grid!important;grid-template-columns:auto 1fr!important;grid-template-areas:"logo steps" "logo call"!important;align-items:center!important;column-gap:12px!important;row-gap:2px!important;padding:10px 14px!important;min-height:0!important}
+.co-head .logo{grid-area:logo}
+.co-head .logo img{height:36px!important}
+.co-head .stepper{grid-area:steps;justify-content:flex-end!important;flex:none!important}
+.co-head .stepper .dot{width:22px!important;height:22px!important;font-size:12px!important}
+.co-head .stepper .bar{width:22px!important;margin:0 5px!important}
+.co-head .callus{grid-area:call;text-align:right!important;font-size:13px!important}
+}
+/* Order band: centered, single column, nothing touches the edges. */
+#llaOrderHero{padding:30px 28px 28px!important;text-align:center!important}
+#llaOrderHero .oh-grid{grid-template-columns:1fr!important;gap:14px!important;justify-items:center!important}
+#llaOrderHero .oh-eyebrow{display:none!important}
+#llaOrderHero h2{font-size:34px!important;margin:0 auto 8px!important;max-width:100%!important;overflow-wrap:anywhere}
+#llaOrderHero .oh-meta{max-width:640px;margin:0 auto!important}
+#llaOrderHero .oh-price{text-align:center!important}
+#llaOrderHero .oh-chips{justify-content:center!important}
+@media(max-width:760px){#llaOrderHero{padding:22px 16px!important}#llaOrderHero h2{font-size:26px!important}#llaOrderHero .oh-big{font-size:40px!important}}
+</style>
+</head>
+<body>
+
+<header class="co-head">
+  <a class="logo" href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/"><img src="assets/lla-logo-nav@2x.png" width="1314" height="596" style="width:auto;height:52px" alt="Longevity Life Academy by eTeacher Group" /></a>
+  <div class="stepper"><div class="stepper-in">
+    <div class="st done"><span class="dot">1</span><span class="lbl">Your details</span></div>
+    <span class="bar done"></span>
+    <div class="st done"><span class="dot">2</span><span class="lbl">Plan &amp; date</span></div>
+    <span class="bar"></span>
+    <div class="st"><span class="dot">3</span><span class="lbl">Pay</span></div>
+  </div></div>
+  <div class="callus">WhatsApp Us <a href="https://api.whatsapp.com/send/?phone=12029494750" target="_blank" rel="noopener">+1 (202) 949-4750</a></div>
+</header>
+
+<main id="screen-order" class="wrap">
+  <div id="demoBanner" style="display:none"></div>
+
+  <div class="cols">
+    <!-- LEFT -->
+    <div>
+      <div class="card">
+        <div class="card-pad">
+          <div class="ln"><b>Course:</b> <span class="course-name">The Longevity Blueprint</span></div>
+          <div class="ln"><b>Course Duration:</b> 18 weeks</div>
+          <div class="ln"><b>Schedule:</b> 18 live sessions across 18 weeks, one session every week</div>
+          <div class="ln"><b>Session time:</b> <span id="sessionTimeVal">As selected in Step 2</span></div>
+          <div class="ln"><b>Lesson duration:</b> 50 min</div>
+          <div class="ln"><b>Location:</b> Online</div>
+        </div>
+        <div class="tband" id="heroTuition" data-plan="monthly">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#3DDC97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <div>
+            <div class="t-lbl" id="heroTuitionLbl">Course tuition fee</div>
+            <div class="t-val" id="heroTuitionVal">$279 monthly for 5 months</div>
+            <div class="t-sub" id="heroTuitionSub">$1,395 total</div>
+          </div>
+        </div>
+        <script>
+          /* Static hero tuition card. Rewrite it before Airwallex loads so the
+           * customer sees the plan they picked from the moment the page paints. */
+          (function(){
+            function plan(){
+              try{ var q=new URLSearchParams(location.search); var p=q.get('plan');
+                if(p==='monthly'||p==='upfront') return p; }catch(e){}
+              try{ var s=sessionStorage.getItem('lla_plan'); if(s==='monthly'||s==='upfront') return s; }catch(e){}
+              try{ var l=localStorage.getItem('lla_plan');  if(l==='monthly'||l==='upfront') return l; }catch(e){}
+              return 'monthly';
+            }
+            var p = 'monthly';
+            var band = document.getElementById('heroTuition');
+            var val  = document.getElementById('heroTuitionVal');
+            var sub  = document.getElementById('heroTuitionSub');
+            var lbl  = document.getElementById('heroTuitionLbl');
+            if (!band) return;
+            band.setAttribute('data-plan', p);
+            if (p === 'upfront'){
+              lbl.textContent = 'Course tuition fee, pay upfront';
+              val.innerHTML   = '<s>$1,395</s>$799 one payment<span class="t-off">43% OFF</span>';
+              sub.innerHTML  = 'Save $596 vs list &middot; $96 vs monthly';
+            } else {
+              lbl.textContent = 'Course tuition fee, pay monthly';
+              val.innerHTML   = '$279 monthly for 5 months';
+              sub.textContent = '$1,395 total';
+            }
+          })();
+        </script>
+      </div>
+      <p class="foot-note">* Today's registration fee is fully refundable with 14 days from registration</p>
+
+      <div class="card">
+        <div class="pay-tabs">
+          <div class="pay-tab active" data-tab="card">
+            <img src="assets/pay/visa.svg" alt="Visa" />
+            <img src="assets/pay/mastercard.svg" alt="Mastercard" />
+            <img src="assets/pay/amex.svg" alt="American Express" />
+          </div>
+          <div class="pay-tab" data-tab="paypal">
+            <img class="pp" src="assets/pay/paypal.svg" alt="PayPal" />
+          </div>
+        </div>
+        <div class="pay-body">
+          <div class="f-lbl" id="payLbl">Card</div>
+          <!-- Airwallex Drop-In mount (real card entry, wired to eTeacher's Airwallex account) -->
+          <div id="awx-dropin" style="min-height:220px;border:1px solid #D5DCE6;border-radius:7px;padding:12px;margin-bottom:14px;background:#fff">
+            <!-- Visible loading state while the CRM reserves the seat and issues the payment intent (2-8 s). Replaced by the Drop-In on mount. -->
+            <div id="awx-loading" style="padding:6px 4px 2px">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+                <span class="awx-spin" style="width:18px;height:18px;border:2.5px solid #D5DCE6;border-top-color:#006EFF;border-radius:50%;display:inline-block;animation:awxspin .8s linear infinite"></span>
+                <span id="awx-loading-txt" style="font-size:14.5px;font-weight:600;color:#2A2F36">Securing your seat and opening the card form...</span>
+              </div>
+              <div style="height:14px;width:38%;background:#EEF2F7;border-radius:4px;margin-bottom:10px"></div>
+              <div style="height:44px;background:#F5F7FA;border:1px solid #E3E7EE;border-radius:6px;margin-bottom:10px"></div>
+              <div style="display:flex;gap:10px;margin-bottom:14px"><div style="flex:1;height:44px;background:#F5F7FA;border:1px solid #E3E7EE;border-radius:6px"></div><div style="flex:1;height:44px;background:#F5F7FA;border:1px solid #E3E7EE;border-radius:6px"></div></div>
+              <div style="height:14px;width:30%;background:#EEF2F7;border-radius:4px;margin-bottom:10px"></div>
+              <div style="height:44px;background:#F5F7FA;border:1px solid #E3E7EE;border-radius:6px;margin-bottom:16px"></div>
+              <div style="height:46px;background:#E8E4FF;border-radius:6px"></div>
+              <div style="font-size:12.5px;color:#8892A0;margin-top:12px">Secure checkout by Airwallex. Usually ready in a few seconds.</div>
+            </div>
+            <style>@keyframes awxspin{to{transform:rotate(360deg)}}</style>
+          </div>
+          <div id="awx-status" style="font-size:13px;color:var(--ink-3);margin:6px 0 8px"></div>
+          <!-- PayPal panel (eTeacher pattern: paypal-notice + #paypal-button-container). Shown when the PayPal tab is active. -->
+          <div id="paypalBox" style="display:none">
+            <div class="paypal-notice" style="font-size:15px;line-height:1.45;color:#2A2F36;margin:6px 0 18px">In order to complete your transaction, we will transfer you over to PayPal secure servers.</div>
+            <div id="paypal-button-container"></div>
+            <div id="paypal-status" style="font-size:13px;color:#5A6472;margin-top:10px"></div>
+          </div>
+          <div id="awx-julie" style="display:flex;align-items:center;gap:12px;margin:10px 0 14px;padding:12px 14px;border:1px solid #DCE5F2;border-radius:10px;background:#F4F8FF">
+            <div style="font-size:14px;line-height:1.35;color:#12233F"><b id="awx-julie-hold">Your seat is held for 15 minutes.</b><br><span style="font-size:12.5px;color:#4B5B75">Full refund within 14 days from registration</span></div>
+          </div>
+<a class="et-bump-btn bump-whatsapp lla-wa-inline" href="https://wa.me/12015023701" target="_blank" rel="noopener"><img src="assets/wa/wapp.png" alt="whatsapp"> <span>Need help finishing registration?</span></a>
+
+
+          <!-- The Airwallex Drop-In renders its own "Pay" button. A second site-level Pay button was showing
+               and confusing buyers. Kept in the DOM (visually hidden) because success/redirect handlers
+               reference #proceed. !important beats any .proceed{} that came before it. -->
+          <button class="proceed" type="button" id="proceed" aria-hidden="true" tabindex="-1"
+                  style="display:none !important;visibility:hidden !important;position:absolute !important;left:-9999px !important;width:0 !important;height:0 !important;padding:0 !important;margin:0 !important;border:0 !important;pointer-events:none !important;">Pay now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div>
+      <div class="sum">
+        <div class="sum-row" id="sumRow1">
+          <span class="k" id="sumRow1K">Course registration fee <span class="tip" title="Charged today to reserve your seat.">?</span></span>
+          <span class="v" id="sumRow1V">&mdash;</span>
+        </div>
+        <p class="sum-note" id="sumNote1">Fully refundable within 14 days from registration.</p>
+
+        <div class="sum-row" id="sumRow2">
+          <span class="k">Monthly tuition fee <span class="tip" title="Billed monthly after your first class.">?</span></span>
+          <span class="v" id="sumRow2V">&mdash;</span>
+        </div>
+        <p class="sum-note" id="sumNote2">Monthly payments begin the month after your first class.</p>
+        <div class="sum-row" id="sumRow3" style="border-top:1px solid #E6ECF5;margin-top:6px;padding-top:10px">
+          <span class="k" id="sumRow3K">Total course price</span>
+          <span class="v" id="sumRow3V">&mdash;</span>
+        </div>
+        <script>
+          /* Static summary panel: pre-populate plan-aware values immediately so
+           * the page paints correct copy even before the CRM round-trip. The
+           * dynamic path later overwrites these once real amounts land. */
+          (function(){
+            function plan(){
+              try{ var q=new URLSearchParams(location.search); var p=q.get('plan');
+                if(p==='monthly'||p==='upfront') return p; }catch(e){}
+              try{ var s=sessionStorage.getItem('lla_plan'); if(s==='monthly'||s==='upfront') return s; }catch(e){}
+              try{ var l=localStorage.getItem('lla_plan');  if(l==='monthly'||l==='upfront') return l; }catch(e){}
+              return 'monthly';
+            }
+            return;
+            var k = document.getElementById('sumRow1K');
+            var v = document.getElementById('sumRow1V');
+            var n = document.getElementById('sumNote1');
+            var r2 = document.getElementById('sumRow2');
+            var n2 = document.getElementById('sumNote2');
+            if (k) k.innerHTML = 'One-time course tuition <span class="tip" title="Charged today, one time.">?</span>';
+            if (v) v.innerHTML = '<s style="opacity:.5;font-weight:500;margin-right:6px">$1,395.00</s>$799.00';
+            if (n) n.textContent = 'Single payment. Full refund inside 14 days from registration.';
+            if (r2) r2.style.display = 'none';
+            if (n2) n2.style.display = 'none';
+          })();
+        </script>
+
+        <hr />
+        <p>Your seat and start date are confirmed instantly by email. The course registration fee is fully refundable within 14 days from registration.</p>
+        <p>In case you have decided to cancel your participation please note that live cohorts, like any other classrooms, have limited capacity. Demand for our classes is high and late cancellation prevent other students from obtaining a spot in the upcoming cohort.</p>
+        <p>Students who wish to cancel their participation up to 14 days after the registration date are entitled to a full refund, as explained on our <a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/terms.html">cancellation policy page</a>.</p>
+      </div>
+
+      
+    </div>
+  </div>
+</main>
+
+<section id="screen-done" class="done">
+  <h1>You're enrolled</h1>
+  <p>Welcome to The Longevity Blueprint. Your place is reserved. A confirmation and your onboarding steps are on the way, including your start date.</p>
+  <p id="done-receipt" style="font-size:13px"></p>
+  <a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/">← Back to home</a>
+</section>
+
+<script>
+  // Force ecomm mode on checkout page so Airwallex Drop-In initializes
+  window.LLA_ECOMM_CONFIG = window.LLA_ECOMM_CONFIG || {};
+  window.LLA_ECOMM_CONFIG.mode = 'ecomm';
+  // ?env=staging routes to eTeacher staging CRM + their Airwallex DEMO account (test cards valid).
+  var _q = new URLSearchParams(location.search);
+  window.LLA_ECOMM_CONFIG.env  = (_q.get('env') === 'staging') ? 'staging' : 'production';
+  window.LLA_ECOMM_CONFIG.workerBase = 'https://eteacher-leads-proxy.gitter-omri.workers.dev';
+  window.LLA_ECOMM_CONFIG.crmPrice = { firstPayment: 279, numberOfPayments: 5, leftToPay: 1116 };
+  window.LLA_ECOMM_CONFIG.crmPlans = { monthly: { firstPayment: 279, numberOfPayments: 5, leftToPay: 1116 }, upfront: { firstPayment: 279, numberOfPayments: 5, leftToPay: 1116 } };
+</script>
+<script src="https://checkout.airwallex.com/assets/elements.bundle.min.js?version=1.160.0"></script>
+
+<script src="assets/eteacher-ecomm.js"></script>
+<script>
+document.querySelectorAll('.pay-tab').forEach(function(t){
+  t.addEventListener('click',function(){
+    document.querySelectorAll('.pay-tab').forEach(function(x){x.classList.remove('active')});
+    t.classList.add('active');
+    var pp = t.getAttribute('data-tab') === 'paypal';
+    [document.getElementById('awx-dropin'), document.getElementById('awx-status')].forEach(function(el){ if(el) el.style.display = pp ? 'none' : ''; });
+    var box = document.getElementById('paypalBox'); if (box) box.style.display = pp ? '' : 'none';
+    var lbl = document.getElementById('payLbl'); if (lbl) lbl.textContent = pp ? 'PayPal' : 'Card';
+    if (pp && window.LLA_RENDER_PAYPAL) window.LLA_RENDER_PAYPAL();
+  });
+});
+
+var statusEl = document.getElementById('awx-status');
+function setStatus(msg, color){ statusEl.textContent = msg; statusEl.style.color = color || 'var(--ink-3)';
+  var lt = document.getElementById('awx-loading-txt'); if (lt && msg) lt.textContent = msg.replace(/\.\.\.$/, '') + '...'; }
+
+function showDone(info){
+  try{
+    var r=document.getElementById('done-receipt');
+    if(r&&info){ r.textContent='Order #'+info.orderid+' · Payment of $'+Number(info.amount).toFixed(2)+' '+(info.currency||'USD')+' received. Keep this order number for any support request.'; }
+  }catch(e){}
+  document.getElementById('screen-order').style.display='none';
+  document.getElementById('screen-done').style.display='block';
+  var s=document.querySelectorAll('.stepper .st')[2];
+  s.classList.add('done');
+  document.querySelectorAll('.stepper .bar')[1].classList.add('done');
+  window.scrollTo(0,0);
+}
+
+// SOLUTION A , the CRM lead + order are created HERE, on the payment screen, and
+// nowhere else. The details screen only validates and stages the payload, so a
+// visitor who never reaches this page leaves no lead and no order behind.
+// Order of precedence:
+//   1. ids already in the URL or session  -> reuse them, never create twice
+//      (covers refresh, back-button and double click)
+//   2. a staged payload from the details screen -> create the lead + order once
+//   3. neither -> demo state, nothing is written to the CRM
+function ensureLiveOrder(){
+  var ids = window.LLA_ECOMM ? window.LLA_ECOMM.getCheckoutIds() : null;
+  if (ids && ids.stid && ids.orderid) return Promise.resolve(ids);
+  if (window.LLA_ECOMM && window.LLA_ECOMM.hasPendingLead && window.LLA_ECOMM.hasPendingLead()) {
+    setStatus('Reserving your seat...');
+    return window.LLA_ECOMM.createStagedOrder();
+  }
+  return Promise.reject(new Error('NO_ORDER_IN_SESSION'));
+}
+
+
+/* PAYPAL — mirrors eTeacher's paypal-checkout.js: client-side order create +
+ * capture, then SetECommercePayment with PaymentMethod 'PayPal' and
+ * PayPalPayerId / PayPalOrderId / PayPalPaymentId (same Worker path as card).
+ * The button renders the instant the tab is opened; only createOrder waits for
+ * the CRM order + amount, so the buyer never stares at an empty panel. */
+var _orderReadyResolve, _orderReadyReject;
+var _orderReady = new Promise(function(res, rej){ _orderReadyResolve = res; _orderReadyReject = rej; });
+var _ppRendered = false;
+window.LLA_RENDER_PAYPAL = function(){
+  if (_ppRendered) return;
+  var st = document.getElementById('paypal-status');
+  if (!window.paypal || !window.paypal.Buttons) { window.LLA_RENDER_PAYPAL_PENDING = true; if (st) st.textContent = 'Loading PayPal...'; return; }
+  window.LLA_RENDER_PAYPAL_PENDING = false; _ppRendered = true; if (st) st.textContent = '';
+  window.paypal.Buttons({
+    style: { layout: 'vertical', height: 55, shape: 'rect', color: 'blue' },
+    createOrder: function(data, actions){
+      if (st) st.textContent = 'Preparing your order...';
+      return _orderReady.then(function(o){
+        if (st) st.textContent = '';
+        return actions.order.create({ purchase_units: [{ amount: { value: Number(o.amount).toFixed(2), currency_code: 'USD' }, description: 'The Longevity Blueprint - order ' + o.ids.orderid, custom_id: String(o.ids.orderid) }] });
+      });
+    },
+    onApprove: function(data, actions){
+      if (st) st.textContent = 'Confirming your PayPal payment...';
+      return actions.order.capture().then(function(details){
+        return _orderReady.then(function(o){
+          var cap = (details.purchase_units && details.purchase_units[0] && details.purchase_units[0].payments && details.purchase_units[0].payments.captures && details.purchase_units[0].payments.captures[0]) || {};
+          setStatus('\u2713 PayPal payment succeeded - order #' + o.ids.orderid, '#0a7');
+          try{LLA_META.track('Purchase',{value:Number(o.amount)||279,currency:'USD',content_name:'Longevity Blueprint',order_id:String(o.ids.orderid),content_type:'product',content_ids:[LLA_CONTENT_ID],contents:[{id:LLA_CONTENT_ID,quantity:1,item_price:Number(o.amount)||179}]});}catch(e){}
+          return window.LLA_ECOMM.reportPayment({
+            StudentId: String(o.ids.stid),
+            OrderId: String(o.ids.orderid),
+            PaymentId: String(o.paymentId),
+            PaymentMethod: 'PayPal',
+            AmountCharged: String(o.amount),
+            ChargeType: 'RegistrationFee',
+            IsApproved: true,
+            TransactionId: String(cap.id || details.id || ''),
+            PayPalPayerId: String((details.payer && details.payer.payer_id) || ''),
+            PayPalOrderId: String(details.id || ''),
+            PayPalPaymentId: String(cap.id || '')
+          }).then(function(){ setTimeout(function(){ showDone({orderid:o.ids.orderid,amount:o.amount,currency:'USD'}); }, 800); });
+        });
+      });
+    },
+    onError: function(err){ console.error('PayPal error', err); if (st) { st.style.color = '#c33'; st.textContent = 'PayPal could not complete the payment. You were not charged. Try again or pay by card.'; } }
+  }).render('#paypal-button-container');
+};
+
+/* Airwallex SDK init does not depend on the order, so it starts the moment the
+ * page loads and overlaps the two CRM round-trips (about 1 s saved per buyer). */
+var _awxInitPromise = null;
+function startAwxInit(){
+  if (_awxInitPromise) return _awxInitPromise;
+  var awx = window.Airwallex;
+  if (!awx || !awx.init) return Promise.reject(new Error('Airwallex SDK not loaded. window.Airwallex=' + typeof window.Airwallex));
+  var env = (window.LLA_ECOMM_CONFIG && window.LLA_ECOMM_CONFIG.env === 'staging') ? 'demo' : 'prod';
+  _awxInitPromise = awx.init({ env: env, origin: window.location.origin, locale: 'en' });
+  return _awxInitPromise;
+}
+try { if (window.LLA_ECOMM && window.LLA_ECOMM.config && window.LLA_ECOMM.config.mode === 'ecomm') startAwxInit().catch(function(){}); } catch(e){}
+
+/* 2026-09-27 COURSE ROUTER (Roberto / CRM request): one brand URL, /checkout/?stid=&orderid=,
+ * for every Longevity product, like the other eTeacher brands. The CRM is not changed; we match it.
+ * The CRM order tells us the product (CoursePrice.MainAbroadCourseID 258 = The Longevity Blueprint,
+ * 283 = Longevity Masterclass, AbroadCourseID 1774 / 1823). Blueprint orders continue on this page
+ * exactly as before. Masterclass orders continue on the masterclass checkout, which already reads the
+ * order and picks Standard $49 / VIP $79 from the CRM amount. The forward happens BEFORE any Airwallex
+ * init and BEFORE any funnel event on this page (only the base PageView has fired), the raw query string
+ * is carried byte-for-byte (stid, orderid, IsForTesting, cid, adGroupID, utm_*, fbclid), and it is
+ * same-origin so _fbp/_fbc and localStorage attribution survive. Unknown course ids: no change. */
+window.LLA_COURSE_ROUTER=(function(){
+  var MC_MAIN=283, MC_ABROAD=1823, TARGET='https://www.longevitylifeacademy.com/blueprint-november-r4x9/julie-masterclass/';
+  function isMasterclass(d){
+    var cp=(d&&d.CoursePrice)||{};
+    return Number(cp.MainAbroadCourseID)===MC_MAIN||Number(cp.AbroadCourseID)===MC_ABROAD;
+  }
+  function route(d,ids){
+    try{
+      if(!isMasterclass(d))return false;
+      var oid=String((ids&&ids.orderid)||(d&&(d.OrderId||d.OrderID))||'');
+      var key='lla_course_routed_'+oid;
+      try{ if(sessionStorage.getItem(key)==='1')return false; sessionStorage.setItem(key,'1'); }catch(e){}
+      var qs=location.search||'';
+      if(!/[?&]stid=/.test(qs)&&ids&&ids.stid)qs+=(qs?'&':'?')+'stid='+encodeURIComponent(ids.stid);
+      if(!/[?&]orderid=/.test(qs)&&oid)qs+=(qs?'&':'?')+'orderid='+encodeURIComponent(oid);
+      try{setStatus('Taking you to your masterclass order...');}catch(e){}
+      location.replace(TARGET+qs+(location.hash||''));
+      return true;
+    }catch(e){return false;}
+  }
+  return {route:route,isMasterclass:isMasterclass};
+})();
+
+async function initAirwallex(){
+  try {
+    try{ LLA_META.buyer(); }catch(e){}   // snapshot buyer email before the staged lead is consumed
+    var ids = await ensureLiveOrder();
+    setStatus('Fetching Airwallex intent for order ' + ids.orderid + '...');
+
+    // Must hit the SAME environment the order was created in, else "Order and student did not match".
+    var envPrefix = (window.LLA_ECOMM_CONFIG.env === 'staging') ? '/staging' : '';
+    /* The CRM provisions the order asynchronously: fetched too soon it answers
+     * OrderId -1 / PaymentID -1 with no Airwallex intent, and 1-3 s later the
+     * same order returns the full intent (observed live 2026-09-09, order
+     * 8020862). Retry instead of failing the buyer on the first attempt. */
+    var r, raw, d;
+    for (var _try = 1; _try <= 8; _try++) {
+      if (_try === 1 && window.__llaEarlyDetails) {
+        /* 2026-09-27 speed-up: the <head> prefetch already asked the CRM for this exact order; use its answer for the first attempt. */
+        try { var early = await window.__llaEarlyDetails; window.__llaEarlyDetails = null;
+          if (early && String(early.OrderId || early.OrderID || '') === String(ids.orderid)) {
+            d = early;
+            if (window.LLA_COURSE_ROUTER && LLA_COURSE_ROUTER.route(d, ids)) return;
+            if (d.Airwallex && d.Airwallex.paymentIntentId) break;
+            continue;
+          }
+        } catch (e) {}
+      }
+      r = await fetch('https://eteacher-leads-proxy.gitter-omri.workers.dev' + envPrefix + '/api/checkout/details', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ studentId: String(ids.stid), orderId: String(ids.orderid) })
+      });
+      raw = await r.text();
+      try { d = JSON.parse(raw); }
+      catch (parseErr) { throw new Error('CRM returned non-JSON (HTTP ' + r.status + '): ' + raw.slice(0, 200)); }
+      if (window.LLA_COURSE_ROUTER && LLA_COURSE_ROUTER.route(d, ids)) return; /* masterclass order -> masterclass checkout */
+      if (d && d.Airwallex && d.Airwallex.paymentIntentId) break;
+      if (_try === 5) {
+        /* Still no intent: the CRM no longer honours this order (old link, cancelled
+         * or expired order). Never show raw JSON to a buyer. If the buyer's details
+         * are still staged, open a fresh order once; otherwise restart cleanly. */
+        if (!ids._retried && window.LLA_ECOMM && window.LLA_ECOMM.hasPendingLead && window.LLA_ECOMM.hasPendingLead()) {
+          try { sessionStorage.removeItem('lla_ecomm_ids'); } catch(e){}
+          setStatus('Refreshing your order...');
+          ids = await window.LLA_ECOMM.createStagedOrder(); ids._retried = true; _try = 0; continue;
+        }
+        var _err = new Error('ORDER_NOT_ACTIVE'); _err.crm = d; throw _err;
+      }
+      setStatus('Preparing your secure payment form (' + _try + '/5)...');
+      await new Promise(function(res){ setTimeout(res, 1500); });
+    }
+
+    var intentId = d.Airwallex.paymentIntentId;
+    var clientSecret = d.Airwallex.clientSecret;
+    /* 2 Nov 2026: CRM mints the intent on an Airwallex Customer (cus_...) and returns it as
+     * Airwallex.customerId. Airwallex requires customer_id on the Drop-In when mode is
+     * 'recurring'; without it the installment consent is not reliably attached to the
+     * customer and the CRM cannot merchant-charge installments 2+. */
+    var customerId = (d.Airwallex && d.Airwallex.customerId) || (d.AirwallexOptions && d.AirwallexOptions.customer_id) || null;
+    var amount = d.Airwallex.amount;
+    var currency = d.Airwallex.currency;
+    var paymentId = d.PaymentID;
+
+    /* EMQ RECOVERY (2026-09-16): hydrate buyer identity from the CRM checkout
+     * details response so Purchase always ships with em/ph/fn/ln/st even when
+     * the buyer arrives via a direct link (?stid=&orderid=) and Stage 1 never
+     * ran on this browser. This closes the 50% em/ph coverage gap that keeps
+     * Purchase EMQ stuck at 5.7 while AddToCart/IC score 9.3. Read-only
+     * consumption of CRM data already flowing over the wire — no new CRM
+     * calls, no CRM writes, no worker changes, no CAPI relay changes. */
+    try {
+      var _crmBuyer = {
+        email: d.Email || d.StudentEmail || d.EmailAddress || '',
+        phone: d.Phone || d.StudentPhone || d.MobilePhone || d.PhoneNumber || '',
+        fn:    d.FirstName || d.StudentFirstName || d.First || '',
+        ln:    d.LastName  || d.StudentLastName  || d.Last  || '',
+        st:    d.State || d.StudentState || ''
+      };
+      var _hasAny = _crmBuyer.email || _crmBuyer.phone || _crmBuyer.fn;
+      if (_hasAny) {
+        var _existing = {};
+        try { _existing = JSON.parse(sessionStorage.getItem('lla_buyer_v1') || 'null') || {}; } catch(e){}
+        /* Merge — never overwrite a field already captured from Stage 1 with a
+         * possibly-stale CRM copy; only fill blanks. */
+        var _merged = {
+          email: _existing.email || String(_crmBuyer.email || '').trim().toLowerCase(),
+          phone: _existing.phone || String(_crmBuyer.phone || '').trim(),
+          fn:    _existing.fn    || String(_crmBuyer.fn    || '').toLowerCase().replace(/[^a-z]/g,''),
+          ln:    _existing.ln    || String(_crmBuyer.ln    || '').toLowerCase().replace(/[^a-z]/g,''),
+          st:    _existing.st    || String(_crmBuyer.st    || '').trim().toLowerCase(),
+          country: _existing.country || 'us',
+          external_id: _existing.external_id || (localStorage.getItem('lla_xid_v1') || '')
+        };
+        try { sessionStorage.setItem('lla_buyer_v1', JSON.stringify(_merged)); } catch(e){}
+        try { localStorage.setItem('lla_identity_v1', JSON.stringify(_merged)); } catch(e){}
+        /* Refresh Pixel advanced matching so any subsequent event includes
+         * these keys; no event is fired here. */
+        try { if (window.LLA_META && LLA_META.applyAdvancedMatching) LLA_META.applyAdvancedMatching(); } catch(e){}
+      }
+    } catch(e){}
+
+    /* CURRENCY GUARD, HARD BLOCK MODE.
+     * The CRM has been observed returning ILS intents on this LLA product. Whether
+     * that comes from a class configured in ILS or from the CRM re-basing to the
+     * buyer's IP, the site must never render a payment form for a non-USD intent.
+     * We DELETE the Airwallex mount, DELETE the site's Pay button, and render a
+     * bright red full-width banner in place. No card fields, no Pay button, no way
+     * to be charged in the wrong currency. Buyer is asked to contact advisor. */
+    var _cur = String(currency || '').toUpperCase();
+    var _amtOk = Number(amount) > 0;
+    if (_cur !== 'USD' || !_amtOk) {
+      var reason = _cur !== 'USD' ? ('gateway returned ' + (_cur || 'no currency') + ' instead of USD')
+                                  : ('gateway returned an invalid amount: ' + String(amount));
+      var mount = document.getElementById('awx-dropin');
+      if (mount) {
+        mount.innerHTML = ''
+          + '<div role="alert" style="font-family:inherit;padding:22px 24px;border:2px solid #b71c1c;background:#fff5f5;border-radius:10px;color:#7a0f0f">'
+          +   '<div style="font-size:18px;font-weight:800;margin-bottom:8px;color:#b71c1c">Payment is temporarily disabled on this page.</div>'
+          +   '<div style="font-size:14.5px;line-height:1.55">We could not confirm the payment currency as US Dollars, so we have deliberately not shown the card form. This prevents any charge in the wrong currency.</div>'
+          +   '<div style="font-size:13.5px;line-height:1.55;margin-top:10px">Please email <a href="mailto:advisor@longevitylifeacademy.com" style="color:#b71c1c;font-weight:700">advisor@longevitylifeacademy.com</a> or WhatsApp <a href="https://api.whatsapp.com/send/?phone=12029494750" target="_blank" rel="noopener" style="color:#b71c1c;font-weight:700">+1 (202) 949-4750</a> and we will complete your enrollment.</div>'
+          +   '<div style="font-size:11px;color:#7a0f0f;opacity:.7;margin-top:14px">Ref: intent ' + String(intentId||'').slice(0,60) + ' — ' + reason + '</div>'
+          + '</div>';
+        mount.style.border = '0';
+        mount.style.padding = '0';
+        mount.style.background = 'transparent';
+      }
+      var st = document.getElementById('awx-status'); if (st) { st.style.color = '#b71c1c'; st.style.fontWeight = '700'; st.textContent = 'Blocked: ' + reason + '. No card was requested.'; }
+      var proceed = document.getElementById('proceed');
+      if (proceed && proceed.parentNode) proceed.parentNode.removeChild(proceed);
+      throw new Error('Refusing to mount Airwallex: ' + reason + ' (intent ' + intentId + ')');
+    }
+
+    document.getElementById('awx-status').innerHTML = 'Live Airwallex intent: <code style="font-size:12px">' + intentId + '</code> · $' + Number(amount).toFixed(2) + ' ' + currency;
+    /* No pre-purchase Meta event fires here any more.
+     * The funnel the Meta team asked for places AddToCart on screen 1 and
+     * InitiateCheckout on screen 2, both raised by LLA_FUNNEL in index.html.
+     * Keeping the old payment-screen AddToCart would send a second AddToCart
+     * for the same visitor and break the AddToCart -> InitiateCheckout ->
+     * Purchase counts they read the funnel from. Purchase still fires below,
+     * after the gateway confirms the payment. */
+
+    /* Show live amounts in the sum panel. Two-plan support Sep 9 2026:
+     *   plan=monthly -> today = FirstPayment, then (NumOfPayments-1) x FirstPayment
+     *   plan=upfront -> today = FirstPayment, single row, no future payments row
+     * NumOfPayments from the CRM is TOTAL payments including the registration fee
+     * charged today; the monthly row must show NumOfPayments-1 or double-count. */
+    /* 2026-09-27 (Roberto / CRM abandoned-cart links): every figure comes from the CRM order,
+     * using the CRM's own semantics (verified against order 8035241, CRM screen "Payments 4, each of 262.31,
+     * first payment 349.75, total 1399"):
+     *   today          = AmountToCharge (= the Airwallex intent amount)
+     *   NumOfPayments  = number of installments AFTER today's payment (CRM "Payments" field)
+     *   PaymentPerMonth= amount of each installment (fallback: (OrderCoursePrice - AmountToCharge) / NumOfPayments)
+     *   total          = OrderCoursePrice; ListCoursePrice struck through when the order is discounted. */
+    var plan = (window.LLA_ECOMM_PLANS && window.LLA_ECOMM_PLANS.resolvePlan) ? window.LLA_ECOMM_PLANS.resolvePlan() : 'monthly'; /* still drives the Drop-In recurring mode below */
+    var money = function(n){ return '$' + Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}); };
+    var strike = function(txt){ return '<s style="opacity:.5;font-weight:500;margin-right:6px">' + txt + '</s>'; };
+    var total = Number(d.OrderCoursePrice) || 0;
+    var list  = Number(d.ListCoursePrice) || 0;
+    var rest  = Math.max(0, total - amount);
+    var nInst = Math.max(0, Math.round(Number(d.NumOfPayments) || 0));
+    if (rest < 0.005) nInst = 0;
+    if (nInst === 0 && rest >= 0.005) nInst = 1;
+    var inst  = nInst ? (Number(d.PaymentPerMonth) > 0 ? Number(d.PaymentPerMonth) : rest / nInst) : 0;
+    if (!(total > 0)) total = amount + nInst * inst;
+    var num = nInst + 1; /* total number of payments incl. today, used by the Drop-In mode below */
+    var k1 = document.getElementById('sumRow1K'), v1 = document.getElementById('sumRow1V'), n1 = document.getElementById('sumNote1');
+    var r2 = document.getElementById('sumRow2'),  v2 = document.getElementById('sumRow2V'), n2 = document.getElementById('sumNote2');
+    var v3 = document.getElementById('sumRow3V');
+    var setK = function(el, txt){ if (!el) return; if (el.firstChild && el.firstChild.nodeType === 3) el.firstChild.nodeValue = txt + ' '; else el.textContent = txt; };
+    if (nInst === 0){
+      setK(k1, 'One-time course tuition');
+      if (v1) v1.innerHTML = (list > amount + 0.005 ? strike(money(list)) : '') + money(amount);
+      if (r2) r2.style.display = 'none';
+      if (n1) n1.textContent = 'Single payment, charged today. Full refund within 14 days from registration.';
+      if (n2) n2.style.display = 'none';
+      if (v3) v3.innerHTML = money(amount);
+    } else {
+      setK(k1, 'Course registration fee (today)');
+      if (v1) v1.innerHTML = money(amount);
+      if (r2) r2.style.display = '';
+      if (v2) v2.innerHTML = nInst + ' x ' + money(inst);
+      if (n1) n1.textContent = 'Charged today. Fully refundable within 14 days from registration.';
+      if (n2){ n2.style.display = ''; n2.textContent = nInst + ' monthly installments of ' + money(inst) + ' begin the month after your first class.'; }
+      if (v3) v3.innerHTML = (list > total + 0.005 ? strike(money(list)) : '') + money(total);
+    }
+    try {
+      var cp = d.CoursePrice || {};
+      var nm = cp.MainAbroadCourseName || cp.AbroadCourseName;
+      if (nm) document.querySelectorAll('.course-name').forEach(function(el){ el.textContent = nm; });
+      var st = document.getElementById('sessionTimeVal');
+      if (st && !(sessionStorage.getItem('lla_start_date') || '')) {
+        var sel = (d.AvailableClasses || []).filter(function(c){ return c && c.SelectedCourse; })[0];
+        var fd = sel && (sel.FirstLessonDate || sel.SemesterStartDate);
+        if (fd) { var dt = new Date(fd); st.textContent = isNaN(dt) ? 'Confirmed by email' : ('Starts ' + dt.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'})); }
+        else st.textContent = 'Confirmed by email after enrollment';
+      }
+    } catch (e) {}
+
+    // The elements.bundle.min.js from checkout.airwallex.com attaches window.Airwallex directly.
+    var awx = window.Airwallex;
+    if (!awx || !awx.init) throw new Error('Airwallex SDK not loaded. window.Airwallex=' + typeof window.Airwallex);
+
+    // Airwallex env must match the account the intent belongs to:
+    // staging CRM -> "eTeacher Demo PA" (demo), production CRM -> "ETEACHER EU LIMITED" (prod).
+    var awxEnv = (window.LLA_ECOMM_CONFIG.env === 'staging') ? 'demo' : 'prod';
+    setStatus('Initializing Airwallex (' + awxEnv + ')...');
+    /* Force English locale on Airwallex init. Without this the Drop-In renders
+     * its Pay button and inline strings in the buyer's browser language, and
+     * localised currency ("\u05e9\u05dc\u05dd ILS 179.00" on a Hebrew browser).
+     * Locking to en makes the whole Drop-In render in English regardless of
+     * navigator.language. The intent's currency stays as CRM returned it (USD). */
+    await startAwxInit();
+
+    var mountEl = document.getElementById('awx-dropin');
+    mountEl.innerHTML = '';
+
+    /* Installments require merchant-triggered recurring consent; pay-in-full is one payment.
+     * currency is force-set to 'USD' here as a second belt-and-braces line of defence
+     * on top of the pre-mount currency guard above. The intent itself is what actually
+     * gets charged, and we already refused to mount unless the intent was minted in USD.
+     * appearance.locale is 'en' so the Pay button label is English. */
+    var dropIn = awx.createElement('dropIn', {
+      intent_id: intentId,
+      client_secret: clientSecret,
+      currency: 'USD',
+      mode: plan === 'upfront' || num <= 1 ? 'payment' : 'recurring',
+      customer_id: plan === 'upfront' || num <= 1 ? undefined : (customerId || undefined),
+      /* CRM AirwallexOptions prescribe payment_consent {next_triggered_by:'merchant', merchant_trigger_reason:'unscheduled'}.
+       * recurringOptions is the legacy-bundle key, payment_consent the current one; both carry the same values. */
+      recurringOptions: plan === 'upfront' || num <= 1 ? undefined : {
+        next_triggered_by: 'merchant',
+        currency: 'USD',
+        merchant_trigger_reason: 'unscheduled'
+      },
+      payment_consent: plan === 'upfront' || num <= 1 ? undefined : {
+        next_triggered_by: 'merchant',
+        merchant_trigger_reason: 'unscheduled'
+      },
+      /* Airwallex filters Drop-in methods by currency + country_code and lists
+       * country_code as REQUIRED for paypal. Without it PayPal never renders. */
+      country_code: 'US',
+      methods:            ['card','paypal'],
+      payment_methods:    ['card','paypal'],
+      paymentMethods:     ['card','paypal'],
+      payment_method_types:['card','paypal'],
+      showPayButton: true,
+      appearance: { locale: 'en' }
+    });
+    if (!dropIn) throw new Error('createElement returned null - SDK could not build dropIn');
+    var _ld = document.getElementById('awx-loading'); if (_ld) _ld.remove();
+    dropIn.mount(mountEl);
+
+    _orderReadyResolve({ ids: ids, amount: amount, paymentId: paymentId });
+
+
+    dropIn.on('success', function(evt){
+      setStatus('✓ Payment succeeded — order #' + ids.orderid, '#0a7');
+      try{LLA_META.track('Purchase',{value:Number(amount)||279,currency:currency||'USD',content_name:'Longevity Blueprint',order_id:String(ids.orderid),content_type:'product',content_ids:[LLA_CONTENT_ID],contents:[{id:LLA_CONTENT_ID,quantity:1,item_price:Number(amount)||179}]});}catch(e){}
+      // Report to CRM via our Worker (queued to /Students/SetECommercePayment)
+      window.LLA_ECOMM.reportPayment({
+        StudentId: String(ids.stid),
+        OrderId: String(ids.orderid),
+        PaymentId: String(paymentId),
+        PaymentMethod: 'CreditCard',
+        AmountCharged: String(amount),
+        ChargeType: 'RegistrationFee',
+        IsApproved: true,
+        TransactionId: (evt && evt.detail && evt.detail.intent && evt.detail.intent.id) || intentId
+      }).then(function(){ setTimeout(function(){ showDone({orderid:ids.orderid,amount:amount,currency:currency}); }, 800); });
+    });
+    dropIn.on('error', function(evt){
+      setStatus('✗ Payment failed: ' + ((evt && evt.detail && ((evt.detail.error && evt.detail.error.message) || evt.detail.message)) || 'error') + ' — you were not charged.', '#c33');
+    });
+    dropIn.on('ready', function(){ setStatus(awxEnv === 'demo' ? 'Sandbox ready — test card 4035 5010 0000 0008, any future date, any CVC.' : 'Secure payment ready (card). This is a live payment of $' + amount.toFixed(2) + ' USD.'); });
+
+    // Manual pay button also submits the drop-in
+    document.getElementById('proceed').addEventListener('click', function(){
+      try { dropIn.confirm(); } catch(e){ setStatus('Submit error: ' + e.message, '#c33'); }
+    });
+  } catch (e) {
+    if (e && e.message === 'NO_ORDER_IN_SESSION') {
+      /* 2026-09-21 14:10: no order in this session (visitor reached the payment page
+         without the popup). Send them straight back to the course page with the
+         enrollment popup open, keeping the plan and tracking parameters. */
+      try{ var _q=location.search.replace(/^\?/,''); location.replace('https://www.longevitylifeacademy.com/blueprint-november-r4x9/?enroll=1'+(_q?'&'+_q:'')); return; }catch(_e){}
+      // Nothing written to the CRM. Show the demo state and send the visitor back to enroll.
+      document.getElementById('demoBanner').style.display = 'none';
+      document.getElementById('awx-dropin').innerHTML =
+        '<div style="padding:18px 4px;font-size:14px;color:#5A6472;line-height:1.55">'
+        + 'No enrollment in progress. Start on the course page to reserve your seat, '
+        + 'then this step will load your real payment form.<br><br>'
+        + '<a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/" style="font-weight:700">&#8592; Go to The Longevity Blueprint</a></div>';
+      setStatus('');
+      document.getElementById('proceed').style.display = 'none';
+      return;
+    }
+    try { _orderReadyReject(e); } catch(err){}
+    if (e && e.message === 'ORDER_NOT_ACTIVE') {
+      try { sessionStorage.removeItem('lla_ecomm_ids'); } catch(err){}
+      try { history.replaceState(null, '', location.pathname + (location.search.match(/[?&]plan=(monthly|upfront)/) ? '?plan=' + location.search.match(/[?&]plan=(monthly|upfront)/)[1] : '')); } catch(err){}
+      document.getElementById('awx-dropin').innerHTML =
+        '<div style="padding:18px 4px;font-size:14px;color:#5A6472;line-height:1.55">'
+        + 'This order is no longer active, so we have not loaded a payment form. Nothing has been charged.<br><br>'
+        + '<a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/?enroll=1" style="font-weight:700">&#8592; Start your enrollment again (takes 1 minute)</a></div>';
+      setStatus('');
+      document.getElementById('proceed').style.display = 'none';
+      var _pp = document.getElementById('paypalBox'); if (_pp) _pp.style.display = 'none';
+      console.warn('ORDER_NOT_ACTIVE', e.crm);
+      return;
+    }
+    if (e && e.message === 'LEAD_CREATE_FAILED') {
+      // The enrollment could not be opened in the CRM (already retried 3x inside
+      // the client). Send the visitor back to the details step with their data
+      // still in the form's session, and keep the card form hidden.
+      document.getElementById('awx-dropin').innerHTML =
+        '<div style="padding:18px 4px;font-size:14px;color:#5A6472;line-height:1.55">'
+        + 'We could not open your enrollment just now. Nothing has been charged.<br><br>'
+        + '<a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/?enroll=1" style="font-weight:700">&#8592; Check your details and try again</a></div>';
+      setStatus('Could not reserve your seat , please try again.', '#c33');
+      document.getElementById('proceed').style.display = 'none';
+      console.error(e);
+      return;
+    }
+    setStatus('Init failed: ' + e.message, '#c33');
+    console.error(e);
+  }
+}
+
+if (window.LLA_ECOMM && window.LLA_ECOMM.config && window.LLA_ECOMM.config.mode === 'ecomm') {
+  initAirwallex();
+} else {
+  document.getElementById('demoBanner').style.display = 'none';
+  document.getElementById('proceed').addEventListener('click', showDone);
+}
+</script>
+<style>
+#planSummary{max-width:1100px;margin:0 auto 18px;padding:0 16px}
+#planSummary .ps-box{display:flex;align-items:center;justify-content:space-between;gap:14px;border:2px solid #1E6BFF;background:#F2F7FF;border-radius:14px;padding:14px 18px;font-family:Inter,sans-serif;color:#0B1B33}
+#planSummary .ps-k{font:600 12px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#5A6472;margin-bottom:6px}
+#planSummary .ps-v{font-size:18px;font-weight:800}
+#planSummary .ps-v small{font-size:13px;font-weight:600;color:#5A6472;margin-left:6px}
+#planSummary .ps-tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0B6B3A;background:#DDF7E8;border-radius:6px;padding:4px 8px;white-space:nowrap}
+</style>
+<script>
+/* v58: read-only plan summary. The plan is chosen in Step 2, before the CRM order exists; it is not switchable here because the order and Airwallex intent are already priced. */
+(function(){try{
+  var q=new URLSearchParams(location.search); var p=q.get('plan');
+  p='monthly';
+  var w=document.createElement('div');w.id='planSummary';
+  w.innerHTML='<div class="ps-box"><div><div class="ps-k">Your plan</div><div class="ps-v">'+(p==='upfront'?'Pay upfront &middot; $799<small>one payment</small>':'Pay monthly &middot; $279<small>x 5 months &middot; $1,395 total</small>')+'</div></div>'+(p==='upfront'?'<span class="ps-tag">You save $96</span>':'')+'</div>';
+  var anchor=document.getElementById('demoBanner');
+  if(anchor&&anchor.parentNode){anchor.parentNode.insertBefore(w,anchor.nextSibling);}else{document.body.insertBefore(w,document.body.firstChild);}
+}catch(e){}})();
+</script>
+<script>/* v58: session time mirrors the buyer's Step 2 pick */
+(function(){function apply(){try{var sd=sessionStorage.getItem('lla_start_date')||'';var el=document.getElementById('sessionTimeVal');if(el&&sd){el.textContent=sd.replace(/\s*\(CRM:[^)]*\)/,'');}var hj=document.getElementById('awx-julie-hold');if(hj&&sd){var m=sd.match(/^(\w{3} \w{3} \d{1,2})/);if(m){hj.textContent='Your seat is held for 15 minutes.';}}}catch(e){}}
+apply();document.addEventListener('DOMContentLoaded',apply);setTimeout(apply,800);setTimeout(apply,2500);})();</script>
+
+<!-- WhatsApp floater (eTeacher IIBS button look; opens the LLA WhatsApp channel directly) -->
+<div id="et-bumpyard-widget" class="active"><div class="et-bump-btn-holder"><a class="widget-trigger-btn" href="https://wa.me/12015023701" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><img src="assets/wa/whatsapp.svg" alt=""> <span class="label">Need help completing your registration?</span></a></div></div>
+
+<style id="lla-r13-checkout-top">
+/* 2026-09-21 15:40 (Omri): one clean order summary at the top instead of three stacked boxes; calculator simplified; help marks removed */
+#planSummary,.lla-jp-line,#heroTuition,.foot-note,.sum .tip{display:none!important}
+.co-head .logo img{max-height:56px;width:auto;height:auto}
+#llaOrderHero{position:relative;overflow:hidden;margin:0 0 22px;padding:26px 28px;border-radius:18px;color:#fff;background:radial-gradient(120% 160% at 100% 0%,#0E3F9A 0%,#071B3E 55%,#050F26 100%);box-shadow:0 30px 60px -30px rgba(3,20,60,.6);font-family:Inter,sans-serif}
+#llaOrderHero::after{content:"";position:absolute;right:-80px;top:-120px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(125,229,255,.28),transparent 70%);pointer-events:none}
+#llaOrderHero .oh-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center;position:relative;z-index:1}
+#llaOrderHero .oh-eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7DE5FF;margin:0 0 8px}
+#llaOrderHero h2{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:600;font-size:30px;line-height:1.1;margin:0 0 10px;color:#fff}
+#llaOrderHero .oh-meta{font-size:15px;line-height:1.5;color:rgba(232,240,255,.85);margin:0}
+#llaOrderHero .oh-meta b{color:#fff;font-weight:600}
+#llaOrderHero .oh-price{text-align:right}
+#llaOrderHero .oh-big{font-size:46px;font-weight:800;letter-spacing:-.03em;line-height:1;color:#fff}
+#llaOrderHero .oh-big small{font-size:16px;font-weight:600;color:rgba(232,240,255,.8);letter-spacing:0;margin-left:6px}
+#llaOrderHero .oh-was{font-size:15px;color:rgba(232,240,255,.6);margin:6px 0 10px}
+#llaOrderHero .oh-was s{margin-right:6px}
+#llaOrderHero .oh-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+#llaOrderHero .oh-chip{font-size:12.5px;font-weight:700;padding:6px 10px;border-radius:999px;background:rgba(125,229,255,.14);border:1px solid rgba(125,229,255,.35);color:#DFF6FF;white-space:nowrap}
+#llaOrderHero .oh-chip.gold{background:rgba(255,205,90,.16);border-color:rgba(255,205,90,.5);color:#FFE7A8}
+.sum{border-radius:14px!important;border:1px solid #DCE5F2!important;box-shadow:0 12px 30px -20px rgba(7,27,62,.35)}
+.sum::before{content:"Payment summary";display:block;font:700 12px/1 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#5A6472;margin:0 0 14px}
+.sum .sum-row .k{font-weight:600;color:#0B1B33}
+.sum .sum-row .v{font-weight:800;color:#0B1B33}
+.sum .sum-note{color:#5A6472}
+.sum hr{border:0;border-top:1px solid #E6ECF5;margin:14px 0}
+.sum p{font-size:13px;line-height:1.5;color:#5A6472}
+#llaVipRow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-top:1px solid #E6ECF5;margin-top:6px;font-family:Inter,sans-serif}
+#llaVipRow .k{font-weight:600;color:#0B1B33}#llaVipRow .v{font-weight:800;color:#0B6B3A;background:#DDF7E8;border-radius:6px;padding:3px 8px;font-size:13px}
+#llaSaveRow{display:flex;justify-content:space-between;padding:10px 0 0;font-family:Inter,sans-serif;font-weight:800;color:#067647}
+@media(max-width:760px){#llaOrderHero{padding:20px 18px}#llaOrderHero .oh-grid{grid-template-columns:1fr;gap:14px}#llaOrderHero .oh-price{text-align:left}#llaOrderHero .oh-chips{justify-content:flex-start}#llaOrderHero h2{font-size:24px}#llaOrderHero .oh-big{font-size:38px}}
+</style>
+<script id="lla-r13-checkout-top-js">
+(function(){try{
+  function plan(){try{var q=new URLSearchParams(location.search);var p=q.get('plan');if(p==='monthly'||p==='upfront')return p;}catch(e){}try{var s=sessionStorage.getItem('lla_plan')||localStorage.getItem('lla_plan');if(s==='monthly'||s==='upfront')return s;}catch(e){}return 'monthly';}
+  function promo(){try{return new URLSearchParams(location.search).get('promo')==='on';}catch(e){}return false;}
+  function start(){try{var sd=sessionStorage.getItem('lla_start_date')||'';sd=sd.replace(/\s*\(CRM:[^)]*\)/,'');var parts=sd.split('·').map(function(x){return x.trim()});return parts.length>1?(parts[0]+' · '+parts[1]+' · weekly'):sd;}catch(e){return '';}}
+  var p='monthly', pr=false;
+  var price = p==='upfront' ? '$799<small>one payment</small>' : '$279<small>a month × 5</small>';
+  var was = p==='upfront' ? '<s>$1,395</s> total &middot; you save $596' : '$1,395 total &middot; 5 monthly payments';
+  var chips = '<span class="oh-chip">14-day full refund</span>' + (pr?'<span class="oh-chip gold">Julie’s VIP Masterclass included</span><span class="oh-chip">You save $249</span>':'<span class="oh-chip">Abbott Lingo CGM included</span>');
+  var sd=start();
+  var h=document.createElement('section'); h.id='llaOrderHero'; h.setAttribute('data-no-promo','');
+  h.innerHTML='<div class="oh-grid"><div><p class="oh-eyebrow">Your enrollment</p><h2>The Longevity Blueprint</h2><p class="oh-meta">'+(sd?'<b>Starts '+sd+'</b><br>':'')+'18 live sessions &middot; 50 min each &middot; online &middot; lifetime access to recordings</p></div>'
+    +'<div class="oh-price"><div class="oh-big">'+price+'</div><div class="oh-was">'+was+'</div><div class="oh-chips">'+chips+'</div></div></div>';
+  function mount(){/* 2026-09-27 (Roberto/CRM): static $279 x 5 banner removed; every amount on this page now comes from the CRM order */
+    var sum=document.querySelector('.sum'); if(sum&&pr&&!document.getElementById('llaVipRow')){var hr=sum.querySelector('hr');var vip=document.createElement('div');vip.id='llaVipRow';vip.innerHTML='<span class="k">Julie’s VIP Masterclass ($99)</span><span class="v">Included</span>';var sv=document.createElement('div');sv.id='llaSaveRow';sv.innerHTML='<span>You save</span><span>$249</span>';if(hr){sum.insertBefore(vip,hr);sum.insertBefore(sv,hr);}else{sum.appendChild(vip);sum.appendChild(sv);}}}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount(); setTimeout(mount,600);
+}catch(e){}})();
+</script>
+</body>
+</html>

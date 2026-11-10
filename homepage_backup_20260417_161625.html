@@ -1,0 +1,3168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master the Science of Living Longer | Longevity Life Academy</title>
+<meta name="description" content="A 12-session live online academy where you'll read your body's signals, interpret longevity research, and build a personal healthspan blueprint — guided by world-class experts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/codec-pro" rel="stylesheet">
+<style>
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #FFFFFF;
+  color: #111111;
+  line-height: 1.6;
+  font-size: 18px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button, input { font-family: inherit; border: none; outline: none; }
+ul, ol { list-style: none; }
+
+/* ============================================
+   CSS VARIABLES
+   ============================================ */
+:root {
+  /* Green palette removed — using blue/navy exclusively */
+  --accent: #006EFF;
+  --accent-hover: #338BFF;
+  --accent-dark: #0055CC;
+  --dark-base: #FFFFFF;
+  --surface-dark: #F5F7FA;
+  --surface-card: #FFFFFF;
+  --surface-elevated: #F0F2F5;
+  --text-primary: #111111;
+  --text-secondary: #4A5568;
+  --text-muted: #8A94A6;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-medium: rgba(0, 0, 0, 0.12);
+  --blue-tp: #006EFF;
+  --accent-glow: rgba(0, 110, 255, 0.25);
+  --accent-glow-strong: rgba(0, 110, 255, 0.4);
+  --font-display: 'Codec Pro', 'Inter', sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-elevated: 0 8px 40px rgba(0, 0, 0, 0.1);
+
+  /* Glassmorphism tokens — LIGHT bg */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-bg-hover: rgba(255, 255, 255, 0.85);
+  --glass-border: 1px solid rgba(0, 0, 0, 0.06);
+  --glass-border-hover: 1px solid rgba(0, 0, 0, 0.12);
+  --glass-blur: blur(20px);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  --glass-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.1);
+  /* Glassmorphism — LIGHT bg */
+  --glass-light-bg: rgba(255, 255, 255, 0.6);
+  --glass-light-bg-hover: rgba(255, 255, 255, 0.75);
+  --glass-light-border: 1px solid rgba(255, 255, 255, 0.5);
+  --glass-light-blur: blur(16px);
+  --glass-light-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.container-wide { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accent);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.section-title .gold {
+  color: var(--accent);
+}
+
+.section-subtitle {
+  font-size: 20px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 680px;
+}
+
+.gold-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: none;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 20px var(--accent-glow);
+}
+.gold-btn:hover {
+  background: linear-gradient(135deg, var(--accent-hover), #5AA3FF);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--accent-glow-strong);
+}
+
+/* Reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ============================================
+   1. FIXED NAVIGATION
+   ============================================ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 24px; height: 72px;
+  display: flex; align-items: center;
+  transition: all var(--transition-base);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.nav.scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.nav-inner {
+  max-width: 1400px; margin: 0 auto; width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--font-display); font-weight: 800; font-size: 22px;
+  color: var(--text-primary);
+}
+.nav-logo-img {
+  height: 40px; width: auto;
+}
+.nav-logo-suffix {
+  font-family: var(--font-display); font-weight: 300; font-size: 20px;
+  color: var(--text-secondary); letter-spacing: 0.5px;
+}
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a {
+  font-size: 14px; font-weight: 500; color: var(--text-secondary);
+  transition: color var(--transition-base); letter-spacing: 0.3px;
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-cta {
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: #fff !important; font-weight: 700 !important;
+  padding: 10px 24px; border-radius: 50px; font-size: 14px !important;
+  transition: all var(--transition-base);
+  box-shadow: 0 2px 12px var(--accent-glow);
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px var(--accent-glow-strong); }
+.nav-mobile-toggle {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 8px; background: none; border: none;
+}
+.nav-mobile-toggle span {
+  display: block; width: 24px; height: 2px; background: var(--text-primary);
+  transition: all var(--transition-base); border-radius: 2px;
+}
+.nav-mobile-menu {
+  display: none; position: fixed; top: 72px; left: 0; right: 0;
+  background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px);
+  padding: 24px; flex-direction: column; gap: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.nav-mobile-menu.active { display: flex; }
+.nav-mobile-menu a {
+  font-size: 16px; font-weight: 500; color: var(--text-secondary);
+  padding: 8px 0; transition: color var(--transition-base);
+}
+.nav-mobile-menu a:hover { color: var(--text-primary); }
+
+/* ============================================
+   2. HERO SECTION
+   ============================================ */
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; padding: 140px 24px 100px;
+  background: linear-gradient(180deg, #E8F1FC 0%, #EEF4FB 50%, #FFFFFF 100%);
+}
+.hero-video-bg {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 0; opacity: 0.7;
+  pointer-events: none;
+}
+.hero-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.25) 100%);
+  z-index: 1;
+}
+.hero-content {
+  position: relative; z-index: 2; text-align: center; max-width: 960px; margin: 0 auto;
+}
+.hero-eyebrow {
+  font-family: var(--font-body); font-size: 13px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 4px; color: var(--accent);
+  margin-bottom: 32px;
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+}
+.hero-eyebrow .dot {
+  width: 4px; height: 4px; border-radius: 50%; background: var(--accent); opacity: 0.6;
+}
+.hero-headline {
+  font-family: var(--font-display); font-weight: 900;
+  font-size: 80px; line-height: 1.0; color: #111111;
+  margin-bottom: 28px; letter-spacing: -1.5px;
+  text-transform: uppercase;
+}
+.hero-headline em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+/* Trustpilot badge */
+.hero-trustpilot {
+  display: inline-flex; align-items: center; justify-content: center; gap: 14px;
+  margin-bottom: 32px; flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 50px; padding: 12px 28px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.tp-logo-text { font-size: 19px; font-weight: 700; color: #111; letter-spacing: -0.3px; display: flex; align-items: center; gap: 8px; }
+.tp-logo-text svg { height: 24px; width: 24px; flex-shrink: 0; }
+.tp-logo-word { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 700; color: #111; letter-spacing: -0.3px; }
+.tp-divider { width: 1px; height: 24px; background: rgba(0,0,0,0.12); }
+.tp-stars { display: flex; gap: 4px; }
+.tp-star {
+  width: 28px; height: 28px; background: #00B67A; border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+}
+.tp-star svg { width: 16px; height: 16px; fill: #fff; }
+.tp-rating { font-size: 17px; font-weight: 600; color: #111111; }
+.tp-rating strong { color: #111; font-weight: 800; }
+
+.hero-sub {
+  font-size: 20px; line-height: 1.7; color: var(--text-primary);
+  max-width: 740px; margin: 0 auto 40px;
+  text-shadow: 0 1px 8px rgba(255,255,255,0.6);
+}
+.hero-form {
+  display: flex; align-items: center; gap: 0; max-width: 520px; margin: 0 auto 48px;
+  background: rgba(255,255,255,0.9); border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 50px; padding: 6px; backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: border-color var(--transition-base);
+}
+.hero-form:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,110,255,0.2); }
+.hero-form input[type="email"] {
+  flex: 1; background: transparent; color: #111111;
+  padding: 14px 24px; font-size: 16px; border: none; outline: none; min-width: 0;
+}
+.hero-form input[type="email"]::placeholder { color: var(--text-muted); }
+.hero-form button {
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: #fff; font-weight: 700; font-size: 15px; padding: 14px 28px;
+  border-radius: 50px; cursor: pointer; white-space: nowrap;
+  transition: all var(--transition-base); border: none;
+  box-shadow: 0 2px 12px var(--accent-glow);
+}
+.hero-form button:hover {
+  background: linear-gradient(135deg, var(--accent-hover), #5AA3FF);
+  transform: translateY(-1px); box-shadow: 0 4px 20px var(--accent-glow-strong);
+}
+.hero-pills {
+  display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
+}
+.hero-pill {
+  display: flex; align-items: center; gap: 8px; padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 50px; font-size: 14px; font-weight: 500; color: var(--text-secondary);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+.hero-pill svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; }
+
+
+
+
+
+
+/* ============================================
+   4. WHAT MAKES THIS DIFFERENT
+   ============================================ */
+.different {
+  position: relative; padding: 120px 0;
+  background: linear-gradient(180deg, var(--dark-base) 0%, #0D2847 50%, var(--dark-base) 100%);
+  overflow: hidden;
+}
+.different::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px; pointer-events: none;
+}
+/* Gradient orb for glass visibility */
+.different::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0,110,255,0.06) 0%, rgba(58,157,106,0.04) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.different-header { text-align: center; margin-bottom: 72px; position: relative; z-index: 1; }
+.different-bridge {
+  font-size: 14px; font-style: italic; color: var(--text-muted);
+  margin-bottom: 12px; letter-spacing: 0.2px;
+}
+.different-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  position: relative; z-index: 1;
+}
+.different-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: var(--radius-xl); padding: 40px 28px; text-align: center;
+  transition: all var(--transition-base);
+  box-shadow: var(--glass-shadow);
+}
+.different-card:hover {
+  background: var(--glass-bg-hover);
+  border: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-hover);
+  transform: translateY(-4px);
+}
+.different-card-icon {
+  width: 64px; height: 64px; border-radius: 16px;
+  background: rgba(0,0,0,0.02);
+  border: 1px solid rgba(0,0,0,0.06);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px;
+}
+.different-card-icon svg { width: 28px; height: 28px; color: var(--accent); }
+.different-card h3 {
+  font-family: var(--font-display); font-weight: 700; font-size: 22px;
+  margin-bottom: 12px; color: var(--text-primary);
+}
+.different-card p { font-size: 15px; line-height: 1.65; color: var(--text-secondary); }
+
+/* ============================================
+   5. WHO IS THIS FOR
+   ============================================ */
+.who-for {
+  position: relative; padding: 120px 0; background: var(--dark-base); overflow: hidden;
+}
+/* Gradient orb for glass visibility */
+.who-for::after {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(58,157,106,0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.who-for-header { text-align: center; margin-bottom: 64px; position: relative; z-index: 1; }
+.who-for-bridge {
+  font-size: 14px; font-style: italic; color: var(--text-muted);
+  margin-bottom: 12px; letter-spacing: 0.2px;
+}
+.who-for-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 20px; max-width: 800px; margin: 0 auto;
+  position: relative; z-index: 1;
+}
+.who-for-grid .who-for-card:last-child {
+  grid-column: 1 / -1;
+  max-width: calc(50% - 10px);
+  justify-self: center;
+}
+.who-for-card {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 24px 28px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: var(--radius-lg); transition: all var(--transition-base);
+  box-shadow: var(--glass-shadow);
+}
+.who-for-card:hover {
+  background: var(--glass-bg-hover);
+  border: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-hover);
+  transform: translateY(-3px);
+}
+.who-for-card svg {
+  width: 24px; height: 24px; color: var(--accent); flex-shrink: 0; margin-top: 2px;
+}
+.who-for-card p { font-size: 16px; line-height: 1.6; color: var(--text-secondary); }
+
+/* ============================================
+   6b. COURSE HIGHLIGHTS (Image cards)
+   ============================================ */
+.highlights {
+  padding: 100px 0;
+  background: var(--dark-base);
+  position: relative;
+  overflow: hidden;
+}
+.highlights::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: 30%;
+  width: 500px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(11,61,46,0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.highlights-header { text-align: center; margin-bottom: 64px; position: relative; z-index: 1; }
+.highlights-bridge {
+  font-size: 16px; color: var(--text-muted); font-style: italic;
+  margin-bottom: 12px;
+}
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+.highlight-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+.highlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.35);
+}
+.highlight-card:first-child {
+  grid-column: 1/-1;
+  aspect-ratio: 21/9;
+}
+.highlight-card img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.highlight-card:hover img { transform: scale(1.05); }
+.highlight-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 10%, rgba(10,15,13,0.55) 45%, rgba(10,15,13,0.92) 100%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 36px;
+}
+.highlight-card-tag {
+  font-family: var(--font-body); font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 3px; color: var(--accent);
+  margin-bottom: 8px;
+}
+.highlight-card h3 {
+  font-family: var(--font-display); font-weight: 800; font-size: 28px;
+  color: #FFFFFF; margin-bottom: 8px; line-height: 1.2;
+}
+.highlight-card p {
+  font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.85); max-width: 500px;
+}
+
+@media (max-width: 1024px) {
+  .highlights-grid { grid-template-columns: 1fr; }
+  .highlight-card:first-child { aspect-ratio: 16/9; }
+}
+@media (max-width: 768px) {
+  .highlights { padding: 80px 0; }
+  .highlight-card { aspect-ratio: 4/3; }
+  .highlight-card:first-child { aspect-ratio: 4/3; }
+  .highlight-card h3 { font-size: 22px; }
+  .highlight-card-overlay { padding: 24px; }
+}
+
+/* ============================================
+   6. UNIFIED CURRICULUM — Phases + Syllabus Dropdowns
+   ============================================ */
+.curriculum {
+  position: relative; padding: 120px 0; overflow: hidden;
+  background: linear-gradient(180deg, var(--dark-base) 0%, var(--surface-dark) 50%, var(--dark-base) 100%);
+}
+.curriculum::after {
+  content: '';
+  position: absolute;
+  top: 20%; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 600px;
+  background: radial-gradient(circle, rgba(0,110,255,0.04) 0%, rgba(58,157,106,0.03) 50%, transparent 70%);
+  pointer-events: none; z-index: 0;
+}
+.curriculum-header { text-align: center; margin-bottom: 72px; position: relative; z-index: 1; }
+.curriculum-bridge {
+  font-size: 14px; font-style: italic; color: var(--text-muted);
+  margin-bottom: 12px; letter-spacing: 0.2px;
+}
+.curriculum-phases {
+  max-width: 960px; margin: 0 auto; position: relative; z-index: 1;
+  display: flex; flex-direction: column; gap: 48px;
+}
+
+/* Phase block */
+.phase-block {}
+.phase-block-header {
+  display: flex; align-items: baseline; gap: 16px;
+  margin-bottom: 20px; padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.phase-block-label {
+  font-family: var(--font-body); font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 3px; color: var(--accent);
+  white-space: nowrap;
+}
+.phase-block-name {
+  font-family: var(--font-display); font-weight: 800; font-size: 24px;
+  color: var(--text-primary); line-height: 1.2;
+}
+.phase-block-sessions {
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+/* Session accordion item inside phase */
+.curriculum-item {
+  border: var(--glass-border); border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  transition: all var(--transition-base);
+  box-shadow: var(--glass-shadow);
+}
+.curriculum-item:hover {
+  background: var(--glass-bg-hover);
+  border: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-hover);
+}
+.curriculum-item.active {
+  background: rgba(255, 255, 255, 0.82);
+  border: var(--glass-border-hover);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+.curriculum-trigger {
+  width: 100%; display: flex; align-items: center; gap: 16px;
+  padding: 18px 24px; background: none; border: none;
+  cursor: pointer; text-align: left; transition: background var(--transition-base);
+}
+.curriculum-trigger:hover { background: rgba(0,0,0,0.02); }
+.curriculum-num {
+  font-family: var(--font-display); font-weight: 800; font-size: 16px;
+  color: var(--accent); min-width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,110,255,0.06);
+  border: 1px solid rgba(0,110,255,0.12);
+  border-radius: var(--radius-sm); flex-shrink: 0;
+}
+.curriculum-trigger-text { flex: 1; }
+.curriculum-trigger-text h3 {
+  font-family: var(--font-display); font-weight: 700; font-size: 17px;
+  color: var(--text-primary); line-height: 1.3;
+}
+.curriculum-trigger-text span {
+  font-size: 13px; color: var(--text-muted); display: block; margin-top: 2px;
+}
+.curriculum-chevron {
+  width: 22px; height: 22px; color: var(--text-muted);
+  transition: transform var(--transition-base); flex-shrink: 0;
+}
+.curriculum-item.active .curriculum-chevron { transform: rotate(180deg); color: var(--accent); }
+.curriculum-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1); }
+.curriculum-body-inner { padding: 0 24px 24px 84px; }
+.curriculum-section-label {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 2px; color: var(--accent); margin-bottom: 8px; margin-top: 16px;
+}
+.curriculum-section-label:first-child { margin-top: 0; }
+.curriculum-goals { margin-bottom: 8px; }
+.curriculum-goals li {
+  position: relative; padding-left: 20px; font-size: 14.5px;
+  line-height: 1.6; color: var(--text-secondary); margin-bottom: 4px;
+}
+.curriculum-goals li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+}
+.curriculum-flow { font-size: 14.5px; line-height: 1.65; color: var(--text-secondary); margin-bottom: 8px; }
+.curriculum-work {
+  font-size: 14.5px; line-height: 1.65; color: var(--text-secondary);
+  padding: 12px 16px; background: rgba(0,110,255,0.05);
+  border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* ============================================
+   8. INSTRUCTORS
+   ============================================ */
+.teachers {
+  position: relative; padding: 120px 0; overflow: hidden;
+  background: linear-gradient(180deg, var(--dark-base) 0%, rgba(0,110,255,0.04) 50%, var(--dark-base) 100%);
+}
+/* Gradient orb */
+.teachers::after {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0,110,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.teachers-header { text-align: center; margin-bottom: 72px; position: relative; z-index: 1; }
+.teachers-bridge {
+  font-size: 14px; font-style: italic; color: var(--text-muted);
+  margin-bottom: 12px; letter-spacing: 0.2px;
+}
+.teachers-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+  max-width: 960px; margin: 0 auto; position: relative; z-index: 1;
+}
+.teacher-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: var(--radius-xl); padding: 32px 24px 28px; text-align: center;
+  transition: all var(--transition-base);
+  box-shadow: var(--glass-shadow);
+  display: flex; flex-direction: column; align-items: center;
+}
+.teacher-card:hover {
+  background: var(--glass-bg-hover);
+  border: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-hover);
+  transform: translateY(-4px);
+}
+.teacher-avatar {
+  width: 88px; height: 88px; border-radius: 50%; margin: 0 auto 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 800; font-size: 28px; color: var(--accent);
+  background: rgba(0,0,0,0.02);
+  border: 2px solid rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+.teacher-avatar img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+}
+.teacher-name {
+  font-family: var(--font-display); font-weight: 700; font-size: 19px;
+  color: var(--text-primary); margin-bottom: 4px;
+}
+.teacher-role {
+  font-size: 12px; font-weight: 600; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px;
+}
+.teacher-bio { font-size: 14px; line-height: 1.6; color: var(--text-secondary); }
+
+/* Credential Logo Strip */
+.credential-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: 800px;
+  margin: 56px auto 0;
+  padding: 28px 40px;
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(0,110,255,0.08);
+}
+.credential-strip-logo {
+  width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 14px;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(0,110,255,0.12);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04), 0 1px 4px rgba(0,110,255,0.06);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+.credential-strip-logo:hover {
+  border-color: rgba(0,110,255,0.30);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,110,255,0.14), 0 2px 6px rgba(0,0,0,0.04);
+}
+.credential-strip-logo svg {
+  width: 24px; height: 24px;
+  stroke: #006EFF; fill: none;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* ============================================
+   9. PLATFORM
+   ============================================ */
+.platform { padding: 100px 0 110px; background: #F0F4F8; color: #1A1A2E; overflow: hidden; }
+.platform-header { max-width: 720px; margin: 0 auto 56px; text-align: center; }
+.platform-header h2 {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: 56px; line-height: 1.1; color: #1A1A2E; margin-bottom: 4px;
+}
+.platform-header .platform-tagline {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 28px; color: #4A4A5A; line-height: 1.3; margin-bottom: 20px;
+}
+.platform-header p.platform-desc {
+  font-size: 17px; line-height: 1.7; color: #5A5A6A; max-width: 680px;
+}
+.platform-bridge {
+  font-size: 14px; font-style: italic; color: #7A7A8A;
+  margin-bottom: 12px; letter-spacing: 0.2px;
+}
+.platform-logo { margin-bottom: 40px; text-align: center; }
+.platform-logo svg { height: 36px; width: auto; }
+.platform-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 56px; }
+.platform-card {
+  text-align: left;
+  background: var(--glass-light-bg);
+  backdrop-filter: var(--glass-light-blur);
+  -webkit-backdrop-filter: var(--glass-light-blur);
+  border: var(--glass-light-border);
+  border-radius: var(--radius-xl); padding: 32px;
+  box-shadow: var(--glass-light-shadow);
+  transition: all var(--transition-base);
+}
+.platform-card:hover {
+  background: var(--glass-light-bg-hover);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
+}
+.platform-card-icon { width: 56px; height: 56px; margin-bottom: 18px; color: #1A1A2E; }
+.platform-card-icon svg {
+  width: 100%; height: 100%; stroke: #1A1A2E; fill: none;
+  stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round;
+}
+.platform-card h3 {
+  font-family: var(--font-body); font-weight: 700; font-size: 20px;
+  color: #1A1A2E; margin-bottom: 10px; line-height: 1.3;
+}
+.platform-card p { font-size: 16px; line-height: 1.65; color: #5A5A6A; }
+.platform-dots { display: none; justify-content: center; gap: 10px; margin-top: 36px; }
+.platform-dot {
+  width: 10px; height: 10px; border-radius: 50%; background: #C8C4BC;
+  border: none; padding: 0; cursor: pointer; transition: background 0.3s;
+}
+.platform-dot.active { background: #1A1A2E; }
+
+/* ============================================
+   10. TESTIMONIALS
+   ============================================ */
+.testimonials {
+  position: relative; padding: 120px 0; overflow: hidden;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F7F4 50%, #FFFFFF 100%);
+}
+/* Gradient orb */
+.testimonials::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0,110,255,0.05) 0%, rgba(58,157,106,0.04) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.testimonials-header { text-align: center; margin-bottom: 72px; position: relative; z-index: 1; }
+.testimonials-bridge {
+  font-size: 14px; font-style: italic; color: var(--text-muted);
+  margin-bottom: 12px; letter-spacing: 0.2px;
+}
+.testimonials-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  max-width: 1100px; margin: 0 auto; position: relative; z-index: 1;
+}
+.testimonial-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: var(--radius-xl); padding: 36px; transition: all var(--transition-base);
+  box-shadow: var(--glass-shadow);
+}
+.testimonial-card:hover {
+  background: var(--glass-bg-hover);
+  border: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-hover);
+  transform: translateY(-3px);
+}
+.testimonial-quote-icon { margin-bottom: 16px; }
+.testimonial-quote-icon svg { width: 36px; height: 36px; color: var(--accent); opacity: 0.4; }
+.testimonial-stars { display: flex; gap: 3px; margin-bottom: 16px; }
+.testimonial-stars svg { width: 14px; height: 14px; color: var(--accent); fill: var(--accent); }
+.testimonial-text {
+  font-size: 17px; line-height: 1.7; color: var(--text-secondary);
+  margin-bottom: 24px; font-style: italic;
+}
+.testimonial-author { display: flex; align-items: center; gap: 12px; }
+.testimonial-author-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, #0A1628, #0D2847);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px; color: var(--accent);
+}
+.testimonial-author-info strong { display: block; font-size: 15px; font-weight: 600; color: var(--text-primary); }
+.testimonial-author-info span { font-size: 13px; color: var(--text-muted); }
+
+/* ============================================
+   11. FAQ
+   ============================================ */
+.faq {
+  position: relative; padding: 120px 0; overflow: hidden;
+  background: linear-gradient(180deg, var(--dark-base) 0%, rgba(11,61,46,0.15) 50%, var(--dark-base) 100%);
+}
+/* Gradient orb */
+.faq::after {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0,110,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.faq-header { text-align: center; margin-bottom: 72px; position: relative; z-index: 1; }
+.faq-bridge {
+  font-size: 14px; font-style: italic; color: var(--text-muted);
+  margin-bottom: 12px; letter-spacing: 0.2px;
+}
+.faq-list { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+.faq-item {
+  border: var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: var(--radius-lg);
+  margin-bottom: 14px;
+  box-shadow: var(--glass-shadow);
+  transition: all var(--transition-base); overflow: hidden;
+}
+.faq-item:hover {
+  background: var(--glass-bg-hover);
+  border: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-hover);
+}
+.faq-trigger {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 24px 28px; background: none; border: none;
+  cursor: pointer; text-align: left; gap: 16px;
+}
+.faq-trigger h3 {
+  font-family: var(--font-body); font-weight: 600; font-size: 18px;
+  color: var(--text-primary); line-height: 1.4; transition: color var(--transition-base);
+}
+.faq-trigger:hover h3 { color: var(--accent); }
+.faq-icon {
+  width: 24px; height: 24px; color: var(--text-muted);
+  transition: all var(--transition-base); flex-shrink: 0;
+}
+.faq-item.active .faq-icon { transform: rotate(45deg); color: var(--accent); }
+.faq-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1); }
+.faq-body-inner { padding: 0 28px 24px; }
+.faq-body-inner p { font-size: 16px; line-height: 1.7; color: var(--text-secondary); }
+
+/* ============================================
+   12. FINAL CTA
+   ============================================ */
+.final-cta {
+  position: relative; padding: 120px 0;
+  background: linear-gradient(135deg, #0A1628 0%, #0D2847 40%, #143A6B 100%);
+  overflow: hidden;
+}
+.final-cta::before {
+  content: ''; position: absolute; top: -50%; right: -30%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(0,110,255,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.final-cta-content { position: relative; z-index: 1; text-align: center; max-width: 720px; margin: 0 auto; }
+.final-cta .section-title { font-size: 64px; margin-bottom: 20px; color: #F5F5F0; }
+.final-cta-sub { font-size: 20px; line-height: 1.7; color: rgba(245,245,240,0.8); margin-bottom: 40px; }
+.final-cta-form {
+  display: flex; align-items: center; gap: 0; max-width: 520px; margin: 0 auto 24px;
+  background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50px; padding: 6px;
+}
+.final-cta-form:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,110,255,0.2); }
+.final-cta-form input[type="email"] {
+  flex: 1; background: transparent; color: var(--text-primary);
+  padding: 14px 24px; font-size: 16px; border: none; outline: none; min-width: 0;
+}
+.final-cta-form input[type="email"]::placeholder { color: rgba(245,245,240,0.4); }
+.final-cta-form button {
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: #fff; font-weight: 700; font-size: 15px; padding: 14px 28px;
+  border-radius: 50px; cursor: pointer; white-space: nowrap;
+  transition: all var(--transition-base); border: none;
+  box-shadow: 0 2px 12px var(--accent-glow);
+}
+.final-cta-form button:hover {
+  background: linear-gradient(135deg, var(--accent-hover), #5AA3FF);
+  transform: translateY(-1px); box-shadow: 0 4px 20px var(--accent-glow-strong);
+}
+.final-cta-note { font-size: 14px; color: rgba(245,245,240,0.5); }
+.final-cta .section-subtitle { color: rgba(245,245,240,0.7); }
+.final-cta .gold { color: #fff !important; }
+.final-cta .eyebrow { color: rgba(245,245,240,0.7); }
+
+/* Lead Generation Form */
+.lead-gen {
+  position: relative; padding: 100px 0;
+  background: #FAFBFD;
+  overflow: hidden;
+}
+.lead-gen::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,110,255,0.15), transparent);
+}
+.lead-gen-inner {
+  max-width: 580px; margin: 0 auto; text-align: center;
+  position: relative; z-index: 1;
+}
+.lead-gen-headline {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(28px, 4vw, 42px); line-height: 1.15;
+  color: var(--text-primary); margin-bottom: 40px;
+  letter-spacing: -0.5px;
+}
+.lead-gen-headline span {
+  color: var(--accent);
+}
+.lead-gen-form {
+  display: flex; flex-direction: column; gap: 14px;
+  max-width: 440px; margin: 0 auto 20px;
+}
+.lead-gen-row {
+  display: flex; gap: 14px;
+}
+.lead-gen-form input {
+  flex: 1; padding: 16px 20px; font-size: 16px; font-family: var(--font-body);
+  border: 1.5px solid rgba(0,0,0,0.1); border-radius: 12px;
+  background: #fff; color: var(--text-primary);
+  outline: none; transition: all 0.25s ease;
+}
+.lead-gen-form input:focus {
+  border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,110,255,0.1);
+}
+.lead-gen-form input::placeholder {
+  color: #A0AEC0;
+}
+.lead-gen-form button {
+  width: 100%; padding: 18px 32px; font-size: 17px; font-weight: 700;
+  font-family: var(--font-display); letter-spacing: 0.3px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: #fff; border: none; border-radius: 12px; cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0,110,255,0.25);
+}
+.lead-gen-form button:hover {
+  background: linear-gradient(135deg, var(--accent-hover), #5AA3FF);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0,110,255,0.35);
+}
+.lead-gen-trust {
+  font-size: 14px; color: var(--text-muted); margin-top: 6px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.lead-gen-trust svg {
+  width: 16px; height: 16px; color: var(--accent); flex-shrink: 0;
+}
+
+/* ============================================
+   13. FOOTER
+   ============================================ */
+.footer { padding: 48px 0; background: #080E1C; border-top: 1px solid rgba(0,110,255,0.08); color: #F5F5F0; }
+.footer-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 24px;
+}
+.footer-logo {
+  font-family: var(--font-display); font-weight: 800; font-size: 18px; color: #F5F5F0;
+}
+.footer-logo .logo-accent { color: var(--accent); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 14px; color: #8A94A6; transition: color var(--transition-base); }
+.footer-links a:hover { color: #F5F5F0; }
+.footer-social { display: flex; gap: 16px; }
+.footer-social a {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition-base);
+}
+.footer-social a:hover { background: rgba(0,110,255,0.1); border-color: rgba(0,110,255,0.3); }
+.footer-social svg { width: 16px; height: 16px; color: #8A94A6; }
+.footer-bottom {
+  margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center; font-size: 13px; color: #6B7A64;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+@media (max-width: 1024px) {
+  .section-title { font-size: 48px; }
+  .hero-headline { font-size: 64px; }
+  .different-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .testimonials-grid { grid-template-columns: 1fr; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .teachers-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .credential-strip { gap: 24px; padding: 24px 20px; }
+  .credential-strip-logo { width: 42px; height: 42px; }
+  .final-cta .section-title { font-size: 48px; }
+
+  .platform-header h2 { font-size: 44px; }
+  .platform-header .platform-tagline { font-size: 24px; }
+  .platform-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 48px; }
+}
+
+@media (max-width: 768px) {
+  body { font-size: 16px; }
+  .container, .container-wide { padding: 0 16px; }
+  .section-title { font-size: 38px; }
+  .section-subtitle { font-size: 17px; }
+  .eyebrow { font-size: 11px; letter-spacing: 2px; }
+  .nav-links { display: none; }
+  .nav-mobile-toggle { display: flex; }
+  .hero { min-height: auto; padding: 130px 16px 60px; }
+  .hero-headline { font-size: 48px; letter-spacing: -0.5px; }
+  .hero-sub { font-size: 17px; }
+  .hero-form {
+    flex-direction: column; border-radius: var(--radius-md);
+    padding: 8px; gap: 8px; background: rgba(255,255,255,0.92);
+  }
+  .hero-form input[type="email"] { width: 100%; text-align: center; padding: 14px 16px; }
+  .hero-form button { width: 100%; text-align: center; justify-content: center; }
+  .hero-pills { gap: 6px; }
+  .hero-pill { font-size: 12px; padding: 8px 12px; }
+  .hero-trustpilot { margin-bottom: 20px; }
+  .different { padding: 80px 0; }
+  .different-grid { grid-template-columns: 1fr; gap: 16px; }
+  .different-card { padding: 28px 20px; }
+  .who-for { padding: 80px 0; }
+  .who-for-grid { grid-template-columns: 1fr; }
+  .curriculum { padding: 80px 0; }
+  .phase-block-header { flex-direction: column; gap: 6px; }
+  .phase-block-name { font-size: 20px; }
+  .curriculum-trigger { padding: 16px; }
+  .curriculum-body-inner { padding: 0 16px 20px 16px; }
+  .curriculum-num { min-width: 38px; height: 38px; font-size: 14px; }
+  .curriculum-trigger-text h3 { font-size: 15px; }
+  .teachers { padding: 80px 0; }
+  .teachers-grid { grid-template-columns: 1fr; max-width: 100%; }
+  .credential-strip { gap: 16px; padding: 20px 12px; flex-wrap: wrap; }
+  .credential-strip-logo { width: 40px; height: 40px; border-radius: 10px; }
+  .credential-strip-logo svg { width: 20px; height: 20px; }
+  .platform { padding: 72px 0 80px; }
+  .platform-header h2 { font-size: 34px; }
+  .platform-header .platform-tagline { font-size: 20px; }
+  .platform-header p.platform-desc { font-size: 16px; }
+  .platform-grid {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; gap: 0; margin: 0 -16px; padding: 0 16px;
+    scrollbar-width: none;
+  }
+  .platform-grid::-webkit-scrollbar { display: none; }
+  .platform-card { flex: 0 0 100%; scroll-snap-align: start; padding-right: 24px; }
+  .platform-dots { display: flex; }
+  .testimonials { padding: 80px 0; }
+  .faq { padding: 80px 0; }
+  .faq-trigger h3 { font-size: 16px; }
+  .final-cta { padding: 80px 0; }
+  .final-cta .section-title { font-size: 38px; }
+  .final-cta-sub { font-size: 17px; }
+  .final-cta-form {
+    flex-direction: column; border-radius: var(--radius-md); padding: 8px; gap: 8px;
+  }
+  .final-cta-form input[type="email"] { width: 100%; text-align: center; padding: 14px 16px; }
+  .final-cta-form button { width: 100%; text-align: center; }
+  .lead-gen { padding: 72px 0; }
+  .lead-gen-headline { font-size: 28px; margin-bottom: 32px; }
+  .lead-gen-row { flex-direction: column; }
+  .lead-gen-form { max-width: 100%; }
+  .lead-gen-trust { font-size: 13px; }
+  .footer-inner { flex-direction: column; text-align: center; }
+
+}
+
+@media (max-width: 480px) {
+  .hero-headline { font-size: 38px; }
+  .section-title { font-size: 32px; }
+
+  .final-cta .section-title { font-size: 32px; }
+  .platform-header h2 { font-size: 28px; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ============================================
+   OUTCOMES SECTION — SINGLE-ROW HORIZONTAL MARQUEE
+   ============================================ */
+.outcomes { padding: 120px 0; overflow: hidden; }
+.outcomes-header { text-align: center; margin-bottom: 72px; }
+
+/* 5-card grid — compact with hover-reveal descriptions */
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.outcomes-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 260px;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.5s ease, min-height 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.outcomes-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 24px 56px rgba(0,0,0,0.28);
+  min-height: 380px;
+}
+.outcomes-card-bg {
+  position: absolute; inset: 0; z-index: 0;
+}
+.outcomes-card-bg img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.5s ease;
+}
+.outcomes-card:hover .outcomes-card-bg img {
+  transform: scale(1.08);
+  filter: brightness(0.85);
+}
+.outcomes-card-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.08) 100%);
+  transition: background 0.5s ease;
+}
+.outcomes-card:hover .outcomes-card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.2) 100%);
+}
+/* Glass text box */
+.outcomes-card-glass {
+  position: relative; z-index: 3;
+  margin: 12px;
+  padding: 20px 18px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: background 0.5s ease, border-color 0.5s ease;
+}
+.outcomes-card:hover .outcomes-card-glass {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.22);
+}
+.outcomes-card-num {
+  font-family: 'Codec Pro', sans-serif; font-weight: 800;
+  font-size: 12px; color: var(--accent);
+  letter-spacing: 2px; margin-bottom: 8px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.outcomes-card-title {
+  font-family: 'Codec Pro', sans-serif; font-weight: 800;
+  font-size: 18px; line-height: 1.25; color: #fff;
+  text-transform: uppercase; letter-spacing: 0.3px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.outcomes-card-desc {
+  font-size: 13px; line-height: 1.55; color: rgba(255,255,255,0.75);
+  margin-top: 0; max-height: 0; overflow: hidden; opacity: 0;
+  transition: max-height 0.5s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.4s ease, margin-top 0.4s ease;
+}
+.outcomes-card:hover .outcomes-card-desc {
+  max-height: 200px; opacity: 1; margin-top: 10px;
+}
+/* Responsive */
+@media (max-width: 1024px) {
+  .outcomes-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+}
+@media (max-width: 768px) {
+  .outcomes { padding: 80px 0; }
+  .outcomes-grid { grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 16px; }
+  .outcomes-card { min-height: 240px; }
+  .outcomes-card:hover { min-height: 240px; }
+  .outcomes-card-glass { padding: 16px 14px; margin: 10px; }
+  .outcomes-card-title { font-size: 16px; }
+  .outcomes-card-desc { max-height: 120px; opacity: 1; margin-top: 8px; font-size: 12px; }
+}
+@media (max-width: 480px) {
+  .outcomes-grid { grid-template-columns: 1fr; }
+  .outcomes-card { min-height: 220px; }
+  .outcomes-card:hover { min-height: 220px; }
+  .outcomes-card-title { font-size: 17px; }
+  .outcomes-card-desc { font-size: 13px; }
+}
+
+/* ============================================
+   METHOD SECTION — Pillar Cards
+   ============================================ */
+.method {
+  padding: 120px 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F5FF 35%, #E8F0FE 50%, #F0F5FF 65%, #FFFFFF 100%);
+}
+.method-header { text-align: center; margin-bottom: 72px; }
+
+/* ============================================
+   HEXAGONAL HUB DIAGRAM
+   ============================================ */
+.hex-hub {
+  position: relative;
+  width: 560px;
+  height: 560px;
+  margin: 0 auto 56px;
+}
+
+/* Center hub */
+.hex-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px; height: 160px;
+  background: linear-gradient(135deg, #006EFF 0%, #0055CC 50%, #003D99 100%);
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10;
+  box-shadow: 0 0 60px rgba(0,110,255,0.35);
+}
+.hex-center::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  background: linear-gradient(135deg, rgba(0,110,255,0.6), rgba(79,70,229,0.3));
+  z-index: -1;
+}
+.hex-center-text {
+  font-family: 'Codec Pro', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0 20px;
+}
+
+/* Connector lines from center to nodes */
+.hex-connector {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(0,110,255,0.45) 0%, rgba(0,110,255,0.20) 100%);
+  transform-origin: 0% 50%;
+  z-index: 1;
+}
+.hex-connector.active {
+  background: linear-gradient(90deg, rgba(0,110,255,0.7) 0%, rgba(0,110,255,0.35) 100%);
+  height: 2.5px;
+}
+
+/* Outer node */
+.hex-node {
+  position: absolute;
+  width: 110px; height: 110px;
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  display: flex; align-items: center; justify-content: center; flex-direction: column;
+  cursor: pointer;
+  transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 5;
+}
+.hex-node-inner {
+  width: 100%; height: 100%;
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex; align-items: center; justify-content: center; flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: none;
+}
+.hex-node::before {
+  content: '';
+  position: absolute;
+  inset: -2.5px;
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  background: linear-gradient(135deg, rgba(0,110,255,0.25), rgba(79,70,229,0.15));
+  z-index: -1;
+  transition: all 0.45s;
+}
+.hex-node:hover::before {
+  background: linear-gradient(135deg, rgba(0,110,255,0.5), rgba(79,70,229,0.3));
+}
+.hex-node:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 8px 24px rgba(0,110,255,0.2));
+}
+.hex-node.active::before {
+  background: linear-gradient(135deg, #006EFF, #4F46E5);
+  inset: -3.5px;
+}
+.hex-node.active {
+  transform: scale(1.14);
+  filter: drop-shadow(0 8px 28px rgba(0,110,255,0.40)) drop-shadow(0 0 12px rgba(0,110,255,0.2));
+}
+.hex-node.active .hex-node-inner {
+  background: linear-gradient(135deg, rgba(255,255,255,0.97), rgba(240,245,255,0.95));
+}
+.hex-node-num {
+  font-family: 'Codec Pro', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  background: linear-gradient(135deg, #006EFF, #4F46E5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+.hex-node-label {
+  font-family: 'Codec Pro', sans-serif;
+  font-weight: 700;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #111;
+  text-align: center;
+  line-height: 1.3;
+  max-width: 80px;
+}
+.hex-node.active .hex-node-label {
+  color: #006EFF;
+}
+
+/* Pulse ring on active node */
+.hex-node.active::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  background: transparent;
+  border: 1.5px solid rgba(0,110,255,0.15);
+  animation: hexPulse 2s ease-in-out infinite;
+}
+@keyframes hexPulse {
+  0%, 100% { opacity: 0.4; inset: -10px; }
+  50% { opacity: 0; inset: -20px; }
+}
+
+/* ============================================
+   3-CARD SLIDESHOW
+   ============================================ */
+.fw-slideshow {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.fw-slide-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 200%; /* 2 slides side by side */
+}
+.fw-slide-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 50%; /* each group = half the track = full slideshow width */
+  padding: 8px 4px;
+  box-sizing: border-box;
+}
+
+/* Individual slideshow card */
+.fw-card {
+  position: relative;
+  background: rgba(255,255,255,0.80);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(0,110,255,0.12);
+  border-radius: 20px;
+  padding: 36px 28px 32px;
+  cursor: pointer;
+  transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+.fw-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(0,110,255,0.04), rgba(79,70,229,0.02));
+  transition: opacity 0.4s;
+}
+.fw-card:hover {
+  border-color: rgba(0,110,255,0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,110,255,0.12), 0 4px 12px rgba(0,0,0,0.04);
+}
+.fw-card.active {
+  border-color: var(--card-color, #006EFF);
+  box-shadow:
+    0 0 0 1px var(--card-color, #006EFF),
+    0 16px 48px rgba(0,110,255,0.18),
+    0 4px 12px rgba(0,0,0,0.06);
+  transform: translateY(-6px);
+}
+.fw-card.active::before {
+  background: linear-gradient(135deg, rgba(0,110,255,0.08), rgba(79,70,229,0.04));
+}
+
+/* Card number badge */
+.fw-card-num {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--card-color, #006EFF), color-mix(in srgb, var(--card-color, #006EFF) 70%, #4F46E5));
+  color: white;
+  font-family: 'Codec Pro', sans-serif;
+  font-weight: 800; font-size: 13px;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--card-color, #006EFF) 30%, transparent);
+}
+
+/* Card icon */
+.fw-card-icon {
+  position: absolute;
+  top: 28px; right: 24px;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--card-color, #006EFF) 8%, white);
+  color: var(--card-color, #006EFF);
+  transition: all 0.4s;
+}
+.fw-card-icon svg {
+  width: 20px; height: 20px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+.fw-card.active .fw-card-icon {
+  background: var(--card-color, #006EFF);
+  color: white;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--card-color, #006EFF) 35%, transparent);
+}
+
+/* Card title */
+.fw-card-title {
+  font-family: 'Codec Pro', sans-serif;
+  font-weight: 700; font-size: 18px;
+  color: var(--card-color, #006EFF);
+  line-height: 1.3;
+  margin-bottom: 12px;
+  padding-right: 48px;
+}
+
+/* Card description — always visible in slideshow */
+.fw-card-desc {
+  font-size: 15px; line-height: 1.7;
+  color: #5A6A7C;
+}
+
+/* Active indicator line */
+.fw-card-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: var(--card-color, #006EFF);
+  border-radius: 20px 20px 0 0;
+  transform: scaleX(0);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: left;
+}
+.fw-card.active .fw-card-bar {
+  transform: scaleX(1);
+}
+
+/* Slideshow navigation */
+.fw-slide-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+.fw-slide-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: rgba(0,110,255,0.15);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.fw-slide-dot.active {
+  background: #006EFF;
+  border-color: rgba(0,110,255,0.3);
+  box-shadow: 0 0 12px rgba(0,110,255,0.3);
+  transform: scale(1.2);
+}
+.fw-slide-dot:hover {
+  background: rgba(0,110,255,0.4);
+}
+.fw-slide-arrow {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(0,110,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #006EFF;
+}
+.fw-slide-arrow:hover {
+  background: #006EFF;
+  color: white;
+  border-color: #006EFF;
+  box-shadow: 0 4px 16px rgba(0,110,255,0.25);
+}
+.fw-slide-arrow svg {
+  width: 18px; height: 18px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* Progress bar under slideshow */
+.fw-slide-progress {
+  width: 200px;
+  height: 3px;
+  background: rgba(0,110,255,0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0 8px;
+}
+.fw-slide-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #006EFF, #4F46E5);
+  border-radius: 3px;
+  width: 0;
+}
+.fw-slide-progress-bar.animating {
+  animation: slideProgress 6s linear forwards;
+}
+@keyframes slideProgress {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+  .hex-hub { width: 420px; height: 420px; }
+  .hex-center { width: 120px; height: 120px; }
+  .hex-center-text { font-size: 9px; letter-spacing: 1.5px; }
+  .hex-node { width: 85px; height: 85px; }
+  .hex-node-num { font-size: 15px; }
+  .hex-node-label { font-size: 8px; max-width: 65px; }
+  .fw-slide-group { gap: 16px; }
+}
+@media (max-width: 600px) {
+  .method { padding: 80px 0; }
+  .hex-hub { width: 340px; height: 340px; }
+  .hex-center { width: 100px; height: 100px; }
+  .hex-center-text { font-size: 8px; letter-spacing: 1px; padding: 0 14px; }
+  .hex-node { width: 70px; height: 70px; }
+  .hex-node-num { font-size: 13px; }
+  .hex-node-label { font-size: 7px; max-width: 55px; }
+  .fw-slide-group {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .fw-card { padding: 28px 24px 24px; }
+  .fw-card-title { font-size: 16px; }
+}
+
+/* ============================================
+   HOW IT WORKS SECTION
+   ============================================ */
+.how-it-works {
+  padding: 120px 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, #0A1628 8%, #0D1B2E 50%, #0A1628 92%, #FFFFFF 100%);
+  position: relative;
+  overflow: hidden;
+}
+.how-it-works::before {
+  content: '';
+  position: absolute;
+  top: 15%; left: 50%; transform: translateX(-50%);
+  width: 900px; height: 500px;
+  background: radial-gradient(circle, rgba(0,110,255,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.how-it-works-header { text-align: center; margin-bottom: 72px; position: relative; z-index: 1; }
+.how-it-works-header .section-title { color: #FFFFFF; }
+.how-it-works-header .section-subtitle { color: rgba(255,255,255,0.72); }
+.how-it-works-header .eyebrow { color: #338BFF; }
+
+.how-it-works-steps {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Glass card for each step */
+.how-step {
+  flex: 1;
+  text-align: center;
+  padding: 40px 28px 36px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+.how-step::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(0,110,255,0.06) 0%, rgba(79,70,229,0.03) 100%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.how-step:hover {
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(0,110,255,0.25);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0,110,255,0.15), 0 0 0 1px rgba(0,110,255,0.1);
+}
+.how-step:hover::before { opacity: 1; }
+
+/* Step number badge */
+.how-step-num {
+  width: 60px; height: 60px;
+  margin: 0 auto 22px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--step-color, #006EFF), color-mix(in srgb, var(--step-color, #006EFF) 70%, #4F46E5));
+  color: #fff;
+  font-family: 'Codec Pro', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  box-shadow: 0 6px 24px color-mix(in srgb, var(--step-color, #006EFF) 35%, transparent);
+  position: relative;
+  z-index: 1;
+}
+
+/* Step title — colored per step */
+.how-step h3 {
+  font-family: 'Codec Pro', sans-serif;
+  font-weight: 700;
+  font-size: 21px;
+  color: var(--step-color, #FFFFFF);
+  margin-bottom: 14px;
+  position: relative; z-index: 1;
+  text-shadow: 0 0 20px color-mix(in srgb, var(--step-color, #006EFF) 30%, transparent);
+}
+
+/* Step description — brighter for readability */
+.how-step p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.72);
+  position: relative; z-index: 1;
+}
+
+/* Connector arrows between steps */
+.how-step-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  margin-top: 0;
+  align-self: center;
+}
+.how-step-line svg {
+  width: 28px; height: 28px;
+  stroke: rgba(59,158,255,0.55);
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px rgba(0,110,255,0.3));
+}
+
+@media (max-width: 768px) {
+  .how-it-works { padding: 80px 0; }
+  .how-it-works-steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .how-step { padding: 32px 24px 28px; max-width: 420px; width: 100%; }
+  .how-step-line {
+    width: auto; height: auto;
+    transform: rotate(90deg);
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     1. FIXED NAVIGATION
+     ============================================ -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="assets/e-teacher-logo-dark.png" alt="eTeacher Group" class="nav-logo-img">
+      <span class="nav-logo-suffix">Longevity Life Academy</span>
+    </a>
+    <div class="nav-links">
+      <a href="#journey">Curriculum</a>
+      <a href="#teachers">Instructors</a>
+      <a href="#faq">FAQ</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#final-cta" class="nav-cta">Apply Now</a>
+    </div>
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="#journey" onclick="closeMobileMenu()">Curriculum</a>
+  <a href="#teachers" onclick="closeMobileMenu()">Instructors</a>
+  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="#testimonials" onclick="closeMobileMenu()">Testimonials</a>
+  <a href="#final-cta" class="nav-cta" onclick="closeMobileMenu()" style="text-align:center; display:block; margin-top: 8px;">Apply Now</a>
+</div>
+
+<!-- ============================================
+     2. HERO SECTION
+     ============================================ -->
+<section class="hero" id="hero">
+  <video class="hero-video-bg" autoplay muted loop playsinline poster="assets/img-metabolic.jpg">
+    <source src="assets/hero-light-bg.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      LIVE ONLINE COURSE <span class="dot"></span> 12 WEEKS <span class="dot"></span> NEXT COHORT ENROLLING
+    </div>
+    <h1 class="hero-headline">The Science of Aging Has <em>Outpaced Your Doctor</em></h1>
+
+    <!-- Trustpilot Badge -->
+    <div class="hero-trustpilot">
+      <span class="tp-logo-text">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26" fill="#00B67A"/></svg>
+        <span class="tp-logo-word">Trustpilot</span>
+      </span>
+      <span class="tp-divider"></span>
+      <div class="tp-stars">
+        <span class="tp-star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span>
+        <span class="tp-star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span>
+        <span class="tp-star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span>
+        <span class="tp-star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span>
+        <span class="tp-star" style="opacity:0.5"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span>
+      </div>
+      <span class="tp-rating"><strong>4.6/5</strong> · Based on 600+ reviews</span>
+    </div>
+
+    <p class="hero-sub">12 live sessions with leading longevity scientists and clinicians. Not the introduction — the deep dive your podcast listening has been preparing you for. Built for people who already track biomarkers and want to go deeper.</p>
+    <form class="hero-form" onsubmit="handleFormSubmit(event, this)">
+      <input type="email" placeholder="Enter your email address" required aria-label="Email address">
+      <button type="submit">Apply to Join →</button>
+    </form>
+    <div class="hero-pills">
+      <div class="hero-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+        12 Sessions
+      </div>
+      <div class="hero-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        90 Min Each
+      </div>
+      <div class="hero-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        8–15 Participants
+      </div>
+      <div class="hero-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+        Expert-Led
+      </div>
+      <div class="hero-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        Certificate
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- ============================================
+     3b. WHAT YOU’LL LEARN
+     ============================================ -->
+<section class="outcomes" id="outcomes">
+  <div class="container">
+    <div class="outcomes-header reveal">
+      <p class="eyebrow" style="margin-bottom: 16px;">What You'll Learn</p>
+      <h2 class="section-title">Five Skills That<br>Change How You Age</h2>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcomes-card reveal">
+        <div class="outcomes-card-bg"><img src="assets/outcome-bg-01.jpg" alt="Bloodwork markers"></div>
+        <div class="outcomes-card-overlay"></div>
+        <div class="outcomes-card-glass">
+          <div class="outcomes-card-num">01</div>
+          <div class="outcomes-card-title">Read Your Own Blood</div>
+          <p class="outcomes-card-desc">Most people wait for their doctor to tell them something is wrong. Learn how to interpret your own glucose data, metabolic markers, and health signals before they become problems.</p>
+        </div>
+      </div>
+      <div class="outcomes-card reveal reveal-delay-1">
+        <div class="outcomes-card-bg"><img src="assets/outcome-bg-02.jpg" alt="DNA molecular structure"></div>
+        <div class="outcomes-card-overlay"></div>
+        <div class="outcomes-card-glass">
+          <div class="outcomes-card-num">02</div>
+          <div class="outcomes-card-title">Build Your Protocol</div>
+          <p class="outcomes-card-desc">There is no one-size-fits-all approach to longevity. You will leave this course with a personalized plan built around your body, your lifestyle, and your specific goals.</p>
+        </div>
+      </div>
+      <div class="outcomes-card reveal reveal-delay-2">
+        <div class="outcomes-card-bg"><img src="assets/outcome-bg-04.jpg" alt="Heart cardiovascular"></div>
+        <div class="outcomes-card-overlay"></div>
+        <div class="outcomes-card-glass">
+          <div class="outcomes-card-num">03</div>
+          <div class="outcomes-card-title">Move With Purpose</div>
+          <p class="outcomes-card-desc">Exercise is not about burning calories — it is about preserving muscle, protecting your brain, and keeping your metabolism sharp. Learn the minimum effective dose that actually moves the needle.</p>
+        </div>
+      </div>
+      <div class="outcomes-card reveal reveal-delay-1">
+        <div class="outcomes-card-bg"><img src="assets/outcome-bg-05.jpg" alt="Molecular compounds"></div>
+        <div class="outcomes-card-overlay"></div>
+        <div class="outcomes-card-glass">
+          <div class="outcomes-card-num">04</div>
+          <div class="outcomes-card-title">Know What Is Worth Your Attention</div>
+          <p class="outcomes-card-desc">The longevity space is full of noise — supplements, wearables, biohacks, and contradictory advice. You will learn a clear decision filter for what actually works and what is just marketing.</p>
+        </div>
+      </div>
+      <div class="outcomes-card reveal reveal-delay-2">
+        <div class="outcomes-card-bg"><img src="assets/outcome-bg-06-sleep.jpg" alt="Man sleeping peacefully"></div>
+        <div class="outcomes-card-overlay"></div>
+        <div class="outcomes-card-glass">
+          <div class="outcomes-card-num">05</div>
+          <div class="outcomes-card-title">Master Sleep and Stress</div>
+          <p class="outcomes-card-desc">Poor sleep and chronic stress are two of the fastest ways to accelerate aging. Understand the science behind both and get practical tools you can use starting tonight.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     4. OUR SCIENCE-BACKED TEACHING METHOD
+     ============================================ -->
+<section class="method" id="method">
+  <div class="container-wide">
+    <div class="method-header reveal">
+      <p class="eyebrow" style="margin-bottom: 16px;">How We Teach</p>
+      <h2 class="section-title">The Longevity Life Academy<br><span class="gold">Learning Framework</span></h2>
+      <p class="section-subtitle" style="margin: 0 auto;">A structured, six-pillar methodology refined over 20+ years of live online education — applied to the science of human longevity.</p>
+    </div>
+
+    <!-- Hexagonal Hub Diagram -->
+    <div class="hex-hub reveal" id="hexHub">
+      <!-- Center hexagon -->
+      <div class="hex-center">
+        <div class="hex-center-text">Your<br>Longevity<br>Protocol</div>
+      </div>
+      <!-- Connector lines (positioned via JS) -->
+      <div class="hex-connector" id="hConn0"></div>
+      <div class="hex-connector" id="hConn1"></div>
+      <div class="hex-connector" id="hConn2"></div>
+      <div class="hex-connector" id="hConn3"></div>
+      <div class="hex-connector" id="hConn4"></div>
+      <div class="hex-connector" id="hConn5"></div>
+      <!-- 6 outer hexagonal nodes -->
+      <div class="hex-node active" data-idx="0" id="hNode0">
+        <div class="hex-node-inner">
+          <div class="hex-node-num">01</div>
+          <div class="hex-node-label">Live Small Cohorts</div>
+        </div>
+      </div>
+      <div class="hex-node" data-idx="1" id="hNode1">
+        <div class="hex-node-inner">
+          <div class="hex-node-num">02</div>
+          <div class="hex-node-label">Clinician Curriculum</div>
+        </div>
+      </div>
+      <div class="hex-node" data-idx="2" id="hNode2">
+        <div class="hex-node-inner">
+          <div class="hex-node-num">03</div>
+          <div class="hex-node-label">Protocol-First</div>
+        </div>
+      </div>
+      <div class="hex-node" data-idx="3" id="hNode3">
+        <div class="hex-node-inner">
+          <div class="hex-node-num">04</div>
+          <div class="hex-node-label">Between-Session Labs</div>
+        </div>
+      </div>
+      <div class="hex-node" data-idx="4" id="hNode4">
+        <div class="hex-node-inner">
+          <div class="hex-node-num">05</div>
+          <div class="hex-node-label">20+ Years Proven</div>
+        </div>
+      </div>
+      <div class="hex-node" data-idx="5" id="hNode5">
+        <div class="hex-node-inner">
+          <div class="hex-node-num">06</div>
+          <div class="hex-node-label">Certificate</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3-Card Slideshow -->
+    <div class="fw-slideshow reveal" id="fwSlideshow">
+      <div class="fw-slide-track" id="fwTrack">
+        <!-- Group 1: Cards 1-3 -->
+        <div class="fw-slide-group">
+          <div class="fw-card active" data-index="0" style="--card-color:#006EFF">
+            <div class="fw-card-bar"></div>
+            <div class="fw-card-num">01</div>
+            <div class="fw-card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <div class="fw-card-title">Live Sessions, Small Cohorts</div>
+            <p class="fw-card-desc">8–15 students per group. Real-time video with live Q&A — not a webinar. You engage directly with instructors and peers every single session.</p>
+          </div>
+          <div class="fw-card" data-index="1" style="--card-color:#4F46E5">
+            <div class="fw-card-bar"></div>
+            <div class="fw-card-num">02</div>
+            <div class="fw-card-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
+            <div class="fw-card-title">Clinician-Designed Curriculum</div>
+            <p class="fw-card-desc">Every session is grounded in peer-reviewed research and real clinical practice. Built with longevity physicians and scientists.</p>
+          </div>
+          <div class="fw-card" data-index="2" style="--card-color:#0891B2">
+            <div class="fw-card-bar"></div>
+            <div class="fw-card-num">03</div>
+            <div class="fw-card-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <div class="fw-card-title">Protocol-First Learning</div>
+            <p class="fw-card-desc">Leave each session with a specific, implementable protocol. Apply it to your own glucose data, bloodwork, and training metrics.</p>
+          </div>
+        </div>
+        <!-- Group 2: Cards 4-6 -->
+        <div class="fw-slide-group">
+          <div class="fw-card" data-index="3" style="--card-color:#0284C7">
+            <div class="fw-card-bar"></div>
+            <div class="fw-card-num">04</div>
+            <div class="fw-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="fw-card-title">Between-Session Experiments</div>
+            <p class="fw-card-desc">Real learning happens between classes. Track your biomarkers, test protocols on yourself, and bring results back for guided analysis.</p>
+          </div>
+          <div class="fw-card" data-index="4" style="--card-color:#2563EB">
+            <div class="fw-card-bar"></div>
+            <div class="fw-card-num">05</div>
+            <div class="fw-card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="fw-card-title">20+ Years of Proven Pedagogy</div>
+            <p class="fw-card-desc">Powered by the same live-learning technology trusted by 400,000+ students, 600+ instructors, and 5 online schools worldwide.</p>
+          </div>
+          <div class="fw-card" data-index="5" style="--card-color:#1E40AF">
+            <div class="fw-card-bar"></div>
+            <div class="fw-card-num">06</div>
+            <div class="fw-card-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg></div>
+            <div class="fw-card-title">Certificate of Completion</div>
+            <p class="fw-card-desc">Graduate with a verified certificate from Longevity Life Academy. 12 weeks of immersive, evidence-based training in longevity science.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Navigation -->
+      <div class="fw-slide-nav">
+        <div class="fw-slide-arrow" id="fwPrev"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div>
+        <div class="fw-slide-dot active" data-slide="0"></div>
+        <div class="fw-slide-progress"><div class="fw-slide-progress-bar animating" id="fwProgressBar"></div></div>
+        <div class="fw-slide-dot" data-slide="1"></div>
+        <div class="fw-slide-arrow" id="fwNext"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============================================
+     6. CURRICULUM — 4 Phases + Session Dropdowns
+     ============================================ -->
+<section class="curriculum" id="journey">
+  <div class="container">
+    <div class="curriculum-header reveal">
+      <p class="curriculum-bridge">From metabolic foundations to your personal longevity protocol</p>
+      <p class="eyebrow" style="margin-bottom: 16px;">The Complete Protocol</p>
+      <h2 class="section-title">12 Sessions. 12 Weeks.<br>One Complete <span class="gold">Operating System</span>.</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">Each 90-minute session builds on the last. Live instruction, cohort discussion, hands-on protocols, and between-session experiments designed to make the science stick in your biology — not just your notes.</p>
+    </div>
+    <div class="curriculum-phases">
+
+      <!-- PHASE 1: Foundation -->
+      <div class="phase-block reveal">
+        <div class="phase-block-header">
+          <span class="phase-block-label">Phase 1 · Sessions 1–3</span>
+          <span class="phase-block-name">Foundation</span>
+        </div>
+        <div class="phase-block-sessions">
+          <div class="curriculum-item" data-session="1">
+            <button class="curriculum-trigger" onclick="toggleCurriculum(this)">
+              <span class="curriculum-num">01</span>
+              <div class="curriculum-trigger-text">
+                <h3>Reframing Aging: From Disease Avoidance to Healthspan Design</h3>
+              </div>
+              <svg class="curriculum-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="curriculum-body">
+              <div class="curriculum-body-inner">
+                <div class="curriculum-section-label">Learning Goals</div>
+                <ul class="curriculum-goals">
+                  <li>Understand aging as a modifiable trajectory, not a fixed decline</li>
+                  <li>Articulate your personal healthspan goals with clarity and specificity</li>
+                  <li>Shift mindset from fixing problems to designing resilient systems</li>
+                </ul>
+                <div class="curriculum-section-label">90-Minute Flow</div>
+                <p class="curriculum-flow">Welcome + framing → Mini-lecture on the biology of aging → Guided personal reflection → Breakout group introductions → Group synthesis and discussion → Introduction to the "Longevity Lens" framework</p>
+                <div class="curriculum-section-label">Between-Session Work</div>
+                <p class="curriculum-work">Complete a 3-day lifestyle awareness log tracking energy, meals, sleep, movement, and mood patterns.</p>
+              </div>
+            </div>
+          </div>
+          <div class="curriculum-item" data-session="2">
+            <button class="curriculum-trigger" onclick="toggleCurriculum(this)">
+              <span class="curriculum-num">02</span>
+              <div class="curriculum-trigger-text">
+                <h3>Metabolic Health: Why Blood Sugar Is the Central Signal</h3>
+              </div>
+              <svg class="curriculum-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="curriculum-body">
+              <div class="curriculum-body-inner">
+                <div class="curriculum-section-label">Learning Goals</div>
+                <ul class="curriculum-goals">
+                  <li>Understand glucose as a signal, not a villain — and why it matters for aging</li>
+                  <li>See how metabolic dysfunction develops silently over years</li>
+                  <li>Understand why weight alone is a poor marker of metabolic health</li>
+                </ul>
+                <div class="curriculum-section-label">90-Minute Flow</div>
+                <p class="curriculum-flow">Review lifestyle logs → Visual walkthrough of glucose curves → Case comparisons (healthy vs. dysregulated) → Myth dismantling session → CGM preview and introduction</p>
+                <div class="curriculum-section-label">Between-Session Work</div>
+                <p class="curriculum-work">Complete a detailed food recall and energy crash mapping exercise — identify when you crash, what you ate, and how you felt.</p>
+              </div>
+            </div>
+          </div>
+          <div class="curriculum-item" data-session="3">
+            <button class="curriculum-trigger" onclick="toggleCurriculum(this)">
+              <span class="curriculum-num">03</span>
+              <div class="curriculum-trigger-text">
+                <h3>Nutrition for Longevity: Inputs vs. Responses</h3>
+              </div>
+              <svg class="curriculum-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="curriculum-body">
+              <div class="curriculum-body-inner">
+                <div class="curriculum-section-label">Learning Goals</div>
+                <ul class="curriculum-goals">
+                  <li>Stop thinking in dietary rules; start thinking in metabolic responses</li>
+                  <li>Understand how protein, fiber, and fat processing affects glucose</li>
+                  <li>Design a default meal framework personalized to your biology</li>
+                </ul>
+                <div class="curriculum-section-label">90-Minute Flow</div>
+                <p class="curriculum-flow">Interactive lecture on nutrient responses → Meal deconstruction exercise → Group comparison of individual responses → Design your default meal framework</p>
+                <div class="curriculum-section-label">Between-Session Work</div>
+                <p class="curriculum-work">Try 1–2 meal adjustments based on your framework and document the results in your learning journal.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 2: Data & Discovery -->
+      <div class="phase-block reveal">
+        <div class="phase-block-header">
+          <span class="phase-block-label">Phase 2 · Sessions 4–5</span>
+          <span class="phase-block-name">Data &amp; Discovery</span>
+        </div>
+        <div class="phase-block-sessions">
+          <div class="curriculum-item" data-session="4">
+            <button class="curriculum-trigger" onclick="toggleCurriculum(this)">
+              <span class="curriculum-num">04</span>
+              <div class="curriculum-trigger-text">
+                <h3>Beyond the Standard Lipid Panel: Seeing the Invisible</h3>
+              </div>
+              <svg class="curriculum-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="curriculum-body">
+              <div class="curriculum-body-inner">
+                <div class="curriculum-section-label">Learning Goals</div>
+                <ul class="curriculum-goals">
+                  <li>Understand how CGM technology works and what it measures</li>
+                  <li>Learn what the data actually means — spikes, variability, baselines</li>
+                  <li>Reduce anxiety around numbers and develop a healthy data relationship</li>
+                </ul>
+                <div class="curriculum-section-label">90-Minute Flow</div>
+                <p class="curriculum-flow">CGM fundamentals lecture → Walk through real anonymized datasets → Group interpretation exercises → CGM setup guidance for those using devices</p>
+                <div class="curriculum-section-label">Between-Session Work</div>
+                <p class="curriculum-work">Begin your CGM experiment or review provided anonymized datasets. Record observations about your own patterns.</p>
+              </div>
+            </div>
+          </div>
+          <div class="curriculum-item" data-session="5">
+            <button class="curriculum-trigger" onclick="toggleCurriculum(this)">
+              <span class="curriculum-num">05</span>
+              <div class="curriculum-trigger-text">
+                <h3>Food Order, Composition &amp; Glucose Curves</h3>
+              </div>
+              <svg class="curriculum-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="curriculum-body">
+              <div class="curriculum-body-inner">
+                <div class="curriculum-section-label">Learning Goals</div>
+                <ul class="curriculum-goals">
+                  <li>Learn how eating sequence (food order) materially impacts glucose response</li>
+                  <li>Understand carbohydrate context — why the same carb acts differently in different meals</li>
+                  <li>Reduce glucose spikes without restriction or deprivation</li>
+                </ul>
+                <div class="curriculum-section-label">90-Minute Flow</div>
+                <p class="curriculum-flow">Share CGM observations from the week → Facilitator-guided curve comparison → Design safe food experiments → Expectation-setting for realistic progress</p>
+                <div class="curriculum-section-label">Between-Session Work</div>
+                <p class="curriculum-work">Run individual food experiments — try different meal orders, compositions, and timings. Document results with CGM data or subjective energy tracking.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 3: Lifestyle Systems -->
+      <div class="phase-block reveal">
+        <div class="phase-block-header">
+          <span class="phase-block-label">Phase 3 · Sessions 6–8</span>
+          <span class="phase-block-name">Lifestyle Systems</span>
+        </div>
+        <div class="phase-block-sessions">
+          <div class="curriculum-item" data-session="6">
+            <button class="curriculum-trigger" onclick="toggleCurriculum(this)">
+              <span class="curriculum-num">06</span>
+              <div class="curriculum-trigger-text">
+                <h3>Training for the Centenarian Olympics</h3>
+              </div>
+              <svg class="curriculum-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="curriculum-body">
+              <div class="curriculum-body-inner">
+                <div class="curriculum-section-label">Learning Goals</div>
+                <ul class="curriculum-goals">
+                  <li>Understand muscle as the body's primary glucose sink</li>
+                  <li>Learn the minimum effective dose of movement for metabolic benefit</li>
+                  <li>Design a sustainable, age-appropriate movement plan</li>
+                </ul>
+                <div class="curriculum-section-label">90-Minute Flow</div>
+                <p class="curriculum-flow">CGM examples with and without post-meal movement → Movement planning workshop → Peer review of individual plans → Commitment check-in</p>
+                <div class="curriculum-section-label">Between-Session Work</div>
+                <p class="curriculum-work">Run movement experiments with CGM tracking — compare glucose curves on days with and without post-meal walks or resistance training.</p>
+              </div>
+            </div>
+          </div>
+          <div class="curriculum-item" data-session="7">
+            <button class="curriculum-trigger" onclick="toggleCurriculum(this)">
+              <span class="curriculum-num">07</span>
+              <div class="curriculum-trigger-text">
+                <h3>Sleep, Circadian Rhythm &amp; Overnight Glucose</h3>
+              </div>
+              <svg class="curriculum-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="curriculum-body">
+              <div class="curriculum-body-inner">
+                <div class="curriculum-section-label">Learning Goals</div>
+                <ul class="curriculum-goals">
+                  <li>See sleep as a metabolic regulation system, not just rest</li>
+                  <li>Understand the effects of late eating, blue light, and irregular schedules on glucose</li>
+                  <li>Design one targeted sleep experiment based on your data</li>
+                </ul>
+                <div class="curriculum-section-label">90-Minute Flow</div>
+                <p class="curriculum-flow">Overnight CGM data review → Sleep habit audit → Troubleshooting workshop for common sleep disruptors → Design your personal sleep experiment</p>
+                <div class="curriculum-section-label">Between-Session Work</div>
+                <p class="curriculum-work">Run your sleep experiment for one week — track bedtime, wake time, late eating, screen exposure, and overnight glucose patterns.</p>
+              </div>
+            </div>
+          </div>
+          <div class="curriculum-item" data-session="8">
+            <button class="curriculum-trigger" onclick="toggleCurriculum(this)">
+              <span class="curriculum-num">08</span>
+              <div class="curriculum-trigger-text">
+                <h3>Stress, Emotions &amp; Non-Food Glucose Spikes</h3>
+              </div>
+              <svg class="curriculum-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="curriculum-body">
+              <div class="curriculum-body-inner">
+                <div class="curriculum-section-label">Learning Goals</div>
+                <ul class="curriculum-goals">
+                  <li>Recognize that emotions and stress cause measurable glucose spikes — without any food</li>
+                  <li>Learn evidence-based nervous system regulation tools</li>
+                  <li>Map your personal stress triggers and build a regulation plan</li>
+                </ul>
+                <div class="curriculum-section-label">90-Minute Flow</div>
+                <p class="curriculum-flow">CGM stress spike examples → Guided nervous system regulation exercise → Personal trigger mapping → Design your regulation toolkit</p>
+                <div class="curriculum-section-label">Between-Session Work</div>
+                <p class="curriculum-work">Practice your chosen stress regulation technique daily. Note any glucose changes during stressful events vs. calm periods.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 4: Integration -->
+      <div class="phase-block reveal">
+        <div class="phase-block-header">
+          <span class="phase-block-label">Phase 4 · Sessions 9–12</span>
+          <span class="phase-block-name">Integration</span>
+        </div>
+        <div class="phase-block-sessions">
+          <div class="curriculum-item" data-session="9">
+            <button class="curriculum-trigger" onclick="toggleCurriculum(this)">
+              <span class="curriculum-num">09</span>
+              <div class="curriculum-trigger-text">
+                <h3>Supplements, Tests &amp; Health Tech Literacy</h3>
+              </div>
+              <svg class="curriculum-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="curriculum-body">
+              <div class="curriculum-body-inner">
+                <div class="curriculum-section-label">Learning Goals</div>
+                <ul class="curriculum-goals">
+                  <li>Avoid biohacking traps and expensive interventions with no evidence</li>
+                  <li>Learn decision filters for evaluating supplements, tests, and wearable data</li>
+                  <li>Develop critical thinking about health marketing claims</li>
+                </ul>
+                <div class="curriculum-section-label">90-Minute Flow</div>
+                <p class="curriculum-flow">Supplement label teardown exercise → Wearable data obsession discussion → Practice applying the decision framework to real products → Group debate</p>
+                <div class="curriculum-section-label">Between-Session Work</div>
+                <p class="curriculum-work">Conduct a personal supplement audit — evaluate everything you currently take against the decision framework. Cut what doesn't pass.</p>
+              </div>
+            </div>
+          </div>
+          <div class="curriculum-item" data-session="10">
+            <button class="curriculum-trigger" onclick="toggleCurriculum(this)">
+              <span class="curriculum-num">10</span>
+              <div class="curriculum-trigger-text">
+                <h3>Social Health, Purpose &amp; Longevity</h3>
+              </div>
+              <svg class="curriculum-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="curriculum-body">
+              <div class="curriculum-body-inner">
+                <div class="curriculum-section-label">Learning Goals</div>
+                <ul class="curriculum-goals">
+                  <li>Understand the psychosocial predictors of healthy aging — loneliness, purpose, community</li>
+                  <li>Recognize that social connection is as impactful as diet and exercise</li>
+                  <li>Design intentional social habits that support your healthspan</li>
+                </ul>
+                <div class="curriculum-section-label">90-Minute Flow</div>
+                <p class="curriculum-flow">Research review on social health and longevity → Values reflection exercise → Social habit design workshop → Accountability pairing</p>
+                <div class="curriculum-section-label">Between-Session Work</div>
+                <p class="curriculum-work">Complete a social connection inventory — map your relationships, identify gaps, and initiate one new or renewed connection this week.</p>
+              </div>
+            </div>
+          </div>
+          <div class="curriculum-item" data-session="11">
+            <button class="curriculum-trigger" onclick="toggleCurriculum(this)">
+              <span class="curriculum-num">11</span>
+              <div class="curriculum-trigger-text">
+                <h3>Personal Longevity Blueprint</h3>
+              </div>
+              <svg class="curriculum-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="curriculum-body">
+              <div class="curriculum-body-inner">
+                <div class="curriculum-section-label">Learning Goals</div>
+                <ul class="curriculum-goals">
+                  <li>Integrate all 10 sessions into a coherent, sustainable personal plan</li>
+                  <li>Build a realistic blueprint without overwhelm or overcommitment</li>
+                  <li>Design your own failure recovery systems and habit stacks</li>
+                </ul>
+                <div class="curriculum-section-label">90-Minute Flow</div>
+                <p class="curriculum-flow">Blueprint construction workshop → Peer coaching sessions (paired review) → Failure planning and obstacle pre-emption → Draft sharing and feedback</p>
+                <div class="curriculum-section-label">Between-Session Work</div>
+                <p class="curriculum-work">Complete your Personal Longevity Blueprint — a comprehensive document covering nutrition, movement, sleep, stress, social health, and monitoring systems.</p>
+              </div>
+            </div>
+          </div>
+          <div class="curriculum-item" data-session="12">
+            <button class="curriculum-trigger" onclick="toggleCurriculum(this)">
+              <span class="curriculum-num">12</span>
+              <div class="curriculum-trigger-text">
+                <h3>Reflection, Integration &amp; Your Next 90 Days</h3>
+              </div>
+              <svg class="curriculum-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="curriculum-body">
+              <div class="curriculum-body-inner">
+                <div class="curriculum-section-label">Learning Goals</div>
+                <ul class="curriculum-goals">
+                  <li>Reflect on your transformation from session 1 to session 12</li>
+                  <li>Synthesize your CGM insights and behavioral experiments into lasting habits</li>
+                  <li>Build a concrete 90-day action plan for continued progress</li>
+                </ul>
+                <div class="curriculum-section-label">90-Minute Flow</div>
+                <p class="curriculum-flow">Before/after reflections → CGM insights synthesis → Commitment statements → 90-day action plan construction → Graduation and celebration</p>
+                <div class="curriculum-section-label">Final Output</div>
+                <p class="curriculum-work">Your completed Personal Longevity Blueprint + 90-Day Action Plan — two living documents that guide your healthspan journey beyond the course.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     7. WHAT MAKES THIS DIFFERENT
+     ============================================ -->
+<section class="different" id="different">
+  <div class="container-wide">
+    <div class="different-header reveal">
+      <p class="different-bridge" style="color:#fff;">Not another asynchronous course you'll half-finish</p>
+      <p class="eyebrow" style="margin-bottom: 16px;">Why This Is Different</p>
+      <h2 class="section-title">What You Won't Find<br><span class="gold">Anywhere Else</span></h2>
+      <p class="section-subtitle" style="margin: 0 auto; color: #fff;">There are podcasts, books, and self-paced courses on longevity. Here is what none of them offer.</p>
+    </div>
+    <div class="different-grid">
+      <div class="different-card reveal reveal-delay-1">
+        <div class="different-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <h3>Live, Not Recorded</h3>
+        <p>90-minute live sessions with real-time Q&A. You interact directly with instructors and your cohort — no pre-recorded lectures, no comment boxes.</p>
+      </div>
+      <div class="different-card reveal reveal-delay-2">
+        <div class="different-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+        </div>
+        <h3>Cohort, Not Audience</h3>
+        <p>8–15 people per group. Small enough for real discussion and personalized feedback. You learn with a peer group as invested as you are.</p>
+      </div>
+      <div class="different-card reveal reveal-delay-3">
+        <div class="different-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3>Protocols, Not Just Information</h3>
+        <p>Every session delivers a specific, implementable protocol. You don't just learn what the science says — you leave each week with a concrete action plan tied to your own data.</p>
+      </div>
+      <div class="different-card reveal reveal-delay-4">
+        <div class="different-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+          </svg>
+        </div>
+        <h3>Backed by 400,000+ Students</h3>
+        <p>Built on a 20+ year track record of live online education. 4.6/5 on Trustpilot. Over 600 instructors. Five schools. This is the infrastructure, applied to longevity science.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     6b. COURSE HIGHLIGHTS (Image cards)
+     ============================================ -->
+<section class="highlights" id="highlights">
+  <div class="container-wide">
+    <div class="highlights-header reveal">
+      <p class="highlights-bridge">The science most longevity podcasts only scratch the surface of</p>
+      <p class="eyebrow" style="margin-bottom: 16px;">Inside the Protocol</p>
+      <h2 class="section-title">Five Deep Dives Your<br><span class="gold">Doctor Won't Give You</span></h2>
+    </div>
+    <div class="highlights-grid">
+      <div class="highlight-card reveal">
+        <img src="assets/img-metabolic.jpg" alt="Metabolic health visualization" loading="lazy">
+        <div class="highlight-card-overlay">
+          <span class="highlight-card-tag">Sessions 2 &amp; 3</span>
+          <h3>The Glucose Problem Most Doctors Miss</h3>
+          <p>Why insulin resistance begins decades before diagnosis — and the metabolic biomarkers that predict it before your fasting glucose does.</p>
+        </div>
+      </div>
+      <div class="highlight-card reveal reveal-delay-1">
+        <img src="assets/img-cgm.jpg" alt="Continuous glucose monitor sensor" loading="lazy">
+        <div class="highlight-card-overlay">
+          <span class="highlight-card-tag">Sessions 4 &amp; 5</span>
+          <h3>Beyond the Standard Lipid Panel</h3>
+          <p>ApoB, Lp(a), hs-CRP, omega-3 index, epigenetic clocks — the biomarkers your annual physical misses and how to interpret them for your 10-year trajectory.</p>
+        </div>
+      </div>
+      <div class="highlight-card reveal reveal-delay-2">
+        <img src="assets/img-movement.jpg" alt="Movement and exercise for longevity" loading="lazy">
+        <div class="highlight-card-overlay">
+          <span class="highlight-card-tag">Session 6</span>
+          <h3>Training for the Centenarian Olympics</h3>
+          <p>Reverse-engineer your fitness from where you want to be at 80. VO2 max, muscle mass, stability — the specific protocols that preserve them.</p>
+        </div>
+      </div>
+      <div class="highlight-card reveal reveal-delay-1">
+        <img src="assets/img-sleep.jpg" alt="Sleep and circadian rhythm" loading="lazy">
+        <div class="highlight-card-overlay">
+          <span class="highlight-card-tag">Sessions 7 &amp; 8</span>
+          <h3>The Sleep Architecture Clinic</h3>
+          <p>Deep sleep, REM, circadian entrainment, HRV, cortisol timing — why optimizing sleep may be the single highest-leverage longevity intervention.</p>
+        </div>
+      </div>
+      <div class="highlight-card reveal reveal-delay-2">
+        <img src="assets/img-supplements.jpg" alt="Supplements and health tech" loading="lazy">
+        <div class="highlight-card-overlay">
+          <span class="highlight-card-tag">Sessions 9 &amp; 10</span>
+          <h3>The Evidence-Based Stack</h3>
+          <p>NMN, omega-3s, metformin, rapamycin, creatine — what the evidence actually supports, what's hype, and what's next. Signal vs. noise.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     9. HOW IT WORKS
+     ============================================ -->
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="how-it-works-header reveal">
+      <p class="eyebrow" style="margin-bottom: 16px;">Getting Started</p>
+      <h2 class="section-title">How It <span class="gold">Works</span></h2>
+      <p class="section-subtitle" style="margin: 0 auto;">From application to your personal longevity blueprint — here is the path.</p>
+    </div>
+    <div class="how-it-works-steps">
+      <div class="how-step reveal reveal-delay-1" style="--step-color:#3B9EFF">
+        <div class="how-step-num">1</div>
+        <h3>Apply</h3>
+        <p>Submit your application. We review every applicant to ensure the cohort is the right fit — serious, motivated, and ready for advanced material.</p>
+      </div>
+      <div class="how-step-line reveal"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></div>
+      <div class="how-step reveal reveal-delay-2" style="--step-color:#6E8EFF">
+        <div class="how-step-num">2</div>
+        <h3>Get Matched to a Cohort</h3>
+        <p>Once accepted, you’re placed into a cohort of 8–15 peers. Choose a schedule that works — sessions run weekly for 12 weeks.</p>
+      </div>
+      <div class="how-step-line reveal"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></div>
+      <div class="how-step reveal reveal-delay-3" style="--step-color:#22C1E3">
+        <div class="how-step-num">3</div>
+        <h3>Learn Live, Apply Weekly</h3>
+        <p>Attend 90-minute live sessions. Each week covers a new topic with hands-on protocols you apply to your own data.</p>
+      </div>
+      <div class="how-step-line reveal"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></div>
+      <div class="how-step reveal reveal-delay-4" style="--step-color:#5B8AFF">
+        <div class="how-step-num">4</div>
+        <h3>Graduate with Your Blueprint</h3>
+        <p>Complete the course with a personalized longevity protocol, a certificate, and lifetime access to recordings and the alumni community.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============================================
+     8. INSTRUCTORS (YOUR FACULTY)
+     ============================================ -->
+<section class="teachers" id="teachers">
+  <div class="container">
+    <div class="teachers-header reveal">
+      <p class="teachers-bridge">The faculty practicing Medicine 3.0</p>
+      <p class="eyebrow" style="margin-bottom: 16px;">Your Faculty</p>
+      <h2 class="section-title">Clinicians and Researchers at the<br><span class="gold">Frontier</span> of Longevity Medicine</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">Not celebrity doctors — credible, dedicated experts who practice what the research says, work directly with you, and answer the questions your GP can't.</p>
+    </div>
+    <div class="teachers-grid">
+      <div class="teacher-card reveal reveal-delay-1">
+        <div class="teacher-avatar"><img src="assets/maya-elhalal.jpg" alt="Maya Elhalal"></div>
+        <h3 class="teacher-name">Maya Elhalal</h3>
+        <p class="teacher-role">Lead Instructor</p>
+        <p class="teacher-bio">Longevity science educator specializing in aging research, glucose management, and healthspan optimization across three continents.</p>
+      </div>
+      <div class="teacher-card reveal reveal-delay-2">
+        <div class="teacher-avatar"><img src="assets/david-barzilai.jpg" alt="David Barzilai, MD, PhD"></div>
+        <h3 class="teacher-name">David Barzilai, MD, PhD</h3>
+        <p class="teacher-role">Healthspan Coach</p>
+        <p class="teacher-bio">Physician focused on metabolic health, stress, sleep, and daily longevity habits — grounded in clinical science, not trends.</p>
+      </div>
+      <div class="teacher-card reveal reveal-delay-3">
+        <div class="teacher-avatar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:36px;height:36px"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3 class="teacher-name">Guest Faculty</h3>
+        <p class="teacher-role">Certified Coaches</p>
+        <p class="teacher-bio">Rotating longevity coaches trained in age-related biology, lifestyle optimization, and translating science into daily practice.</p>
+      </div>
+    </div>
+
+    <!-- Credential Logo Strip -->
+    <div class="credential-strip reveal">
+      <!-- Board Certified -->
+      <div class="credential-strip-logo">
+        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 2a10 10 0 110 20 10 10 0 010-20z"/></svg>
+      </div>
+      <!-- MD / PhD -->
+      <div class="credential-strip-logo">
+        <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+      </div>
+      <!-- Published Research -->
+      <div class="credential-strip-logo">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+      </div>
+      <!-- Functional Medicine -->
+      <div class="credential-strip-logo">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <!-- Clinical Practice -->
+      <div class="credential-strip-logo">
+        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+      </div>
+      <!-- Peer-Reviewed -->
+      <div class="credential-strip-logo">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     9. PLATFORM
+     ============================================ -->
+<section class="platform" id="platform">
+  <div class="container">
+    <div class="platform-header reveal">
+      <p class="platform-bridge">Built on infrastructure trusted by 400K+ learners</p>
+      <h2>Powered by Our Award-Winning Learning Platform</h2>
+      <div class="platform-tagline">Engineered for serious, self-directed learners</div>
+      <p class="platform-desc">Our proprietary platform gives you frictionless access to live sessions, recorded lectures, cohort discussions, experiment tracking, and your complete protocol library — all in one place. No friction between learning and doing.</p>
+    </div>
+    <div class="platform-logo reveal">
+      <img src="assets/e-teacher-logo-dark.png" alt="eTeacher Group" style="height: 72px; width: auto;">
+    </div>
+    <div class="platform-grid reveal" id="platformSlider">
+      <div class="platform-card">
+        <div class="platform-card-icon">
+          <svg viewBox="0 0 56 56"><rect x="6" y="8" width="30" height="38" rx="3"/><path d="M14 18h14M14 26h14M14 34h8"/><path d="M40 16v28a3 3 0 01-3 3H13"/><circle cx="44" cy="12" r="7"/><path d="M42 12l2 2 4-4"/></svg>
+        </div>
+        <h3>Course &amp; Content Library</h3>
+        <p>Browse your curriculum of interactive modules, videos, reading assignments, worksheets, and quizzes — all organized by session and topic.</p>
+      </div>
+      <div class="platform-card">
+        <div class="platform-card-icon">
+          <svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="20"/><polygon points="23,18 23,38 40,28"/></svg>
+        </div>
+        <h3>Lesson Recordings</h3>
+        <p>All live sessions are recorded and archived, providing lifetime access to every lecture, discussion, and expert walkthrough in your curriculum.</p>
+      </div>
+      <div class="platform-card">
+        <div class="platform-card-icon">
+          <svg viewBox="0 0 56 56"><rect x="8" y="6" width="40" height="30" rx="3"/><path d="M8 30h40"/><path d="M24 36h8v6h-8z"/><path d="M20 42h16"/><circle cx="28" cy="18" r="6"/><path d="M20 28a10 10 0 0116 0"/></svg>
+        </div>
+        <h3>Live Sessions for Q&amp;A</h3>
+        <p>Weekly scheduled open sessions — drop in to ask questions, discuss assignments, or troubleshoot your CGM data with teachers and classmates.</p>
+      </div>
+      <div class="platform-card">
+        <div class="platform-card-icon">
+          <svg viewBox="0 0 56 56"><circle cx="18" cy="20" r="7"/><circle cx="38" cy="20" r="7"/><circle cx="28" cy="38" r="7"/><path d="M24 17h8M20 27l6 6M36 27l-6 6"/></svg>
+        </div>
+        <h3>Discussion Groups</h3>
+        <p>Collaborate with your cohort through forum-based discussions, share CGM insights, meal experiments, and breakthroughs — with ongoing teacher support.</p>
+      </div>
+      <div class="platform-card">
+        <div class="platform-card-icon">
+          <svg viewBox="0 0 56 56"><rect x="10" y="6" width="26" height="38" rx="3"/><path d="M18 16h10M18 24h10M18 32h6"/><polyline points="40,14 40,44 10,44"/><path d="M42 20l-6 6-4-3"/></svg>
+        </div>
+        <h3>Progress Tracking</h3>
+        <p>Real-time visibility into your journey — logging completed quizzes, class attendance, homework submissions, and personal experiment results.</p>
+      </div>
+      <div class="platform-card">
+        <div class="platform-card-icon">
+          <svg viewBox="0 0 56 56"><circle cx="28" cy="16" r="8"/><circle cx="12" cy="30" r="6"/><circle cx="44" cy="30" r="6"/><path d="M28 24v6M18 34l6 4M38 34l-6 4"/><circle cx="28" cy="42" r="5"/></svg>
+        </div>
+        <h3>24/7 Learners Community</h3>
+        <p>Connect and engage in real time with fellow longevity learners through our vibrant community — share wins, ask questions, and stay accountable.</p>
+      </div>
+    </div>
+    <div class="platform-dots" id="platformDots"></div>
+  </div>
+</section>
+
+<!-- ============================================
+     10. TESTIMONIALS
+     ============================================ -->
+<section class="testimonials" id="testimonials">
+  <div class="container-wide">
+    <div class="testimonials-header reveal">
+      <p class="testimonials-bridge">What happens when serious people get serious</p>
+      <p class="eyebrow" style="margin-bottom: 16px;">From the Cohort</p>
+      <h2 class="section-title">What Happens When Serious People Get<br>Serious About <span class="gold">Longevity Science</span></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-quote-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>
+        </div>
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">"I've taken dozens of online courses, but this was the first time I felt like I was in a real classroom. The live interaction, the small group size, and the expert instructors made all the difference. I actually changed my habits — not just learned about them."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-author-avatar">SK</div>
+          <div class="testimonial-author-info">
+            <strong>Sarah K.</strong>
+            <span>San Francisco, USA</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-quote-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>
+        </div>
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">"The CGM module was a revelation. Seeing my own glucose data in real-time, then discussing it with my cohort and instructors — that combination of personal data and expert interpretation is something you can't get from a book or podcast."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-author-avatar">MR</div>
+          <div class="testimonial-author-info">
+            <strong>Michael R.</strong>
+            <span>London, UK</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="testimonial-quote-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>
+        </div>
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">"As a 52-year-old executive, I thought I knew about health. This course showed me I was missing the most important layer — understanding my own metabolic signals. The sleep module alone was worth the entire investment."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-author-avatar">AT</div>
+          <div class="testimonial-author-info">
+            <strong>Anika T.</strong>
+            <span>Berlin, Germany</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     11. FAQ
+     ============================================ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-header reveal">
+      <p class="faq-bridge">Before you apply</p>
+      <p class="eyebrow" style="margin-bottom: 16px;">Before You Apply</p>
+      <h2 class="section-title"><span class="gold">Everything</span> You<br>Need to Know</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <h3>What's the time commitment?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner"><p>Each live session is 90 minutes, once per week, for 12 weeks. Between sessions, expect 30–60 minutes of self-guided experiments and journaling. Total commitment: about 2.5 hours per week, plus the personal experiments that naturally fold into your daily life (like a post-meal walk or sleep adjustment).</p></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <h3>Do I need a CGM device?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner"><p>A CGM is recommended but not required. If you choose to use one, we'll guide you through setup and interpretation. If not, we provide anonymized real datasets you can learn from. Many participants find the course valuable either way — the principles of metabolic health apply whether or not you're wearing a sensor.</p></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <h3>Is this a medical program?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner"><p>No. This is an educational and coaching program, not clinical care. We don't diagnose, treat, or prescribe. Our instructors are credentialed scientists and coaches, but the course is designed for healthy adults who want to optimize — not patients who need treatment. If you have specific medical concerns, we encourage you to work with your physician alongside this course.</p></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <h3>What if I miss a live session?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner"><p>All sessions are recorded and available within 24 hours on our platform. While live attendance is strongly encouraged for the interactive elements (breakout rooms, real-time Q&amp;A), you can catch up with recordings and still complete all assignments. We recommend attending at least 10 of 12 sessions live for the best experience.</p></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <h3>Who are the instructors?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner"><p>Our faculty includes Maya Elhalal (Founder, Longevity Science), David Barzilai MD/PhD (Healthspan Coach), and guest faculty from the Longevity Life Academy certified coach network. Each brings a unique blend of research credentials and practical coaching experience. No celebrity doctors — just credible, dedicated experts who work directly with you.</p></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <h3>What's the course schedule and pricing?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner"><p>New cohorts begin regularly. Enter your email above and we'll send you the next available start date, session times, and full pricing details. Early enrollment discounts are available for each cohort.</p></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <h3>What do I get at the end?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner"><p>You'll graduate with: (1) a Personal Longevity Blueprint covering nutrition, movement, sleep, stress, and monitoring; (2) a 90-Day Action Plan; (3) lifetime access to all session recordings; (4) a Longevity Health Reset certificate; and (5) ongoing access to the learner community.</p></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     12. FINAL CTA
+     ============================================ -->
+<section class="final-cta" id="final-cta">
+  <div class="container">
+    <div class="final-cta-content reveal">
+      <h2 class="section-title">You've Done the Reading.<br>Now Do the <span class="gold">Work</span>.</h2>
+      <p class="final-cta-sub">Expert guidance. A cohort as serious as you are. 12 sessions that close the gap between what longevity science knows and what you're actually doing about it.</p>
+      <form class="final-cta-form" onsubmit="handleFormSubmit(event, this)">
+        <input type="email" placeholder="Enter your email address" required aria-label="Email address">
+        <button type="submit">Apply to Join →</button>
+      </form>
+      <p class="final-cta-note">Limited to 15 per cohort · We'll send you the next start date and pricing</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     LEAD GENERATION FORM
+     ============================================ -->
+<section class="lead-gen" id="lead-gen">
+  <div class="container">
+    <div class="lead-gen-inner reveal">
+      <h2 class="lead-gen-headline">The Next Cohort Fills Fast — <span>Reserve Your Seat</span></h2>
+      <form class="lead-gen-form" onsubmit="handleFormSubmit(event, this)">
+        <div class="lead-gen-row">
+          <input type="text" placeholder="First name" required aria-label="First name">
+          <input type="email" placeholder="Email address" required aria-label="Email address">
+        </div>
+        <button type="submit">Get Early Access to the Next Cohort →</button>
+      </form>
+      <p class="lead-gen-trust">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Join 400,000+ students already learning with Longevity Life Academy — trusted since 2000
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     13. FOOTER
+     ============================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="assets/e-teacher-logo.png" alt="eTeacher Group" style="height: 24px; width: auto;"> <span style="font-weight:300; color: #8A94A6;">Longevity Life Academy</span></div>
+      <div class="footer-links">
+        <a href="#journey">Curriculum</a>
+        <a href="#teachers">Instructors</a>
+        <a href="#faq">FAQ</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 eTeacher Group. All rights reserved. Longevity Life Academy is part of the eTeacher Group family of online schools.
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================
+     JAVASCRIPT
+     ============================================ -->
+<script>
+/* Stagger outcomes video start times for visual variety */
+document.querySelectorAll('.outcomes-slide-media video').forEach((vid, i) => {
+  vid.addEventListener('loadedmetadata', () => {
+    vid.currentTime = (i * 4) % vid.duration;
+  });
+});
+
+/* Navigation scroll effect */
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+/* Mobile menu */
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+mobileToggle.addEventListener('click', () => {
+  mobileMenu.classList.toggle('active');
+});
+function closeMobileMenu() {
+  mobileMenu.classList.remove('active');
+}
+
+/* Smooth scroll for anchor links */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = 80;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+
+/* IntersectionObserver for reveal animations */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* What You'll Learn — static grid, no JS needed */
+
+/* ---- Hexagonal Hub + 3-Card Slideshow ---- */
+(function() {
+  const hub = document.getElementById('hexHub');
+  if (!hub) return;
+
+  // Position hex nodes in a circle using trigonometry
+  const nodes = hub.querySelectorAll('.hex-node');
+  const connectors = hub.querySelectorAll('.hex-connector');
+  const hubW = hub.offsetWidth || 520;
+  const hubH = hub.offsetHeight || 520;
+  const cx = hubW / 2;
+  const cy = hubH / 2;
+  const radius = Math.min(hubW, hubH) * 0.38; // distance from center to node center
+
+  function positionHex() {
+    const w = hub.offsetWidth || 520;
+    const h = hub.offsetHeight || 520;
+    const ccx = w / 2;
+    const ccy = h / 2;
+    const r = Math.min(w, h) * 0.38;
+
+    nodes.forEach((node, i) => {
+      // Start from top (-90deg), go clockwise
+      const angle = (-90 + i * 60) * (Math.PI / 180);
+      const nx = ccx + r * Math.cos(angle) - node.offsetWidth / 2;
+      const ny = ccy + r * Math.sin(angle) - node.offsetHeight / 2;
+      node.style.left = nx + 'px';
+      node.style.top = ny + 'px';
+    });
+
+    // Position connector lines
+    connectors.forEach((conn, i) => {
+      const angle = (-90 + i * 60) * (Math.PI / 180);
+      const deg = -90 + i * 60;
+      // Start from center, point outward
+      conn.style.left = ccx + 'px';
+      conn.style.top = ccy + 'px';
+      conn.style.width = (r - 55) + 'px'; // stop before node
+      conn.style.transform = 'rotate(' + deg + 'deg)';
+    });
+  }
+
+  positionHex();
+  window.addEventListener('resize', positionHex);
+
+  // Slideshow logic
+  const track = document.getElementById('fwTrack');
+  const dots = document.querySelectorAll('.fw-slide-dot');
+  const progressBar = document.getElementById('fwProgressBar');
+  const prevBtn = document.getElementById('fwPrev');
+  const nextBtn = document.getElementById('fwNext');
+  const allCards = document.querySelectorAll('.fw-card');
+  let currentSlide = 0;
+  let autoTimer;
+
+  function goToSlide(idx) {
+    currentSlide = idx;
+    track.style.transform = 'translateX(-' + (idx * 50) + '%)';
+    // Update dots
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    // Update hex nodes — highlight the 3 nodes for this slide group
+    nodes.forEach((n, i) => {
+      const inGroup = (idx === 0 && i < 3) || (idx === 1 && i >= 3);
+      n.classList.toggle('active', inGroup);
+    });
+    // Update connector highlights
+    connectors.forEach((c, i) => {
+      const inGroup = (idx === 0 && i < 3) || (idx === 1 && i >= 3);
+      c.classList.toggle('active', inGroup);
+    });
+    // Update card active states — highlight all 3 cards in the visible group
+    allCards.forEach((c, i) => {
+      const cardGroup = Math.floor(i / 3);
+      c.classList.toggle('active', cardGroup === idx);
+      // Reset and apply bar animation
+      const bar = c.querySelector('.fw-card-bar');
+      if (bar) {
+        bar.style.transform = cardGroup === idx ? 'scaleX(1)' : 'scaleX(0)';
+      }
+    });
+    // Restart progress bar animation
+    if (progressBar) {
+      progressBar.classList.remove('animating');
+      progressBar.offsetHeight; // force reflow
+      progressBar.classList.add('animating');
+    }
+  }
+
+  function nextSlide() {
+    goToSlide((currentSlide + 1) % 2);
+  }
+
+  function prevSlide() {
+    goToSlide(currentSlide === 0 ? 1 : 0);
+  }
+
+  function startAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(nextSlide, 6000);
+  }
+
+  // Event listeners
+  nextBtn.addEventListener('click', () => { nextSlide(); startAuto(); });
+  prevBtn.addEventListener('click', () => { prevSlide(); startAuto(); });
+  dots.forEach(d => d.addEventListener('click', () => {
+    goToSlide(parseInt(d.dataset.slide));
+    startAuto();
+  }));
+
+  // Hex node click → go to that node's slide group
+  nodes.forEach(n => n.addEventListener('click', () => {
+    const idx = parseInt(n.dataset.idx);
+    const targetSlide = idx < 3 ? 0 : 1;
+    goToSlide(targetSlide);
+    startAuto();
+  }));
+
+  // Card click → highlight that specific hex node
+  allCards.forEach(c => c.addEventListener('click', () => {
+    const idx = parseInt(c.dataset.index);
+    nodes.forEach((n, i) => n.classList.toggle('active', i === idx));
+  }));
+
+  // Initialize
+  goToSlide(0);
+  startAuto();
+})();
+
+/* Curriculum accordion */
+function toggleCurriculum(trigger) {
+  const item = trigger.closest('.curriculum-item');
+  const body = item.querySelector('.curriculum-body');
+  const isActive = item.classList.contains('active');
+
+  // Close all
+  document.querySelectorAll('.curriculum-item.active').forEach(i => {
+    i.classList.remove('active');
+    i.querySelector('.curriculum-body').style.maxHeight = '0';
+  });
+
+  // Open clicked (if not already active)
+  if (!isActive) {
+    item.classList.add('active');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
+/* FAQ accordion */
+function toggleFaq(trigger) {
+  const item = trigger.closest('.faq-item');
+  const body = item.querySelector('.faq-body');
+  const isActive = item.classList.contains('active');
+
+  document.querySelectorAll('.faq-item.active').forEach(i => {
+    i.classList.remove('active');
+    i.querySelector('.faq-body').style.maxHeight = '0';
+  });
+
+  if (!isActive) {
+    item.classList.add('active');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
+/* Form submission */
+function handleFormSubmit(e, form) {
+  e.preventDefault();
+  const email = form.querySelector('input[type="email"]').value;
+  const btn = form.querySelector('button');
+  const originalText = btn.textContent;
+  btn.textContent = 'Thank you! ✓';
+  btn.style.background = 'linear-gradient(135deg, #0055CC, #006EFF)';
+  btn.style.color = '#fff';
+  setTimeout(() => {
+    btn.textContent = originalText;
+    btn.style.background = '';
+    btn.style.color = '';
+    form.reset();
+  }, 3000);
+}
+
+/* Platform mobile slider dots */
+(function() {
+  const slider = document.getElementById('platformSlider');
+  const dotsContainer = document.getElementById('platformDots');
+  if (!slider || !dotsContainer) return;
+
+  function initDots() {
+    if (window.innerWidth > 768) { dotsContainer.innerHTML = ''; return; }
+    const cards = slider.querySelectorAll('.platform-card');
+    dotsContainer.innerHTML = '';
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'platform-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to card ' + (i + 1));
+      dot.addEventListener('click', () => {
+        cards[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      });
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function syncDots() {
+    if (window.innerWidth > 768) return;
+    const cards = slider.querySelectorAll('.platform-card');
+    const scrollLeft = slider.scrollLeft;
+    const cardWidth = cards[0]?.offsetWidth || 1;
+    const activeIndex = Math.round(scrollLeft / cardWidth);
+    dotsContainer.querySelectorAll('.platform-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === activeIndex);
+    });
+  }
+
+  initDots();
+  window.addEventListener('resize', initDots);
+  slider.addEventListener('scroll', syncDots, { passive: true });
+})();
+
+/* Prefers reduced motion */
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+}
+
+</script>
+
+</body>
+</html>

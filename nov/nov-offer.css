@@ -1,0 +1,89 @@
+/* November 2026 offer module for longevitylifeacademy.com.
+   Uses the site's own tokens (--font-display, --font-body, --blue, --ink) so the folds
+   sit inside the existing design. Self-contained: no dependency on pages.dev stylesheets. */
+
+/* Top promo strip */
+#novStrip{position:fixed;left:0;right:0;top:var(--nov-nav,72px);z-index:9989;height:44px;display:flex;align-items:center;justify-content:center;gap:12px;padding:0 16px;background:linear-gradient(90deg,#0A47C2,#006EFF 55%,#2F8BFF);color:#fff;font-family:var(--font-body,'Inter',sans-serif);font-size:15px;font-weight:500;box-shadow:0 10px 30px -14px rgba(0,60,180,.6);cursor:pointer}
+#novStrip .ns-t{font-weight:600;color:#E6EEFF}
+#novStrip .ns-or{color:#BFD8FF}
+#novStrip .ns-code{appearance:none;border:0;cursor:pointer;display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:8px;background:#fff;color:#0A47C2;font-family:var(--font-body,'Inter',sans-serif);font-weight:800;font-size:13.5px;letter-spacing:.08em}
+#novStrip .ns-code:hover{background:#EAF2FF}
+#novStrip .ns-sub{color:#E6EEFF;font-weight:500}
+html.has-nov-strip body{--nov-strip:44px}
+@media (max-width:640px){#novStrip{height:40px;gap:8px;padding:0 12px;font-size:14px;justify-content:center}#novStrip .ns-t,#novStrip .ns-sub{display:none}#novStrip .ns-code{height:30px;padding:0 12px;font-size:13px}}
+
+/* Offer fold */
+.nov-offer{position:relative;padding:112px 0 96px;background:linear-gradient(180deg,#FFFFFF 0%,#F2F7FF 100%);overflow:hidden}
+.nov-offer .nov-num{position:absolute;right:-10px;top:40px;font-family:var(--font-display,serif);font-weight:800;font-size:clamp(160px,22vw,300px);line-height:1;color:rgba(0,110,255,.08);pointer-events:none;user-select:none}
+.nov-offer .section-title .nov-accent,.nov-incl .section-title .nov-accent{color:var(--blue,#006EFF)}
+.nov-grid{display:grid;grid-template-columns:minmax(0,460px) minmax(0,1fr);gap:40px;align-items:start;margin-top:40px}
+.nov-card{position:relative;border-radius:26px;padding:32px 30px 28px;color:#fff;background:radial-gradient(120% 90% at 100% 0%,rgba(0,110,255,.55),transparent 60%),linear-gradient(165deg,#0C2A6B 0%,#061A48 55%,#03112F 100%);box-shadow:0 40px 90px -30px rgba(3,20,70,.65),inset 0 1px 0 rgba(255,255,255,.12)}
+.nov-plan{font-size:15px;font-weight:600;color:#9EC4FF;margin-bottom:14px}
+.nov-price{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.nov-price s{font-size:30px;font-weight:600;color:rgba(255,255,255,.55);text-decoration-thickness:2px}
+.nov-price strong{font-family:var(--font-display,serif);font-weight:800;font-size:clamp(64px,7vw,88px);line-height:.95;letter-spacing:-.03em;color:#fff}
+.nov-price span{font-size:18px;font-weight:600;color:#D7E6FF}
+.nov-rest{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:22px 0 0;padding:18px 0;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);font-size:17px;font-weight:600;color:#D7E6FF}
+.nov-rest b{font-size:22px;color:#fff}
+.nov-rest b small{font-size:15px;font-weight:400;color:#BFD8FF}
+.nov-total{margin:18px 0 0;font-size:16px;color:#BFD8FF}
+.nov-total b{display:block;font-size:22px;color:#fff;margin-bottom:4px}
+.nov-codes{margin:20px -30px 0;padding:18px 30px;background:linear-gradient(90deg,#0A5BFF,#2F8BFF);box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.nov-codes-t{font-size:16px;font-weight:700;color:#fff;margin-bottom:10px}
+.nov-chip{appearance:none;cursor:pointer;border:0;display:inline-flex;align-items:center;height:38px;padding:0 14px;margin:0 8px 8px 0;border-radius:9px;background:#fff;color:#0A47C2;font-family:var(--font-body,'Inter',sans-serif);font-weight:800;font-size:14px;letter-spacing:.06em;box-shadow:0 6px 18px -8px rgba(0,20,80,.6)}
+.nov-chip:hover{background:#EAF2FF}
+.nov-chip.is-on{outline:3px solid rgba(255,255,255,.75);outline-offset:1px}
+.nov-coupon-l{display:block;margin:22px 0 10px;font-size:16px;font-weight:700;color:#fff}
+.nov-coupon{width:100%;height:56px;border-radius:12px;border:1px solid rgba(255,255,255,.3);background:#fff;color:#0A1428;font-family:var(--font-body,'Inter',sans-serif);font-size:18px;font-weight:600;letter-spacing:.04em;padding:0 16px;box-sizing:border-box}
+.nov-coupon::placeholder{color:#8FA6C8;font-weight:500}
+.nov-apply{appearance:none;cursor:pointer;width:100%;height:58px;margin-top:14px;border:0;border-radius:999px;background:#fff;color:#0A1428;font-family:var(--font-body,'Inter',sans-serif);font-weight:800;font-size:17px;box-shadow:0 14px 34px -12px rgba(0,0,0,.6)}
+.nov-apply:hover{background:#EAF2FF}
+.nov-refund{margin:18px 0 0;font-size:15px;line-height:1.5;color:#BFD8FF}
+.nov-refund b{color:#fff}
+.nov-steps h3{font-family:var(--font-body,'Inter',sans-serif);font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--blue,#006EFF);margin:12px 0 16px}
+.nov-steps ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.nov-steps li{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:18px;background:#fff;border:1px solid #E1EBFA;box-shadow:0 18px 40px -28px rgba(10,40,120,.35);font-size:17px;line-height:1.55;color:#2A2F36}
+.nov-steps li i{flex:none;width:16px;height:16px;margin-top:6px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--c2),var(--c1));box-shadow:0 0 0 5px color-mix(in srgb,var(--c1) 16%,transparent)}
+.nov-steps li b{color:#0A1428}
+@media (max-width:980px){.nov-grid{grid-template-columns:1fr;gap:28px}.nov-offer{padding:80px 0 72px}.nov-offer .nov-num{display:none}}
+@media (max-width:640px){.nov-card{padding:26px 22px 22px;border-radius:22px}.nov-codes{margin:18px -22px 0;padding:16px 22px}.nov-price strong{font-size:64px}.nov-steps li{padding:16px 16px;font-size:16px}}
+
+/* Included fold */
+.nov-incl{padding:96px 0 104px;background:#fff}
+.nov-incl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:40px}
+.nov-incl-card{position:relative;padding:30px 26px 26px;border-radius:22px;background:#F7FAFF;border:1px solid #E1EBFA;box-shadow:0 24px 50px -34px rgba(10,40,120,.35);overflow:hidden}
+.nov-incl-card:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--c1),var(--c2))}
+.nov-incl-card .n{font-family:var(--font-display,serif);font-style:italic;font-weight:600;font-size:30px;color:var(--c1);line-height:1;margin-bottom:12px}
+.nov-incl-card h3{font-family:var(--font-body,'Inter',sans-serif);font-size:21px;font-weight:800;line-height:1.25;color:#0A1428;margin:0 0 10px;letter-spacing:-.01em}
+.nov-incl-card p{font-size:16.5px;line-height:1.55;color:#4A5568;margin:0 0 18px}
+.nov-incl-card .tag{display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:999px;background:linear-gradient(90deg,var(--c1),var(--c2));color:#fff;font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+@media (max-width:980px){.nov-incl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.nov-incl{padding:72px 0 76px}.nov-incl-grid{grid-template-columns:1fr;gap:16px}.nov-incl-card{padding:24px 20px 22px}}
+
+/* VIP fold */
+.nov-vip{position:relative;padding:104px 0 112px;color:#fff;background:radial-gradient(90% 70% at 85% 10%,rgba(0,110,255,.45),transparent 60%),linear-gradient(180deg,#071B4A 0%,#04122F 100%);overflow:hidden}
+.nov-vip .eyebrow{color:#8FC7FF}
+.nov-vip .section-title{color:#fff}
+.nov-vip .section-subtitle{color:#C9DAF5;max-width:760px}
+.nov-vip-grid{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:56px;align-items:start;margin-top:48px}
+.nov-vip-portrait{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.08)}
+.nov-vip-portrait img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.nov-vip-portrait figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 24px;background:linear-gradient(180deg,transparent,rgba(3,12,40,.92));font-size:15px;color:#C9DAF5}
+.nov-vip-portrait figcaption b{display:block;font-size:22px;color:#fff;margin-bottom:2px;font-family:var(--font-body,'Inter',sans-serif);font-weight:800}
+.nov-vip-bio{font-size:19px;line-height:1.6;color:#D7E6FF;margin:0 0 28px}
+.nov-vip-bio b{color:#fff}
+.nov-vip h3{font-family:var(--font-display,serif);font-weight:700;font-size:30px;line-height:1.1;color:#fff;margin:0 0 18px;letter-spacing:-.01em}
+.nov-vip ul{list-style:none;margin:0 0 28px;padding:0;display:grid;gap:14px}
+.nov-vip li{position:relative;padding-left:30px;font-size:17.5px;line-height:1.55;color:#D7E6FF}
+.nov-vip li:before{content:"";position:absolute;left:0;top:.5em;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#8FC7FF,#006EFF);box-shadow:0 0 0 5px rgba(0,110,255,.22)}
+.nov-vip li b{color:#fff}
+.nov-vip .nov-code{display:inline-block;padding:1px 8px;border-radius:6px;background:rgba(255,255,255,.12);color:#fff;font-weight:800;letter-spacing:.06em}
+.nov-vip-cta{display:inline-flex;align-items:center;gap:10px;height:58px;padding:0 30px;border-radius:999px;background:var(--blue,#006EFF);color:#fff;font-family:var(--font-body,'Inter',sans-serif);font-weight:800;font-size:17px;text-decoration:none;box-shadow:0 18px 44px -14px rgba(0,110,255,.9)}
+.nov-vip-cta:hover{background:#0059D6}
+.nov-vip-cta svg{width:18px;height:18px;stroke:#fff;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.nov-vip-after{margin:16px 0 0;font-size:15px;color:#9EC4FF}
+@media (max-width:980px){.nov-vip-grid{grid-template-columns:1fr;gap:32px}.nov-vip{padding:80px 0 84px}}
+@media (max-width:640px){.nov-vip-portrait{border-radius:20px}.nov-vip h3{font-size:26px}}
+
+/* Floating CTA: same component, November price */
+#llaFloatCta .lla-cta-pill .mo{font-size:11px}

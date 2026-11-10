@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Refer a Friend — Longevity Life Academy</title>
+<meta name="description" content="Invite a friend to Longevity Life Academy. They get a discount on enrollment, you earn cash credits — because a longer, healthier life is meant to be shared.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#006EFF;
+  --blue-strong:#0051CC;
+  --blue-light:#E8F1FF;
+  --blue-hover:#0059D6;
+  --ink:#111111;
+  --ink-2:#2A2F36;
+  --ink-3:#5A6472;
+  --ink-4:#8892A0;
+  --bg:#FFFFFF;
+  --surface:#F5F7FA;
+  --surface-2:#EEF1F6;
+  --navy:#001233;
+  --navy-2:#0A1A3A;
+  --cream:#F7F4EC;
+  --font-display:'Codec Pro','Inter',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-serif:'Instrument Serif','Times New Roman',serif;
+  --radius-md:16px;
+  --radius-lg:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:var(--font-body);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.5}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;border:none;cursor:pointer}
+
+/* ============ HEADER ============ */
+.site-header{position:absolute;top:0;left:0;right:0;z-index:50;padding:22px 40px;display:flex;align-items:center;justify-content:space-between}
+.brand-lockup{display:flex;flex-direction:column;line-height:1}
+/* PIXEL-MATCH HOMEPAGE WORDMARK (hero-academy-name styling) */
+.brand-name{font-family:var(--font-display);font-weight:600;font-size:20px;color:rgba(255,255,255,0.95);letter-spacing:0.08em;text-transform:uppercase;text-shadow:0 2px 20px rgba(0,0,0,0.3)}
+.brand-name .life-blue{color:#7EC8FF;font-weight:800}
+.brand-by{font-size:11px;color:rgba(255,255,255,0.7);margin-top:6px;display:flex;align-items:center;gap:6px}
+.brand-by img{height:14px;width:auto;filter:brightness(0) invert(1);opacity:0.85}
+.header-back{color:rgba(255,255,255,0.85);font-size:14px;font-weight:500;padding:10px 18px;border:1px solid rgba(255,255,255,0.2);border-radius:999px;transition:all 0.2s}
+.header-back:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.4)}
+
+/* ============ HERO ============ */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--navy)}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-bg.is-active{opacity:1}
+.hero-bg.is-hidden{opacity:0}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,18,51,0.85) 0%,rgba(0,18,51,0.65) 45%,rgba(0,18,51,0.3) 100%);z-index:1}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1320px;margin:0 auto;padding:130px 40px 80px;display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center}
+
+.hero-copy{color:#fff}
+.hero-eyebrow{display:inline-block;font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#6FA8FF;margin-bottom:24px;padding:8px 16px;border:1px solid rgba(111,168,255,0.4);border-radius:999px;background:rgba(111,168,255,0.08)}
+.hero-title{font-family:var(--font-serif);font-weight:400;font-size:clamp(40px,5.5vw,72px);line-height:1.05;letter-spacing:-0.01em;margin-bottom:24px;color:#fff}
+.hero-title em{font-style:italic;color:#6FA8FF;font-family:var(--font-serif)}
+.hero-sub{font-size:18px;line-height:1.6;color:rgba(255,255,255,0.85);max-width:520px;font-weight:400}
+
+/* Hero version switcher (V1/V2) */
+.hero-toggle{position:absolute;bottom:24px;left:40px;z-index:5;display:flex;gap:8px;background:rgba(0,0,0,0.4);backdrop-filter:blur(10px);padding:6px;border-radius:999px;border:1px solid rgba(255,255,255,0.12)}
+.hero-toggle button{background:transparent;color:rgba(255,255,255,0.7);font-size:12px;font-weight:600;padding:6px 14px;border-radius:999px;letter-spacing:0.05em;transition:all 0.2s}
+.hero-toggle button.is-active{background:#fff;color:var(--navy)}
+
+/* ============ FORM CARD ============ */
+.form-card{background:#fff;border-radius:24px;padding:36px 36px 32px;box-shadow:0 30px 80px rgba(0,0,0,0.35),0 8px 24px rgba(0,0,0,0.15);max-width:480px;width:100%;justify-self:end}
+.form-card-title{font-family:var(--font-display);font-weight:700;font-size:24px;line-height:1.2;color:var(--navy);margin-bottom:6px;letter-spacing:-0.01em}
+.form-card-sub{font-size:14px;color:var(--ink-3);margin-bottom:24px;line-height:1.5}
+
+.lg-form{display:flex;flex-direction:column;gap:14px}
+.lg-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.lg-field label{display:block;font-size:12px;font-weight:600;color:var(--ink-2);margin-bottom:6px;letter-spacing:0.02em}
+.lg-field input,.lg-field select{width:100%;padding:13px 14px;font-size:15px;font-family:inherit;color:var(--ink);background:#fff;border:1.5px solid #E2E6EE;border-radius:10px;transition:all 0.2s;font-weight:400}
+.lg-field input:focus,.lg-field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,110,255,0.12)}
+.lg-field input::placeholder{color:var(--ink-4)}
+.lg-phone-row{display:grid;grid-template-columns:130px 1fr;gap:8px}
+.lg-submit{margin-top:8px;background:var(--blue);color:#fff;font-weight:700;font-size:16px;padding:16px 28px;border-radius:12px;font-family:inherit;letter-spacing:0.01em;transition:all 0.2s;position:relative}
+.lg-submit:hover{background:var(--blue-hover);transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,110,255,0.35)}
+.lg-disclaimer{font-size:11px;color:var(--ink-4);margin-top:14px;line-height:1.5;text-align:center}
+
+.form-error{display:none;background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.3);color:#b91c1c;border-radius:10px;padding:10px 14px;margin-top:12px;font-size:13px;line-height:1.5}
+.form-error.visible{display:block}
+.is-submitting .lg-submit{opacity:.7;pointer-events:none}
+.is-submitting .lg-submit::after{content:'';position:absolute;right:18px;top:50%;width:16px;height:16px;margin-top:-8px;border:2px solid rgba(255,255,255,0.4);border-top-color:#fff;border-radius:50%;animation:lg-spin .7s linear infinite}
+@keyframes lg-spin{to{transform:rotate(360deg)}}
+
+.form-thankyou{display:none;text-align:center;padding:16px 8px}
+.form-thankyou.visible{display:block}
+.thx-icon{width:64px;height:64px;border-radius:50%;background:rgba(0,110,255,0.1);color:var(--blue);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:32px}
+.thx-title{font-family:var(--font-display);font-weight:700;font-size:24px;color:var(--navy);margin-bottom:10px}
+.thx-body{font-size:15px;color:var(--ink-3);line-height:1.6}
+
+/* ============ HOW IT WORKS ============ */
+.section{padding:90px 40px}
+.how-section{background:var(--cream);text-align:center}
+.how-title{font-family:var(--font-serif);font-weight:400;font-size:clamp(34px,4vw,52px);line-height:1.1;color:var(--navy);margin-bottom:16px;letter-spacing:-0.01em}
+.how-title em{font-style:italic;color:var(--blue);font-family:var(--font-serif)}
+.how-sub{font-size:17px;color:var(--ink-3);max-width:580px;margin:0 auto 64px;line-height:1.6}
+
+.how-steps{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
+.how-steps::before{content:'';position:absolute;top:32px;left:14%;right:14%;height:2px;background:linear-gradient(90deg,transparent 0%,rgba(0,18,51,0.18) 15%,rgba(0,18,51,0.18) 85%,transparent 100%);z-index:0}
+.how-step{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;padding:0 12px}
+.step-num{width:64px;height:64px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--font-display);font-weight:700;font-size:26px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;border:5px solid var(--cream);box-shadow:0 4px 14px rgba(0,18,51,0.15)}
+.step-text{font-size:17px;line-height:1.5;color:var(--ink-2);max-width:280px;font-weight:500}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--navy);color:#fff;padding:64px 40px 32px}
+.footer-grid{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:48px}
+.footer-col h4{font-family:var(--font-display);font-size:13px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#6FA8FF;margin-bottom:18px}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:10px}
+.footer-col a,.footer-col p{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.6;transition:color 0.2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{max-width:1320px;margin:48px auto 0;padding-top:28px;border-top:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.footer-brand{display:flex;align-items:center;gap:14px}
+.footer-brand .fb-mark{font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.95)}
+.footer-brand .fb-mark .life-blue{color:#7EC8FF;font-weight:800}
+.footer-divider{width:1px;height:24px;background:rgba(255,255,255,0.2)}
+.footer-legal{font-size:12px;color:rgba(255,255,255,0.55);display:flex;gap:18px;align-items:center}
+.footer-legal a{color:rgba(255,255,255,0.7)}
+.footer-legal a:hover{color:#fff}
+.footer-social{display:flex;gap:12px}
+.footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;transition:all 0.2s;color:rgba(255,255,255,0.85)}
+.footer-social a:hover{background:#6FA8FF;color:var(--navy)}
+.footer-social svg{width:16px;height:16px;fill:currentColor}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.5);text-align:center;margin-top:24px}
+
+/* ============ MOBILE ============ */
+@media (max-width: 900px){
+  .site-header{padding:18px 20px}
+  .header-back{padding:8px 14px;font-size:13px}
+  .brand-name{font-size:16px}
+  .brand-by{font-size:10px}
+  .hero{min-height:auto}
+  .hero-inner{grid-template-columns:1fr;gap:36px;padding:110px 20px 60px}
+  .hero-copy{text-align:center}
+  .hero-eyebrow{font-size:11px}
+  .hero-sub{margin:0 auto;font-size:16px}
+  .hero-overlay{background:linear-gradient(180deg,rgba(0,18,51,0.7) 0%,rgba(0,18,51,0.85) 60%,rgba(0,18,51,0.92) 100%)}
+  .hero-toggle{left:50%;transform:translateX(-50%);bottom:12px}
+  .form-card{padding:28px 22px;justify-self:center;max-width:100%}
+  .form-card-title{font-size:22px}
+  .lg-row{grid-template-columns:1fr;gap:14px}
+  .section{padding:64px 20px}
+  .how-steps{grid-template-columns:1fr;gap:36px}
+  .how-steps::before{display:none}
+  .step-text{max-width:100%}
+  .footer{padding:48px 20px 28px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:18px}
+  .footer-legal{flex-wrap:wrap}
+}
+@media (max-width: 480px){
+  .footer-grid{grid-template-columns:1fr}
+  .hero-title{font-size:36px}
+}
+</style>
+<script src="/blueprint-november-r4x9/assets/ai-attribution.js"></script>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="brand-lockup">
+    <div class="brand-name">Longevity <span class="life-blue">Life</span> Academy</div>
+    <div class="brand-by">by <img src="eteacher-wordmark-only.png" alt="eTeacher"> Group</div>
+  </div>
+  <a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/" class="header-back">← Back to course</a>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <img id="heroV1" src="hero-v1.jpg" alt="" class="hero-bg is-active" loading="eager" fetchpriority="high">
+  <img id="heroV2" src="hero-v2-collage.jpg" alt="" class="hero-bg is-hidden" loading="lazy">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="hero-eyebrow">Refer a friend</span>
+      <h1 class="hero-title">Give the people you love a <em>longer, healthier life.</em></h1>
+      <p class="hero-sub">Refer the people closest to you to Longevity Life Academy. They get the science, the biomarkers, and the protocol to add healthy years to their life. When they enroll, you both receive a special reward.</p>
+    </div>
+
+    <!-- Lead-gen form card (uses eTeacherLeads → Cloudflare Worker → CRM) -->
+    <div class="form-card">
+      <div id="referForm-wrap">
+        <h2 class="form-card-title">Refer someone you love</h2>
+        <p class="form-card-sub">Leave their details and we'll reach out with a personal welcome and your shared reward.</p>
+
+        <form id="referForm" class="lg-form form-with-thankyou" data-thankyou-target="referThx" data-admin-notes="Source: Refer-a-Friend LP" novalidate>
+          <div class="lg-row">
+            <div class="lg-field">
+              <label for="lg-fname">First Name *</label>
+              <input id="lg-fname" name="firstName" type="text" autocomplete="given-name" placeholder="Type their first name" required>
+            </div>
+            <div class="lg-field">
+              <label for="lg-lname">Last Name *</label>
+              <input id="lg-lname" name="lastName" type="text" autocomplete="family-name" placeholder="Type their last name" required>
+            </div>
+          </div>
+
+          <div class="lg-field">
+            <label for="lg-email">Email *</label>
+            <input id="lg-email" name="email" type="email" autocomplete="email" placeholder="friend@email.com" required>
+          </div>
+
+          <div class="lg-row">
+            <div class="lg-field">
+              <label for="lg-country">Country *</label>
+              <select id="lg-country" name="country" required>
+                <option value="US" selected>United States (+1)</option>
+                <option value="CA">Canada (+1)</option>
+                <option value="GB">United Kingdom (+44)</option>
+                <option value="AU">Australia (+61)</option>
+                <option value="IL">Israel (+972)</option>
+                <option value="FR">France (+33)</option>
+                <option value="DE">Germany (+49)</option>
+                <option value="ES">Spain (+34)</option>
+                <option value="IT">Italy (+39)</option>
+                <option value="MX">Mexico (+52)</option>
+                <option value="BR">Brazil (+55)</option>
+                <option value="ZA">South Africa (+27)</option>
+                <option value="IN">India (+91)</option>
+                <option value="AE">UAE (+971)</option>
+                <option value="SG">Singapore (+65)</option>
+                <option value="PH">Philippines (+63)</option>
+              </select>
+            </div>
+            <div class="lg-field">
+              <label for="lg-phone">Mobile Phone *</label>
+              <input id="lg-phone" name="phone" type="tel" autocomplete="tel" placeholder="201-555-0123" required>
+            </div>
+          </div>
+
+          <button type="submit" class="lg-submit">Submit referral</button>
+          <p class="lg-disclaimer">By submitting, you confirm your friend is happy to hear from Longevity Life Academy.</p>
+        </form>
+
+        <div id="referThx" class="form-thankyou" role="status" aria-live="polite">
+          <div class="thx-icon">✓</div>
+          <div class="thx-title">Referral received</div>
+          <p class="thx-body">Thank you. We'll reach out to your friend shortly with a personal welcome and your shared reward.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero version switcher -->
+  <div class="hero-toggle" role="group" aria-label="Hero image version">
+    <button type="button" data-hero="V1" class="is-active">V1</button>
+    <button type="button" data-hero="V2">V2</button>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section how-section">
+  <h2 class="how-title">Refer. Enroll. <em>Add healthy years to their life.</em></h2>
+  <p class="how-sub">Three simple steps to give the people you love the science of a longer, healthier life — and a shared reward when they join.</p>
+
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="step-num">1</div>
+      <p class="step-text">Refer the people you love to become Longevity Life Academy students.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-num">2</div>
+      <p class="step-text">They receive a discount on their course enrollment.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-num">3</div>
+      <p class="step-text">You earn cash credits for each one who enrolls.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><p>Longevity Life Academy</p></li>
+        <li><p>by eTeacher Group</p></li>
+        <li><p>Support: <a href="mailto:service@eteachergroup.com">service@eteachergroup.com</a></p></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/about.html">About Longevity Life Academy</a></li>
+        <li><a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/#instructors">Our Instructors</a></li>
+        <li><a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/#pricing">Pricing</a></li>
+        <li><a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Course</h4>
+      <ul>
+        <li><a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/#curriculum">Curriculum</a></li>
+        <li><a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/cgm.html">Continuous Glucose Monitor</a></li>
+        <li><a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/biological-age-light.html">Biological Age Quiz</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/blog.html">The Longevity Blog</a></li>
+        <li><a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/#faq">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-brand">
+      <div class="fb-mark">Longevity <span class="life-blue">Life</span> Academy</div>
+      <div class="footer-divider"></div>
+      <div class="footer-legal">
+        <a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/privacy.html">Privacy Policy</a>
+        <a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/terms.html">Terms and Conditions</a>
+      </div>
+    </div>
+    <div class="footer-social">
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12H16l-.4 2.9h-2.1v7A10 10 0 0 0 22 12z"/></svg></a>
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2 0 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.9.9 1.4.2.5.4 1.1.4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c0 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.9.7-1.4.9-.5.2-1.1.4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2 0-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.9-.9-1.4-.2-.5-.4-1.1-.4-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c0-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.9-.7 1.4-.9.5-.2 1.1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 5.8.1 5 .3 4.2.6c-.8.3-1.5.7-2.2 1.4C1.3 2.7.9 3.4.6 4.2.3 5 .1 5.8.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.1 1.2.3 2.1.5 2.8.3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.7.3 1.6.5 2.8.5 1.2.1 1.7.1 4.9.1s3.7 0 4.9-.1c1.2-.1 2.1-.3 2.8-.5.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.7.5-1.6.5-2.8.1-1.2.1-1.7.1-4.9s0-3.7-.1-4.9c-.1-1.2-.3-2.1-.5-2.8-.3-.8-.7-1.5-1.4-2.2C21.3 1.3 20.6.9 19.8.6 19 .3 18.2.1 16.9.1 15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.5a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8z"/></svg></a>
+      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2c-.3-1-1-1.8-2-2C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.5.5c-1 .3-1.8 1-2 2C0 8.2 0 12 0 12s0 3.8.5 5.8c.3 1 1 1.8 2 2 2 .6 9.5.6 9.5.6s7.5 0 9.5-.5c1-.3 1.8-1 2-2 .5-2 .5-5.8.5-5.8s0-3.8-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a>
+    </div>
+  </div>
+
+  <p class="footer-copy">© 2026 Longevity Life Academy, an eTeacher Group brand. All rights reserved.</p>
+</footer>
+
+<!-- ============ HERO V1/V2 SWITCHER ============ -->
+<script>
+(function(){
+  var btns = document.querySelectorAll('.hero-toggle button');
+  var v1 = document.getElementById('heroV1');
+  var v2 = document.getElementById('heroV2');
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      btns.forEach(function(x){ x.classList.remove('is-active'); });
+      b.classList.add('is-active');
+      var ver = b.getAttribute('data-hero');
+      if (ver === 'V1') {
+        v1.style.opacity = '1'; v2.style.opacity = '0';
+      } else {
+        v1.style.opacity = '0'; v2.style.opacity = '1';
+      }
+    });
+  });
+  // ensure transitions
+  v1.style.transition = 'opacity .35s ease'; v2.style.transition = 'opacity .35s ease';
+  v1.style.opacity = '1'; v2.style.opacity = '0';
+})();
+</script>
+
+<!-- ============ CRM LEAD-GEN WIRING ============ -->
+<!-- Cloudflare Worker → AWS SQS → eTeacher CRM (same proxy used on the main site) -->
+<script>
+(function(){
+  var ETEACHER_ENV = 'production';
+  var ENDPOINTS = {
+    staging:    'https://eteacher-leads-proxy.gitter-omri.workers.dev/leads/staging',
+    production: 'https://eteacher-leads-proxy.gitter-omri.workers.dev/leads/production'
+  };
+  var ipCountryPromise = null;
+  function getIpCountry(){
+    if (ipCountryPromise) return ipCountryPromise;
+    ipCountryPromise = fetch('https://ipapi.co/country/', { method:'GET', cache:'force-cache' })
+      .then(function(r){ return r.ok ? r.text() : ''; })
+      .then(function(t){ t=(t||'').trim().toUpperCase(); return /^[A-Z]{2}$/.test(t) ? t : ''; })
+      .catch(function(){ return ''; });
+    return ipCountryPromise;
+  }
+  function isValidEmail(s){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s); }
+
+  var ATTR_KEYS = ['gclid','fbclid','msclkid','ttclid','li_fat_id','wbraid','gbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  var ATTR_TTL_MS = 30 * 24 * 60 * 60 * 1000;
+  var ATTR_STORAGE_KEY = 'lla_attribution_v1';
+  function readAttributionStorage(){
+    try {
+      var raw = localStorage.getItem(ATTR_STORAGE_KEY);
+      if (!raw) return null;
+      var obj = JSON.parse(raw);
+      if (!obj || !obj.ts || (Date.now() - obj.ts) > ATTR_TTL_MS) return null;
+      return obj;
+    } catch(e) { return null; }
+  }
+  function captureAttribution(){
+    try {
+      var params = new URLSearchParams(window.location.search || '');
+      var found = {}; var hasAny = false;
+      ATTR_KEYS.forEach(function(k){ var v = params.get(k); if (v) { found[k] = v; hasAny = true; } });
+      if (hasAny) {
+        found.ts = Date.now();
+        found.first_landing = window.location.href;
+        found.first_referrer = document.referrer || '';
+        try { localStorage.setItem(ATTR_STORAGE_KEY, JSON.stringify(found)); } catch(e){}
+        return found;
+      }
+      return readAttributionStorage();
+    } catch(e) { return null; }
+  }
+  var _cachedAttribution = captureAttribution();
+  function getAttribution(){ return _cachedAttribution || readAttributionStorage(); }
+  function buildDynamicParameters(attr){
+    if (!attr) return '';
+    var pairs = [];
+    ATTR_KEYS.forEach(function(k){ if (attr[k]) pairs.push(k + '=' + attr[k]); });
+    return pairs.join(';');
+  }
+  function postWithRetry(url, payload, attempt){
+    attempt = attempt || 1;
+    return fetch(url, { method:'POST', headers:{ 'Content-Type':'application/json','Accept':'application/json' }, body: JSON.stringify(payload), credentials:'omit', mode:'cors' })
+      .then(function(res){
+        if (res.status === 200) return { ok:true, status:200 };
+        if (res.status >= 400 && res.status < 500) return { ok:false, status:res.status, retryable:false };
+        if (attempt < 3) { var d = Math.pow(2, attempt-1)*1000; return new Promise(function(r){ setTimeout(function(){ r(postWithRetry(url, payload, attempt+1)); }, d); }); }
+        return { ok:false, status:res.status, retryable:true };
+      })
+      .catch(function(err){
+        if (attempt < 3) { var d = Math.pow(2, attempt-1)*1000; return new Promise(function(r){ setTimeout(function(){ r(postWithRetry(url, payload, attempt+1)); }, d); }); }
+        return { ok:false, status:0, retryable:true, error:String(err) };
+      });
+  }
+  window.eTeacherLeads = {
+    endpoint: ENDPOINTS[ETEACHER_ENV],
+    env: ETEACHER_ENV,
+    getAttribution: getAttribution,
+    submit: function(fields){
+      if (!fields || !fields.firstName || !fields.lastName || !isValidEmail(fields.email||'') || !fields.phone || !fields.countryIso) {
+        return Promise.resolve({ ok:false, status:0, error:'Missing or invalid fields' });
+      }
+      return getIpCountry().then(function(ipCountry){
+        var payload = {
+          ProductID: 26,
+          FirstName: String(fields.firstName).trim(),
+          LastName:  String(fields.lastName).trim(),
+          Email:     String(fields.email).trim(),
+          MobilePhone: String(fields.phone).trim(),
+          CountryIsoCode: String(fields.countryIso).toUpperCase(),
+          LandingPage: window.location.href,
+          UserAgent: navigator.userAgent,
+          ReferringSite: document.referrer || window.location.hostname,
+          QueryString: (window.location.search || '').replace(/^\?/, '')
+        };
+        if (ipCountry) payload.CountryIsoCodeByIp = ipCountry;
+        if (fields.adminNotes) payload.AdminNotes = String(fields.adminNotes).slice(0, 4000);
+        var attr = getAttribution();
+        var dyn = buildDynamicParameters(attr);
+        if (fields.googleCampaignId && /^\d+$/.test(String(fields.googleCampaignId))) {
+          dyn = (dyn ? dyn + ';' : '') + 'google_campaign_id=' + String(fields.googleCampaignId);
+        }
+        if (dyn) payload.DynamicParameters = dyn.slice(0, 4000);
+        if (fields.campaignId && /^\d+$/.test(String(fields.campaignId))) {
+          payload.CampaignID = parseInt(fields.campaignId, 10);
+        }
+        return postWithRetry(ENDPOINTS[ETEACHER_ENV], payload);
+      });
+    }
+  };
+})();
+</script>
+
+<script>
+window.LLA_CAMPAIGN_IDS = window.LLA_CAMPAIGN_IDS || {};
+window.LLA_GOOGLE_CAMPAIGN_IDS = window.LLA_GOOGLE_CAMPAIGN_IDS || {
+  US: '116641',
+  CA: '116639'
+};
+(function(){
+  function getValue(form, name){ var el = form.querySelector('[name="'+name+'"], #'+name); return el ? el.value : ''; }
+  function showError(form, msg){
+    var box = form.querySelector('.form-error');
+    if (!box) {
+      box = document.createElement('div');
+      box.className = 'form-error';
+      box.setAttribute('role','alert');
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn && submitBtn.parentNode) submitBtn.parentNode.insertBefore(box, submitBtn.nextSibling);
+      else form.appendChild(box);
+    }
+    box.textContent = msg; box.classList.add('visible');
+  }
+  function clearError(form){ var b = form.querySelector('.form-error'); if (b) b.classList.remove('visible'); }
+  function showThankYou(form){
+    var targetId = form.getAttribute('data-thankyou-target');
+    var thx = targetId ? document.getElementById(targetId) : form.parentNode.querySelector('.form-thankyou');
+    if (!thx) return;
+    form.style.display = 'none';
+    thx.classList.add('visible');
+    try { thx.scrollIntoView({ behavior:'smooth', block:'center' }); } catch(err){}
+  }
+  function bind(form){
+    if (form.dataset.thankyouBound === '1') return;
+    form.dataset.thankyouBound = '1';
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      clearError(form);
+      var fields = {
+        firstName:  getValue(form, 'firstName'),
+        lastName:   getValue(form, 'lastName'),
+        email:      getValue(form, 'email'),
+        phone:      getValue(form, 'phone'),
+        countryIso: getValue(form, 'country'),
+        adminNotes: form.dataset.adminNotes || '',
+        campaignId: (window.LLA_CAMPAIGN_IDS && window.LLA_CAMPAIGN_IDS[form.id]) || '',
+        googleCampaignId: ''
+      };
+      if (fields.countryIso && window.LLA_GOOGLE_CAMPAIGN_IDS) {
+        fields.googleCampaignId = window.LLA_GOOGLE_CAMPAIGN_IDS[fields.countryIso.toUpperCase()] || '';
+      }
+      if (!fields.firstName || !fields.lastName || !fields.email || !fields.phone || !fields.countryIso) {
+        showError(form, 'Please fill in all required fields.'); return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) {
+        showError(form, 'Please enter a valid email address.'); return;
+      }
+      form.classList.add('is-submitting');
+      window.eTeacherLeads.submit(fields).then(function(res){
+        form.classList.remove('is-submitting');
+        if (res.ok) {
+          try {
+            var attr = (window.eTeacherLeads.getAttribution && window.eTeacherLeads.getAttribution()) || {};
+            if (window.dataLayer) { window.dataLayer.push({ event:'lead_form_submit', form_id: form.id || 'unknown', crm_status:'ok', env: window.eTeacherLeads.env, gclid: attr.gclid || '', fbclid: attr.fbclid || '', utm_source: attr.utm_source || '', utm_campaign: attr.utm_campaign || '', utm_medium: attr.utm_medium || '' }); }
+          } catch(err){}
+          showThankYou(form);
+        } else {
+          try { if (window.dataLayer) { window.dataLayer.push({ event:'lead_form_submit_error', form_id: form.id || 'unknown', crm_status: res.status, env: window.eTeacherLeads.env }); } } catch(err){}
+          showError(form, 'Something went wrong. Please try again.');
+        }
+      });
+    });
+  }
+  document.querySelectorAll('form.form-with-thankyou').forEach(bind);
+})();
+</script>
+
+  <script src="../assets/lla-country.js" defer></script>
+</body>
+</html>

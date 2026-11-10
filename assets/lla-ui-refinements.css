@@ -1,0 +1,66 @@
+/* Scoped visual refinement. No analytics, CRM or payment behavior. */
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts){--lla-body:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--lla-display:"Playfair Display",Georgia,serif;font-family:var(--lla-body)!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) :is(p,li,label,input,select,textarea,button,small,.kicker,.h2-sub,.teacher-card-live-role,.teacher-card-live-bio,.how-v2-card-desc,.how-v2-card-duration,.phase-block-range){font-family:var(--lla-body)!important;font-style:normal!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) :is(h1,h2,h3,.hero-accent,.hero-accent span,.hero-accent em,.teacher-card-live-name,.how-v2-card-title,.curriculum-tab-name,.phase-block-name,.jb4-title,.cgm-fold-title){font-family:var(--lla-display)!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) :is(button,a.btn,a.cta,.cta-pill,.main-cta,.em-next) :is(span,b,strong){font-family:var(--lla-body)!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #syllabus .curriculum-tabs{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important;align-items:stretch!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #syllabus .curriculum-tab{display:grid!important;grid-template-rows:20px 52px 22px!important;align-content:center!important;justify-items:center!important;gap:6px!important;min-width:0!important;min-height:140px!important;height:auto!important;padding:16px 12px!important;transform:none!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #syllabus .curriculum-tab-num{font:600 15px/20px var(--lla-body)!important;font-variant-numeric:tabular-nums;opacity:.75!important;margin:0!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #syllabus .curriculum-tab-name{display:grid!important;place-content:center!important;width:100%!important;height:52px!important;margin:0!important;font-size:20px!important;line-height:1.2!important;font-weight:500!important;white-space:normal!important;word-break:normal!important;overflow-wrap:normal!important;text-align:center!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #syllabus .curriculum-tab-meta{font:400 15px/22px var(--lla-body)!important;white-space:nowrap!important;margin:0!important;opacity:.9!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) section.trust-strip .trust-logo{width:148px!important;min-width:148px!important;height:50px!important;padding:8px 14px!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) section.trust-strip .trust-logo::before,html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) section.trust-strip .trust-logo::after{display:none!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) section.trust-strip .trust-logo-img{width:auto!important;height:30px!important;max-width:120px!important;max-height:30px!important;object-fit:contain!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) section.trust-strip{padding-top:20px!important;padding-bottom:20px!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #teachers img[alt="Jordan Lattimore"]{object-position:50% 82%!important;transform:none!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #teachers .teacher-card-live-name{font-size:22px!important;line-height:1.2!important;margin-bottom:7px!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #teachers .teacher-card-live-role{font-size:16px!important;line-height:1.4!important;font-weight:600!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #teachers .teacher-card-live-bio{font-size:16px!important;line-height:1.55!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .about-powered{padding:24px 0 0!important;overflow:hidden!important;isolation:isolate}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .about-powered-head{padding:0 24px!important;margin:0 0 16px!important;gap:16px!important;min-width:0!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .about-powered-name{font:500 26px/1.2 var(--lla-display)!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .about-powered-sub{font:500 15px/1.4 var(--lla-body)!important;color:#c5d9f0!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .about-powered-desc{padding:0 24px!important;margin:0!important;width:auto!important;font:400 18px/1.6 var(--lla-body)!important;color:#dce8f6!important;-webkit-text-fill-color:#dce8f6!important;letter-spacing:0!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .hero-powered-strip--in-about{margin:24px 0 0!important;width:100%!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;overflow:hidden!important;box-shadow:none!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .hero-powered-inner{padding:0!important;width:100%!important;max-width:none!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .hero-powered-stats{width:100%!important;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;overflow:hidden!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .hero-powered-stats li{min-width:0!important;padding:18px 12px!important;gap:7px!important;background:transparent!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .hero-powered-stats li>span{font:400 15px/1.35 var(--lla-body)!important;color:#c5d9f0!important;-webkit-text-fill-color:#c5d9f0!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .hero-powered-stats strong{font:600 30px/1.15 var(--lla-body)!important;font-variant-numeric:tabular-nums;color:#fff!important;-webkit-text-fill-color:#fff!important;gap:4px!important;letter-spacing:-.5px!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .hero-powered-stats .unit{font:400 16px/1 var(--lla-body)!important;color:#c5d9f0!important;-webkit-text-fill-color:#c5d9f0!important;margin:0!important;letter-spacing:0!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #how .how-v2-card.mf-how5{background:linear-gradient(145deg,#244976,#102b50)!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #how .mf-how5 .how-v2-num{font:500 30px/1 var(--lla-display)!important;color:#96bfef!important;-webkit-text-fill-color:#96bfef!important;margin-bottom:14px!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #how .mf-how5 .how-v2-card-meta{font:600 15px/1.4 var(--lla-body)!important;color:#a9cff7!important;-webkit-text-fill-color:#a9cff7!important;margin:0 0 8px!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #how .mf-how5 .how-v2-card-title{font:500 26px/1.16 var(--lla-display)!important;color:#fff!important;-webkit-text-fill-color:#fff!important;margin:0 0 13px!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #how .mf-how5 .how-v2-card-desc{font:400 17px/1.55 var(--lla-body)!important;color:#d4e2f2!important;-webkit-text-fill-color:#d4e2f2!important;margin:0!important}
+@media(max-width:720px){
+ html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #syllabus .curriculum-tabs{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+ html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #syllabus .curriculum-tab{padding:12px 8px!important;min-height:132px!important}
+ html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #syllabus .curriculum-tab-name{font-size:18px!important}
+ html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) section.trust-strip .trust-logo{width:124px!important;min-width:124px!important;height:44px!important;padding:6px 10px!important}
+ html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) section.trust-strip .trust-logo-img{max-width:104px!important;height:28px!important;max-height:28px!important}
+ html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .about-powered-head{padding:0 20px!important}
+ html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .about-powered-desc{padding:0 20px!important;font-size:17px!important;line-height:1.6!important}
+ html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .hero-powered-stats strong{font-size:28px!important}
+ html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .hero-powered-stats li{padding:16px 10px!important}
+}
+@media(prefers-reduced-motion:reduce){html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) .trust-logos{animation:none!important}}
+/* About fold: consistent text scale and an actually centered full-width paragraph. */
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about :is(.about-mainhead,.about-mainhead .life-blue){
+ font-family:"Playfair Display",Georgia,serif!important;font-style:normal!important;font-weight:500!important;
+}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about :is(.about-statement,.about-lead,.about-powered-desc){
+ font:400 22px/1.5 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+ letter-spacing:0!important;text-align:center!important;text-wrap:pretty!important;
+}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .about-powered-desc{
+ box-sizing:border-box!important;width:100%!important;max-width:none!important;
+ margin:0!important;padding:0 32px!important;border:0!important;
+}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .hero-powered-stats :is(strong,.unit,li>span){
+ font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-style:normal!important;
+}
+@media(max-width:720px){
+ html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about :is(.about-statement,.about-lead,.about-powered-desc){font-size:20px!important;line-height:1.5!important}
+ html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #about .about-powered-desc{padding:0 22px!important}
+}

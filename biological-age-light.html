@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="robots" content="noindex,nofollow">
+  <!-- Meta identity bootstrap.
+     The Pixel on this site is loaded by GTM, which initialises it with no user
+     data. Every event GTM fires therefore reaches Meta with no match key, which
+     is why About_Us, Clicked_on_Enroll, Visited_one_of_the_six_pillars and
+     Clicked_on_curriculum score 6.1 out of 10 while the Lead tag scores 9.3.
+     This installs Meta's own Pixel snippet first and attaches the identity to
+     it. GTM's Meta tag begins with `if (f.fbq) return;`, so it reuses this
+     Pixel instead of replacing it and the match keys survive into its events.
+     external_id is present for every visitor, including anonymous ones; email,
+     phone and name are added only once the visitor has supplied them.
+     This fires no event of its own. -->
+<script>(function(){
+  var PIXEL='1440305917310328';
+  function xid(){
+    try{
+      var v=localStorage.getItem('lla_xid_v1');
+      if(!v){ v='lla'+Date.now().toString(36)+Math.random().toString(36).slice(2,12); localStorage.setItem('lla_xid_v1',v); }
+      return v;
+    }catch(e){return '';}
+  }
+  function stored(){
+    var i=null;
+    try{ i=JSON.parse(sessionStorage.getItem('lla_buyer_v1')||'null'); }catch(e){}
+    if(!i||!i.email){ try{ i=JSON.parse(localStorage.getItem('lla_identity_v1')||'null'); }catch(e){} }
+    return i||{};
+  }
+  function letters(s){ return String(s||'').toLowerCase().replace(/[^a-z]/g,''); }
+  function userData(){
+    var i=stored(), ud={external_id:xid()};
+    if(i.email) ud.em=String(i.email).trim().toLowerCase();
+    if(i.phone) ud.ph=String(i.phone).replace(/[^0-9]/g,'');
+    if(i.fn) ud.fn=letters(i.fn);
+    if(i.ln) ud.ln=letters(i.ln);
+    if(i.st) ud.st=String(i.st).trim().toLowerCase();
+    if(i.country) ud.country=String(i.country).trim().toLowerCase();
+    return ud;
+  }
+  var ud=userData();
+  window.dataLayer=window.dataLayer||[];
+  window.dataLayer.push({event:'lla_identity_ready',lla_em:ud.em||'',lla_ph:ud.ph||'',lla_fn:ud.fn||'',lla_ln:ud.ln||'',lla_st:ud.st||'',lla_country:ud.country||'',lla_external_id:ud.external_id||''});
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq.disablePushState = true; /* 2026-11-05: no automatic un-ID'd PageView on hash/pushState navigation (Meta SPA util); keeps PageView paired with the server copy */
+  try{ window.fbq('init',PIXEL,userData()); }catch(e){}
+})();</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PMRKXXJV');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biological Age Assessment, Light Version</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/codec-pro" rel="stylesheet">
+  <style>
+    :root{
+      --green-deep:#0B3D2E;
+      --green-mid:#1A5C3A;
+      --green-light:#2D7A4F;
+      --accent:#006EFF;
+      --accent-hover:#338BFF;
+      --bg:#FFFFFF;
+      --surface:#F5F7FA;
+      --surface-2:#EEF4FB;
+      --text:#111111;
+      --text-2:#4A5568;
+      --border:rgba(0,0,0,.08);
+      --shadow:0 12px 36px rgba(10,28,52,.08);
+      --radius:24px;
+      --pill:999px;
+      --font-display:'Codec Pro','Inter',sans-serif;
+      --font-body:'Inter',sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-body);background:linear-gradient(180deg,#E8F1FC 0%,#F5F7FA 38%,#FFF 100%);color:var(--text);line-height:1.6}
+    .wrap{width:min(1100px,calc(100% - 32px));margin:0 auto}
+    .hero,.section{padding:72px 0}
+    .center{text-align:center}
+    .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+    h1,h2,h3{font-family:var(--font-display);line-height:.98;letter-spacing:-1.4px}
+    h1{font-size:clamp(46px,8vw,84px);max-width:9ch;margin:18px auto 0}
+    h2{font-size:clamp(34px,5vw,56px);max-width:13ch;margin:14px auto 0}
+    .sub{font-size:21px;color:var(--text-2);max-width:34ch;margin:22px auto 0}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:var(--pill);background:linear-gradient(135deg,var(--accent),var(--accent-hover));color:#fff;font-weight:700;text-decoration:none;box-shadow:0 8px 30px rgba(0,110,255,.22);margin-top:28px}
+    .hero-grid{display:grid;grid-template-columns:1fr 1.05fr 1fr;gap:18px;align-items:stretch;margin-top:34px}
+    .image-card,.panel,.card,.result-box{background:rgba(255,255,255,.86);border:1px solid rgba(255,255,255,.6);box-shadow:0 16px 50px rgba(12,24,44,.10);backdrop-filter:blur(18px);border-radius:28px;overflow:hidden}
+    .image-card img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;display:block}
+    .panel{padding:28px}
+    .panel p{color:var(--text-2);max-width:34ch;margin:0 auto}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+    .stat{padding:16px;border-radius:18px;background:rgba(255,255,255,.88);border:1px solid rgba(0,0,0,.06)}
+    .stat strong{display:block;font-family:var(--font-display);font-size:24px}
+    .stat span{font-size:13px;color:var(--text-2)}
+    .assessment{display:grid;grid-template-columns:.78fr 1.22fr;gap:22px;align-items:start}
+    .card{padding:28px}
+    .sticky{position:sticky;top:24px;text-align:left}
+    .score{font-family:var(--font-display);font-size:clamp(64px,8vw,92px);line-height:.9;margin:18px 0 6px}
+    .muted{color:var(--text-2)}
+    .progress{height:12px;border-radius:999px;background:rgba(0,0,0,.06);overflow:hidden;margin-top:20px}
+    .progress > span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green-light),var(--accent))}
+    .mini{display:grid;gap:12px;margin-top:18px}
+    .mini div{display:flex;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,.08);font-size:14px}
+    .mini span{color:var(--text-2)}
+    .headcopy{text-align:center;margin-bottom:26px}
+    .headcopy p{color:var(--text-2);max-width:48ch;margin:12px auto 0}
+    .group + .group{margin-top:30px}
+    .group h3{font-size:26px;text-align:center}
+    .group p{color:var(--text-2);text-align:center;font-size:15px;margin:8px 0 18px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    label{display:block;font-size:14px;font-weight:700;text-align:center;margin-bottom:8px}
+    input[type="number"],select{width:100%;min-height:52px;border-radius:16px;border:1px solid var(--border);background:#fff;text-align:center;padding:0 14px}
+    .options{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .opt input{position:absolute;opacity:0;pointer-events:none}
+    .opt{position:relative}
+    .opt label{display:grid;gap:8px;align-content:center;min-height:132px;padding:18px;border-radius:20px;border:1px solid var(--border);background:rgba(255,255,255,.88);cursor:pointer;margin:0}
+    .opt label strong{display:block;font-size:16px}
+    .opt label span{display:block;font-size:14px;color:var(--text-2);font-weight:400}
+    .opt input:checked + label{border-color:rgba(0,110,255,.46);box-shadow:0 12px 30px rgba(0,110,255,.10)}
+    .actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:26px}
+    .btn-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:999px;border:1px solid var(--border);background:#fff;font-weight:700}
+    .result{display:none;margin-top:24px;text-align:center}
+    .result.visible{display:block}
+    .result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+    .result-box{padding:18px}
+    .result-box strong{display:block;font-size:22px}
+    .result-box span{font-size:14px;color:var(--text-2)}
+    .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .feature{padding:24px}
+    .feature p{color:var(--text-2);margin-top:10px}
+    @media (max-width:1000px){.hero-grid,.assessment,.pillars,.result-grid{grid-template-columns:1fr}.sticky{position:static}.stats{grid-template-columns:1fr}}
+    @media (max-width:720px){.row,.options{grid-template-columns:1fr}.sub{font-size:18px}}
+
+    /* Bio-age lead-gen form (shown after result) */
+    .bio-leadgen{display:none;margin-top:22px;padding:32px 28px;border-radius:24px;background:linear-gradient(160deg,#0a1628 0%,#0d1b2e 50%,#060e1a 100%);box-shadow:0 24px 60px rgba(0,0,0,0.18);border:1px solid rgba(0,110,255,0.14);color:#fff}
+    .bio-leadgen.visible{display:block;animation:bio-fade .5s cubic-bezier(.22,1,.36,1)}
+    .bio-leadgen .bio-leadgen-eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#338BFF;margin-bottom:10px}
+    .bio-leadgen h3{font-family:'Codec Pro','Inter',sans-serif;font-size:clamp(26px,3.4vw,34px);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.15;margin:0 0 8px}
+    .bio-leadgen p.bio-leadgen-sub{color:rgba(255,255,255,0.72);font-size:15.5px;line-height:1.6;margin:0 0 22px;max-width:none}
+    .bio-leadgen-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .bio-leadgen-field{display:flex;flex-direction:column;gap:6px}
+    .bio-leadgen-field.full{grid-column:1/-1}
+    .bio-leadgen-field label{font-family:'Codec Pro','Inter',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:rgba(255,255,255,0.78);text-align:left;margin:0}
+    .bio-leadgen-field input,.bio-leadgen-field textarea{width:100%;padding:16px 18px;font-size:15.5px;font-family:'Inter',sans-serif;background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.12);border-radius:14px;color:#fff !important;-webkit-text-fill-color:#fff !important;outline:none;transition:all .22s ease;text-align:left;min-height:auto;appearance:none;-webkit-appearance:none}
+    .bio-leadgen-field select{width:100%;padding:16px 42px 16px 18px;font-size:15.5px;font-family:'Inter',sans-serif;background-color:#ffffff !important;color:#0a1628 !important;-webkit-text-fill-color:#0a1628 !important;border:1.5px solid rgba(255,255,255,0.18);border-radius:14px;outline:none;transition:all .22s ease;text-align:left;min-height:auto;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%230a1628' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;cursor:pointer}
+    .bio-leadgen-field select option{background:#ffffff !important;color:#0a1628 !important}
+    .bio-leadgen-field input::placeholder,.bio-leadgen-field textarea::placeholder{color:rgba(255,255,255,0.5);-webkit-text-fill-color:rgba(255,255,255,0.5)}
+    .bio-leadgen-field input:focus,.bio-leadgen-field textarea:focus{border-color:#006EFF;background:rgba(255,255,255,0.09);box-shadow:0 0 0 3px rgba(0,110,255,0.18)}
+    .bio-leadgen-field select:focus{border-color:#006EFF;box-shadow:0 0 0 3px rgba(0,110,255,0.28)}
+    .bio-leadgen-field input:-webkit-autofill,.bio-leadgen-field input:-webkit-autofill:hover,.bio-leadgen-field input:-webkit-autofill:focus,.bio-leadgen-field select:-webkit-autofill,.bio-leadgen-field textarea:-webkit-autofill{-webkit-text-fill-color:#fff !important;-webkit-box-shadow:0 0 0 100px #0d1b2e inset !important;caret-color:#fff !important;color:#fff !important}
+    .bio-leadgen-submit{grid-column:1/-1;width:100%;padding:18px 28px;font-family:'Codec Pro','Inter',sans-serif;font-size:16px;font-weight:700;letter-spacing:.4px;color:#fff;background:linear-gradient(135deg,#006EFF,#338BFF);border:none;border-radius:14px;cursor:pointer;box-shadow:0 12px 30px rgba(0,110,255,0.35);transition:transform .22s ease,box-shadow .22s ease;margin-top:6px}
+    .bio-leadgen-submit:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(0,110,255,0.45)}
+    .bio-leadgen-trust{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.55);font-size:13px;margin:14px 0 0;justify-content:center}
+    /* Universal Thank You state on this page */
+    .form-thankyou{display:none;text-align:center;padding:48px 28px;border-radius:24px;background:linear-gradient(160deg,#0a1628 0%,#0d1b2e 50%,#060e1a 100%);border:1px solid rgba(0,110,255,0.18);box-shadow:0 24px 60px rgba(0,0,0,0.35);margin-top:22px;animation:bio-fade .5s cubic-bezier(.22,1,.36,1)}
+    .form-thankyou.visible{display:block}
+    .form-thankyou-icon{width:72px;height:72px;margin:0 auto 22px;border-radius:50%;background:linear-gradient(135deg,#006EFF,#338BFF);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,110,255,0.35)}
+    .form-thankyou-icon svg{width:34px;height:34px;color:#fff}
+    .form-thankyou-headline{font-family:'Codec Pro','Inter',sans-serif;font-size:clamp(30px,4vw,42px);font-weight:800;color:#fff;letter-spacing:-.02em;margin:0 0 12px;line-height:1.1;max-width:none}
+    .form-thankyou-text{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:rgba(255,255,255,0.78);max-width:460px;margin:0 auto 26px}
+    .form-thankyou-cta{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;font-family:'Codec Pro','Inter',sans-serif;font-size:15.5px;font-weight:700;color:#fff;background:linear-gradient(135deg,#006EFF,#338BFF);border-radius:999px;text-decoration:none;box-shadow:0 10px 28px rgba(0,110,255,0.35);transition:transform .25s ease}
+    .form-thankyou-cta:hover{transform:translateY(-2px)}
+    .form-thankyou-cta svg{width:18px;height:18px}
+    @keyframes bio-fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    @media (max-width:720px){.bio-leadgen-grid{grid-template-columns:1fr}.bio-leadgen{padding:28px 22px}.form-thankyou{padding:40px 22px}}
+
+    /* ===== Smart lead-capture: contextual course info beside the form ===== */
+    .bio-convert{display:none;margin-top:22px}
+    .bio-convert.visible{display:block;animation:bio-fade .5s cubic-bezier(.22,1,.36,1)}
+    .bio-convert-card{display:grid;grid-template-columns:1.02fr 1fr;gap:0;border-radius:26px;overflow:hidden;box-shadow:0 30px 70px rgba(6,16,32,.28);border:1px solid rgba(0,110,255,.16)}
+    /* Left: course context panel */
+    .bio-ctx{position:relative;padding:36px 34px;background:linear-gradient(165deg,#071a36 0%,#0a2142 55%,#04101f 100%);color:#fff;overflow:hidden}
+    .bio-ctx::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 340px at 15% 0%,rgba(0,110,255,.30),transparent 60%),radial-gradient(500px 320px at 100% 100%,rgba(120,90,255,.20),transparent 62%);pointer-events:none}
+    .bio-ctx>*{position:relative;z-index:1}
+    .bio-ctx-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7EC8FF;margin-bottom:14px}
+    .bio-ctx-eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:#5EB6FF;box-shadow:0 0 8px #5EB6FF,0 0 16px rgba(94,182,255,.7);animation:llaDot 2.2s ease-in-out infinite}
+    .bio-ctx h3{font-family:'Instrument Serif','Times New Roman',serif;font-weight:400;font-size:clamp(28px,3.4vw,38px);line-height:1.06;letter-spacing:-.01em;color:#fff;margin:0 0 6px}
+    .bio-ctx h3 .it{font-style:italic;color:#7EC8FF}
+    .bio-ctx .bio-ctx-track{display:inline-block;margin:2px 0 16px;padding:6px 14px;border-radius:999px;background:rgba(0,110,255,.16);border:1px solid rgba(126,200,255,.3);color:#BFE0FF;font-size:12.5px;font-weight:700;letter-spacing:.02em}
+    .bio-ctx .bio-ctx-lead{color:rgba(233,240,251,.78);font-size:15px;line-height:1.6;margin:0 0 22px;max-width:42ch}
+    .bio-ctx-list{display:flex;flex-direction:column;gap:13px;margin:0 0 26px}
+    .bio-ctx-list li{display:flex;gap:12px;align-items:flex-start;list-style:none;font-size:14.5px;line-height:1.5;color:rgba(233,240,251,.9)}
+    .bio-ctx-list li strong{color:#fff;font-weight:700}
+    .bio-ctx-list .ic{flex:0 0 22px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#006EFF,#338BFF);margin-top:1px;box-shadow:0 4px 12px rgba(0,110,255,.4)}
+    .bio-ctx-list .ic svg{width:13px;height:13px;color:#fff;stroke-width:3}
+    .bio-ctx-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 14px;padding-top:20px;border-top:1px solid rgba(160,200,255,.14)}
+    .bio-ctx-price .amt{font-family:'Instrument Serif','Times New Roman',serif;font-size:32px;color:#fff;line-height:1}
+    .bio-ctx-price .amt span{font-size:15px;color:rgba(233,240,251,.6);font-family:'Inter',sans-serif}
+    .bio-ctx-price .alt{font-size:13px;color:rgba(233,240,251,.62)}
+    .bio-ctx-price .alt b{color:#7EC8FF;font-weight:700}
+    .bio-ctx-trust{display:flex;align-items:center;gap:9px;margin-top:16px;font-size:12.5px;color:rgba(233,240,251,.6)}
+    .bio-ctx-trust .stars{color:#FFC24B;letter-spacing:1px;font-size:13px}
+    /* Right: form column (reuses .bio-leadgen visuals) */
+    .bio-convert .bio-leadgen{display:block;margin-top:0;border-radius:0;box-shadow:none;border:none;background:linear-gradient(160deg,#0a1628 0%,#0d1b2e 55%,#060e1a 100%)}
+    .bio-convert .form-thankyou{margin-top:0;border-radius:0}
+    @media (max-width:860px){.bio-convert-card{grid-template-columns:1fr}.bio-ctx{padding:30px 26px}}
+
+    /* ===== Premium course-info sections (dark navy) ===== */
+    .course-dark{position:relative;background:linear-gradient(180deg,#04101F 0%,#061428 48%,#04101F 100%);color:#fff;padding:96px 0;overflow:hidden}
+    .course-dark::before{content:"";position:absolute;inset:0;background:radial-gradient(760px 460px at 12% -8%,rgba(0,110,255,.20),transparent 62%),radial-gradient(680px 460px at 100% 106%,rgba(120,90,255,.14),transparent 60%);pointer-events:none}
+    .course-dark .wrap{position:relative;z-index:1}
+    .cd-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#7EC8FF}
+    .cd-eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:#5EB6FF;box-shadow:0 0 8px #5EB6FF,0 0 16px rgba(94,182,255,.7)}
+    .cd-h2{font-family:'Instrument Serif','Times New Roman',serif;font-weight:400;font-size:clamp(34px,5vw,58px);line-height:1.02;letter-spacing:-.5px;margin:16px 0 0;max-width:16ch}
+    .course-dark.center .cd-h2{margin-left:auto;margin-right:auto}
+    .cd-h2 .it{font-style:italic;color:#7EC8FF}
+    .cd-sub{font-size:19px;line-height:1.6;color:rgba(233,240,251,.72);max-width:52ch;margin:20px 0 0}
+    .course-dark.center .cd-sub{margin-left:auto;margin-right:auto}
+
+    /* ===== Julie hero banner (authority strip - accompanies, does not overtake) ===== */
+    .julie-banner{position:relative;width:100%;overflow:hidden;background:#04101F;isolation:isolate}
+    .julie-banner img.jb-photo{position:absolute;top:0;right:0;height:100%;width:56%;object-fit:cover;object-position:center 22%;z-index:0}
+    .julie-banner::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+      background:linear-gradient(90deg,#04101F 0%,#04101F 34%,rgba(4,16,31,.94) 44%,rgba(4,16,31,.55) 56%,rgba(4,16,31,.10) 70%,rgba(4,16,31,0) 82%),
+                linear-gradient(180deg,rgba(4,16,31,.35),rgba(4,16,31,0) 30%,rgba(4,16,31,.35))}
+    .julie-banner .jb-wrap{position:relative;z-index:2;width:min(1100px,calc(100% - 32px));margin:0 auto;padding:56px 0;min-height:400px;display:flex;align-items:center}
+    .julie-banner .jb-content{max-width:560px}
+    .jb-badge{display:inline-flex;align-items:center;gap:9px;padding:8px 16px;border-radius:999px;background:rgba(0,110,255,.16);border:1px solid rgba(126,200,255,.36);color:#9FD1FF;font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+    .jb-badge svg{width:15px;height:15px;color:#5EB6FF}
+    .jb-title{font-family:'Instrument Serif','Times New Roman',serif;font-weight:400;color:#fff;font-size:clamp(34px,4.6vw,56px);line-height:1.03;letter-spacing:-.5px;margin:18px 0 0}
+    .jb-title .hl{color:#7EC8FF;font-style:italic}
+    .jb-sub{font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:rgba(233,240,251,.82);max-width:44ch;margin:16px 0 0}
+    .jb-cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:26px}
+    .jb-cta{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 30px;border-radius:999px;background:linear-gradient(135deg,#006EFF,#338BFF);color:#fff;font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 12px 34px rgba(0,110,255,.34);transition:transform .2s,box-shadow .2s}
+    .jb-cta:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(0,110,255,.46)}
+    .jb-cta.secondary{background:transparent;border:1px solid rgba(126,200,255,.5);box-shadow:none;color:#CFE6FF}
+    .jb-cta.secondary:hover{background:rgba(0,110,255,.12);transform:translateY(-2px);box-shadow:none}
+    .jb-note{font-size:14px;color:rgba(200,216,240,.66)}
+    .jb-next{display:flex;align-items:flex-start;gap:10px;margin-top:18px;max-width:52ch;font-size:14.5px;line-height:1.55;color:rgba(214,228,248,.82)}
+    .jb-next svg{flex:none;width:17px;height:17px;margin-top:2px;color:#7EC8FF}
+    .jb-next b{color:#fff;font-weight:700}
+    /* Product-info strip inside banner */
+    .jb-facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .jb-fact{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:12px;background:rgba(10,26,48,.66);border:1px solid rgba(126,200,255,.2);color:#E9F0FB;font-size:13.5px;font-weight:600;line-height:1.2}
+    .jb-fact b{color:#7EC8FF;font-weight:800}
+    .jb-fact .stars{color:#FFC24B;letter-spacing:1px}
+    @media (max-width:820px){
+      .julie-banner img.jb-photo{width:100%;object-position:center 18%;opacity:.55}
+      .julie-banner::after{background:linear-gradient(180deg,rgba(4,16,31,.72) 0%,rgba(4,16,31,.82) 55%,rgba(4,16,31,.92) 100%)}
+      .julie-banner .jb-wrap{padding:44px 0;min-height:360px}
+      .jb-content{max-width:100%}
+    }
+
+    /* Inside-the-program format cards */
+    .cd-format{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+    .cd-fcard{position:relative;padding:28px 24px;border-radius:22px;background:linear-gradient(165deg,rgba(16,34,62,.9),rgba(8,20,40,.9));border:1px solid rgba(126,200,255,.14);box-shadow:0 24px 54px rgba(4,12,26,.5);text-align:left;transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .35s,box-shadow .35s}
+    .cd-fcard:hover{transform:translateY(-6px);border-color:rgba(126,200,255,.34);box-shadow:0 34px 70px rgba(0,60,150,.34)}
+    .cd-fcard .ficon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#006EFF,#338BFF);box-shadow:0 10px 24px rgba(0,110,255,.4);margin-bottom:18px}
+    .cd-fcard .ficon svg{width:23px;height:23px;color:#fff;stroke-width:2.2}
+    .cd-fcard h4{font-size:18px;font-weight:700;color:#fff;margin:0 0 8px;letter-spacing:-.01em}
+    .cd-fcard p{font-size:14px;line-height:1.55;color:rgba(233,240,251,.7);margin:0}
+    .cd-fcard .big{font-family:'Instrument Serif',serif;font-size:34px;color:#7EC8FF;line-height:1;margin-bottom:6px;display:block}
+
+    /* Six pillars grid */
+    .cd-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+    .cd-pillar{position:relative;border-radius:22px;overflow:hidden;min-height:250px;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid rgba(126,200,255,.14);box-shadow:0 24px 54px rgba(4,12,26,.5);transition:transform .35s cubic-bezier(.22,1,.36,1)}
+    .cd-pillar:hover{transform:translateY(-6px)}
+    .cd-pillar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+    .cd-pillar::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,16,31,.05) 0%,rgba(4,16,31,.55) 52%,rgba(4,16,31,.94) 100%);z-index:1}
+    .cd-pillar .pbody{position:relative;z-index:2;padding:22px 22px 24px}
+    .cd-pillar .pnum{font-family:'Instrument Serif',serif;font-size:15px;color:#7EC8FF;letter-spacing:.08em}
+    .cd-pillar h4{font-size:20px;font-weight:700;color:#fff;margin:4px 0 6px;letter-spacing:-.01em}
+    .cd-pillar p{font-size:13.5px;line-height:1.5;color:rgba(233,240,251,.82);margin:0}
+
+    /* Faculty */
+    .cd-faculty{display:grid;grid-template-columns:.86fr 1.14fr;gap:44px;align-items:center;margin-top:52px}
+    .cd-faculty-photo{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 34px 80px rgba(4,12,26,.6);border:1px solid rgba(126,200,255,.16)}
+    .cd-faculty-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;display:block}
+    .cd-faculty-photo .badge{position:absolute;left:18px;bottom:18px;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;background:rgba(4,16,31,.72);backdrop-filter:blur(10px);border:1px solid rgba(126,200,255,.3);color:#BFE0FF;font-size:12.5px;font-weight:700}
+    .cd-faculty-photo .badge svg{width:14px;height:14px;color:#FFC24B}
+    .cd-faculty-body .cd-h2{font-size:clamp(30px,4vw,46px);max-width:18ch}
+    .cd-faculty-role{color:#7EC8FF;font-size:14px;font-weight:700;letter-spacing:.02em;margin-top:10px}
+    .cd-faculty-body p.bio{font-size:16px;line-height:1.66;color:rgba(233,240,251,.78);margin-top:16px;max-width:50ch}
+    .cd-faculty-stats{display:flex;gap:34px;margin-top:26px;flex-wrap:wrap}
+    .cd-faculty-stats .st strong{display:block;font-family:'Instrument Serif',serif;font-size:34px;color:#fff;line-height:1}
+    .cd-faculty-stats .st span{font-size:13px;color:rgba(233,240,251,.62)}
+
+    /* Outcomes */
+    .cd-outcomes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+    .cd-oc{padding:26px 24px;border-radius:20px;background:linear-gradient(165deg,rgba(16,34,62,.72),rgba(8,20,40,.72));border:1px solid rgba(126,200,255,.14);text-align:left}
+    .cd-oc .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(0,110,255,.16);border:1px solid rgba(126,200,255,.3);margin-bottom:16px}
+    .cd-oc .ic svg{width:20px;height:20px;color:#7EC8FF;stroke-width:2.2}
+    .cd-oc h4{font-size:17px;font-weight:700;color:#fff;margin:0 0 7px}
+    .cd-oc p{font-size:14px;line-height:1.55;color:rgba(233,240,251,.7);margin:0}
+
+    /* Trust strip */
+    .cd-trust{margin-top:56px;padding:30px 36px;border-radius:22px;background:linear-gradient(120deg,rgba(0,110,255,.12),rgba(120,90,255,.08));border:1px solid rgba(126,200,255,.2);display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+    .cd-trust .tstat{text-align:center}
+    .cd-trust .tstat strong{display:block;font-family:'Instrument Serif',serif;font-size:38px;color:#fff;line-height:1}
+    .cd-trust .tstat .stars{color:#FFC24B;letter-spacing:2px;font-size:16px;display:block;margin-bottom:2px}
+    .cd-trust .tstat span{font-size:13px;color:rgba(233,240,251,.66)}
+    .cd-trust .tdiv{width:1px;align-self:stretch;background:rgba(160,200,255,.18)}
+
+    @media (max-width:900px){.cd-format{grid-template-columns:repeat(2,1fr)}.cd-pillars{grid-template-columns:repeat(2,1fr)}.cd-outcomes{grid-template-columns:1fr}.cd-faculty{grid-template-columns:1fr;gap:32px}}
+    @media (max-width:560px){.course-dark{padding:68px 0}.cd-format{grid-template-columns:1fr}.cd-pillars{grid-template-columns:1fr}.cd-trust{flex-direction:column;gap:20px}.cd-trust .tdiv{display:none}.cd-faculty-stats{gap:24px}}
+  </style>
+  <link rel="stylesheet" href="assets/lla-nav.css?v=4">
+<script src="/blueprint-november-r4x9/assets/ai-attribution.js"></script>
+<style id="et-bumpyard-css">
+#et-bumpyard-widget{font-family:"Open Sans","Inter",system-ui,sans-serif;position:fixed;right:0;bottom:var(--et-wa-bottom,0px);z-index:99999;padding:0 20px 20px;font-style:normal}
+#et-bumpyard-widget .flex{display:flex;flex-direction:row;align-items:center;justify-content:flex-start}
+#et-bumpyard-widget .chat-box{display:block;background:#fff;box-shadow:0 0 24px rgba(0,0,0,.2);border-radius:10px;overflow:hidden;position:relative;max-width:360px;width:0;height:0;transform:translateX(110%);opacity:0;transition:.3s cubic-bezier(.19,1,.22,1);border:1px solid #e2e2e2;margin:0 0 10px auto;text-align:left;color:#222}
+#et-bumpyard-widget.show .chat-box{transform:translateX(0);opacity:1;width:340px;height:auto}
+#et-bumpyard-widget .chat-box .close{position:absolute;top:15px;right:15px;width:15px;height:15px;cursor:pointer;z-index:2}
+#et-bumpyard-widget .chat-box .close::before,#et-bumpyard-widget .chat-box .close::after{content:"";width:2px;height:16px;position:absolute;left:calc(50% - 1px);background:#919295;display:block;border-radius:2px}
+#et-bumpyard-widget .chat-box .close::before{transform:rotate(45deg)}#et-bumpyard-widget .chat-box .close::after{transform:rotate(-45deg)}
+#et-bumpyard-widget .chat-box header{background:#f9f9f9;padding:20px;margin:0;border:0}
+#et-bumpyard-widget .chat-box header div{line-height:1.2;font-size:14px;color:#222}
+#et-bumpyard-widget .chat-box header div.name{font-size:16px;font-weight:600}
+#et-bumpyard-widget .chat-box header .avatar{margin-right:10px}
+#et-bumpyard-widget .chat-box .avatar{position:relative}
+#et-bumpyard-widget .chat-box .avatar img{border-radius:50%;box-shadow:0 0 30px rgba(0,0,0,.1);width:55px;height:55px;object-fit:cover;display:block}
+#et-bumpyard-widget .chat-box header .avatar::after{content:"";display:block;width:10px;height:10px;background:#4ecf5e;position:absolute;bottom:0;right:0;border:2px solid #f9f9f9;border-radius:50%}
+#et-bumpyard-widget .chat-box main{padding:20px;position:relative;border-bottom:1px solid #f3f0f0;display:block}
+#et-bumpyard-widget .chat-box main .time{font-size:12px;color:#919295;text-align:center;margin:0 0 20px;min-height:14px}
+#et-bumpyard-widget .chat-box main .message{align-items:flex-start;opacity:0;transition:.4s}
+#et-bumpyard-widget .chat-box main .message .avatar{margin-right:10px}
+#et-bumpyard-widget .chat-box main .message .avatar img{width:30px;height:30px;box-shadow:none}
+#et-bumpyard-widget .chat-box main .message .chat-message{background:#edecec;padding:10px;border-radius:0 10px 10px 10px;font-size:14px;line-height:1.3;transform:translateY(100%);transition:.4s;color:#222}
+#et-bumpyard-widget.loaded .chat-box main .message{opacity:1}#et-bumpyard-widget.loaded .chat-box main .message .chat-message{transform:translateY(0)}
+#et-bumpyard-widget .chat-box footer{text-align:center;padding:10px 20px 20px;background:#fff;margin:0;border:0}
+#et-bumpyard-widget .chat-box footer .title{font-size:14px;font-weight:600;margin:0 0 10px;color:#454545}
+.et-bump-btn.bump-whatsapp{border-radius:4px;background:#4ecf5e;color:#fff!important;text-decoration:none!important;padding:0 8px;line-height:40px;display:flex;justify-content:center;align-items:center;font-size:15px;font-weight:600;text-transform:none;font-family:"Open Sans","Inter",system-ui,sans-serif;font-style:normal}
+.et-bump-btn.bump-whatsapp img{margin:0 10px -2px 0;width:17px;height:17px}
+#et-bumpyard-widget .et-bump-btn-holder{text-align:right}
+#et-bumpyard-widget .widget-trigger-btn{position:relative;color:#fff!important;text-decoration:none!important;border-radius:500px;background:#025d17;line-height:40px;color:#fff;text-decoration:none;padding:0 20px;font-weight:600;display:inline-flex;align-items:center;box-shadow:0 0 24px rgba(0,0,0,.2);cursor:pointer;font-size:15px;user-select:none}
+#et-bumpyard-widget .widget-trigger-btn img{margin-right:10px;height:20px;width:20px}
+#et-bumpyard-widget .widget-trigger-btn::after{content:"";display:block;width:10px;height:10px;background:#f8294d;position:absolute;top:0;right:0;border-radius:50%}
+#et-bumpyard-widget .chat-box header .et-about{background:none!important;padding:0!important;margin:0!important;border:0!important;box-shadow:none!important;width:auto!important;min-height:0!important;display:block!important;color:#222!important;text-align:left}#et-bumpyard-widget .chat-box header .et-about div{color:#222!important;background:none!important;padding:0!important}#et-bumpyard-widget .chat-box footer{background:#fff!important;color:#454545!important;padding:10px 20px 20px!important;margin:0!important;border:0!important;display:block!important;width:auto!important;min-height:0!important}#et-bumpyard-widget .chat-box footer .title{color:#454545!important;background:none!important}#et-bumpyard-widget .chat-box header{display:flex!important;background:#f9f9f9!important;padding:20px!important;position:static!important;width:auto!important;height:auto!important;min-height:0!important;box-shadow:none!important;border:0!important}#et-bumpyard-widget .chat-box main{background:#fff!important;padding:20px!important;width:auto!important;min-height:0!important;margin:0!important}#et-bumpyard-widget img{max-width:none}
+#et-bumpyard-widget .chat-box main{min-height:70px!important}#et-bumpyard-widget .sw-loader{display:flex;justify-content:center;gap:6px;padding:6px 0 4px}#et-bumpyard-widget .sw-loader i{width:7px;height:7px;border-radius:50%;background:#b9b9b9;display:block;animation:etdot 1.2s infinite ease-in-out}#et-bumpyard-widget .sw-loader i:nth-child(2){animation-delay:.2s}#et-bumpyard-widget .sw-loader i:nth-child(3){animation-delay:.4s}@keyframes etdot{0%,80%,100%{opacity:.35;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.lla-wa-inline{margin:14px 0 4px}
+@media screen and (max-width:768px){#et-bumpyard-widget{padding:0 20px 20px;bottom:var(--et-wa-bottom-m,var(--et-wa-bottom,0px))}#et-bumpyard-widget .widget-trigger-btn{padding:15px;margin:10px 0 0}#et-bumpyard-widget .widget-trigger-btn img{height:28px;width:28px;margin:0}#et-bumpyard-widget .widget-trigger-btn .label{display:none}#et-bumpyard-widget.show .chat-box{width:min(340px,calc(100vw - 28px))}}
+#et-bumpyard-widget{--et-wa-bottom:0px;--et-wa-bottom-m:0px}</style>
+</head>
+<body class="has-shared-nav">
+<!-- LLA_SHARED_NAV -->
+<nav class="lla-shared-nav" id="llaSharedNav" aria-label="Site navigation">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Longevity Life Academy home">
+      <img src="assets/lla-logo-exact-transparent@2x.png?v=9" alt="Longevity Life Academy" class="nav-logo-img" width="1314" height="596">
+    </a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="index.html#syllabus">Curriculum</a>
+      <a href="cgm.html">CGM</a>
+      <a href="biological-age-light.html">Bio-Age Quiz</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="pricing.html" class="nav-pricing">Pricing</a>
+      <a href="index.html#lead-gen" class="nav-cta">Apply Now</a>
+    </div>
+    <button class="mobile-menu-btn" id="llaMobileMenuBtn" aria-label="Open navigation menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</nav>
+<div class="lla-mobile-nav-overlay" id="llaMobileNavOverlay" aria-hidden="true">
+  <button class="lla-mobile-nav-close" id="llaMobileNavClose" aria-label="Close navigation menu">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <nav class="lla-mobile-nav-links">
+    <a href="about.html" class="lla-mobile-nav-link">About</a>
+    <a href="index.html#syllabus" class="lla-mobile-nav-link">Curriculum</a>
+    <a href="cgm.html" class="lla-mobile-nav-link">CGM</a>
+    <a href="biological-age-light.html" class="lla-mobile-nav-link">Bio-Age Quiz</a>
+    <a href="blog.html" class="lla-mobile-nav-link">Blog</a>
+    <a href="index.html#faq" class="lla-mobile-nav-link">FAQ</a>
+    <a href="pricing.html" class="lla-mobile-nav-link">Pricing</a>
+    <a href="index.html#lead-gen" class="lla-mobile-nav-link lla-mobile-nav-cta">Apply Now</a>
+  </nav>
+</div>
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMRKXXJV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<main>
+    <section class="hero">
+      <div class="wrap center">
+        <span class="eyebrow">Free 3-minute assessment</span>
+        <h1>What age is your body really living at?</h1>
+        <p class="sub">Answer a few questions about how you sleep, eat, move, and recover. Get an instant estimate of your biological age — and see the one pillar to focus on first.</p>
+        <a class="btn" href="#assessment">Start the assessment</a>
+
+        <div class="hero-grid">
+          <figure class="image-card"><img src="assets/img-movement.jpg" alt="Adult training and moving with intention" width="900" height="1125" loading="lazy"></figure>
+          <div class="panel">
+            <span class="eyebrow">What you receive</span>
+            <h3 style="font-size:30px;margin:14px 0">A clear snapshot of how your habits are shaping the way you age.</h3>
+            <p>Your personalized biological-age estimate, the focus area that matters most for you right now, and a supportive path into the science-backed protocol taught inside Longevity Life Academy.</p>
+            <div class="stats">
+              <div class="stat"><strong>3 min</strong><span>To complete</span></div>
+              <div class="stat"><strong>Instant</strong><span>Personalized result</span></div>
+              <div class="stat"><strong>Free CGM</strong><span>Inside the course</span></div>
+            </div>
+          </div>
+          <figure class="image-card"><img src="assets/img-nutrition.jpg" alt="Nutritious longevity-focused meal" width="900" height="1125" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Julie Gibson Clark authority banner ===== -->
+    <section class="julie-banner" aria-label="Julie Gibson Clark joins Longevity Life Academy as Founding Faculty">
+      <img src="assets/instructors/julie-hero.jpg" alt="Julie Gibson Clark, ranked #2 slowest-aging person in the world" class="jb-photo" loading="lazy" width="2560" height="1440">
+      <div class="jb-wrap">
+        <div class="jb-content">
+          <span class="jb-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.7L12 17.3 5.8 20.8l1.6-6.7L2.2 8.9l6.9-.6z"/></svg> #2 Slowest-Aging Person on Earth</span>
+          <h2 class="jb-title">Julie Gibson Clark joins Longevity Life Academy as <span class="hl">Founding Faculty</span>.</h2>
+          <p class="jb-sub">The #2 slowest-aging person on Earth — achieved on everyday fundamentals, not an elite budget. Enroll in the 18-week Longevity course and get discounted access to Julie's exclusive Masterclass, opening September.</p>
+          <div class="jb-facts">
+            <span class="jb-fact"><b>$289/mo</b> · 18-week live course</span>
+            <span class="jb-fact">Abbott Lingo CGM <b>included</b></span>
+            <span class="jb-fact">Small classes <b>8–15</b> · personal protocol</span>
+            <span class="jb-fact"><span class="stars">★★★★★</span> <b>4.6/5</b> Trustpilot · 600+ reviews</span>
+          </div>
+          <div class="jb-cta-row">
+            <a href="#assessment" class="jb-cta">Get your biological age first</a>
+            <span class="jb-note">Free assessment · takes 3 minutes</span>
+          </div>
+          <p class="jb-next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <span>Right after your result, our admissions team reaches out — not to review your score, but to get you <b>enrolled in the Longevity Blueprint course at $289/mo</b>, with discounted access to Julie's exclusive Masterclass opening September.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="assessment">
+      <div class="wrap assessment">
+        <aside class="card sticky" aria-live="polite">
+          <span class="eyebrow">Your live snapshot</span>
+          <div class="score" id="liveAge">--</div>
+          <p class="muted" id="liveSummary">Answer the questions to reveal an estimated biological age and the area that may deserve the most attention next.</p>
+          <div class="progress"><span id="progressFill"></span></div>
+          <div class="mini">
+            <div><span>Estimated result</span><strong id="miniTrack">Pending</strong></div>
+            <div><span>Assessment progress</span><strong id="miniProgress">0%</strong></div>
+            <div><span>Style of feedback</span><strong>Supportive</strong></div>
+          </div>
+        </aside>
+
+        <div>
+          <form class="card" id="bioAgeForm">
+            <div class="headcopy">
+              <span class="eyebrow">Biological age questionnaire</span>
+              <h2>Begin with a few simple answers.</h2>
+              <p>Your responses help create a clear, supportive snapshot of how your current habits may be influencing the way your body ages.</p>
+            </div>
+
+            <div class="group">
+              <h3>About you</h3>
+              <p>A few quick answers create the baseline for the assessment.</p>
+              <div class="row">
+                <div>
+                  <label for="chronologicalAge">What is your age?</label>
+                  <input id="chronologicalAge" name="chronologicalAge" type="number" min="18" max="100" required>
+                </div>
+                <div>
+                  <label for="sleepHours">How many hours do you usually sleep?</label>
+                  <select id="sleepHours" name="sleepHours">
+                    <option value="">Select</option>
+                    <option value="3">Less than 6 hours</option>
+                    <option value="1">6 to 7 hours</option>
+                    <option value="-2">7 to 8.5 hours</option>
+                    <option value="0">More than 8.5 hours</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="group">
+              <h3>Energy and nourishment</h3>
+              <p>These answers help estimate how well the body is being fueled and supported day to day.</p>
+              <div class="options">
+                <div class="opt"><input type="radio" id="energyStable" name="energy" value="-2"><label for="energyStable"><strong>Energy feels steady</strong><span>Most days feel balanced, without strong crashes or swings.</span></label></div>
+                <div class="opt"><input type="radio" id="energyCrash" name="energy" value="2"><label for="energyCrash"><strong>Energy rises and dips</strong><span>Afternoons feel sluggish, or meals tend to cause noticeable highs and lows.</span></label></div>
+                <div class="opt"><input type="radio" id="nutritionStrong" name="nutrition" value="-2"><label for="nutritionStrong"><strong>Meals feel supportive</strong><span>Most meals include quality food, protein, and a sense of consistency.</span></label></div>
+                <div class="opt"><input type="radio" id="nutritionWeak" name="nutrition" value="2"><label for="nutritionWeak"><strong>Meals feel irregular</strong><span>Food choices often feel rushed, processed, or inconsistent.</span></label></div>
+              </div>
+            </div>
+
+            <div class="group">
+              <h3>Movement and recovery</h3>
+              <p>Aging well is closely connected to strength, stamina, and the ability to bounce back.</p>
+              <div class="options">
+                <div class="opt"><input type="radio" id="trainingStrong" name="training" value="-3"><label for="trainingStrong"><strong>Movement is part of the week</strong><span>Strength, cardio, walking, or intentional exercise happens regularly.</span></label></div>
+                <div class="opt"><input type="radio" id="trainingLow" name="training" value="3"><label for="trainingLow"><strong>Movement is limited</strong><span>Most days are sedentary, with little structured exercise or walking.</span></label></div>
+                <div class="opt"><input type="radio" id="recoveryGood" name="recovery" value="-1"><label for="recoveryGood"><strong>Recovery feels good</strong><span>Energy usually returns well after effort, and stress feels manageable.</span></label></div>
+                <div class="opt"><input type="radio" id="recoveryPoor" name="recovery" value="2"><label for="recoveryPoor"><strong>Recovery feels slow</strong><span>The body often feels depleted, sore, or under pressure.</span></label></div>
+              </div>
+            </div>
+
+            <div class="group">
+              <h3>Awareness and signals</h3>
+              <p>Tracking patterns can make healthy changes easier and more precise.</p>
+              <div class="options">
+                <div class="opt"><input type="radio" id="markerTracked" name="markers" value="-2"><label for="markerTracked"><strong>Health signals are tracked</strong><span>Labs, blood pressure, body composition, wearables, or similar trends are reviewed regularly.</span></label></div>
+                <div class="opt"><input type="radio" id="markerUnknown" name="markers" value="2"><label for="markerUnknown"><strong>There is little visibility</strong><span>Health trends are mostly unknown or only checked occasionally.</span></label></div>
+                <div class="opt"><input type="radio" id="stressLow" name="stress" value="-1"><label for="stressLow"><strong>Stress feels manageable</strong><span>There is room for rest, recovery, and emotional regulation most weeks.</span></label></div>
+                <div class="opt"><input type="radio" id="stressHigh" name="stress" value="3"><label for="stressHigh"><strong>Stress feels constant</strong><span>The nervous system often feels overworked, reactive, or stretched.</span></label></div>
+              </div>
+            </div>
+
+            <div class="quiz-error" id="quizError" role="alert" aria-live="polite" style="display:none;margin:0 0 14px;padding:14px 18px;border-radius:12px;background:rgba(255,90,90,0.10);border:1px solid rgba(255,120,120,0.32);color:#ffd0d0;font-size:14.5px;line-height:1.5;"></div>
+            <div class="actions">
+              <button class="btn" type="submit">See my result</button>
+              <button class="btn-secondary" type="reset">Start over</button>
+            </div>
+          </form>
+
+          <section class="card result" id="resultCard" aria-live="polite">
+            <h3 style="font-size:36px">Your biological age snapshot</h3>
+            <p class="muted" id="resultNarrative">Complete the assessment to unlock a personalized age estimate and a gentle recommendation for where to focus first.</p>
+            <div class="result-grid">
+              <div class="result-box"><strong id="ageGap">--</strong><span>Age comparison</span></div>
+              <div class="result-box"><strong id="focusTrack">--</strong><span>Suggested focus</span></div>
+              <div class="result-box"><strong id="readiness">--</strong><span>Next step style</span></div>
+            </div>
+          </section>
+
+          <div class="bio-convert" id="bioConvert">
+           <div class="bio-convert-card">
+            <aside class="bio-ctx">
+              <span class="bio-ctx-eyebrow">Your next step</span>
+              <h3>Turn your result into <span class="it">a real protocol.</span></h3>
+              <div class="bio-ctx-track" id="bioCtxTrack">Personalized to your snapshot</div>
+              <p class="bio-ctx-lead" id="bioCtxLead">Longevity Life Academy is a live, 18-week course that takes you from this snapshot to your own written longevity protocol — guided by expert faculty and your own body's data.</p>
+              <ul class="bio-ctx-list">
+                <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span><strong>18 weeks live online</strong> — weekly 50-min sessions in a small class of 8–15 adults.</span></li>
+                <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span><strong>Free Abbott Lingo CGM</strong> — shipped before lesson 5, so you see your own glucose data.</span></li>
+                <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span><strong>Six-pillar curriculum</strong> — nutrition, sleep, movement, supplements, stress, and your protocol.</span></li>
+                <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span><strong>Your personal longevity protocol</strong> — peer-reviewed by your class, yours to keep.</span></li>
+              </ul>
+              <div class="bio-ctx-price">
+                <span class="amt">$289 <span>/mo × 5</span></span>
+                <span class="alt">or <b>$1,249 one-time</b> · cancel anytime, no setup fee</span>
+              </div>
+              <div class="bio-ctx-trust"><span class="stars">★★★★★</span> 4.6 / 5 on Trustpilot · 600+ verified reviews</div>
+            </aside>
+          <form class="bio-leadgen form-with-thankyou" id="bioLeadGenForm" data-thankyou-target="bioThankYou" novalidate>
+            <span class="bio-leadgen-eyebrow">Talk to admissions</span>
+            <h3>Discuss your result with our team.</h3>
+            <p class="bio-leadgen-sub">Leave your details and an admissions advisor will reach out personally to walk you through your snapshot and the best way into the program — no commitment.</p>
+            <div class="bio-leadgen-grid">
+              <div class="bio-leadgen-field">
+                <label for="bioFName">First Name</label>
+                <input id="bioFName" name="firstName" type="text" placeholder="Your first name" required autocomplete="given-name">
+              </div>
+              <div class="bio-leadgen-field">
+                <label for="bioLName">Last Name</label>
+                <input id="bioLName" name="lastName" type="text" placeholder="Your last name" required autocomplete="family-name">
+              </div>
+              <div class="bio-leadgen-field full">
+                <label for="bioEmail">Email Address</label>
+                <input id="bioEmail" name="email" type="email" placeholder="you@example.com" required autocomplete="email">
+              </div>
+              <div class="bio-leadgen-field full">
+                <label for="bioPhone">Phone Number</label>
+                <input id="bioPhone" name="phone" type="tel" placeholder="Mobile number" required autocomplete="tel" inputmode="tel" maxlength="20" pattern="[0-9()+\-.\s]{6,20}">
+              </div>
+              <div class="bio-leadgen-field full">
+                <label for="bioCountry">State</label>
+                                <select id="bioCountry" name="country" required>
+                  <option value="" disabled selected>Select your state</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="DC">District of Columbia</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>
+              </div>
+              <button class="bio-leadgen-submit" type="submit">Send my details</button>
+<a class="et-bump-btn bump-whatsapp lla-wa-inline" href="https://wa.me/12015023701" target="_blank" rel="noopener"><img src="assets/wa/wapp.png" alt="whatsapp"> <span>Start Chat on WhatsApp</span></a>
+
+            </div>
+            <p class="bio-leadgen-trust">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Your information is secure. We'll never share your details.
+            </p>
+          <div class="lg-or" aria-hidden="true"><span>or</span></div>
+          <a href="#" data-checkout-open class="lg-buy">
+            <span class="lg-buy-main"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1.6"/><circle cx="19" cy="21" r="1.6"/><path d="M2.5 3h3l2.6 12.5a2 2 0 0 0 2 1.5h7.9a2 2 0 0 0 2-1.6L21.5 8H6.2"/></svg> Enroll Online Now &mdash; $289/mo</span>
+            <span class="lg-buy-sub">Register &rarr; Choose your dates &rarr; Pay online &middot; done in 2 minutes</span>
+          </a>
+          </form>
+
+          <div class="form-thankyou" id="bioThankYou" role="status" aria-live="polite">
+            <div class="form-thankyou-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <h3 class="form-thankyou-headline">Thank You!</h3>
+            <p class="form-thankyou-text">We have received your details. One of our team members will be in touch with you shortly. We look forward to welcoming you to Longevity Life Academy.</p>
+            <a class="form-thankyou-cta" href="index.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              Back to Home
+            </a>
+          </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Inside the program ===== -->
+    <section class="course-dark center" id="inside-program">
+      <div class="wrap">
+        <span class="cd-eyebrow">Inside the program</span>
+        <h2 class="cd-h2">A snapshot is the start. <span class="it">A protocol changes things.</span></h2>
+        <p class="cd-sub">Longevity Life Academy turns your result into a written, evidence-based plan — over 18 live weeks, in a small class, guided by faculty and your own body's data.</p>
+        <div class="cd-format">
+          <div class="cd-fcard">
+            <span class="big">18</span>
+            <h4>Weeks, live online</h4>
+            <p>Four phases across 18 live sessions — 18 Live Sessions. 4 Phases. One Protocol.</p>
+          </div>
+          <div class="cd-fcard">
+            <span class="big">8&ndash;15</span>
+            <h4>Small cohort</h4>
+            <p>A class of 8&ndash;15 adults so faculty know you, your data, and your goals.</p>
+          </div>
+          <div class="cd-fcard">
+            <span class="big">50<span style="font-size:16px;color:rgba(233,240,251,.6)">min</span></span>
+            <h4>Weekly live sessions</h4>
+            <p>Recorded, with weekly assignments and a private class forum between sessions.</p>
+          </div>
+          <div class="cd-fcard">
+            <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+            <h4>Free Abbott Lingo CGM</h4>
+            <p>Shipped before lesson 5 with 14 days of app access, so you see your real glucose data.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== The Six Pillars ===== -->
+    <section class="course-dark center" id="six-pillars" style="padding-top:0">
+      <div class="wrap">
+        <span class="cd-eyebrow">The curriculum</span>
+        <h2 class="cd-h2">Six pillars. <span class="it">One protocol that's yours.</span></h2>
+        <p class="cd-sub">Each pillar builds on your assessment, moving from the fundamentals to a personal longevity protocol you keep for life.</p>
+        <div class="cd-pillars">
+          <div class="cd-pillar"><img src="assets/img-nutrition.jpg" alt="Nutrition" loading="lazy"><div class="pbody"><div class="pnum">Pillar 01</div><h4>Nutrition</h4><p>What to eat and when, tuned to how your body actually responds.</p></div></div>
+          <div class="cd-pillar"><img src="assets/img-sleep.jpg" alt="Sleep" loading="lazy"><div class="pbody"><div class="pnum">Pillar 02</div><h4>Sleep</h4><p>Rhythm, recovery, and the nightly habits that reset the body.</p></div></div>
+          <div class="cd-pillar"><img src="assets/img-movement.jpg" alt="Exercise and movement" loading="lazy"><div class="pbody"><div class="pnum">Pillar 03</div><h4>Exercise &amp; Movement</h4><p>Strength, cardio, and mobility that protect vitality over decades.</p></div></div>
+          <div class="cd-pillar"><img src="assets/img-supplements.jpg" alt="Supplements and wearables" loading="lazy"><div class="pbody"><div class="pnum">Pillar 04</div><h4>Supplements &amp; Wearables</h4><p>What's worth taking, what's worth tracking, and how to read the data.</p></div></div>
+          <div class="cd-pillar"><img src="assets/img-stress.jpg" alt="Stress management" loading="lazy"><div class="pbody"><div class="pnum">Pillar 05</div><h4>Stress Management</h4><p>Nervous-system tools to build resilience and steadier energy.</p></div></div>
+          <div class="cd-pillar"><img src="assets/img-metabolic.jpg" alt="Your longevity protocol" loading="lazy"><div class="pbody"><div class="pnum">Pillar 06</div><h4>Your Longevity Protocol</h4><p>A written plan, peer-reviewed by your class and yours to keep.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Meet your faculty ===== -->
+    <section class="course-dark" id="faculty" style="padding-top:0">
+      <div class="wrap">
+        <div class="cd-faculty">
+          <div class="cd-faculty-photo">
+            <img src="assets/instructors/julie-portrait.jpg" alt="Julie Gibson Clark, Founding Faculty" loading="lazy">
+            <span class="badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.7L12 17.3 5.8 20.8l1.6-6.7L2.2 8.9l6.9-.6z"/></svg> Ranked #2 · Rejuvenation Olympics</span>
+          </div>
+          <div class="cd-faculty-body">
+            <span class="cd-eyebrow">Meet your faculty</span>
+            <h2 class="cd-h2">Julie Gibson Clark</h2>
+            <div class="cd-faculty-role">Founding Faculty · Longevity Life Academy</div>
+            <p class="bio">Ranked the #2 slowest-aging person in the world on the Rejuvenation Olympics, Julie is a leading voice in accessible, evidence-based longevity. She built her results without a private lab or an elite budget — and she teaches exactly that approach here.</p>
+            <div class="cd-faculty-stats">
+              <div class="st"><strong>#2</strong><span>Rejuvenation Olympics</span></div>
+              <div class="st"><strong>18</strong><span>Live weeks with faculty</span></div>
+              <div class="st"><strong>1:1</strong><span>Protocol built around you</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== What you walk away with ===== -->
+    <section class="course-dark center" id="outcomes" style="padding-top:0">
+      <div class="wrap">
+        <span class="cd-eyebrow">What you walk away with</span>
+        <h2 class="cd-h2">Not information. <span class="it">A plan you'll actually use.</span></h2>
+        <div class="cd-outcomes">
+          <div class="cd-oc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div><h4>Your written protocol</h4><p>A personal longevity plan, peer-reviewed by your cohort and yours to keep for life.</p></div>
+          <div class="cd-oc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.8L7 14.3"/></svg></div><h4>Data you can read</h4><p>Real glucose insight from your Lingo CGM, plus the skills to interpret your own markers.</p></div>
+          <div class="cd-oc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h4>A small, expert community</h4><p>Faculty who know your name and a cohort walking the same path alongside you.</p></div>
+        </div>
+
+        <div class="cd-trust">
+          <div class="tstat"><span class="stars">★★★★★</span><strong>4.6 / 5</strong><span>Rated on Trustpilot</span></div>
+          <div class="tdiv"></div>
+          <div class="tstat"><strong>600+</strong><span>Verified reviews</span></div>
+          <div class="tdiv"></div>
+          <div class="tstat"><strong>Designed by</strong><span>eTeacher Group</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('bioAgeForm');
+    const liveAge = document.getElementById('liveAge');
+    const liveSummary = document.getElementById('liveSummary');
+    const progressFill = document.getElementById('progressFill');
+    const miniTrack = document.getElementById('miniTrack');
+    const miniProgress = document.getElementById('miniProgress');
+    const resultCard = document.getElementById('resultCard');
+    const ageGap = document.getElementById('ageGap');
+    const focusTrack = document.getElementById('focusTrack');
+    const readiness = document.getElementById('readiness');
+    const resultNarrative = document.getElementById('resultNarrative');
+    const fieldNames = ['chronologicalAge','sleepHours','energy','nutrition','training','recovery','markers','stress'];
+    function getData(){const fd=new FormData(form);const data={};fieldNames.forEach(name=>data[name]=fd.get(name));return data}
+    function filledCount(data){return fieldNames.filter(name=>data[name]!==null&&data[name]!=='').length}
+    function compute(data){const age=Number(data.chronologicalAge||0);if(!age)return null;const modifiers=['sleepHours','energy','nutrition','training','recovery','markers','stress'].map(key=>Number(data[key]||0)).reduce((sum,value)=>sum+value,0);const bioAge=Math.max(18,Math.round(age+modifiers));const gap=bioAge-age;let track='Balanced foundation';let note='Your biological age appears closely aligned with your chronological age. This suggests a stable foundation, with the strongest gains likely to come from a few more intentional choices around sleep, energy, and consistency.';let readinessLabel='Ready for a next step';if((Number(data.stress)+Number(data.sleepHours))>=4){track='Restore the basics';note='Your result suggests that recovery, sleep quality, and stress balance may deserve a little more attention right now.';readinessLabel='Best with a gentle reset'}else if((Number(data.energy)+Number(data.nutrition)+Number(data.markers))>=3){track='Metabolic balance';note='Your result suggests that better energy stability, nourishment, and visibility into key health signals could make a meaningful difference.';readinessLabel='Best with practical structure'}else if((Number(data.training)+Number(data.recovery))<=-3){track='Performance longevity';note='Your result suggests a strong foundation in movement, recovery, and daily rhythm, with room to keep refining what already works well.';readinessLabel='Ready for advanced guidance'}return {age,bioAge,gap,track,note,readinessLabel}}
+    function updateLive(){const data=getData();const count=filledCount(data);const pct=Math.round((count/fieldNames.length)*100);progressFill.style.width=pct+'%';miniProgress.textContent=pct+'%';const result=compute(data);if(!result){liveAge.textContent='--';miniTrack.textContent='Pending';liveSummary.textContent='Answer the questions to reveal an estimated biological age and the area that may deserve the most attention next.';return}liveAge.textContent=result.bioAge;miniTrack.textContent=result.track;liveSummary.textContent=result.gap<=0?`Current estimate: ${Math.abs(result.gap)} year${Math.abs(result.gap)===1?'':'s'} younger than chronological age.`:`Current estimate: ${result.gap} year${result.gap===1?'':'s'} older than chronological age.`}
+    form.addEventListener('input', updateLive); form.addEventListener('change', updateLive);
+    const bioLeadGen = document.getElementById('bioLeadGenForm');
+    const bioThankYou = document.getElementById('bioThankYou');
+    const bioConvert = document.getElementById('bioConvert');
+    const bioCtxTrack = document.getElementById('bioCtxTrack');
+    const bioCtxLead = document.getElementById('bioCtxLead');
+    const quizError = document.getElementById('quizError');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = getData();
+      const otherFields = ['sleepHours','energy','nutrition','training','recovery','markers','stress'];
+      const otherFilled = otherFields.filter(k=>data[k]!==null && data[k]!=='').length;
+      if(!data.chronologicalAge){
+        if(quizError){ quizError.style.display='block'; quizError.textContent='Please enter your age to get your biological age estimate.'; quizError.scrollIntoView({behavior:'smooth',block:'center'}); }
+        return;
+      }
+      if(otherFilled < 3){
+        if(quizError){ quizError.style.display='block'; quizError.textContent='Please complete at least 3 health-style questions to get your biological age estimate.'; quizError.scrollIntoView({behavior:'smooth',block:'center'}); }
+        return;
+      }
+      if(quizError){ quizError.style.display='none'; quizError.textContent=''; }
+      const result = compute(data);
+      if(!result) return;
+      resultCard.classList.add('visible');
+      ageGap.textContent = result.gap===0 ? 'Aligned with age' : (result.gap>0 ? `+${result.gap} years` : `${result.gap} years`);
+      focusTrack.textContent = result.track;
+      readiness.textContent = result.readinessLabel;
+      resultNarrative.textContent = `Estimated biological age: ${result.bioAge}. ${result.note}`;
+      // Pass the bio-age result to the lead-gen form as AdminNotes for the CRM.
+      if (bioLeadGen) {
+        const labels = { sleepHours:'Sleep', energy:'Energy', nutrition:'Nutrition', training:'Training', recovery:'Recovery', markers:'Tracking markers', stress:'Stress' };
+        const answers = Object.keys(labels).map(k=>`${labels[k]}=${data[k]||'n/a'}`).join('; ');
+        const notes = [
+          `[Bio-Age Assessment]`,
+          `Chronological: ${data.chronologicalAge}`,
+          `Estimated bio-age: ${result.bioAge}`,
+          `Gap: ${result.gap>=0?'+':''}${result.gap}`,
+          `Track: ${result.track}`,
+          `Readiness: ${result.readinessLabel}`,
+          `Answers: ${answers}`
+        ].join(' | ');
+        bioLeadGen.dataset.adminNotes = notes;
+        bioLeadGen.classList.add('visible');
+      }
+      // Personalize the course-info panel to the user's snapshot, then reveal the conversion block.
+      if (bioCtxTrack) {
+        const gapTxt = result.gap===0 ? 'aligned with your chronological age' : (result.gap>0 ? `${result.gap} year${result.gap===1?'':'s'} older than your chronological age` : `${Math.abs(result.gap)} year${Math.abs(result.gap)===1?'':'s'} younger than your chronological age`);
+        bioCtxTrack.textContent = `Your focus: ${result.track}`;
+        if (bioCtxLead) {
+          bioCtxLead.textContent = `Your snapshot puts you ${gapTxt}. Inside the 18-week program you'll turn this into a written longevity protocol — starting with ${result.track.toLowerCase()} — guided by expert faculty and your own body's data.`;
+        }
+      }
+      if (bioConvert) { bioConvert.classList.add('visible'); }
+      resultCard.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+    form.addEventListener('reset', ()=>{
+      setTimeout(()=>{
+        progressFill.style.width='0%';
+        miniProgress.textContent='0%';
+        miniTrack.textContent='Pending';
+        liveAge.textContent='--';
+        liveSummary.textContent='Answer the questions to reveal an estimated biological age and the area that may deserve the most attention next.';
+        resultCard.classList.remove('visible');
+        if(bioConvert){ bioConvert.classList.remove('visible'); }
+        if(bioLeadGen){
+          bioLeadGen.classList.remove('visible');
+          bioLeadGen.reset();
+          bioLeadGen.style.display = '';
+          delete bioLeadGen.dataset.adminNotes;
+        }
+        if(bioThankYou){ bioThankYou.classList.remove('visible'); }
+      },0);
+    });
+    // After the lead-gen form successfully posts to the CRM, also lock the assessment.
+    if (bioLeadGen) {
+      bioLeadGen.addEventListener('thankyou:shown', function(){
+        form.style.display = 'none';
+        form.querySelectorAll('button').forEach(b=>{b.disabled=true});
+      });
+    }
+  </script>
+
+  <!-- =====================================================
+       eTeacher Leads CRM Integration (bio-age page)
+       Mirrors the homepage integration. Endpoint switched
+       between staging and production via ETEACHER_ENV.
+       ===================================================== -->
+  <script>
+  (function(){
+    var ETEACHER_ENV = 'production'; // staging-tested 2026-05-06; flipped to production per CEO request
+    // Routed through Cloudflare Worker proxy (adds CORS headers; eTeacher API has none)
+    // Worker source: workspace/eteacher-proxy-worker/src/index.js
+    var ENDPOINTS = {
+      staging:    'https://eteacher-leads-proxy.gitter-omri.workers.dev/leads/staging',
+      production: 'https://eteacher-leads-proxy.gitter-omri.workers.dev/leads/production'
+    };
+    var ipCountryPromise = null;
+    function getIpCountry(){
+      if (ipCountryPromise) return ipCountryPromise;
+      ipCountryPromise = fetch('https://ipapi.co/country/', { method:'GET', cache:'force-cache' })
+        .then(function(r){ return r.ok ? r.text() : ''; })
+        .then(function(t){ t=(t||'').trim().toUpperCase(); return /^[A-Z]{2}$/.test(t) ? t : ''; })
+        .catch(function(){ return ''; });
+      return ipCountryPromise;
+    }
+    function isValidEmail(s){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s); }
+
+    // ---------- Click-ID + UTM capture (mirrors index.html) ----------
+    var ATTR_KEYS = ['gclid','fbclid','msclkid','ttclid','li_fat_id','wbraid','gbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    var ATTR_TTL_MS = 30 * 24 * 60 * 60 * 1000;
+    var ATTR_STORAGE_KEY = 'lla_attribution_v1';
+    function readAttributionStorage(){
+      try {
+        var raw = localStorage.getItem(ATTR_STORAGE_KEY);
+        if (!raw) return null;
+        var obj = JSON.parse(raw);
+        if (!obj || !obj.ts || (Date.now() - obj.ts) > ATTR_TTL_MS) return null;
+        return obj;
+      } catch(e) { return null; }
+    }
+    function captureAttribution(){
+      try {
+        var params = new URLSearchParams(window.location.search || '');
+        var found = {};
+        var hasAny = false;
+        ATTR_KEYS.forEach(function(k){ var v = params.get(k); if (v) { found[k] = v; hasAny = true; } });
+        if (hasAny) {
+          found.ts = Date.now();
+          found.first_landing = window.location.href;
+          found.first_referrer = document.referrer || '';
+          try { localStorage.setItem(ATTR_STORAGE_KEY, JSON.stringify(found)); } catch(e){}
+          return found;
+        }
+        return readAttributionStorage();
+      } catch(e) { return null; }
+    }
+    var _cachedAttribution = captureAttribution();
+    function getAttribution(){ return _cachedAttribution || readAttributionStorage(); }
+    function buildDynamicParameters(attr){
+      if (!attr) return '';
+      var pairs = [];
+      ATTR_KEYS.forEach(function(k){ if (attr[k]) pairs.push(k + '=' + attr[k]); });
+      return pairs.join(';');
+    }
+
+    function postWithRetry(url, payload, attempt){
+      attempt = attempt || 1;
+      return fetch(url, { method:'POST', headers:{ 'Content-Type':'application/json','Accept':'application/json' }, body: JSON.stringify(payload), credentials:'omit', mode:'cors' })
+        .then(function(res){
+          if (res.status === 200) return { ok:true, status:200 };
+          if (res.status >= 400 && res.status < 500) return { ok:false, status:res.status, retryable:false };
+          if (attempt < 3) { var d = Math.pow(2, attempt-1)*1000; return new Promise(function(r){ setTimeout(function(){ r(postWithRetry(url, payload, attempt+1)); }, d); }); }
+          return { ok:false, status:res.status, retryable:true };
+        })
+        .catch(function(err){
+          if (attempt < 3) { var d = Math.pow(2, attempt-1)*1000; return new Promise(function(r){ setTimeout(function(){ r(postWithRetry(url, payload, attempt+1)); }, d); }); }
+          return { ok:false, status:0, retryable:true, error:String(err) };
+        });
+    }
+    window.eTeacherLeads = {
+      endpoint: ENDPOINTS[ETEACHER_ENV],
+      env: ETEACHER_ENV,
+      getAttribution: getAttribution,
+      submit: function(fields){
+        if (!fields || !fields.firstName || !fields.lastName || !isValidEmail(fields.email||'') || !fields.phone || !fields.countryIso) {
+          return Promise.resolve({ ok:false, status:0, error:'Missing or invalid fields' });
+        }
+        // ---- USA-ONLY HARD GATE (see nanp-state-autofill.js) ----
+        var usPhone = (window.LLA_US && window.LLA_US.validatePhone)
+          ? window.LLA_US.validatePhone(fields.phone)
+          : { ok: false, reason: 'validator_unavailable' };
+        if (!usPhone.ok) {
+          return Promise.resolve({ ok:false, status:0, error:'non_us_phone', reason: usPhone.reason });
+        }
+        var stateCode = String(fields.countryIso).toUpperCase();
+        var US_STATES = { AL:1,AK:1,AZ:1,AR:1,CA:1,CO:1,CT:1,DE:1,DC:1,FL:1,GA:1,HI:1,ID:1,IL:1,IN:1,IA:1,KS:1,KY:1,LA:1,ME:1,MD:1,MA:1,MI:1,MN:1,MS:1,MO:1,MT:1,NE:1,NV:1,NH:1,NJ:1,NM:1,NY:1,NC:1,ND:1,OH:1,OK:1,OR:1,PA:1,RI:1,SC:1,SD:1,TN:1,TX:1,UT:1,VT:1,VA:1,WA:1,WV:1,WI:1,WY:1 };
+        if (!US_STATES[stateCode]) {
+          return Promise.resolve({ ok:false, status:0, error:'invalid_state' });
+        }
+        return getIpCountry().then(function(ipCountry){
+          var payload = {
+            ProductID: 26,
+            FirstName: String(fields.firstName).trim(),
+            LastName:  String(fields.lastName).trim(),
+            Email:     String(fields.email).trim(),
+            MobilePhone: usPhone.e164,
+            CountryIsoCode: 'US',
+            State: stateCode,
+            StateProvinceRegion: stateCode,
+            LandingPage: window.location.href,
+            UserAgent: navigator.userAgent,
+            ReferringSite: document.referrer || window.location.hostname,
+            QueryString: (window.location.search || '').replace(/^\?/, '')
+          };
+          payload.CountryIsoCodeByIp = 'US';
+          var notes = 'US State: ' + stateCode;
+          if (fields.adminNotes) notes += ' | ' + String(fields.adminNotes);
+          payload.AdminNotes = notes.slice(0, 4000);
+          var attr = getAttribution();
+          var dyn = buildDynamicParameters(attr);
+          if (fields.googleCampaignId && /^\d+$/.test(String(fields.googleCampaignId))) {
+            dyn = (dyn ? dyn + ';' : '') + 'google_campaign_id=' + String(fields.googleCampaignId);
+          }
+          if (dyn) payload.DynamicParameters = dyn.slice(0, 4000);
+          if (fields.campaignId && /^\d+$/.test(String(fields.campaignId))) {
+            payload.CampaignID = parseInt(fields.campaignId, 10);
+          }
+          return postWithRetry(ENDPOINTS[ETEACHER_ENV], payload);
+        });
+      }
+    };
+  })();
+  </script>
+
+  <style>
+    .form-with-thankyou .form-error{display:none;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.4);color:#fecaca;border-radius:12px;padding:12px 16px;margin-top:14px;font-size:14px;line-height:1.5;font-family:'Inter',sans-serif}
+    .form-with-thankyou .form-error.visible{display:block}
+    .form-with-thankyou.is-submitting button[type="submit"]{opacity:.7;pointer-events:none;position:relative}
+    .form-with-thankyou.is-submitting button[type="submit"]::after{content:'';position:absolute;right:18px;top:50%;width:16px;height:16px;margin-top:-8px;border:2px solid rgba(255,255,255,0.4);border-top-color:#fff;border-radius:50%;animation:lg-spin .7s linear infinite}
+    @keyframes lg-spin{to{transform:rotate(360deg)}}
+  </style>
+  <script>
+  // CampaignID map shared with index.html semantics. Update with eTeacher-provided IDs.
+  window.LLA_CAMPAIGN_IDS = window.LLA_CAMPAIGN_IDS || {
+    // 'leadGenV2Form':   123456,
+    // 'bioLeadGenForm':  123457,
+  };
+  window.LLA_GOOGLE_CAMPAIGN_IDS = window.LLA_GOOGLE_CAMPAIGN_IDS || {
+    US: '116641', // LGV_EN_GGL_Search_US_2026-05-05_#116641
+    CA: '116639'  // LGV_EN_GGL_Search_Canada_2026-05-05_#116639
+  };
+  (function(){
+    function getValue(form, name){ var el = form.querySelector('[name="'+name+'"], #'+name); return el ? el.value : ''; }
+    function showError(form, msg){
+      var box = form.querySelector('.form-error');
+      if (!box) {
+        box = document.createElement('div');
+        box.className = 'form-error';
+        box.setAttribute('role','alert');
+        var submitBtn = form.querySelector('button[type="submit"], .lead-gen-v2-submit, .bio-leadgen-submit');
+        if (submitBtn && submitBtn.parentNode) submitBtn.parentNode.insertBefore(box, submitBtn.nextSibling);
+        else form.appendChild(box);
+      }
+      box.textContent = msg; box.classList.add('visible');
+    }
+    function clearError(form){ var b = form.querySelector('.form-error'); if (b) b.classList.remove('visible'); }
+    function showThankYou(form){
+      var targetId = form.getAttribute('data-thankyou-target');
+      var thx = targetId ? document.getElementById(targetId) : form.parentNode.querySelector('.form-thankyou');
+      if (!thx) return;
+      form.style.display = 'none';
+      thx.classList.add('visible');
+      try { thx.scrollIntoView({ behavior:'smooth', block:'center' }); } catch(err){}
+      try { form.dispatchEvent(new CustomEvent('thankyou:shown', { bubbles:true })); } catch(err){}
+    }
+    function bind(form){
+      if (form.dataset.thankyouBound === '1') return;
+      form.dataset.thankyouBound = '1';
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        clearError(form);
+        var fields = {
+          firstName:  getValue(form, 'firstName')  || getValue(form, 'bioFName')  || getValue(form, 'lg-fname'),
+          lastName:   getValue(form, 'lastName')   || getValue(form, 'bioLName')  || getValue(form, 'lg-lname'),
+          email:      getValue(form, 'email')      || getValue(form, 'bioEmail')  || getValue(form, 'lg-email'),
+          phone:      getValue(form, 'phone')      || getValue(form, 'bioPhone')  || getValue(form, 'lg-phone'),
+          countryIso: getValue(form, 'country')    || getValue(form, 'bioCountry')|| getValue(form, 'lg-country'),
+          adminNotes: form.dataset.adminNotes || '',
+          campaignId: (window.LLA_CAMPAIGN_IDS && window.LLA_CAMPAIGN_IDS[form.id]) || '',
+          googleCampaignId: ''
+        };
+        // US-only site: always attribute to the US Google Ads campaign.
+        if (window.LLA_GOOGLE_CAMPAIGN_IDS) {
+          fields.googleCampaignId = window.LLA_GOOGLE_CAMPAIGN_IDS['US'] || '';
+        }
+        var _iso = 'US';
+        try { if (window.LLA_COUNTRY && window.LLA_COUNTRY.selected) _iso = String(window.LLA_COUNTRY.selected() || 'US').toUpperCase(); } catch (e) {}
+        if (_iso !== 'US' && !fields.countryIso) fields.countryIso = _iso;
+        if (!fields.firstName || !fields.lastName || !fields.email || !fields.phone || !fields.countryIso) {
+          showError(form, 'Please fill in all required fields.'); return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) {
+          showError(form, 'Please enter a valid email address.'); return;
+        }
+        // Client-side US phone gate: block non-US / invalid numbers before submit.
+        var _p = (_iso === 'US')
+          ? ((window.LLA_US && window.LLA_US.validatePhone) ? window.LLA_US.validatePhone(fields.phone) : { ok:true })
+          : ((window.LLA_COUNTRY && window.LLA_COUNTRY.toE164) ? window.LLA_COUNTRY.toE164(fields.phone, _iso) : { ok:true });
+        if (!_p.ok) {
+          showError(form, _iso === 'US' ? 'Please enter a valid US mobile number, or pick your country from the list.' : 'Please enter a valid mobile number for the selected country.');
+          return;
+        }
+        form.classList.add('is-submitting');
+        window.eTeacherLeads.submit(fields).then(function(res){
+          form.classList.remove('is-submitting');
+          if (res.ok) {
+            try {
+              var attr = (window.eTeacherLeads.getAttribution && window.eTeacherLeads.getAttribution()) || {};
+              if (window.dataLayer) { window.dataLayer.push({ event:'lead_form_submit', form_id: form.id || 'unknown', crm_status:'ok', env: window.eTeacherLeads.env, gclid: attr.gclid || '', fbclid: attr.fbclid || '', utm_source: attr.utm_source || '', utm_campaign: attr.utm_campaign || '', utm_medium: attr.utm_medium || '' }); }
+            } catch(err){}
+            showThankYou(form);
+          } else {
+            try { if (window.dataLayer) { window.dataLayer.push({ event:'lead_form_submit_error', form_id: form.id || 'unknown', crm_status: res.status, env: window.eTeacherLeads.env }); } } catch(err){}
+            showError(form, "We couldn't submit your details right now. Please try again in a moment, or email advisor@longevitylifeacademy.com.");
+          }
+        });
+      });
+    }
+    function init(){ document.querySelectorAll('form.form-with-thankyou').forEach(bind); }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+  })();
+  </script>
+
+
+  <!-- Global Floating Enroll CTA -->
+  <style>
+    .lla-float-cta{
+      position:fixed;top:96px;right:32px;z-index:9999;
+      display:inline-flex;align-items:stretch;cursor:pointer;text-decoration:none;
+      font-family:'Inter','Codec Pro',sans-serif;
+      border-radius:18px;overflow:hidden;
+      background:linear-gradient(180deg,#0F2D52 0%,#0A2240 100%);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:
+        0 0 0 1px rgba(120,180,255,.18),
+        0 14px 36px rgba(8,30,60,.28),
+        0 0 28px rgba(120,190,255,.18);
+      opacity:0;transform:translateY(-12px);pointer-events:none;
+      transition:opacity .45s ease, transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .25s ease;
+    }
+    .lla-float-cta.is-visible{opacity:1;transform:translateY(0);pointer-events:auto}
+    .lla-float-cta:hover{
+      transform:translateY(-2px);
+      box-shadow:
+        0 0 0 1px rgba(140,200,255,.35),
+        0 18px 44px rgba(8,30,60,.34),
+        0 0 44px rgba(120,190,255,.42);
+    }
+    .lla-float-cta .lla-cta-text{
+      display:flex;flex-direction:column;justify-content:center;
+      padding:14px 18px 14px 20px;gap:4px;
+    }
+    .lla-float-cta .lla-cta-eyebrow{
+      display:flex;align-items:center;gap:8px;
+      font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+      color:#8FB9F0;
+    }
+    .lla-float-cta .lla-cta-eyebrow::before{
+      content:"";width:6px;height:6px;border-radius:50%;
+      background:#5EB6FF;box-shadow:0 0 8px #5EB6FF,0 0 14px rgba(94,182,255,.7);
+      animation:llaDot 2.2s ease-in-out infinite;
+    }
+    .lla-float-cta .lla-cta-title{
+      font-family:'Codec Pro','Inter',sans-serif;
+      font-size:15.5px;font-weight:700;color:#fff;letter-spacing:.1px;line-height:1.1;
+    }
+    .lla-float-cta .lla-cta-pill{
+      display:flex;align-items:center;gap:8px;
+      padding:0 22px;margin:8px 8px 8px 6px;border-radius:12px;
+      background:linear-gradient(180deg,#5EB6FF 0%,#2E8BE6 100%);
+      color:#06243F;font-weight:800;font-size:14.5px;letter-spacing:.1px;
+      box-shadow:0 1px 0 rgba(255,255,255,.55) inset, 0 8px 20px rgba(46,139,230,.32);
+    }
+    .lla-float-cta .lla-cta-pill .price{font-size:15.5px;font-weight:900}
+    .lla-float-cta .lla-cta-pill .mo{font-size:11px;font-weight:700;color:#0A2240;opacity:.78;letter-spacing:.06em}
+    .lla-float-cta .lla-cta-arrow{width:16px;height:16px;color:#06243F;transition:transform .25s ease}
+    .lla-float-cta:hover .lla-cta-arrow{transform:translateX(3px)}
+    @keyframes llaDot{
+      0%,100%{box-shadow:0 0 8px #5EB6FF,0 0 14px rgba(94,182,255,.7)}
+      50%{box-shadow:0 0 14px #5EB6FF,0 0 24px rgba(94,182,255,1)}
+    }
+    @media (max-width:720px){
+      .lla-float-cta{top:12px;right:12px;left:12px;border-radius:14px}
+      .lla-float-cta .lla-cta-text{padding:10px 12px 10px 14px;flex:1;min-width:0}
+      .lla-float-cta .lla-cta-title{font-size:14px}
+      .lla-float-cta .lla-cta-eyebrow{font-size:9.5px}
+      .lla-float-cta .lla-cta-pill{padding:0 14px;margin:6px 6px 6px 4px;border-radius:10px}
+      .lla-float-cta .lla-cta-pill .price{font-size:14px}
+      .lla-float-cta .lla-cta-pill .mo{font-size:10px}
+    }
+  </style>
+  <a href="/blueprint-november-r4x9/#lead-gen" class="lla-float-cta" id="llaFloatCta" aria-label="Enroll Now in The Longevity Blueprint — $289 per month">
+    <span class="lla-cta-text">
+      <span class="lla-cta-eyebrow">Enroll Now</span>
+      <span class="lla-cta-title">The Longevity Blueprint</span>
+    </span>
+    <span class="lla-cta-pill">
+      <span class="price">$289</span><span class="mo">/ MO</span>
+      <svg class="lla-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+    </span>
+  </a>
+  <script>
+    (function(){
+      var cta=document.getElementById('llaFloatCta');
+      if(!cta) return;
+      function onScroll(){if(window.scrollY>140){cta.classList.add('is-visible')}else{cta.classList.remove('is-visible')}}
+      window.addEventListener('scroll',onScroll,{passive:true});
+      // Always show after a short delay even without scroll, so users on short pages see it
+      setTimeout(function(){cta.classList.add('is-visible')},800);
+      onScroll();
+      var path=(location.pathname||'').toLowerCase();
+      var isHome = path==='/blueprint-november-r4x9/' || path==='' || /(^|\/)(index(\.html)?|index-light\.html)$/.test(path);
+      var isBio = /biological-age-light\.html$/.test(path);
+      cta.addEventListener('click',function(e){
+        // Same-page handler for the homepage
+        if(isHome){
+          e.preventDefault();
+          var lead=document.getElementById('lead-gen')||document.getElementById('leadGenV2Form');
+          if(lead){lead.scrollIntoView({behavior:'smooth',block:'start'});
+            var first=lead.querySelector('input,select,textarea');
+            if(first){setTimeout(function(){try{first.focus({preventScroll:true})}catch(_){}},700);}
+          }
+          return;
+        }
+        // Bio-age internal page: reveal embedded lead-gen and scroll to it
+        if(isBio){
+          e.preventDefault();
+          var rc=document.getElementById('resultCard');
+          var blead=document.getElementById('bioLeadGenForm');
+          var bconv=document.getElementById('bioConvert');
+          if(rc) rc.classList.add('visible');
+          if(blead) blead.classList.add('visible');
+          if(bconv) bconv.classList.add('visible');
+          var t=bconv||blead||rc;
+          if(t){
+            requestAnimationFrame(function(){
+              t.scrollIntoView({behavior:'smooth',block:'start'});
+              var first=blead&&blead.querySelector('input,select,textarea');
+              if(first){setTimeout(function(){try{first.focus({preventScroll:true})}catch(_){}},700);}
+            });
+          }
+          return;
+        }
+        // Other pages: default href "/#lead-gen" navigates to homepage anchor
+      });
+    })();
+  </script>
+
+  <script src="assets/lla-nav.js?v=1" defer></script>
+<script src="assets/nanp-state-autofill.js" defer></script>
+<style id="ecom-modal-css">
+#enrollModal{position:fixed;inset:0;z-index:9999;display:none}
+#enrollModal.open{display:block}
+#enrollModal .em-backdrop{position:absolute;inset:0;background:rgba(10,18,30,.45)}
+#enrollModal .em-dialog{position:relative;max-width:430px;margin:56px auto;background:#fff;border-radius:8px;box-shadow:0 24px 70px rgba(0,0,0,.28);max-height:calc(100vh - 92px);overflow-y:auto;padding:26px 30px 30px}
+#enrollModal .em-x{position:absolute;top:14px;right:16px;width:28px;height:28px;border:none;background:none;cursor:pointer;font-size:24px;line-height:1;color:#1b2a3d}
+#enrollModal .em-steps{display:flex;align-items:flex-start;justify-content:center;margin:6px 0 22px}
+#enrollModal .em-st{display:flex;flex-direction:column;align-items:center;gap:7px;width:96px}
+#enrollModal .em-dot{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;background:#fff;border:1.5px solid #C9D2DE;color:#98A3B3}
+#enrollModal .em-lbl{font-size:13.5px;color:#98A3B3;font-weight:500;white-space:nowrap}
+#enrollModal .em-st.active .em-dot,#enrollModal .em-st.done .em-dot{background:#006EFF;border-color:#006EFF;color:#fff}
+#enrollModal .em-st.active .em-lbl,#enrollModal .em-st.done .em-lbl{color:#111;font-weight:600}
+#enrollModal .em-bar{height:1.5px;background:#D7DEE8;flex:1;margin-top:13px;max-width:56px}
+#enrollModal .em-bar.done{background:#006EFF}
+#enrollModal h2{font-family:'Codec Pro','Inter',sans-serif;font-size:24px;line-height:1.22;font-weight:800;letter-spacing:-.5px;text-align:center;color:#0B1B33;margin:0 0 22px}
+#enrollModal h2 em{font-style:normal;color:inherit}
+#enrollModal .em-lb{display:block;font-size:13.5px;font-weight:700;color:#0B1B33;margin-bottom:7px}
+#enrollModal .em-in{width:100%;border:1px solid #D5DCE6;border-radius:6px;padding:13px 14px;font-size:14.5px;font-family:'Inter',sans-serif;outline:none;margin-bottom:17px;color:#111;background:#fff}
+#enrollModal .em-in::placeholder{color:#A9B3C1}
+#enrollModal .em-in:focus,#enrollModal select.em-in:focus{border-color:#006EFF}
+#enrollModal select.em-in{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235A6472' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");background-repeat:no-repeat;background-position:right 13px center;padding-right:38px}
+#enrollModal .em-phone{display:flex;gap:9px;margin-bottom:9px}
+#enrollModal .em-phone .em-in{margin-bottom:0}
+#enrollModal .em-row{margin-bottom:17px}
+#enrollModal .em-row .em-in{margin-bottom:0}
+#enrollModal .em-cc{display:flex;align-items:center;gap:5px;border:1px solid #D5DCE6;border-radius:6px;padding:0 12px;font-size:14.5px;font-weight:600;color:#006EFF;background:#fff;flex:none}
+#enrollModal .em-cc span{font-size:15px}
+#enrollModal .em-phone .em-in{margin-bottom:0}
+#enrollModal .em-go{width:100%;background:#006EFF;color:#fff;border:none;border-radius:6px;padding:14px;font-family:'Inter',sans-serif;font-weight:700;font-size:15.5px;cursor:pointer;transition:.15s}
+#enrollModal .em-go:hover{background:#0059D6}
+#enrollModal .em-refund{text-align:center;font-size:12.5px;color:#5A6472;margin-top:12px}
+#enrollModal .em-consent{display:flex;gap:9px;align-items:flex-start;margin-top:16px}
+#enrollModal .em-consent input{width:16px;height:16px;accent-color:#006EFF;margin-top:2px;flex:none}
+#enrollModal .em-consent label{font-size:12px;color:#5A6472;line-height:1.5}
+#enrollModal .em-card{border:1px solid #E3E7EE;border-radius:7px;overflow:hidden;margin-bottom:20px}
+#enrollModal .em-card-b{padding:15px 17px}
+#enrollModal .em-cname{color:#E2571E;font-weight:700;font-size:14.5px;margin-bottom:9px}
+#enrollModal .em-cl{font-size:13.5px;color:#2A2F36;margin-bottom:5px}
+#enrollModal .em-cl b{color:#111;font-weight:700}
+#enrollModal .em-cl.gap{margin-top:12px;margin-bottom:0}
+#enrollModal .em-band{background:#12355B;color:#fff;padding:14px 17px;display:flex;align-items:center;gap:11px}
+#enrollModal .em-band .b-l{font-size:13px;font-weight:600;opacity:.92;margin-bottom:2px}
+#enrollModal .em-band .b-v{font-family:'Codec Pro','Inter',sans-serif;font-weight:800;font-size:16.5px}
+#enrollModal .em-promo{display:flex;gap:10px;margin-bottom:20px}
+#enrollModal .em-promo .em-in{margin-bottom:0}
+#enrollModal .em-apply{padding:0 22px;border:1.5px solid #006EFF;background:#fff;color:#006EFF;border-radius:6px;font-weight:700;font-size:14.5px;cursor:pointer;font-family:'Inter',sans-serif;flex:none}
+#enrollModal .em-apply:hover{background:#E8F1FF}
+#enrollModal .em-screen{display:none}
+#enrollModal .em-screen.on{display:block}
+#enrollModal .em-err{display:none;color:#D93025;font-size:13px;font-weight:600;margin:-9px 0 13px}
+#enrollModal .em-err.on{display:block}
+#enrollModal .em-go[disabled]{opacity:.6;cursor:default}
+@media(max-width:520px){#enrollModal .em-dialog{margin:16px 12px;padding:24px 20px 26px;max-height:calc(100vh - 32px)}#enrollModal .em-st{width:82px}#enrollModal .em-lbl{font-size:12px}}
+
+/* v2 prominent ecommerce button */
+.lg-or{display:flex;align-items:center;gap:14px;margin:2px 0 4px}
+.lg-or::before,.lg-or::after{content:'';flex:1;height:1px;background:#E2E8F1}
+.lg-or span{font-family:'Codec Pro','Inter',sans-serif;font-size:12.5px;font-weight:600;color:#98A3B3;text-transform:uppercase;letter-spacing:.08em}
+a.lg-buy{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:100%;padding:21px 32px;border-radius:16px;text-decoration:none;background:linear-gradient(135deg,#25DE8C 0%,#10B981 45%,#059669 100%);border:1.5px solid rgba(255,255,255,.45);cursor:pointer;transition:transform .22s ease;position:relative;overflow:hidden;margin-top:4px;animation:lgGlow 2.6s ease-in-out infinite}
+@keyframes lgGlow{0%,100%{box-shadow:0 14px 40px rgba(16,185,129,.5),0 0 0 0 rgba(37,222,140,.55),inset 0 1px 0 rgba(255,255,255,.4)}50%{box-shadow:0 18px 52px rgba(16,185,129,.68),0 0 0 9px rgba(37,222,140,0),inset 0 1px 0 rgba(255,255,255,.45)}}
+a.lg-buy::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.32),transparent);transform:skewX(-20deg);animation:lgSheen 3.4s ease-in-out infinite}
+@keyframes lgSheen{0%,55%{left:-60%}85%,100%{left:130%}}
+.lg-buy-main{display:flex;align-items:center;gap:11px;font-family:'Codec Pro','Inter',sans-serif;font-size:19px;font-weight:800;color:#fff;letter-spacing:.01em;line-height:1.25;text-shadow:0 1px 2px rgba(4,32,20,.25)}
+.lg-buy-main svg{stroke:#fff;flex:none}
+.lg-buy-sub{font-size:13.5px;font-weight:700;color:#fff;font-family:'Inter',-apple-system,sans-serif;line-height:1.35;opacity:.96}
+a.lg-buy:hover{transform:translateY(-2px);box-shadow:0 18px 46px rgba(16,185,129,.55),inset 0 1px 0 rgba(255,255,255,.4)}
+@media (prefers-reduced-motion: reduce){ a.lg-buy::after{animation:none} a.lg-buy{animation:none;box-shadow:0 14px 40px rgba(16,185,129,.5),inset 0 1px 0 rgba(255,255,255,.4)} }
+
+</style>
+<div id="enrollModal" role="dialog" aria-modal="true" aria-label="Enroll">
+  <div class="em-backdrop" data-em-close></div>
+  <div class="em-dialog">
+    <button class="em-x" type="button" data-em-close aria-label="Close">&times;</button>
+
+    <div class="em-steps">
+      <div class="em-st active" id="emS1"><span class="em-dot">1</span><span class="em-lbl">Register</span></div>
+      <span class="em-bar" id="emB1"></span>
+      <div class="em-st" id="emS2"><span class="em-dot">2</span><span class="em-lbl">Select course</span></div>
+      <span class="em-bar" id="emB2"></span>
+      <div class="em-st" id="emS3"><span class="em-dot">3</span><span class="em-lbl">Place order</span></div>
+    </div>
+
+    <h2>Your protocol <em>starts here.</em></h2>
+
+    <!-- STEP 1 -->
+    <div class="em-screen on" id="emStep1">
+      <label class="em-lb" for="emName">Full Name*</label>
+      <input class="em-in" id="emName" type="text" placeholder="Full Name" autocomplete="name" />
+
+      <label class="em-lb" for="emEmail">Email*</label>
+      <input class="em-in" id="emEmail" type="email" placeholder="Email" autocomplete="email" />
+
+      <label class="em-lb" for="emPhone">Mobile Number*</label>
+      <div class="em-phone">
+        <div class="em-cc" id="emCc"><span id="emCcIso">US</span><span id="emCcDial">+1</span></div>
+        <select class="em-in" id="emCountry" data-lla-country="1" aria-label="Country"></select>
+      </div>
+      <div class="em-row">
+        <input class="em-in" id="emPhone" type="tel" placeholder="Mobile" autocomplete="tel" />
+      </div>
+      <script>
+      (function(){
+        function sync(){
+          var sel=document.getElementById('emCountry'),iso=document.getElementById('emCcIso'),dial=document.getElementById('emCcDial');
+          if(!sel||!iso||!dial) return;
+          var v=(sel.value||'US').toUpperCase(),opt=sel.options[sel.selectedIndex],d=opt&&opt.getAttribute('data-dial');
+          if(!d&&window.LLA_COUNTRY&&window.LLA_COUNTRY.list){try{var L=typeof LLA_COUNTRY.list==='function'?LLA_COUNTRY.list():LLA_COUNTRY.list;L.forEach(function(c){if(c.iso===v)d=c.dial;});}catch(e){}}
+          iso.textContent=v;dial.textContent='+'+(d||'1');
+        }
+        document.addEventListener('change',function(e){if(e.target&&e.target.id==='emCountry')sync();});
+        window.addEventListener('load',function(){setTimeout(sync,0);setTimeout(sync,500);});
+      })();
+      </script>
+
+      <div class="em-err" id="emErr" role="alert"></div>
+      <button class="em-go" type="button" id="emGo1">Continue</button>
+      <p class="em-refund">Fully refundable within 14 days from registration.</p>
+
+      <div class="em-consent">
+        <input type="checkbox" id="emSms" checked />
+        <label for="emSms">By subscribing, you agree to receive SMS messages from Longevity Life Academy. Message frequency varies. Message &amp; Data rates may apply.</label>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="em-screen" id="emStep2">
+      <label class="em-lb" for="emDate">Preferred class time</label>
+      <select class="em-in" id="emDate">
+        <option>Monday evenings, 7:00pm - 7:50pm ET</option>
+        <option>Wednesday midday, 12:00pm - 12:50pm ET</option>
+        <option>Next available start date</option>
+      </select>
+
+      <div class="em-card">
+        <div class="em-card-b">
+          <div class="em-cname">The Longevity Blueprint</div>
+          <div class="em-cl"><b>Schedule:</b> 18 live sessions across 18 weeks, one session every week</div>
+          <div class="em-cl"><b>Time:</b> 7:00pm - 7:50pm ET</div>
+          <div class="em-cl"><b>Lesson duration:</b> 50 min</div>
+          <div class="em-cl gap"><b>Period:</b> 18 weeks</div>
+        </div>
+        <div class="em-band">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3DDC97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <div>
+            <div class="b-l">Course tuition</div>
+            <div class="b-v">$279.00 monthly for 5 months</div>
+          </div>
+        </div>
+      </div>
+
+      <label class="em-lb" for="emPromo">I have promo code</label>
+      <div class="em-promo">
+        <input class="em-in" id="emPromo" type="text" placeholder="Enter promo code" />
+        <button class="em-apply" type="button" id="emApply">Apply</button>
+      </div>
+
+      <button class="em-go" type="button" id="emGo2">Continue</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* 22 Sep 2026: purchase path runs in e-commerce mode so Continue creates the CRM order
+     and the payment step receives StudentId/OrderId. List price on this site: $279 x 5. */
+  window.LLA_ECOMM_CONFIG = window.LLA_ECOMM_CONFIG || {};
+  window.LLA_ECOMM_CONFIG.mode = 'ecomm';
+  window.LLA_ECOMM_CONFIG.env  = 'production';
+  window.LLA_ECOMM_CONFIG.workerBase = 'https://eteacher-leads-proxy.gitter-omri.workers.dev';
+  window.LLA_ECOMM_CONFIG.crmPrice = { firstPayment: 279, numberOfPayments: 5, leftToPay: 1116 };
+  window.LLA_ECOMM_CONFIG.crmPlans = { monthly: { firstPayment: 279, numberOfPayments: 5, leftToPay: 1116 }, upfront: { firstPayment: 279, numberOfPayments: 5, leftToPay: 1116 } };
+</script>
+<script src="/blueprint-november-r4x9/assets/eteacher-ecomm.js" defer></script>
+<script>
+(function(){
+  var m=document.getElementById('enrollModal');
+  if(!m) return;
+  function open(){m.classList.add('open');document.body.style.overflow='hidden';}
+  function close(){m.classList.remove('open');document.body.style.overflow='';}
+  function step(n){
+    document.getElementById('emStep1').classList.toggle('on',n===1);
+    document.getElementById('emStep2').classList.toggle('on',n===2);
+    document.getElementById('emS1').className='em-st '+(n>1?'done':'active');
+    document.getElementById('emS2').className='em-st '+(n>=2?'active':'');
+    document.getElementById('emB1').className='em-bar'+(n>=2?' done':'');
+    m.querySelector('.em-dialog').scrollTop=0;
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-checkout-open]');
+    if(a){e.preventDefault();step(1);open();return;}
+    if(e.target.closest('[data-em-close]')){close();}
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  var errBox=document.getElementById('emErr');
+  function emErr(msg){errBox.textContent=msg;errBox.classList.add('on');}
+  function emErrClear(){errBox.textContent='';errBox.classList.remove('on');}
+  var ERR_MSG={
+    need_full_name:'Please enter your full name (first and last).',
+    invalid_email:'Please enter a valid email address.',
+    non_us_phone:'Please enter a valid US mobile number, or pick your country from the list.',
+    invalid_phone:'Please enter a valid mobile number for the selected country.',
+    invalid_state:'Please enter a valid US mobile number.',
+    'Missing or invalid fields':'Please fill in all fields.'
+  };
+  document.getElementById('emGo1').addEventListener('click',function(){
+    var btn=this;
+    emErrClear();
+    var fields={
+      fullName:document.getElementById('emName').value,
+      email:document.getElementById('emEmail').value,
+      phone:document.getElementById('emPhone').value,
+      smsConsent:document.getElementById('emSms').checked,
+      startDate:(document.getElementById('emDate')||{}).value||'',
+      countryIso:String((document.getElementById('emCountry')||{}).value||'US').toUpperCase(),
+      promoCode:''
+    };
+    if(!fields.fullName.trim()||!fields.email.trim()||!fields.phone.trim()){emErr('Please fill in all fields.');return;}
+    if(fields.fullName.trim().split(/\s+/).length<2){emErr(ERR_MSG.need_full_name);return;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(fields.email.trim())){emErr(ERR_MSG.invalid_email);return;}
+    var _cc=String((document.getElementById('emCountry')||{}).value||'US').toUpperCase();
+    fields.countryIso=_cc;
+    var _vp=(_cc==='US')
+      ?((window.LLA_US&&window.LLA_US.validatePhone)?window.LLA_US.validatePhone(fields.phone):{ok:true})
+      :((window.LLA_COUNTRY&&window.LLA_COUNTRY.toE164)?window.LLA_COUNTRY.toE164(fields.phone,_cc):{ok:true});
+    if(!_vp.ok){emErr(_cc==='US'?ERR_MSG.non_us_phone:ERR_MSG.invalid_phone);return;}
+    if(!window.LLA_ECOMM){
+      var b1=this,t0=Date.now();b1.disabled=true;b1.textContent='One moment\u2026';
+      (function w(){if(window.LLA_ECOMM){b1.disabled=false;b1.textContent='Continue';b1.click();return;}
+        if(Date.now()-t0>15000){b1.disabled=false;b1.textContent='Continue';emErr('Slow connection. Please tap Continue again.');return;}setTimeout(w,200);})();
+      return;}
+        /* E-COMMERCE 3-SCREEN CHECKOUT ONLY. No CRM lead is created on this screen.
+     * The details are held in the page and the lead + order are created on the
+     * click that leads to the payment screen. Do not re-add a lead call or any
+     * marketing event here. The separate lead-generation form is unaffected. */
+    window.LLA_ECOMM_PENDING = fields;
+    try{ if(window.sessionStorage) sessionStorage.setItem('lla_pending_enroll',JSON.stringify(fields)); }catch(e){}
+    step(2);
+  });
+  document.getElementById('emGo2').addEventListener('click',function(){
+    var btn=this;
+    function go(ids){
+      window.location.href='/blueprint-november-r4x9/checkout/'+(ids&&ids.stid?('?stid='+encodeURIComponent(ids.stid)+'&orderid='+encodeURIComponent(ids.orderid)):'');
+    }
+    var ids=(window.LLA_ECOMM&&window.LLA_ECOMM.getCheckoutIds())||null;
+    if(ids&&ids.stid){go(ids);return;}
+    var f=window.LLA_ECOMM_PENDING;
+    if(!f){ try{ f=JSON.parse(sessionStorage.getItem('lla_pending_enroll')||'null'); }catch(e){ f=null; } }
+    if(!f||!window.LLA_ECOMM){go(null);return;}
+    if(btn.getAttribute('data-busy')==='1'){return;}
+    btn.setAttribute('data-busy','1');
+    var label=btn.textContent;btn.textContent='Please wait\u2026';
+    window.LLA_ECOMM.submitLead(f).then(function(r){
+      btn.setAttribute('data-busy','0');btn.textContent=label;
+      if(r&&r.ok){ try{ sessionStorage.removeItem('lla_pending_enroll'); }catch(e){} go((window.LLA_ECOMM.getCheckoutIds())||null);return;}
+      step(1);
+      emErr(ERR_MSG[(r&&r.error)]||'Something went wrong, please try again in a moment.');
+    });
+  });
+  document.getElementById('emApply').addEventListener('click',function(){
+    var v=document.getElementById('emPromo').value.trim().toUpperCase();
+    this.textContent = (v==='FOUNDER35') ? 'Applied' : 'Apply';
+  });
+  var q=new URLSearchParams(location.search);
+  if(q.get('enroll')){step(q.get('enroll')==='2'?2:1);open();}
+})();
+</script>
+  <script src="assets/lla-country.js" defer></script>
+
+<!-- WhatsApp floater (eTeacher IIBS button look; opens the LLA WhatsApp channel directly) -->
+<div id="et-bumpyard-widget" class="active"><div class="et-bump-btn-holder"><a class="widget-trigger-btn" href="https://wa.me/12015023701" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><img src="assets/wa/whatsapp.svg" alt=""> <span class="label">Available on WhatsApp</span></a></div></div>
+</body>
+</html>

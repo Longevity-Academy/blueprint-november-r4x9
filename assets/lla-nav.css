@@ -1,0 +1,98 @@
+/* Shared LLA nav — scoped to body.has-shared-nav. Matches index.html nav verbatim. */
+body.has-shared-nav { padding-top: 0; }
+
+/* Hide any legacy per-page nav so only the shared nav renders */
+body.has-shared-nav nav.nav:not(.lla-shared-nav),
+body.has-shared-nav nav#nav:not(.lla-shared-nav) {
+  display: none !important;
+}
+
+body.has-shared-nav .lla-shared-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 12px 0;
+  background: linear-gradient(180deg, #0e1f48 0%, #081634 100%);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border-bottom: 1px solid rgba(120, 170, 255, 0.22);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.55);
+}
+body.has-shared-nav .lla-shared-nav .container {
+  max-width: 1280px; margin: 0 auto; padding: 0 24px;
+}
+body.has-shared-nav .lla-shared-nav .nav-inner {
+  display: flex; align-items: center; justify-content: flex-start; gap: 56px;
+}
+body.has-shared-nav .lla-shared-nav .nav-inner .nav-links { margin-left: 32px; }
+body.has-shared-nav .lla-shared-nav .nav-links .nav-cta { margin-left: 28px; }
+body.has-shared-nav .lla-shared-nav .nav-logo {
+  display: flex; align-items: center; gap: 0;
+  text-decoration: none; padding: 0; margin: 0;
+}
+body.has-shared-nav .lla-shared-nav .nav-logo-img {
+  display: block; height: 72px; width: auto; max-width: 380px;
+}
+body.has-shared-nav .lla-shared-nav .nav-links {
+  display: flex; gap: 32px; align-items: center;
+}
+body.has-shared-nav .lla-shared-nav .nav-links a {
+  font-size: 15px; font-weight: 600; color: #ffffff;
+  letter-spacing: 0.01em; text-decoration: none;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  transition: color .22s ease;
+}
+body.has-shared-nav .lla-shared-nav .nav-links a:hover { color: #1a7fff; }
+body.has-shared-nav .lla-shared-nav .nav-cta {
+  background: linear-gradient(135deg, #1a7fff 0%, #0066ff 100%);
+  color: #fff !important; padding: 10px 24px; border-radius: 999px;
+  font-size: 14px; font-weight: 700; letter-spacing: 0.01em;
+  transition: all .22s ease;
+  box-shadow: 0 4px 16px rgba(26,127,255,0.45), inset 0 1px 0 rgba(255,255,255,0.2);
+  border: 1px solid rgba(120,180,255,0.4);
+}
+body.has-shared-nav .lla-shared-nav .nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0,110,255,0.35);
+}
+body.has-shared-nav .lla-shared-nav .mobile-menu-btn {
+  display: none; background: none; border: none; color: #fff;
+  cursor: pointer; padding: 8px; z-index: 1001;
+  margin-left: auto;
+}
+body.has-shared-nav .lla-mobile-nav-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.95); z-index: 9999;
+  flex-direction: column; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity .3s ease; pointer-events: none;
+}
+body.has-shared-nav .lla-mobile-nav-overlay.open {
+  display: flex; opacity: 1; pointer-events: auto;
+}
+body.has-shared-nav .lla-mobile-nav-close {
+  position: absolute; top: 20px; right: 24px;
+  background: none; border: none; color: #fff; cursor: pointer; padding: 8px;
+}
+body.has-shared-nav .lla-mobile-nav-links {
+  display: flex; flex-direction: column; align-items: center; gap: 32px;
+}
+body.has-shared-nav .lla-mobile-nav-link {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 28px; font-weight: 700; color: #fff;
+  text-decoration: none; transition: color .2s ease;
+}
+body.has-shared-nav .lla-mobile-nav-link:hover { color: #1a7fff; }
+body.has-shared-nav .lla-mobile-nav-cta {
+  background: #1a7fff; color: #fff !important;
+  padding: 16px 40px; border-radius: 999px;
+  font-size: 20px; margin-top: 16px;
+}
+@media (max-width: 900px) {
+  body.has-shared-nav .lla-shared-nav .nav-links > a { display: none; }
+}
+@media (max-width: 768px) {
+  body.has-shared-nav .lla-shared-nav .nav-links { display: none !important; }
+  body.has-shared-nav .lla-shared-nav .mobile-menu-btn { display: block; }
+  body.has-shared-nav .lla-shared-nav .nav-logo-img { height: 54px; max-width: 300px; }
+}
+/* Push internal-page body content below fixed nav */
+body.has-shared-nav { margin-top: 92px; }
+@media (max-width: 768px) { body.has-shared-nav { margin-top: 72px; } }

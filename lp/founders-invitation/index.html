@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Personal Invitation · Live Cohort · Longevity Life Academy by eTeacher</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0A1E3F;--navy-2:#050c1e;--ink:#0A1220;--cream:#F5F0E5;--neon:#5EB6FF;--blue:#006EFF;--highlight:#FFF3A6}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--ink);color:#fff;font-family:'Inter',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+  /* NAV · real LLA navy */
+  .nav{position:sticky;top:0;z-index:100;padding:14px 0;background:linear-gradient(180deg,#0e1f48 0%,#081634 100%);border-bottom:1px solid rgba(126,200,255,.22);box-shadow:0 2px 20px rgba(0,0,0,.45)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px}
+  .nav-logo img{display:block;height:62px;width:auto;max-width:340px}
+  .nav-cta{background:linear-gradient(135deg,#1a7fff 0%,#0066ff 100%);color:#fff;padding:10px 24px;border-radius:999px;font-size:14px;font-weight:700;box-shadow:0 4px 16px rgba(26,127,255,.45),inset 0 1px 0 rgba(255,255,255,.2);border:1px solid rgba(120,180,255,.4)}
+
+  /* HERO · cells only */
+  .hero{position:relative;overflow:hidden;background:#050c1e}
+  .hero-bg{position:absolute;inset:0;background-image:url('../_assets/hero-dark.jpg');background-size:auto 90%;background-position:right center;background-repeat:no-repeat;background-color:#050C22;opacity:1}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,12,30,.92) 0%,rgba(5,12,30,.7) 45%,rgba(5,12,30,.1) 80%,rgba(5,12,30,0) 100%)}
+  .hero-inner{position:relative;max-width:1200px;margin:0 auto;padding:120px 24px 140px;min-height:640px;display:grid;grid-template-columns:1fr}
+  .hero-copy{max-width:640px}
+  .hero-wordmark{display:block;height:82px;width:auto;margin-bottom:24px;opacity:.98}
+  .eyebrow{display:inline-block;padding:8px 18px;border:1px solid rgba(126,200,255,.35);border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.14em;color:#7EC8FF;text-transform:uppercase;margin-bottom:22px}
+  h1.hero-title{font-family:'Instrument Serif',Georgia,serif;font-weight:400;line-height:1.05;font-size:clamp(38px,5vw,64px);color:#fff;letter-spacing:-.01em}
+  h1.hero-title em{font-style:italic;color:var(--neon);font-weight:400}
+  .hero p.lede{margin-top:22px;font-size:19px;line-height:1.55;color:#dbe3f5;max-width:560px}
+  .hero p.lede strong{color:#fff}
+  .hero-cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;align-items:center}
+  .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--neon);color:var(--ink);padding:16px 28px;border-radius:14px;font-size:16px;font-weight:700;box-shadow:0 8px 32px rgba(94,182,255,.55)}
+  .hero-meta{font-size:13px;color:#9AB0D6}
+
+  /* PROMO STRIP · designed bar right after hero */
+  .promo-strip{background:linear-gradient(180deg,#0a1a3e 0%,#061127 100%);border-top:1px solid rgba(126,200,255,.25);border-bottom:1px solid rgba(126,200,255,.25);padding:22px 0}
+  .promo-strip-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:20px 32px;align-items:center;justify-content:space-between}
+  .promo-left{color:#dbe3f5;font-size:14px;line-height:1.55;flex:1 1 420px;min-width:280px}
+  .promo-left b{color:#FFE066;font-size:15px;letter-spacing:.02em;display:block;margin-bottom:4px}
+  .promo-price{font-family:'Instrument Serif',Georgia,serif;font-size:26px;color:#fff;line-height:1;white-space:nowrap}
+  .promo-price s{color:#7d8aab;font-size:18px;margin-right:8px;font-family:'Inter',sans-serif}
+  .promo-cta{background:var(--neon);color:var(--ink);padding:14px 26px;border-radius:12px;font-weight:700;font-size:14px;letter-spacing:.01em;box-shadow:0 6px 22px rgba(94,182,255,.42);white-space:nowrap}
+
+  /* TRUST + URGENCY */
+  .trust{background:#061127;border-top:1px solid rgba(126,200,255,.15);border-bottom:1px solid rgba(126,200,255,.15);padding:18px 0}
+  .trust-inner{display:flex;flex-wrap:wrap;gap:28px 40px;justify-content:center;align-items:center;font-size:14px;color:#c8d3ea}
+  .trust-inner strong{color:#fff}
+  .stars{color:#FFC542;letter-spacing:2px;font-size:14px}
+  .urgency{background:#0a1a3e;padding:16px 0;border-bottom:1px solid rgba(126,200,255,.15)}
+  .urgency-inner{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:center;font-size:14px;color:#dbe3f5}
+  .urgency-inner b{color:#FFE066}
+  .urgency-inner .cta-inline{background:var(--neon);color:var(--ink);padding:10px 20px;border-radius:12px;font-weight:700;font-size:14px}
+
+  section.block{padding:80px 0}
+  .cream{background:var(--cream);color:var(--ink)}
+  h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(30px,3.6vw,46px);line-height:1.15;letter-spacing:-.01em;margin-bottom:16px}
+  h2 em{font-style:italic;color:var(--blue)}
+  .cream h2 em{color:var(--blue)}
+  .lead{font-size:18px;line-height:1.6;max-width:720px;margin-bottom:32px}
+  .cream .lead{color:#425067}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{background:#fff;border:1px solid #E4DECB;border-radius:18px;padding:26px}
+  .card h3{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;margin-bottom:10px;color:var(--ink)}
+  .card p{font-size:15px;line-height:1.6;color:#4a5468}
+
+  .faculty{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+  .faculty figure{background:#fff;border:1px solid #E4DECB;border-radius:16px;padding:16px;text-align:center;color:var(--ink)}
+  .faculty img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;display:block;margin-bottom:12px}
+  .faculty figcaption{font-size:13px;line-height:1.5;color:#4a5468;text-align:left}
+  .faculty figcaption strong{display:block;color:var(--ink);font-size:15px;margin-bottom:4px;text-align:center}
+  .faculty .founding{color:var(--blue);font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase;display:block;margin:0 auto 8px;text-align:center}
+
+  .cgm-row{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .cgm-row img{width:100%;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.15)}
+
+  /* REDEEM FOLD · big 35% off, tiny price, big CTA */
+  .redeem{background:linear-gradient(180deg,#F5F0E5 0%,#EDE4CE 100%);padding:64px 0;color:var(--ink)}
+  .redeem-inner{max-width:1080px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center}
+  .redeem h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(30px,3.4vw,42px);line-height:1.15;color:var(--ink);margin-bottom:14px}
+  .redeem h2 em{font-style:italic;color:var(--blue)}
+  .redeem p.sub{font-size:16px;line-height:1.55;color:#4a5468;margin-bottom:22px}
+  .redeem-card{background:#fff;border:1px solid #E4DECB;border-radius:22px;padding:40px 32px;text-align:center;box-shadow:0 20px 60px rgba(10,18,32,.10)}
+  .redeem-badge{display:inline-block;background:linear-gradient(135deg,#1a7fff 0%,#0066ff 100%);color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:20px}
+  .redeem-big{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(72px,10vw,110px);font-weight:400;line-height:.95;color:var(--blue);letter-spacing:-.02em}
+  .redeem-big small{display:block;font-family:'Inter',sans-serif;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:#4a5468;font-weight:700;margin-top:8px}
+  .redeem-price-line{margin:20px 0 24px;color:#4a5468;font-size:15px}
+  .redeem-price-line s{color:#8b95a8;margin-right:8px}
+  .redeem-price-line b{color:var(--ink);font-weight:700}
+  .redeem-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#1a7fff 0%,#0066ff 100%);color:#fff;padding:18px 32px;border-radius:999px;font-size:16px;font-weight:700;box-shadow:0 8px 26px rgba(26,127,255,.4);width:100%;max-width:340px}
+  .redeem-fine{font-size:12px;color:#7a8497;margin-top:14px;letter-spacing:.02em}
+
+  footer{background:linear-gradient(180deg,#081634 0%,#050c1e 100%);color:#c8d3ea;padding:56px 0 32px;font-size:14px;border-top:1px solid rgba(126,200,255,.15)}
+  footer .container{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+  footer h4{color:#fff;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+  footer a{color:#c8d3ea;display:block;padding:4px 0}
+  footer a:hover{color:var(--neon)}
+  footer img{height:56px;width:auto;margin-bottom:14px}
+  footer .fine{grid-column:1/-1;border-top:1px solid rgba(126,200,255,.15);padding-top:20px;margin-top:20px;color:#7d8aab;font-size:12px}
+
+  @media (max-width:820px){
+    .hero-inner{padding:120px 20px 72px}
+    .hero-copy{max-width:100%}
+    .hero-bg::after{background:linear-gradient(180deg,rgba(5,12,30,.65) 0%,rgba(5,12,30,.85) 100%)}
+    .grid-3{grid-template-columns:1fr}
+    .cgm-row{grid-template-columns:1fr}
+    .faculty{grid-template-columns:repeat(2,1fr)}
+    footer .container{grid-template-columns:1fr}
+    .nav-logo img{height:44px}
+    .hero-wordmark{height:54px;margin-bottom:16px}
+    .nav-cta{padding:8px 16px;font-size:13px}
+    h1.hero-title{font-size:34px}
+    .promo-strip-inner{gap:14px}
+    .promo-left{flex:1 1 100%}
+    .promo-price{font-size:22px}
+    .redeem-inner{grid-template-columns:1fr;gap:32px}
+    .redeem-big{font-size:88px}
+    .hero-bg{background-size:cover !important;background-position:center !important}
+  }
+</style>
+<script src="../gate.js"></script><script src="/blueprint-november-r4x9/assets/ai-attribution.js"></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/blueprint-november-r4x9/" class="nav-logo"><img src="../_assets/images/lla-logo-exact.png" alt="Longevity Life Academy by eTeacher"></a>
+    <a href="#lp-apply-form" class="nav-cta">Apply Now</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <img class="hero-wordmark" src="../_assets/images/lla-hero-wordmark-110h.png" alt="Longevity Life Academy by eTeacher">
+      <span class="eyebrow">The Longevity Blueprint · Live Cohort</span>
+      <h1 class="hero-title">The longevity course that turns the next decades into your <em>strongest</em>.</h1>
+      <p class="lede">A guided protocol built around <strong>your biology, your numbers, and the daily practice</strong>. Taught live by Dr. Julie Gibson Clark, #2 on the Rejuvenation Olympics, and our founding faculty. Only <strong>3 seats remain</strong> in the class starting <strong>Monday, August 17</strong>.</p>
+      <div class="hero-cta-row">
+        <a href="#lp-apply-form" class="btn-primary">Reserve My Seat →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="promo-strip">
+  <div class="promo-strip-inner">
+    <div class="promo-left"><b>Founder's pricing · 35% off tuition</b>Applications close Friday, August 14 &middot; 11:59pm ET</div>
+    <div class="promo-price"><s>$1,650</s> $1,073</div>
+    <a href="#lp-apply-form" class="promo-cta">Claim 35% Now →</a>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="container trust-inner">
+    <span><span class="stars">★★★★★</span> <strong>Excellent</strong> on Trustpilot · 600+ reviews</span>
+    <span><strong>400k+</strong> students</span>
+    <span><strong>197</strong> countries</span>
+    <span><strong>25 yrs</strong> online education</span>
+    <span><strong>Live</strong> format</span>
+  </div>
+</div>
+
+<section class="redeem" id="apply">
+  <div class="redeem-inner">
+    <div>
+      <h2>Redeem your <em>Founder's voucher</em> before applications close.</h2>
+      <p class="sub">Only <b>3 seats remain</b> in the class starting <b>Monday, August 17</b>. Your voucher unlocks the full Longevity Blueprint cohort at Founder's pricing. It expires Friday, August 14 &middot; 11:59pm ET.</p>
+      <p class="sub" style="margin-bottom:0">Live faculty. Free Abbott Lingo CGM by lesson 5. Class of 8 to 15.</p>
+    </div>
+    <div class="redeem-card">
+      <span class="redeem-badge">Founder's Voucher</span>
+      <div class="redeem-big">35%<small>Off Tuition</small></div>
+      <div class="redeem-price-line"><s>$1,650</s> <b>$1,073</b> or $360/month</div>
+      <a href="#lp-apply-form" class="redeem-cta">Redeem My 35% Voucher →</a>
+      <div class="redeem-fine">Applications close Friday, August 14 &middot; 11:59pm ET</div>
+    </div>
+  </div>
+</section>
+
+<section class="block cream">
+  <div class="container">
+    <h2>What you actually <em>get</em></h2>
+    <p class="lead">A structured longevity education, not a webinar. Eighteen live sessions across four phases, one continuous glucose monitor, and a faculty of practicing physicians.</p>
+    <div class="grid-3">
+      <div class="card"><h3>18 live sessions</h3><p>Four phases · six pillars · nutrition, sleep, exercise, supplements, mental health, daily protocol. Recorded if you miss one.</p></div>
+      <div class="card"><h3>Free Abbott Lingo CGM</h3><p>A 14-day continuous glucose monitor arrives before lesson 5, so your training is calibrated to your own metabolism.</p></div>
+      <div class="card"><h3>Class of 8–15</h3><p>Small-cohort format. Direct access to the faculty. Not a 500-person webinar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2 style="color:#fff">Your <em>faculty</em></h2>
+    <p class="lead" style="color:#c8d3ea">Physicians and clinicians who practice longevity medicine, publish, and coach.</p>
+    <div class="faculty">
+      <figure>
+        <img src="../_assets/instructors/julie-gibson-clark.jpg" alt="Julie Gibson Clark">
+        <figcaption><strong>Julie Gibson Clark</strong><span class="founding">Founding Faculty</span>#2 slowest-aging person in the world on the Rejuvenation Olympics. A leading voice in accessible, evidence-based longevity, and Founding Faculty at Longevity Life Academy.</figcaption>
+      </figure>
+      <figure>
+        <img src="../_assets/instructors/natalie.jpg" alt="Natalie Blackbourne">
+        <figcaption><strong>Natalie Blackbourne</strong>M.S. Emotional Intelligence with ~20 years in health and wellness. Focuses on neuroscience and cognitive optimization for long-term vitality.</figcaption>
+      </figure>
+      <figure>
+        <img src="../_assets/instructors/courtney.jpg" alt="Courtney Donofrio">
+        <figcaption><strong>Courtney Donofrio</strong>IIN-certified founder of EatBiohackLove, based in Amsterdam. Specializes in gut health, hormone balance, and practical biohacking.</figcaption>
+      </figure>
+      <figure>
+        <img src="../_assets/instructors/amy.jpg" alt="Amy Jamieson">
+        <figcaption><strong>Amy Jamieson</strong>M.S. Health Science & Kinesiology, NASM CPT/CES, ACE Health Coach. 25+ years in higher education and a master competitive runner.</figcaption>
+      </figure>
+      <figure>
+        <img src="../_assets/instructors/jordan.jpg" alt="Jordan Lattimore">
+        <figcaption><strong>Jordan Lattimore</strong>B.Sc. Psychology, University of Alberta. 12 years in Costa Rica near the Nicoya Blue Zone, 5+ years in behavioral therapy.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="block cream">
+  <div class="container">
+    <div class="cgm-row">
+      <div>
+        <h2>Your own <em>data</em>, in the course</h2>
+        <p class="lead">A free Abbott Lingo continuous glucose monitor arrives before lesson 5. You learn to read your own metabolism, not textbook averages.</p>
+        <a href="#lp-apply-form" class="btn-primary">Reserve My Seat →</a>
+      </div>
+      <img src="../_assets/images/lingo-cgm.jpg" alt="Abbott Lingo continuous glucose monitor">
+    </div>
+  </div>
+</section>
+
+
+
+<footer>
+  <div class="container">
+    <div>
+      <img src="../_assets/images/lla-logo-exact.png" alt="Longevity Life Academy by eTeacher">
+      <p style="max-width:420px">A live longevity course by Longevity Life Academy, part of eTeacher Group · 25 years, 400,000+ students, 197 countries.</p>
+    </div>
+    <div>
+      <h4>Program</h4>
+      <a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/about.html">About</a>
+      <a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/#syllabus">Curriculum</a>
+      <a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/cgm.html">CGM</a>
+      <a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/pricing.html">Pricing</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/blog.html">Blog</a>
+      <a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/#faq">FAQ</a>
+      <a href="https://www.longevitylifeacademy.com/blueprint-november-r4x9/">Home</a>
+    </div>
+    <div class="fine">© 2026 Longevity Life Academy by eTeacher Group · All rights reserved · Trustpilot rating verified · Excellent 600+ reviews</div>
+  </div>
+</footer>
+<a href="#lp-apply-form" class="fab"><span class="dot"></span>Claim 35% Off Now</a>
+
+
+<link rel="stylesheet" href="../_assets/lp-form.css">
+
+<section class="lp-form-section" id="lp-apply-form">
+  <div class="lp-form-inner">
+    <h2 class="lp-form-title">Redeem your <em>Founder's Voucher</em></h2>
+    <p class="lp-form-sub">Confirm your seat in the class starting <b>Monday, August 17</b>. A member of admissions will call within one business day to complete enrollment.</p>
+    <form id="lp-lead-form" class="lp-form form-with-thankyou" novalidate>
+      <div class="lp-form-row">
+        <div class="lp-form-field">
+          <label for="lp-fname">First Name</label>
+          <input id="lp-fname" name="firstName" type="text" placeholder="Your first name" required autocomplete="given-name">
+        </div>
+        <div class="lp-form-field">
+          <label for="lp-lname">Last Name</label>
+          <input id="lp-lname" name="lastName" type="text" placeholder="Your last name" required autocomplete="family-name">
+        </div>
+      </div>
+      <div class="lp-form-full lp-form-field">
+        <label for="lp-email">Email Address</label>
+        <input id="lp-email" name="email" type="email" placeholder="you@example.com" required autocomplete="email">
+      </div>
+      <div class="lp-form-row">
+        <div class="lp-form-field">
+          <label for="lp-phone">Phone Number</label>
+          <input id="lp-phone" name="phone" type="tel" placeholder="(555) 123-4567" required autocomplete="tel" inputmode="tel" maxlength="20" pattern="[0-9()+\-.\s]{10,20}">
+        </div>
+        <div class="lp-form-field">
+          <label for="lp-country">State</label>
+          <select id="lp-country" name="country" required>
+            <option value="" disabled selected>Select your state</option>
+            <option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="DC">District of Columbia</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="lp-form-submit">Redeem My 35% Voucher →</button>
+      <div class="form-error" role="alert"></div>
+      <p class="lp-form-fine">By submitting, you agree to be contacted by Longevity Life Academy admissions. Founder's pricing valid through Friday, August 14 &middot; 11:59pm ET.</p>
+          <div class="lg-or" aria-hidden="true"><span>or</span></div>
+          <a href="#" data-checkout-open class="lg-buy">
+            <span class="lg-buy-main"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1.6"/><circle cx="19" cy="21" r="1.6"/><path d="M2.5 3h3l2.6 12.5a2 2 0 0 0 2 1.5h7.9a2 2 0 0 0 2-1.6L21.5 8H6.2"/></svg> Enroll Online Now</span>
+            <span class="lg-buy-sub">Register &rarr; Choose your dates &rarr; Pay online &middot; done in 2 minutes</span>
+          </a>
+    </form>
+    <div class="lp-thankyou" id="lp-thankyou">
+      <h3>You're on the list.</h3>
+      <p>An admissions advisor will call within one business day to complete your enrollment. Look for a call from a US number.</p>
+    </div>
+  </div>
+</section>
+
+<script src="../_assets/nanp-state-autofill.js"></script>
+<script src="../_assets/eteacher-leads.js"></script>
+<script src="../lp-crm.js"></script>
+
+<style id="ecom-modal-css">
+#enrollModal{position:fixed;inset:0;z-index:9999;display:none}
+#enrollModal.open{display:block}
+#enrollModal .em-backdrop{position:absolute;inset:0;background:rgba(10,18,30,.45)}
+#enrollModal .em-dialog{position:relative;max-width:430px;margin:56px auto;background:#fff;border-radius:8px;box-shadow:0 24px 70px rgba(0,0,0,.28);max-height:calc(100vh - 92px);overflow-y:auto;padding:26px 30px 30px}
+#enrollModal .em-x{position:absolute;top:14px;right:16px;width:28px;height:28px;border:none;background:none;cursor:pointer;font-size:24px;line-height:1;color:#1b2a3d}
+#enrollModal .em-steps{display:flex;align-items:flex-start;justify-content:center;margin:6px 0 22px}
+#enrollModal .em-st{display:flex;flex-direction:column;align-items:center;gap:7px;width:96px}
+#enrollModal .em-dot{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;background:#fff;border:1.5px solid #C9D2DE;color:#98A3B3}
+#enrollModal .em-lbl{font-size:13.5px;color:#98A3B3;font-weight:500;white-space:nowrap}
+#enrollModal .em-st.active .em-dot,#enrollModal .em-st.done .em-dot{background:#006EFF;border-color:#006EFF;color:#fff}
+#enrollModal .em-st.active .em-lbl,#enrollModal .em-st.done .em-lbl{color:#111;font-weight:600}
+#enrollModal .em-bar{height:1.5px;background:#D7DEE8;flex:1;margin-top:13px;max-width:56px}
+#enrollModal .em-bar.done{background:#006EFF}
+#enrollModal h2{font-family:'Codec Pro','Inter',sans-serif;font-size:24px;line-height:1.22;font-weight:800;letter-spacing:-.5px;text-align:center;color:#0B1B33;margin:0 0 22px}
+#enrollModal h2 em{font-style:normal;color:inherit}
+#enrollModal .em-lb{display:block;font-size:13.5px;font-weight:700;color:#0B1B33;margin-bottom:7px}
+#enrollModal .em-in{width:100%;border:1px solid #D5DCE6;border-radius:6px;padding:13px 14px;font-size:14.5px;font-family:'Inter',sans-serif;outline:none;margin-bottom:17px;color:#111;background:#fff}
+#enrollModal .em-in::placeholder{color:#A9B3C1}
+#enrollModal .em-in:focus,#enrollModal select.em-in:focus{border-color:#006EFF}
+#enrollModal select.em-in{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235A6472' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");background-repeat:no-repeat;background-position:right 13px center;padding-right:38px}
+#enrollModal .em-phone{display:flex;gap:9px;margin-bottom:9px}
+#enrollModal .em-phone .em-in{margin-bottom:0}
+#enrollModal .em-row{margin-bottom:17px}
+#enrollModal .em-row .em-in{margin-bottom:0}
+#enrollModal .em-cc{display:flex;align-items:center;gap:5px;border:1px solid #D5DCE6;border-radius:6px;padding:0 12px;font-size:14.5px;font-weight:600;color:#006EFF;background:#fff;flex:none}
+#enrollModal .em-cc span{font-size:15px}
+#enrollModal .em-phone .em-in{margin-bottom:0}
+#enrollModal .em-go{width:100%;background:#006EFF;color:#fff;border:none;border-radius:6px;padding:14px;font-family:'Inter',sans-serif;font-weight:700;font-size:15.5px;cursor:pointer;transition:.15s}
+#enrollModal .em-go:hover{background:#0059D6}
+#enrollModal .em-refund{text-align:center;font-size:12.5px;color:#5A6472;margin-top:12px}
+#enrollModal .em-consent{display:flex;gap:9px;align-items:flex-start;margin-top:16px}
+#enrollModal .em-consent input{width:16px;height:16px;accent-color:#006EFF;margin-top:2px;flex:none}
+#enrollModal .em-consent label{font-size:12px;color:#5A6472;line-height:1.5}
+#enrollModal .em-card{border:1px solid #E3E7EE;border-radius:7px;overflow:hidden;margin-bottom:20px}
+#enrollModal .em-card-b{padding:15px 17px}
+#enrollModal .em-cname{color:#E2571E;font-weight:700;font-size:14.5px;margin-bottom:9px}
+#enrollModal .em-cl{font-size:13.5px;color:#2A2F36;margin-bottom:5px}
+#enrollModal .em-cl b{color:#111;font-weight:700}
+#enrollModal .em-cl.gap{margin-top:12px;margin-bottom:0}
+#enrollModal .em-band{background:#12355B;color:#fff;padding:14px 17px;display:flex;align-items:center;gap:11px}
+#enrollModal .em-band .b-l{font-size:13px;font-weight:600;opacity:.92;margin-bottom:2px}
+#enrollModal .em-band .b-v{font-family:'Codec Pro','Inter',sans-serif;font-weight:800;font-size:16.5px}
+#enrollModal .em-promo{display:flex;gap:10px;margin-bottom:20px}
+#enrollModal .em-promo .em-in{margin-bottom:0}
+#enrollModal .em-apply{padding:0 22px;border:1.5px solid #006EFF;background:#fff;color:#006EFF;border-radius:6px;font-weight:700;font-size:14.5px;cursor:pointer;font-family:'Inter',sans-serif;flex:none}
+#enrollModal .em-apply:hover{background:#E8F1FF}
+#enrollModal .em-screen{display:none}
+#enrollModal .em-screen.on{display:block}
+#enrollModal .em-err{display:none;color:#D93025;font-size:13px;font-weight:600;margin:-9px 0 13px}
+#enrollModal .em-err.on{display:block}
+#enrollModal .em-go[disabled]{opacity:.6;cursor:default}
+@media(max-width:520px){#enrollModal .em-dialog{margin:16px 12px;padding:24px 20px 26px;max-height:calc(100vh - 32px)}#enrollModal .em-st{width:82px}#enrollModal .em-lbl{font-size:12px}}
+
+/* v2 prominent ecommerce button */
+.lg-or{display:flex;align-items:center;gap:14px;margin:2px 0 4px}
+.lg-or::before,.lg-or::after{content:'';flex:1;height:1px;background:#E2E8F1}
+.lg-or span{font-family:'Codec Pro','Inter',sans-serif;font-size:12.5px;font-weight:600;color:#98A3B3;text-transform:uppercase;letter-spacing:.08em}
+a.lg-buy{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:100%;padding:21px 32px;border-radius:16px;text-decoration:none;background:linear-gradient(135deg,#25DE8C 0%,#10B981 45%,#059669 100%);border:1.5px solid rgba(255,255,255,.45);cursor:pointer;transition:transform .22s ease;position:relative;overflow:hidden;margin-top:4px;animation:lgGlow 2.6s ease-in-out infinite}
+@keyframes lgGlow{0%,100%{box-shadow:0 14px 40px rgba(16,185,129,.5),0 0 0 0 rgba(37,222,140,.55),inset 0 1px 0 rgba(255,255,255,.4)}50%{box-shadow:0 18px 52px rgba(16,185,129,.68),0 0 0 9px rgba(37,222,140,0),inset 0 1px 0 rgba(255,255,255,.45)}}
+a.lg-buy::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.32),transparent);transform:skewX(-20deg);animation:lgSheen 3.4s ease-in-out infinite}
+@keyframes lgSheen{0%,55%{left:-60%}85%,100%{left:130%}}
+.lg-buy-main{display:flex;align-items:center;gap:11px;font-family:'Codec Pro','Inter',sans-serif;font-size:19px;font-weight:800;color:#fff;letter-spacing:.01em;line-height:1.25;text-shadow:0 1px 2px rgba(4,32,20,.25)}
+.lg-buy-main svg{stroke:#fff;flex:none}
+.lg-buy-sub{font-size:13.5px;font-weight:700;color:#fff;font-family:'Inter',-apple-system,sans-serif;line-height:1.35;opacity:.96}
+a.lg-buy:hover{transform:translateY(-2px);box-shadow:0 18px 46px rgba(16,185,129,.55),inset 0 1px 0 rgba(255,255,255,.4)}
+@media (prefers-reduced-motion: reduce){ a.lg-buy::after{animation:none} a.lg-buy{animation:none;box-shadow:0 14px 40px rgba(16,185,129,.5),inset 0 1px 0 rgba(255,255,255,.4)} }
+
+</style>
+<div id="enrollModal" role="dialog" aria-modal="true" aria-label="Enroll">
+  <div class="em-backdrop" data-em-close></div>
+  <div class="em-dialog">
+    <button class="em-x" type="button" data-em-close aria-label="Close">&times;</button>
+
+    <div class="em-steps">
+      <div class="em-st active" id="emS1"><span class="em-dot">1</span><span class="em-lbl">Register</span></div>
+      <span class="em-bar" id="emB1"></span>
+      <div class="em-st" id="emS2"><span class="em-dot">2</span><span class="em-lbl">Select course</span></div>
+      <span class="em-bar" id="emB2"></span>
+      <div class="em-st" id="emS3"><span class="em-dot">3</span><span class="em-lbl">Place order</span></div>
+    </div>
+
+    <h2>Your protocol <em>starts here.</em></h2>
+
+    <!-- STEP 1 -->
+    <div class="em-screen on" id="emStep1">
+      <label class="em-lb" for="emName">Full Name*</label>
+      <input class="em-in" id="emName" type="text" placeholder="Full Name" autocomplete="name" />
+
+      <label class="em-lb" for="emEmail">Email*</label>
+      <input class="em-in" id="emEmail" type="email" placeholder="Email" autocomplete="email" />
+
+      <label class="em-lb" for="emPhone">Mobile Number*</label>
+      <div class="em-phone">
+        <div class="em-cc" id="emCc"><span id="emCcIso">US</span><span id="emCcDial">+1</span></div>
+        <select class="em-in" id="emCountry" data-lla-country="1" aria-label="Country"></select>
+      </div>
+      <div class="em-row">
+        <input class="em-in" id="emPhone" type="tel" placeholder="Mobile" autocomplete="tel" />
+      </div>
+      <script>
+      (function(){
+        function sync(){
+          var sel=document.getElementById('emCountry'),iso=document.getElementById('emCcIso'),dial=document.getElementById('emCcDial');
+          if(!sel||!iso||!dial) return;
+          var v=(sel.value||'US').toUpperCase(),opt=sel.options[sel.selectedIndex],d=opt&&opt.getAttribute('data-dial');
+          if(!d&&window.LLA_COUNTRY&&window.LLA_COUNTRY.list){try{var L=typeof LLA_COUNTRY.list==='function'?LLA_COUNTRY.list():LLA_COUNTRY.list;L.forEach(function(c){if(c.iso===v)d=c.dial;});}catch(e){}}
+          iso.textContent=v;dial.textContent='+'+(d||'1');
+        }
+        document.addEventListener('change',function(e){if(e.target&&e.target.id==='emCountry')sync();});
+        window.addEventListener('load',function(){setTimeout(sync,0);setTimeout(sync,500);});
+      })();
+      </script>
+
+      <div class="em-err" id="emErr" role="alert"></div>
+      <button class="em-go" type="button" id="emGo1">Continue</button>
+      <p class="em-refund">Fully refundable within 14 days from registration.</p>
+
+      <div class="em-consent">
+        <input type="checkbox" id="emSms" checked />
+        <label for="emSms">By subscribing, you agree to receive SMS messages from Longevity Life Academy. Message frequency varies. Message &amp; Data rates may apply.</label>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="em-screen" id="emStep2">
+      <label class="em-lb" for="emDate">Preferred class time</label>
+      <select class="em-in" id="emDate">
+        <option>Monday evenings, 7:00pm - 7:50pm ET</option>
+        <option>Wednesday midday, 12:00pm - 12:50pm ET</option>
+        <option>Next available start date</option>
+      </select>
+
+      <div class="em-card">
+        <div class="em-card-b">
+          <div class="em-cname">The Longevity Blueprint</div>
+          <div class="em-cl"><b>Schedule:</b> 18 live sessions across 18 weeks, one session every week</div>
+          <div class="em-cl"><b>Time:</b> 7:00pm - 7:50pm ET</div>
+          <div class="em-cl"><b>Lesson duration:</b> 50 min</div>
+          <div class="em-cl gap"><b>Period:</b> 18 weeks</div>
+        </div>
+        <div class="em-band">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3DDC97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <div>
+            <div class="b-l">Course tuition</div>
+            <div class="b-v">$279.00 monthly for 5 months</div>
+          </div>
+        </div>
+      </div>
+
+      <label class="em-lb" for="emPromo">I have promo code</label>
+      <div class="em-promo">
+        <input class="em-in" id="emPromo" type="text" placeholder="Enter promo code" />
+        <button class="em-apply" type="button" id="emApply">Apply</button>
+      </div>
+
+      <button class="em-go" type="button" id="emGo2">Continue</button>
+    </div>
+  </div>
+</div>
+
+<script>window.LLA_ECOMM_CONFIG = window.LLA_ECOMM_CONFIG || { workerBase: 'https://eteacher-leads-proxy.gitter-omri.workers.dev' };</script>
+<script src="/blueprint-november-r4x9/assets/eteacher-ecomm.js" defer></script>
+<script>
+(function(){
+  var m=document.getElementById('enrollModal');
+  if(!m) return;
+  function open(){m.classList.add('open');document.body.style.overflow='hidden';}
+  function close(){m.classList.remove('open');document.body.style.overflow='';}
+  function step(n){
+    document.getElementById('emStep1').classList.toggle('on',n===1);
+    document.getElementById('emStep2').classList.toggle('on',n===2);
+    document.getElementById('emS1').className='em-st '+(n>1?'done':'active');
+    document.getElementById('emS2').className='em-st '+(n>=2?'active':'');
+    document.getElementById('emB1').className='em-bar'+(n>=2?' done':'');
+    m.querySelector('.em-dialog').scrollTop=0;
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-checkout-open]');
+    if(a){e.preventDefault();step(1);open();return;}
+    if(e.target.closest('[data-em-close]')){close();}
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  var errBox=document.getElementById('emErr');
+  function emErr(msg){errBox.textContent=msg;errBox.classList.add('on');}
+  function emErrClear(){errBox.textContent='';errBox.classList.remove('on');}
+  var ERR_MSG={
+    need_full_name:'Please enter your full name (first and last).',
+    invalid_email:'Please enter a valid email address.',
+    non_us_phone:'Please enter a valid US mobile number, or pick your country from the list.',
+    invalid_phone:'Please enter a valid mobile number for the selected country.',
+    invalid_state:'Please enter a valid US mobile number.',
+    'Missing or invalid fields':'Please fill in all fields.'
+  };
+  document.getElementById('emGo1').addEventListener('click',function(){
+    var btn=this;
+    emErrClear();
+    var fields={
+      fullName:document.getElementById('emName').value,
+      email:document.getElementById('emEmail').value,
+      phone:document.getElementById('emPhone').value,
+      smsConsent:document.getElementById('emSms').checked,
+      startDate:(document.getElementById('emDate')||{}).value||'',
+      countryIso:String((document.getElementById('emCountry')||{}).value||'US').toUpperCase(),
+      promoCode:''
+    };
+    if(!fields.fullName.trim()||!fields.email.trim()||!fields.phone.trim()){emErr('Please fill in all fields.');return;}
+    if(fields.fullName.trim().split(/\s+/).length<2){emErr(ERR_MSG.need_full_name);return;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(fields.email.trim())){emErr(ERR_MSG.invalid_email);return;}
+    var _cc=String((document.getElementById('emCountry')||{}).value||'US').toUpperCase();
+    fields.countryIso=_cc;
+    var _vp=(_cc==='US')
+      ?((window.LLA_US&&window.LLA_US.validatePhone)?window.LLA_US.validatePhone(fields.phone):{ok:true})
+      :((window.LLA_COUNTRY&&window.LLA_COUNTRY.toE164)?window.LLA_COUNTRY.toE164(fields.phone,_cc):{ok:true});
+    if(!_vp.ok){emErr(_cc==='US'?ERR_MSG.non_us_phone:ERR_MSG.invalid_phone);return;}
+    if(!window.LLA_ECOMM){
+      var b1=this,t0=Date.now();b1.disabled=true;b1.textContent='One moment\u2026';
+      (function w(){if(window.LLA_ECOMM){b1.disabled=false;b1.textContent='Continue';b1.click();return;}
+        if(Date.now()-t0>15000){b1.disabled=false;b1.textContent='Continue';emErr('Slow connection. Please tap Continue again.');return;}setTimeout(w,200);})();
+      return;}
+        /* E-COMMERCE 3-SCREEN CHECKOUT ONLY. No CRM lead is created on this screen.
+     * The details are held in the page and the lead + order are created on the
+     * click that leads to the payment screen. Do not re-add a lead call or any
+     * marketing event here. The separate lead-generation form is unaffected. */
+    window.LLA_ECOMM_PENDING = fields;
+    try{ if(window.sessionStorage) sessionStorage.setItem('lla_pending_enroll',JSON.stringify(fields)); }catch(e){}
+    step(2);
+  });
+  document.getElementById('emGo2').addEventListener('click',function(){
+    var btn=this;
+    function go(ids){
+      window.location.href='https://lla-checkout.gitter-omri.workers.dev/checkout.html'+(ids&&ids.stid?('?stid='+encodeURIComponent(ids.stid)+'&orderid='+encodeURIComponent(ids.orderid)):'');
+    }
+    var ids=(window.LLA_ECOMM&&window.LLA_ECOMM.getCheckoutIds())||null;
+    if(ids&&ids.stid){go(ids);return;}
+    var f=window.LLA_ECOMM_PENDING;
+    if(!f){ try{ f=JSON.parse(sessionStorage.getItem('lla_pending_enroll')||'null'); }catch(e){ f=null; } }
+    if(!f||!window.LLA_ECOMM){go(null);return;}
+    if(btn.getAttribute('data-busy')==='1'){return;}
+    btn.setAttribute('data-busy','1');
+    var label=btn.textContent;btn.textContent='Please wait\u2026';
+    window.LLA_ECOMM.submitLead(f).then(function(r){
+      btn.setAttribute('data-busy','0');btn.textContent=label;
+      if(r&&r.ok){ try{ sessionStorage.removeItem('lla_pending_enroll'); }catch(e){} go((window.LLA_ECOMM.getCheckoutIds())||null);return;}
+      step(1);
+      emErr(ERR_MSG[(r&&r.error)]||'Something went wrong, please try again in a moment.');
+    });
+  });
+  document.getElementById('emApply').addEventListener('click',function(){
+    var v=document.getElementById('emPromo').value.trim().toUpperCase();
+    this.textContent = (v==='FOUNDER35') ? 'Applied' : 'Apply';
+  });
+  var q=new URLSearchParams(location.search);
+  if(q.get('enroll')){step(q.get('enroll')==='2'?2:1);open();}
+})();
+</script>
+  <script src="../_assets/lla-country.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julie Gibson Clark — Founding Faculty | Longevity Life Academy</title>
+<meta name="description" content="Julie Gibson Clark is one of the slowest-aging people ever measured — ranked #2 in the world on the Rejuvenation Olympics, ahead of biohacker Bryan Johnson's $2M-a-year program. Now Founding Faculty at Longevity Life Academy.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Julie Gibson Clark — Founding Faculty | Longevity Life Academy">
+<meta property="og:description" content="One of the slowest-aging people ever measured — #2 in the world, ahead of a $2M-a-year biohacker. Now Founding Faculty at Longevity Life Academy.">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue: #006EFF;
+    --blue-strong: #0051CC;
+    --blue-hover: #0059D6;
+    --blue-light: #E8F1FF;
+    --ink: #111111;
+    --ink-2: #3a4250;
+    --ink-3: #6a7382;
+    --bg: #FFFFFF;
+    --surface: #F5F7FA;
+    --navy: #060e1a;
+    --navy-2: #0a1628;
+    --navy-grad: linear-gradient(180deg, #0e1f48 0%, #081634 100%);
+    --gold: #E9C46A;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --font-display: 'Bricolage Grotesque', 'Inter', -apple-system, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-serif: 'Instrument Serif', Georgia, serif;
+  }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { font-family: var(--font-body); color: var(--ink); background: var(--bg); line-height: 1.65; font-size: 17px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.86); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(17,17,17,0.08); }
+  .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav-logo { font-family: var(--font-display); font-weight: 700; font-size: 17px; letter-spacing: -0.01em; color: var(--ink); }
+  .nav-logo span { color: var(--blue); }
+  .nav-back { font-size: 14px; color: var(--blue); font-weight: 600; display: inline-flex; align-items: center; gap: 7px; transition: opacity 0.15s; }
+  .nav-back:hover { opacity: 0.65; }
+  .nav-back svg { width: 16px; height: 16px; }
+
+  section.block { padding: 100px 0; }
+  .eyebrow { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; }
+  .eyebrow.light { color: var(--blue); }
+  .eyebrow.on-dark { color: #7EC8FF; }
+  .eyebrow.on-blue { color: rgba(255,255,255,0.9); }
+
+  /* ===== HERO — dark navy ===== */
+  .hero { position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden; background: var(--navy); }
+  .hero-img { position: absolute; top: 0; right: 0; bottom: 0; width: 58%; }
+  .hero-img picture { display: block; width: 100%; height: 100%; }
+  .hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 12%; }
+  @keyframes heroZoom { to { transform: scale(1); } }
+  /* left navy panel + soft feather over the image's left edge so text never sits on her face */
+  .hero-scrim { position: absolute; inset: 0; background:
+      linear-gradient(90deg, var(--navy) 0%, var(--navy) 38%, rgba(6,14,26,0.72) 48%, rgba(6,14,26,0.12) 60%, rgba(6,14,26,0) 70%),
+      linear-gradient(180deg, rgba(6,14,26,0.35) 0%, rgba(6,14,26,0) 22%, rgba(6,14,26,0) 78%, rgba(6,14,26,0.4) 100%); }
+  .hero-content { position: relative; z-index: 2; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 32px; color: #fff; }
+  .hero-inner { max-width: 560px; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 9px; background: rgba(0,110,255,0.18); border: 1px solid rgba(126,200,255,0.45); color: #7EC8FF; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 8px 16px; border-radius: 999px; margin-bottom: 24px; }
+  .hero-eyebrow svg { width: 15px; height: 15px; fill: var(--gold); }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(42px, 7.8vw, 88px); font-weight: 700; line-height: 0.98; letter-spacing: -0.03em; margin-bottom: 22px; text-shadow: 0 2px 44px rgba(0,0,0,0.45); }
+  .hero h1 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: #7EC8FF; }
+  .hero-sub { font-size: clamp(18px, 2.4vw, 22px); color: rgba(255,255,255,0.9); max-width: 660px; line-height: 1.5; font-weight: 400; }
+  .hero-sub b { color: #fff; font-weight: 700; }
+
+  /* ===== STAT BAND — solid blue ===== */
+  .statband { background: linear-gradient(135deg, #006EFF 0%, #0057D6 100%); }
+  .statband-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat { padding: 46px 20px; text-align: center; border-right: 1px solid rgba(255,255,255,0.16); }
+  .stat:last-child { border-right: none; }
+  .stat b { display: block; font-family: var(--font-display); font-size: clamp(30px, 4.4vw, 50px); font-weight: 700; letter-spacing: -0.02em; color: #fff; }
+  .stat span { display: block; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: rgba(255,255,255,0.82); margin-top: 10px; line-height: 1.45; }
+
+  /* ===== SCIENCE — light white ===== */
+  .science { background: var(--bg); }
+  .science .head { text-align: center; max-width: 740px; margin: 0 auto; }
+  h2.title { font-family: var(--font-display); font-size: clamp(32px, 5vw, 54px); font-weight: 700; line-height: 1.05; letter-spacing: -0.025em; margin-bottom: 24px; }
+  h2.title em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--blue); }
+  .lead { font-size: 18.5px; color: var(--ink-2); line-height: 1.7; max-width: 760px; }
+  .lead p { margin-bottom: 22px; } .lead p:last-child { margin-bottom: 0; }
+  .lead strong { color: var(--ink); font-weight: 700; }
+  .science .lead { margin: 0 auto; text-align: center; }
+  .pace { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 54px; }
+  .pace-card { position: relative; border-radius: var(--radius-lg); padding: 40px 36px 36px; overflow: hidden; }
+  .pace-card.avg { background: var(--surface); border: 1px solid rgba(17,17,17,0.08); }
+  .pace-card.her { background: linear-gradient(160deg, #002a66 0%, #003d99 100%); color: #fff; box-shadow: 0 30px 70px -30px rgba(0,80,214,0.55); }
+  .pace-card .who { font-size: 12px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; margin-bottom: 8px; }
+  .pace-card.avg .who { color: var(--ink-3); }
+  .pace-card.her .who { color: var(--gold); }
+  .pace-card .big { font-family: var(--font-display); font-size: clamp(52px, 9vw, 84px); font-weight: 700; line-height: 0.95; letter-spacing: -0.03em; }
+  .pace-card.avg .big { color: var(--ink); }
+  .pace-card .unit { font-size: 14px; margin-top: 4px; }
+  .pace-card.avg .unit { color: var(--ink-3); }
+  .pace-card.her .unit { color: rgba(255,255,255,0.7); }
+  .bar { height: 10px; border-radius: 999px; margin-top: 26px; overflow: hidden; }
+  .bar.avg { background: rgba(17,17,17,0.1); } .bar.avg > i { display:block; height:100%; width:100%; background: var(--ink-3); border-radius:999px; }
+  .bar.her { background: rgba(255,255,255,0.16); } .bar.her > i { display:block; height:100%; width:66.5%; background: linear-gradient(90deg,#4DA3FF,#7EC8FF); border-radius:999px; box-shadow: 0 0 18px rgba(126,200,255,0.7); }
+  .pace-card .cap { font-size: 14.5px; margin-top: 16px; line-height: 1.55; }
+  .pace-card.avg .cap { color: var(--ink-2); }
+  .pace-card.her .cap { color: rgba(255,255,255,0.88); }
+  .science-note { text-align: center; font-size: 13.5px; color: var(--ink-3); margin: 30px auto 0; max-width: 780px; }
+  .science-note a { color: var(--blue); font-weight: 600; }
+
+  /* ===== STORY — dark navy ===== */
+  .story-sec { background: var(--navy-grad); color: #fff; }
+  .story { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+  .story h2.title { color: #fff; } .story h2.title em { color: #7EC8FF; }
+  .story .lead { color: rgba(255,255,255,0.78); } .story .lead strong { color: #fff; }
+  .story-media { position: relative; }
+  .story-media img { width: 100%; border-radius: var(--radius-lg); box-shadow: 0 30px 70px -25px rgba(0,0,0,0.7), 0 40px 90px -40px rgba(0,110,255,0.4); }
+  .story-media .badge { position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%); white-space: nowrap; background: linear-gradient(90deg,#0057d6,#2f8bff); color: #fff; font-size: 13px; font-weight: 700; padding: 12px 22px; border-radius: 999px; box-shadow: 0 14px 30px -8px rgba(0,110,255,0.6); }
+
+  /* ===== VERSUS — light surface ===== */
+  .versus-sec { background: var(--surface); }
+  .versus-sec .head { text-align: center; max-width: 760px; margin: 0 auto 50px; }
+  .versus-sec .lead { margin: 0 auto; text-align: center; }
+  .versus { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: stretch; }
+  .vs-side { border-radius: var(--radius-lg); padding: 40px 34px; text-align: center; display: flex; flex-direction: column; }
+  .vs-side.her { background: linear-gradient(160deg, #003d99 0%, #0057d6 55%, #006EFF 100%); color: #fff; box-shadow: 0 30px 70px -28px rgba(0,80,214,0.6); position: relative; overflow: hidden; }
+  .vs-side.him { background: #fff; border: 1px solid rgba(17,17,17,0.1); box-shadow: 0 20px 50px -30px rgba(17,17,17,0.25); }
+  .vs-side .crown { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 12px; }
+  .vs-side.her .crown { color: var(--gold); }
+  .vs-side.him .crown { color: var(--ink-3); }
+  .vs-side .who { font-family: var(--font-display); font-weight: 700; font-size: 23px; margin-bottom: 6px; letter-spacing: -0.01em; }
+  .vs-side.him .who { color: var(--ink); }
+  .vs-side .tag { font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600; margin-bottom: 22px; }
+  .vs-side.her .tag { color: #cfe4ff; }
+  .vs-side.him .tag { color: var(--blue); }
+  .vs-side .num { font-family: var(--font-display); font-size: 56px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
+  .vs-side.him .num { color: var(--ink); }
+  .vs-side .num small { display:block; font-size: 13px; font-weight: 600; margin-top: 8px; font-family: var(--font-body); letter-spacing: 0; }
+  .vs-side.her .num small { color: rgba(255,255,255,0.7); }
+  .vs-side.him .num small { color: var(--ink-3); }
+  .vs-rows { margin-top: 24px; display: grid; gap: 12px; text-align: left; }
+  .vs-rows .r { display: flex; align-items: flex-start; gap: 10px; font-size: 14.5px; line-height: 1.4; }
+  .vs-side.her .vs-rows .r { color: rgba(255,255,255,0.92); }
+  .vs-side.him .vs-rows .r { color: var(--ink-2); }
+  .vs-rows svg { width: 17px; height: 17px; flex-shrink: 0; margin-top: 2px; }
+  .vs-side.her .vs-rows svg { stroke: #7EC8FF; }
+  .vs-side.him .vs-rows svg { stroke: var(--ink-3); }
+  .vs-mid { align-self: center; font-family: var(--font-serif); font-style: italic; font-size: 26px; color: var(--ink-3); }
+  .versus-foot { text-align: center; font-size: 13.5px; color: var(--ink-3); margin-top: 30px; }
+  .versus-foot a { color: var(--blue); font-weight: 600; }
+
+  /* ===== TIMELINE — dark navy ===== */
+  .timeline { background: var(--navy); color: #fff; }
+  .timeline h2.title { color: #fff; } .timeline h2.title em { color: #7EC8FF; }
+  .timeline .lead { color: rgba(255,255,255,0.75); }
+  .tl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
+  .tl-card { background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.09); border-radius: var(--radius-md); padding: 28px 26px; transition: transform 0.3s var(--ease), border-color 0.3s, background 0.3s; }
+  /* alternating tinted cards within the same fold */
+  .tl-card:nth-child(6n+1) { background: linear-gradient(160deg, rgba(0,110,255,0.16), rgba(0,110,255,0.05)); border-color: rgba(126,200,255,0.28); }
+  .tl-card:nth-child(6n+2) { background: linear-gradient(160deg, rgba(233,196,106,0.14), rgba(233,196,106,0.03)); border-color: rgba(233,196,106,0.28); }
+  .tl-card:nth-child(6n+3) { background: rgba(255,255,255,0.055); border-color: rgba(255,255,255,0.12); }
+  .tl-card:nth-child(6n+4) { background: rgba(255,255,255,0.055); border-color: rgba(255,255,255,0.12); }
+  .tl-card:nth-child(6n+5) { background: linear-gradient(160deg, rgba(233,196,106,0.14), rgba(233,196,106,0.03)); border-color: rgba(233,196,106,0.28); }
+  .tl-card:nth-child(6n+6) { background: linear-gradient(160deg, rgba(0,110,255,0.16), rgba(0,110,255,0.05)); border-color: rgba(126,200,255,0.28); }
+  .tl-card:hover { transform: translateY(-5px); border-color: rgba(126,200,255,0.55); }
+  .tl-time { font-family: var(--font-display); font-weight: 700; font-size: 14px; color: #7EC8FF; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+  .tl-card:nth-child(6n+2) .tl-time, .tl-card:nth-child(6n+5) .tl-time { color: var(--gold); }
+  .tl-card h3 { font-family: var(--font-display); font-size: 19px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
+  .tl-card p { font-size: 14.5px; color: rgba(255,255,255,0.72); line-height: 1.6; }
+
+  /* ===== QUOTES — solid blue ===== */
+  .quotes { background: linear-gradient(135deg, #006EFF 0%, #338BFF 100%); color: #fff; }
+  .quotes h2.title { color: #fff; } .quotes h2.title em { color: #cfe4ff; }
+  .quotes .eyebrow { color: rgba(255,255,255,0.9); }
+  .quotes-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 12px; }
+  .qcard { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); border-radius: var(--radius-md); padding: 32px 28px; transition: transform 0.3s var(--ease), background 0.3s; }
+  /* center quote inverted to a deep-navy card for contrast within the blue fold */
+  .qcard:nth-child(2) { background: linear-gradient(165deg, #062449 0%, #04152e 100%); border-color: rgba(126,200,255,0.35); box-shadow: 0 26px 60px -30px rgba(0,0,0,0.5); }
+  .qcard:nth-child(2) .qmark { color: var(--gold); }
+  .qcard:nth-child(2) .qlabel { color: var(--gold); }
+  .qcard:hover { transform: translateY(-5px); background: rgba(255,255,255,0.17); }
+  .qcard:nth-child(2):hover { background: linear-gradient(165deg, #073063 0%, #051a3a 100%); }
+  .qcard .qmark { font-family: var(--font-serif); font-size: 60px; line-height: 0.5; color: rgba(255,255,255,0.55); }
+  .qcard p { font-family: var(--font-serif); font-style: italic; font-size: 24px; color: #fff; line-height: 1.3; margin: 14px 0 18px; }
+  .qcard .qlabel { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #cfe4ff; }
+
+  /* ===== PRESS — light white ===== */
+  .press { background: var(--bg); }
+  .press .head { text-align: center; max-width: 760px; margin: 0 auto; }
+  .press-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; margin-top: 50px; }
+  .pcard { display: flex; flex-direction: column; background: #fff; border: 1px solid rgba(17,17,17,0.08); border-radius: var(--radius-lg); overflow: hidden; transition: transform 0.35s var(--ease), box-shadow 0.35s; box-shadow: 0 20px 50px -32px rgba(17,17,17,0.3); }
+  .pcard:hover { transform: translateY(-6px); box-shadow: 0 34px 70px -30px rgba(0,80,214,0.35); }
+  .pcard-img { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+  .pcard-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; transition: transform 0.6s var(--ease); }
+  .pcard:hover .pcard-img img { transform: scale(1.06); }
+  .pcard-outlet { position: absolute; top: 14px; left: 14px; background: rgba(255,255,255,0.94); backdrop-filter: blur(6px); color: var(--ink); font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 0.02em; padding: 7px 14px; border-radius: 999px; box-shadow: 0 6px 16px -6px rgba(17,17,17,0.35); }
+  /* distinct accent per outlet + subtle card tint so the three press cards differ */
+  .pcard:nth-child(1) .pcard-outlet { background: var(--blue); color: #fff; }
+  .pcard:nth-child(2) { background: var(--surface); }
+  .pcard:nth-child(2) .pcard-outlet { background: var(--navy-2); color: #fff; }
+  .pcard:nth-child(3) .pcard-outlet { background: var(--gold); color: #1a1204; }
+  .pcard-body { padding: 24px 24px 26px; display: flex; flex-direction: column; flex: 1; }
+  .pcard-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 700; line-height: 1.28; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 12px; }
+  .pcard-body p { font-size: 14.5px; color: var(--ink-2); line-height: 1.55; margin-bottom: 20px; flex: 1; }
+  .pcard-read { font-size: 13px; font-weight: 700; letter-spacing: 0.03em; color: var(--blue); display: inline-flex; align-items: center; gap: 7px; }
+  .pcard-read svg { width: 15px; height: 15px; }
+
+  /* ===== JOINING — dark navy ===== */
+  .joining { background: var(--navy-grad); color: #fff; }
+  .joining .head { text-align: center; max-width: 760px; margin: 0 auto 50px; }
+  .joining .eyebrow { color: #7EC8FF; }
+  .joining h2.title { color: #fff; } .joining h2.title em { color: #7EC8FF; }
+  .joining .lead { color: rgba(255,255,255,0.8); margin: 0 auto; text-align: center; } .joining .lead strong { color: #fff; }
+  .join-card { display: grid; grid-template-columns: 0.85fr 1.15fr; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid rgba(126,200,255,0.2); box-shadow: 0 40px 100px -40px rgba(0,0,0,0.8); }
+  .join-media { position: relative; min-height: 100%; }
+  .join-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+  .join-body { background: rgba(255,255,255,0.045); padding: clamp(36px,4.4vw,56px); }
+  .join-body h3 { font-family: var(--font-display); font-size: clamp(26px,3.4vw,36px); font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 20px; }
+  .join-body h3 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: #7EC8FF; }
+  .join-body > p { font-size: 16.5px; color: rgba(255,255,255,0.78); line-height: 1.65; margin-bottom: 28px; }
+  .teach-list { display: grid; gap: 15px; }
+  .teach-list li { list-style: none; display: flex; align-items: flex-start; gap: 13px; font-size: 15.5px; color: rgba(255,255,255,0.92); }
+  .teach-list svg { width: 21px; height: 21px; flex-shrink: 0; margin-top: 1px; stroke: #7EC8FF; fill: none; stroke-width: 2.4; }
+
+  /* ===== CTA — blue gradient ===== */
+  .cta-final { background: linear-gradient(135deg, #0057D6 0%, #006EFF 55%, #338BFF 100%); text-align: center; color: #fff; }
+  .cta-final h2 { font-family: var(--font-display); font-size: clamp(32px,5.4vw,58px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.05; margin-bottom: 20px; }
+  .cta-final h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: #cfe4ff; }
+  .cta-final p { font-size: 19px; color: rgba(255,255,255,0.9); max-width: 620px; margin: 0 auto 34px; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: var(--blue-strong); font-weight: 700; font-size: 17px; padding: 18px 42px; border-radius: 12px; box-shadow: 0 18px 40px -12px rgba(0,0,0,0.35); transition: transform 0.3s var(--ease), box-shadow 0.3s; }
+  .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 26px 54px -12px rgba(0,0,0,0.5); }
+  .cta-btn svg { width: 20px; height: 20px; }
+
+  footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.08); padding: 40px 24px; text-align: center; font-size: 13.5px; color: rgba(255,255,255,0.5); }
+  footer a { color: #7EC8FF; }
+  .disclaimer { max-width: 880px; margin: 18px auto 0; font-size: 11.5px; line-height: 1.6; color: rgba(255,255,255,0.35); }
+
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .statband-grid { grid-template-columns: repeat(2,1fr); }
+    .stat:nth-child(2) { border-right: none; }
+    .stat { border-bottom: 1px solid rgba(255,255,255,0.16); }
+    .pace { grid-template-columns: 1fr; }
+    .story { grid-template-columns: 1fr; gap: 46px; } .story-media { order: -1; }
+    .versus { grid-template-columns: 1fr; } .vs-mid { transform: rotate(90deg); justify-self: center; }
+    .tl { grid-template-columns: 1fr 1fr; }
+    .quotes-grid { grid-template-columns: 1fr; }
+    .press-grid { grid-template-columns: 1fr; }
+    .join-card { grid-template-columns: 1fr; } .join-media { min-height: 300px; }
+  }
+  @media (max-width: 900px) {
+    .hero { min-height: 88vh; align-items: flex-end; }
+    .hero-img { width: 100%; height: 62%; top: 0; bottom: auto; }
+    .hero-img img { object-position: center 12%; }
+    .hero-content { padding-bottom: 72px; }
+    .hero-inner { max-width: 100%; }
+    .hero-scrim { background:
+      linear-gradient(180deg, rgba(6,14,26,0.32) 0%, rgba(6,14,26,0) 30%, rgba(6,14,26,0.55) 55%, var(--navy) 80%); }
+  }
+  @media (max-width: 540px) {
+    .hero { min-height: 86vh; } section.block { padding: 66px 0; } .tl { grid-template-columns: 1fr; }
+    .hero-img { height: 56%; }
+    .hero-img img { object-position: center 10%; }
+    .hero-eyebrow { margin-bottom: 18px; font-size: 11px; letter-spacing: 0.1em; }
+    .hero-scrim { background:
+      linear-gradient(180deg, rgba(6,14,26,0.3) 0%, rgba(6,14,26,0) 26%, rgba(6,14,26,0.62) 52%, var(--navy) 78%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-img img { animation: none; transform: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+/* --- Full site nav (matches homepage) + standardized brand logo --- */
+nav{background:linear-gradient(180deg,#0e1f48 0%,#081634 100%) !important;border-bottom:1px solid rgba(120,170,255,0.22) !important;box-shadow:0 6px 24px rgba(0,0,0,0.45);}
+.nav-inner{max-width:1200px;height:auto;padding:14px 28px;gap:40px;justify-content:flex-start;}
+.nav-logo{display:inline-flex;align-items:center;padding:0;margin:0;line-height:0;flex-shrink:0;}
+.nav-logo-img{display:block;height:82px;width:auto;max-width:420px;image-rendering:auto;}
+.nav-menu{display:flex;align-items:center;gap:30px;margin-left:auto;}
+.nav-menu a{font-family:var(--font-body);font-size:15px;font-weight:600;color:rgba(255,255,255,0.86);text-decoration:none;letter-spacing:-0.01em;transition:color .15s;}
+.nav-menu a:hover{color:#6BB6FF;}
+.nav-menu a.nav-cta{background:var(--blue);color:#fff;padding:10px 22px;border-radius:999px;box-shadow:0 4px 16px rgba(0,110,255,0.4);}
+.nav-menu a.nav-cta:hover{background:var(--blue-hover);color:#fff;}
+.nav-menu a.nav-pricing{color:#fff;}
+.nav-mobile-btn{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:6px;margin-left:auto;}
+@media (max-width:960px){
+  .nav-menu{display:none;}
+  .nav-mobile-btn{display:inline-flex;}
+  .nav-logo-img{height:60px;max-width:320px;}
+  .nav-inner{padding:12px 20px;}
+}
+/* Mobile drawer */
+.nav-drawer{position:fixed;inset:0;z-index:200;background:linear-gradient(180deg,#0e1f48 0%,#081634 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;opacity:0;pointer-events:none;transition:opacity .2s;}
+.nav-drawer.open{opacity:1;pointer-events:auto;}
+.nav-drawer a{font-family:var(--font-display);font-size:24px;font-weight:700;color:#fff;text-decoration:none;}
+.nav-drawer a.nav-cta{background:var(--blue);padding:14px 40px;border-radius:999px;font-size:20px;}
+.nav-drawer-close{position:absolute;top:22px;right:24px;background:none;border:none;color:#fff;cursor:pointer;}
+</style>
+<script src="/blueprint-november-r4x9/assets/ai-attribution.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="../index.html" aria-label="Longevity Life Academy by eTeacher Group home"><img src="../assets/lla-logo-exact-transparent@2x.png?v=9" alt="Longevity Life Academy by eTeacher Group" class="nav-logo-img" width="1314" height="596"></a>
+    <div class="nav-menu">
+      <a href="../about.html">About</a>
+      <a href="../index.html#syllabus">Curriculum</a>
+      <a href="../cgm.html">CGM</a>
+      <a href="../biological-age-light.html">Bio-Age Quiz</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="../pricing.html" class="nav-pricing">Pricing</a>
+      <a href="../index.html#lead-gen" class="nav-cta">Apply Now</a>
+    </div>
+    <button class="nav-mobile-btn" id="navMobileBtn" aria-label="Open menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <button class="nav-drawer-close" id="navDrawerClose" aria-label="Close menu"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  <a href="../about.html">About</a>
+  <a href="../index.html#syllabus">Curriculum</a>
+  <a href="../cgm.html">CGM</a>
+  <a href="../biological-age-light.html">Bio-Age Quiz</a>
+  <a href="../blog.html">Blog</a>
+  <a href="../index.html#faq">FAQ</a>
+  <a href="../pricing.html">Pricing</a>
+  <a href="../index.html#lead-gen" class="nav-cta">Apply Now</a>
+</div>
+<script>(function(){var b=document.getElementById('navMobileBtn'),d=document.getElementById('navDrawer'),c=document.getElementById('navDrawerClose');if(b&&d){b.addEventListener('click',function(){d.classList.add('open');});}if(c&&d){c.addEventListener('click',function(){d.classList.remove('open');});}if(d){d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){d.classList.remove('open');});});}})();</script>
+
+<!-- HERO (dark navy) -->
+<header class="hero">
+  <div class="hero-img"><picture><source media="(max-width: 900px)" srcset="../assets/instructors/julie-hero-mobile.jpg"><img src="../assets/instructors/julie-hero.jpg" alt="Julie Gibson Clark"></picture></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-content">
+    <div class="hero-inner">
+      <span class="hero-eyebrow"><svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm0 3h14v2H5v-2z"/></svg>Founding Faculty &middot; Longevity Life Academy</span>
+      <h1>One of the slowest-aging<br>people <em>ever measured.</em></h1>
+      <p class="hero-sub">Julie Gibson Clark ranked <b>#2 in the world</b> at the Rejuvenation Olympics &mdash; her cells aging about <b>a third slower</b> than a typical adult&rsquo;s, on <b>everyday fundamentals</b> anyone can follow.</p>
+    </div>
+  </div>
+</header>
+
+<!-- STAT BAND (solid blue) -->
+<div class="statband">
+  <div class="wrap">
+    <div class="statband-grid">
+      <div class="stat"><b>#2</b><span>In the World<br>Rejuvenation Olympics</span></div>
+      <div class="stat"><b>0.665</b><span>Pace of Aging<br>DunedinPACE</span></div>
+      <div class="stat"><b>~8 mo</b><span>Biological Aging<br>Per Calendar Year</span></div>
+      <div class="stat"><b>0</b><span>Exotic Hardware<br>No Seven-Figure Lab</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- SCIENCE (light white) -->
+<section class="block science">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Her Cellular Age</span>
+      <h2 class="title">Her body doesn&rsquo;t keep <em>calendar time.</em></h2>
+      <p class="lead">Scientists measure the true speed of aging with the <strong>DunedinPACE</strong> epigenetic clock &mdash; how many biological years your cells gain for every year on the calendar. A score of <strong>1.0</strong> is a normal, average pace. Julie&rsquo;s is <strong>0.665</strong>.</p>
+    </div>
+    <div class="pace">
+      <div class="pace-card avg">
+        <div class="who">A Typical Adult</div>
+        <div class="big">1.00</div>
+        <div class="unit">biological years per calendar year</div>
+        <div class="bar avg"><i></i></div>
+        <p class="cap">Cells age in lockstep with the calendar &mdash; one biological year for every year lived.</p>
+      </div>
+      <div class="pace-card her">
+        <div class="who">&#9733; Julie Gibson Clark</div>
+        <div class="big">0.665</div>
+        <div class="unit">biological years per calendar year</div>
+        <div class="bar her"><i></i></div>
+        <p class="cap">Roughly <strong>eight months of biological aging</strong> for every twelve on the calendar &mdash; about a third slower than average.</p>
+      </div>
+    </div>
+    <p class="science-note">Score reflects Julie&rsquo;s publicly reported result on the <a href="https://www.rejuvenationolympics.com/dunedin-pace" target="_blank" rel="noopener">Rejuvenation Olympics leaderboard</a>, measured with the DunedinPACE epigenetic clock via a TruDiagnostic blood test. Lower is slower aging.</p>
+  </div>
+</section>
+
+<!-- STORY (dark navy) -->
+<section class="block story-sec">
+  <div class="wrap">
+    <div class="story">
+      <div>
+        <span class="eyebrow on-dark">How She Got There</span>
+        <h2 class="title">It started with a <em>wake-up call.</em></h2>
+        <div class="lead">
+          <p>Julie is a former structural engineer turned recruiter and a single mom in Phoenix, Arizona. Her turning point wasn&rsquo;t a lab or a clinic &mdash; it was a diagnosis of <strong>heavy-metal poisoning</strong> that forced her to rebuild her health from the ground up.</p>
+          <p>What followed wasn&rsquo;t extreme biohacking. It was a set of <strong>fundamentals held with total consistency</strong>: real food, daily movement, protected sleep, meditation, and a few well-chosen supplements. No million-dollar lab. No team of doctors.</p>
+          <p>Years of that rhythm slowed her pace of aging to <strong>0.665</strong> &mdash; enough to put her <strong>#2 in the world</strong> on the Rejuvenation Olympics leaderboard, a spot she held for over a year.</p>
+        </div>
+      </div>
+      <div class="story-media">
+        <img src="../assets/instructors/julie-purple.jpg" alt="Julie Gibson Clark">
+        <span class="badge">Fundamentals, held for years</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERSUS (light surface) -->
+<section class="block versus-sec">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Discipline vs. Budget</span>
+      <h2 class="title">She out-aged a <em>$2M-a-year</em> biohacker.</h2>
+      <p class="lead">On the 2023 leaderboard, Julie ranked <strong>#2 in the world</strong> &mdash; sitting several places ahead of tech biohacker Bryan Johnson, who reportedly spends around $2 million a year and takes 100+ supplements a day chasing the same goal.</p>
+    </div>
+    <div class="versus">
+      <div class="vs-side her">
+        <div class="crown">&#9733; Ranked #2 in the World</div>
+        <div class="who">Julie Gibson Clark</div>
+        <div class="tag">The Fundamentals</div>
+        <div class="num">0.665<small>DunedinPACE &middot; 2023</small></div>
+        <div class="vs-rows">
+          <div class="r"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Affordable, everyday routine</div>
+          <div class="r"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>A handful of core supplements</div>
+          <div class="r"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Diet, exercise, sleep &amp; meditation</div>
+          <div class="r"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No lab, no team of doctors</div>
+        </div>
+      </div>
+      <div class="vs-mid">vs</div>
+      <div class="vs-side him">
+        <div class="crown">Ranked Lower at the Time</div>
+        <div class="who">Bryan Johnson</div>
+        <div class="tag">Project Blueprint</div>
+        <div class="num">~$2M<small>Per Year &middot; 2023</small></div>
+        <div class="vs-rows">
+          <div class="r"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>~$2 million a year</div>
+          <div class="r"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>100+ supplements a day</div>
+          <div class="r"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>A team of 30+ doctors</div>
+          <div class="r"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>A full-time longevity operation</div>
+        </div>
+      </div>
+    </div>
+    <p class="versus-foot">Figures reflect the 2023 Rejuvenation Olympics leaderboard, as reported by <a href="https://fortune.com/well/2023/11/04/longevity-women-biohackers-diet-exercise-bryan-johnson/" target="_blank" rel="noopener">Fortune</a> and <a href="https://www.businessinsider.com/woman-spending-less-than-millionaire-bryan-johnson-anti-aging-ranking-2023-11" target="_blank" rel="noopener">Business Insider</a>. Rankings shift over time as new tests are logged.</p>
+  </div>
+</section>
+
+<!-- TIMELINE (dark navy) -->
+<section class="block timeline">
+  <div class="wrap">
+    <span class="eyebrow on-dark">A Day In Her Protocol</span>
+    <h2 class="title">Simple. Consistent. <em>Repeatable.</em></h2>
+    <p class="lead">No exotic hardware, no seven-figure lab &mdash; just a rhythm she can keep for decades. This is the exact kind of routine she teaches at the Academy.</p>
+    <div class="tl">
+      <div class="tl-card"><div class="tl-time">5:00 AM</div><h3>Rise &amp; center</h3><p>Wakes before the house does &mdash; reads, journals and meditates with green tea in hand. &ldquo;The quietest, most peaceful part of the day.&rdquo;</p></div>
+      <div class="tl-card"><div class="tl-time">7:00 AM</div><h3>Move &amp; sweat</h3><p>Strength work, a Norwegian 4&times;4 for VO&#8322; max, then sauna and a cold shower. The trick: &ldquo;Just go for the sauna. That&rsquo;s all you have to do today.&rdquo;</p></div>
+      <div class="tl-card"><div class="tl-time">Late morning</div><h3>Eat the rainbow</h3><p>A big greens drink, a warm greens latte, then roughly a pound of colorful vegetables with protein grazed across the day.</p></div>
+      <div class="tl-card"><div class="tl-time">1:00 PM</div><h3>20 minutes of calm</h3><p>Transcendental Meditation, a daily practice since 2019. Her most surprising benefit? Deeper, steadier sleep.</p></div>
+      <div class="tl-card"><div class="tl-time">Early evening</div><h3>Dinner &amp; connection</h3><p>An early meal &mdash; ideally about three hours before bed &mdash; built around time with her son, not just macros.</p></div>
+      <div class="tl-card"><div class="tl-time">9:00 PM</div><h3>Guard the sleep</h3><p>An evening walk, then lights out. &ldquo;You cannot biohack your way out of a good night&rsquo;s sleep.&rdquo;</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTES (solid blue) -->
+<section class="block quotes">
+  <div class="wrap">
+    <span class="eyebrow">In Her Words</span>
+    <h2 class="title">The philosophy <em>she teaches.</em></h2>
+    <div class="quotes-grid">
+      <div class="qcard"><div class="qmark">&ldquo;</div><p>We don&rsquo;t need millions of dollars to live long, vibrant lives.</p><span class="qlabel">The Belief</span></div>
+      <div class="qcard"><div class="qmark">&ldquo;</div><p>You cannot biohack your way out of a good night&rsquo;s sleep.</p><span class="qlabel">The Non-Negotiable</span></div>
+      <div class="qcard"><div class="qmark">&ldquo;</div><p>No matter where you are in your health journey &mdash; just start.</p><span class="qlabel">The Mission</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOINING (dark navy) -->
+<section class="block joining">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow on-dark">The Next Chapter</span>
+      <h2 class="title">Now she&rsquo;s teaching <em>it to you.</em></h2>
+      <p class="lead">Julie has joined <strong>Longevity Life Academy</strong> &mdash; the longevity education program by eTeacher Group &mdash; as <strong>Founding Faculty.</strong></p>
+    </div>
+    <div class="join-card">
+      <div class="join-media"><img src="../assets/instructors/julie-standing-hd.jpg" alt="Julie Gibson Clark" style="object-position:center 20%"></div>
+      <div class="join-body">
+        <span class="eyebrow on-dark">What Julie Teaches</span>
+        <h3>The exact fundamentals behind a <em>world #2 ranking.</em></h3>
+        <p>No billionaire budget, no exotic hardware &mdash; just the accessible, evidence-based levers anyone can pull, taught by the woman who lives them every day.</p>
+        <ul class="teach-list">
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Sustainable nutrition &amp; daily eating rhythm</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>VO&#8322; max cardio &amp; strength training</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Protecting sleep as the true non-negotiable</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Meditation &amp; stress as longevity levers</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Smart, minimal supplementation &amp; tracking your biomarkers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA (blue gradient) -->
+<section class="block cta-final">
+  <div class="wrap">
+    <h2>Learn longevity from <em>the woman who lives it.</em></h2>
+    <p>Julie&rsquo;s cohort is small and seats are limited. Apply now to learn the exact, repeatable protocol behind a world #2 ranking.</p>
+    <a class="cta-btn" href="../index.html#lead-gen">
+      Enroll in the Next Cohort
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div>&copy; Longevity Life Academy &middot; by <a href="../index.html">eTeacher Group</a> &middot; <a href="../index.html#teachers">Back to Instructors</a></div>
+  <p class="disclaimer">Julie Gibson Clark&rsquo;s pace-of-aging score (DunedinPACE ~0.665) and #2 world ranking reflect her publicly reported results on the Rejuvenation Olympics leaderboard, as covered by Fortune, Business Insider and others. Leaderboard positions change over time as new tests are logged, and epigenetic-clock scores are estimates, not medical diagnoses. Individual results vary; the Academy&rsquo;s programs are educational and not a substitute for medical advice.</p>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('section.block .wrap > *, .story, .story > *, .pace-card, .vs-side, .tl-card, .qcard, .pcard, .join-card').forEach((el) => {
+    el.classList.add('reveal'); io.observe(el);
+  });
+</script>
+</body>
+</html>

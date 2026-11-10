@@ -1,0 +1,60 @@
+/* Scoped usability fixes. Original course components and destinations are retained. */
+html { scroll-padding-top: calc(var(--guest-nav-height, 78px) + 56px); }
+#mockStrip { top: var(--guest-nav-height, 78px) !important; }
+#mockStrip a { touch-action: manipulation; }
+html body#lpRoot #fnNavToggle { min-width: 44px; min-height: 44px; }
+html body#lpRoot .fn-nav-pill { min-height: 44px; }
+#enrollModal { z-index: 2147480000 !important; }
+html.guest-form-visible #et-bumpyard-widget,
+html.guest-form-focused #et-bumpyard-widget,
+body:has(#enrollModal.open) #et-bumpyard-widget,
+body:has(.co-head) #et-bumpyard-widget { display: none !important; }
+header.co-head .logo .bm-v7-byline { display: none !important; }
+header.co-head .logo .bm-v7-lockup { display: block !important; height: auto !important; }
+.pay-tabs .gpay-mark { display: none !important; }
+.guest-contact-consent { display: flex !important; gap: 10px; align-items: flex-start; font-size: 15px !important; }
+.guest-contact-consent input[type=checkbox] { width: 20px !important; height: 20px !important; flex: 0 0 20px; margin: 2px 0 0 !important; padding: 0 !important; }
+html.guest-coupon-applied #enrollModal .lla-jp-line,
+html.guest-coupon-applied #enrollModal .mock-promo-lb { display: none !important; }
+body:has(.co-head) .lla-jp-line { display: none !important; }
+#fnDrawer.is-open { z-index: 2147479000 !important; overflow-y: auto; padding-bottom: calc(24px + env(safe-area-inset-bottom)); }
+#fnDrawer .fn-drawer-top { position: sticky; top: 0; flex-shrink: 0; z-index: 2; background: #071a3d; }
+html.guest-menu-open #mockStrip,
+html.guest-menu-open #et-bumpyard-widget { visibility: hidden !important; }
+#tgRail, .lla-slider { overscroll-behavior-x: contain; }
+#tgRail:focus-visible, .lla-slider:focus-visible { outline: 2px solid #5eb6ff; outline-offset: 4px; }
+@media(max-width:760px) {
+  #mockStrip .t.sm a { display: inline-flex; min-height: 44px; align-items: center; }
+  #et-bumpyard-widget { right: 12px !important; bottom: calc(12px + env(safe-area-inset-bottom)) !important; width: 52px !important; height: 52px !important; }
+  #et-bumpyard-widget .label { display: none !important; }
+  #et-bumpyard-widget .widget-trigger-btn { width: 52px !important; height: 52px !important; padding: 0 !important; justify-content: center !important; border-radius: 50% !important; }
+  #ask input, #ask textarea, #ask select { font-size: 16px !important; }
+  #ask textarea { min-height: 132px; }
+  html body#lpRoot #enrollModal .em-dialog .em-x { width: 44px !important; height: 44px !important; }
+  html body#lpRoot #enrollModal .em-dialog {
+    height: var(--guest-viewport-height, 100dvh) !important;
+    bottom: auto !important;
+    scroll-padding-top: 92px;
+    scroll-padding-bottom: 100px;
+    padding-bottom: calc(32px + env(safe-area-inset-bottom)) !important;
+  }
+  html body#lpRoot #enrollModal .em-dialog .mock-footer {
+    padding-bottom: env(safe-area-inset-bottom) !important;
+  }
+  html body#lpRoot #enrollModal #emStep1 .em-in { margin-bottom: 6px !important; }
+  html body#lpRoot #enrollModal .em-lb { margin-top: 8px !important; }
+  html body#lpRoot #enrollModal .dp-card { min-height: 88px !important; }
+  html body#lpRoot #enrollModal .dp-et { white-space: normal !important; }
+  header.co-head { position: relative; }
+  .pay-tab { min-height: 48px; }
+  #awx-dropin { min-width: 0; padding: 8px !important; }
+  .card, .cols > *, .card-pad { min-width: 0; }
+}
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto !important; }
+  #tgRail, .lla-slider { scroll-behavior: auto !important; }
+}
+@media(max-width:360px) {
+  html body#lpRoot #enrollModal .em-steps .em-lbl { font-size: 14px !important; white-space: nowrap !important; }
+  html body#lpRoot #enrollModal .em-steps { column-gap: 5px !important; }
+}

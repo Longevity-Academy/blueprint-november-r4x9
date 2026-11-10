@@ -1,0 +1,48 @@
+/* Typography only: no layout, dimensions, colors, backgrounds or content.
+   Local variable fonts supply genuine weights and italics. */
+html body{font-kerning:normal;font-optical-sizing:auto;font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:auto;-moz-osx-font-smoothing:auto}
+html body#lpRoot:not(#legacy-ui):not(#legacy-fonts) :is(h1,h2,h3,h4,h5,h6,p,span,b,strong,em,i,li,label,button,a,input,select,textarea,small,summary),
+html body:not(#lpRoot) :is(h1,h2,h3,h4,h5,h6,p,span,b,strong,em,i,li,label,button,a,input,select,textarea,small,summary){
+  text-shadow:none!important;font-synthesis:none;font-kerning:normal;font-optical-sizing:auto;
+}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) :is(h1,h2,h3,h4,h5,h6,.section-title,.how-v2-card-title,.teacher-card-live-name,.curriculum-trigger-text,.faq-q){
+  font-family:"Playfair Display",Georgia,serif!important;font-weight:500!important;
+}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) :is(h1,h2,h3,h4,h5,h6) :is(span,em,i,b,strong){
+  font-family:inherit!important;
+}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #hero h1.hero-title{
+  filter:none!important;
+}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #hero h1.hero-title .life-blue{
+  font-family:"Playfair Display",Georgia,serif!important;font-weight:500!important;
+}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) :is(.nav-links a,.eyebrow,.lla-cta-title,.lla-cta-eyebrow,.lg-buy-main,.lead-gen-v2-sub,.section-subtitle,.how-v2-card-meta,.curriculum-tab-meta,.teacher-card-live-role,.teacher-card-live-bio,.faq-a-inner,.about-powered-desc){
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-style:normal!important;letter-spacing:normal!important;
+}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) :is(.nav-links a,.eyebrow,.how-v2-card-meta,.teacher-card-live-role,.em-lbl,.em-cl,.em-cname){font-weight:500!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) :is(.btn-primary,.btn-secondary,.mfp-enroll,.lg-buy-main,.em-go,.jb2-join,.lla-cta-title){
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-style:normal!important;font-weight:600!important;letter-spacing:normal!important;
+}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) :is(.cgm14-num,.mfp-price,.mfp-price strong,.lla-cta-pill .price,.em-band .b-v,.hero-powered-stats strong){
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-style:normal!important;font-variant-numeric:lining-nums tabular-nums;
+}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #cgm.cgm12 .cgm14-num{font-weight:400!important;text-shadow:none!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) .lla-cta-pill .price{font-weight:700!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #enrollModal :is(label,.em-lb,.em-lbl,.em-cl,.em-cname,.em-cc,.em-cc span,.em-band .b-l,.em-band .b-v,.em-date-meta,.em-sms,.mock-hint){
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-style:normal!important;letter-spacing:normal!important;
+}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #enrollModal .em-lb{font-weight:600!important}
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) #enrollModal .em-dialog,
+html body #et-bumpyard-widget,
+html body #et-bumpyard-widget :is(a,span,button){font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-style:normal!important}
+/* Text on photography retains a crisp one-pixel edge, not a diffuse glow. */
+html.mf body#lpRoot:not(#legacy-ui):not(#legacy-fonts) :is(.hero-title,.hero-sub,.topic-v2-title,.topic-v2-desc,.skill-title,.skill-sub,.final-cta-title,.final-cta-sub){
+  text-shadow:0 1px 1px rgba(0,0,0,.5)!important;
+}
+html body:not(#lpRoot) :is(h1,h2,h3,h4,.tband,.sum-row,.callus,.st,.foot-note,.sum-note,.done,.paybody,.et-bump-btn,.widget-trigger-btn){
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-style:normal!important;
+}
+html body:not(#lpRoot) :is(h1,h2,h3,h4,.course-title,.sum-row .v,.tband .t-val){font-weight:600!important}
+html body:not(#lpRoot) :is(.sum-row .v,.tband .t-val,.verified-quote-value){font-variant-numeric:lining-nums tabular-nums}
+html body:not(#lpRoot) :is(button,.et-bump-btn,.widget-trigger-btn){font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-weight:600!important;font-style:normal!important}

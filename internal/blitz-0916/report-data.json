@@ -1,0 +1,1677 @@
+{
+  "title": "Organic Push | CEO Report",
+  "report_updated_at": "2026-09-18T17:20:31.964516+03:00",
+  "meta_requested_end": "2026-09-18T17:10:10+03:00",
+  "latest_returned_bucket_start": "2026-09-18T16:00:00+03:00",
+  "publication_register_date": "2026-09-17",
+  "publication_source_commit": "704a60e39450d93d9b3f3ff6fc8482d4e2d4366d",
+  "publication_status": "Historical register, not reverified today",
+  "current_live_posts": null,
+  "current_live_groups": null,
+  "posts_last_recorded": 41,
+  "distinct_group_urls_last_recorded": 39,
+  "post_membership_sum": 3468000,
+  "distinct_group_membership_sum": 3261400,
+  "membership_is_unique_reach": false,
+  "authored_comments_last_reported": 112,
+  "groups_with_authored_comments_last_reported": 27,
+  "authored_comments_are_received_engagement": false,
+  "likes_total": null,
+  "other_reactions_total": null,
+  "comments_received_total": null,
+  "shares_total": null,
+  "generic_organic_events": 84,
+  "per_group_organic_events": 85,
+  "tracking_labels_with_events": 37,
+  "unique_human_clicks": null,
+  "definitely_agent_events": null,
+  "definitely_non_agent_events": null,
+  "unclassified_generic_events": 84,
+  "organic_landing_page_views": null,
+  "organic_engaged_sessions": null,
+  "organic_users": null,
+  "tracking_link_pages_in_repository": 306,
+  "daily": {
+    "2026-09-16": {
+      "generic": 47,
+      "group": 48
+    },
+    "2026-09-17": {
+      "generic": 37,
+      "group": 37
+    },
+    "2026-09-18": {
+      "generic": 0,
+      "group": 0
+    }
+  },
+  "hourly": [
+    {
+      "hour_idt": "2026-09-16T15:00:00+03:00",
+      "generic": 24,
+      "group": 25
+    },
+    {
+      "hour_idt": "2026-09-16T22:00:00+03:00",
+      "generic": 20,
+      "group": 20
+    },
+    {
+      "hour_idt": "2026-09-16T23:00:00+03:00",
+      "generic": 3,
+      "group": 3
+    },
+    {
+      "hour_idt": "2026-09-17T09:00:00+03:00",
+      "generic": 33,
+      "group": 33
+    },
+    {
+      "hour_idt": "2026-09-17T10:00:00+03:00",
+      "generic": 1,
+      "group": 1
+    },
+    {
+      "hour_idt": "2026-09-17T15:00:00+03:00",
+      "generic": 1,
+      "group": 1
+    },
+    {
+      "hour_idt": "2026-09-17T20:00:00+03:00",
+      "generic": 2,
+      "group": 2
+    }
+  ],
+  "group_events": [
+    {
+      "event": "OC_fit_over_50",
+      "count": 6
+    },
+    {
+      "event": "OC_health_tips_109k",
+      "count": 4
+    },
+    {
+      "event": "OC_health_wellness",
+      "count": 4
+    },
+    {
+      "event": "OC_healthy_food_nutrition",
+      "count": 4
+    },
+    {
+      "event": "OC_sixty_over",
+      "count": 4
+    },
+    {
+      "event": "OC_fifty_plus",
+      "count": 3
+    },
+    {
+      "event": "OC_fit_fab_50",
+      "count": 3
+    },
+    {
+      "event": "OC_food_health_tips",
+      "count": 3
+    },
+    {
+      "event": "OC_food_nutrition_dietetics",
+      "count": 3
+    },
+    {
+      "event": "OC_health_fitness_tips",
+      "count": 3
+    },
+    {
+      "event": "OC_health_tips_132k",
+      "count": 3
+    },
+    {
+      "event": "OC_healthy_eating",
+      "count": 3
+    },
+    {
+      "event": "OC_healthy_life",
+      "count": 3
+    },
+    {
+      "event": "OC_aging_gracefully_14m",
+      "count": 2
+    },
+    {
+      "event": "OC_aging_gracefully_161k",
+      "count": 2
+    },
+    {
+      "event": "OC_aging_gracefully_18m",
+      "count": 2
+    },
+    {
+      "event": "OC_aging_gracefully_194k",
+      "count": 2
+    },
+    {
+      "event": "OC_aging_gracefully_460k",
+      "count": 2
+    },
+    {
+      "event": "OC_blueprint",
+      "count": 2
+    },
+    {
+      "event": "OC_health_tips_advice",
+      "count": 2
+    },
+    {
+      "event": "OC_holistic_friends",
+      "count": 2
+    },
+    {
+      "event": "OC_lessons_learned",
+      "count": 2
+    },
+    {
+      "event": "OC_life_lessons",
+      "count": 2
+    },
+    {
+      "event": "OC_mthfr",
+      "count": 2
+    },
+    {
+      "event": "OC_natural_health_tips",
+      "count": 2
+    },
+    {
+      "event": "OC_peptides_trt",
+      "count": 2
+    },
+    {
+      "event": "OC_pf_54871327895123",
+      "count": 2
+    },
+    {
+      "event": "OC_recipes_health",
+      "count": 2
+    },
+    {
+      "event": "OC_aging_attitude",
+      "count": 1
+    },
+    {
+      "event": "OC_aging_gracefully_176k",
+      "count": 1
+    },
+    {
+      "event": "OC_health_tips",
+      "count": 1
+    },
+    {
+      "event": "OC_hormone_health",
+      "count": 1
+    },
+    {
+      "event": "OC_ila",
+      "count": 1
+    },
+    {
+      "event": "OC_mobility",
+      "count": 1
+    },
+    {
+      "event": "OC_nutrition",
+      "count": 1
+    },
+    {
+      "event": "OC_over50_bb",
+      "count": 1
+    },
+    {
+      "event": "OC_pf_07981169600612",
+      "count": 1
+    }
+  ],
+  "posts": [
+    {
+      "group": "Health Tips",
+      "group_key": "moshealthtips",
+      "group_url": "https://www.facebook.com/groups/moshealthtips/",
+      "record_url": "https://www.facebook.com/groups/moshealthtips/my_posted_content/",
+      "identity": "Personal profile",
+      "members_last_recorded": 190000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "MTHFR - Gene Mutations & Epigenetics",
+      "group_key": "MTHFRGROUP",
+      "group_url": "https://www.facebook.com/groups/MTHFRGROUP/",
+      "record_url": "https://www.facebook.com/groups/MTHFRGROUP/my_posted_content/",
+      "identity": "Personal profile",
+      "members_last_recorded": 187000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Health and Fitness Tips",
+      "group_key": "dailyhealthandfitnesstips",
+      "group_url": "https://www.facebook.com/groups/dailyhealthandfitnesstips/",
+      "record_url": "https://www.facebook.com/groups/dailyhealthandfitnesstips/my_posted_content/",
+      "identity": "Personal profile",
+      "members_last_recorded": 140000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Biohackers - Peptides, TRT & Zepbound",
+      "group_key": "1004823345283515",
+      "group_url": "https://www.facebook.com/groups/1004823345283515/",
+      "record_url": "https://www.facebook.com/groups/1004823345283515/my_posted_content/",
+      "identity": "Personal profile",
+      "members_last_recorded": 59000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Mobility is Longevity",
+      "group_key": "4377300339259627",
+      "group_url": "https://www.facebook.com/groups/4377300339259627/",
+      "record_url": "https://www.facebook.com/groups/4377300339259627/my_posted_content/",
+      "identity": "Personal profile",
+      "members_last_recorded": 22000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Lifeboat Foundation",
+      "group_key": "lifeboatfoundation",
+      "group_url": "https://www.facebook.com/groups/lifeboatfoundation/",
+      "record_url": "https://www.facebook.com/groups/lifeboatfoundation/my_posted_content/",
+      "identity": "Personal profile",
+      "members_last_recorded": 16600,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Bryan Johnson's Blueprint & Other Solutions",
+      "group_key": "1347791319465570",
+      "group_url": "https://www.facebook.com/groups/1347791319465570/",
+      "record_url": "https://www.facebook.com/groups/1347791319465570/my_posted_content/",
+      "identity": "Personal profile",
+      "members_last_recorded": 12000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Nutrition for Health & Longevity",
+      "group_key": "196637290400579",
+      "group_url": "https://www.facebook.com/groups/196637290400579/",
+      "record_url": "https://www.facebook.com/groups/196637290400579/my_posted_content/",
+      "identity": "Personal profile",
+      "members_last_recorded": 9500,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "International Longevity Alliance",
+      "group_key": "longevity.alliance",
+      "group_url": "https://www.facebook.com/groups/longevity.alliance/",
+      "record_url": "https://www.facebook.com/groups/longevity.alliance/my_posted_content/",
+      "identity": "Personal profile",
+      "members_last_recorded": 7100,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Longevity",
+      "group_key": "107981169600612",
+      "group_url": "https://www.facebook.com/groups/107981169600612/",
+      "record_url": "https://www.facebook.com/groups/107981169600612/my_posted_content/",
+      "identity": "Personal profile",
+      "members_last_recorded": 5400,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Gary Brecka’s Biohacking Community",
+      "group_key": "321426973698172",
+      "group_url": "https://www.facebook.com/groups/321426973698172/",
+      "record_url": "https://www.facebook.com/groups/321426973698172/my_posted_content/",
+      "identity": "Personal profile",
+      "members_last_recorded": 10300,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Longevity Lifestyle and Science-Based Supplements",
+      "group_key": "NMNfans",
+      "group_url": "https://www.facebook.com/groups/NMNfans/",
+      "record_url": "https://www.facebook.com/groups/NMNfans/my_posted_content/",
+      "identity": "Personal profile",
+      "members_last_recorded": 11800,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "End Aging Now",
+      "group_key": "endagingnow",
+      "group_url": "https://www.facebook.com/groups/endagingnow/",
+      "record_url": "https://www.facebook.com/groups/endagingnow/my_posted_content/",
+      "identity": "Personal profile",
+      "members_last_recorded": 7700,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Health Tips",
+      "group_key": "moshealthtips",
+      "group_url": "https://www.facebook.com/groups/moshealthtips/",
+      "record_url": "https://www.facebook.com/groups/moshealthtips/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 190000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Health and Fitness Guide",
+      "group_key": "HealthAndFitnessGuide",
+      "group_url": "https://www.facebook.com/groups/HealthAndFitnessGuide/",
+      "record_url": "https://www.facebook.com/groups/HealthAndFitnessGuide/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 123000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Lifeboat Foundation",
+      "group_key": "lifeboatfoundation",
+      "group_url": "https://www.facebook.com/groups/lifeboatfoundation/",
+      "record_url": "https://www.facebook.com/groups/lifeboatfoundation/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 16600,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Food and Nutrition - DIETETICS",
+      "group_key": "709153936610432",
+      "group_url": "https://www.facebook.com/groups/709153936610432/",
+      "record_url": "https://www.facebook.com/groups/709153936610432/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 108000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Health, Fitness & Weight loss USA new 2022",
+      "group_key": "323216902349590",
+      "group_url": "https://www.facebook.com/groups/323216902349590/",
+      "record_url": "https://www.facebook.com/groups/323216902349590/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 101000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Health and Fitness",
+      "group_key": "Healthfitness86",
+      "group_url": "https://www.facebook.com/groups/Healthfitness86/",
+      "record_url": "https://www.facebook.com/groups/Healthfitness86/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 91000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Aging Gracefully",
+      "group_key": "2108845589941566",
+      "group_url": "https://www.facebook.com/groups/2108845589941566/",
+      "record_url": "https://www.facebook.com/groups/2108845589941566/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 87000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Health and Wellness",
+      "group_key": "205657133675884",
+      "group_url": "https://www.facebook.com/groups/205657133675884/",
+      "record_url": "https://www.facebook.com/groups/205657133675884/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 118000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Healthy Food and Nutrition Benefit",
+      "group_key": "270942806411526",
+      "group_url": "https://www.facebook.com/groups/270942806411526/",
+      "record_url": "https://www.facebook.com/groups/270942806411526/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 118000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Blood Pressure / Hypertension Treatment, Natural Remedy, Solution Supp",
+      "group_key": "bloodpressurehypertensiontreatmentsolution",
+      "group_url": "https://www.facebook.com/groups/bloodpressurehypertensiontreatmentsolution/",
+      "record_url": "https://www.facebook.com/groups/bloodpressurehypertensiontreatmentsolution/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 76000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Old men and women of 45 above U.S.A",
+      "group_key": "2949220398566737",
+      "group_url": "https://www.facebook.com/groups/2949220398566737/",
+      "record_url": "https://www.facebook.com/groups/2949220398566737/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 69000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Weight loss exercise for woman",
+      "group_key": "353107757817520",
+      "group_url": "https://www.facebook.com/groups/353107757817520/",
+      "record_url": "https://www.facebook.com/groups/353107757817520/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 64000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "MEDICAL LEARNING GROUP",
+      "group_key": "310427566418861",
+      "group_url": "https://www.facebook.com/groups/310427566418861/",
+      "record_url": "https://www.facebook.com/groups/310427566418861/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 141000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Basic knowledge medical/ medicine 💊💉",
+      "group_key": "4162244577172439",
+      "group_url": "https://www.facebook.com/groups/4162244577172439/",
+      "record_url": "https://www.facebook.com/groups/4162244577172439/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 96000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Diabetes treatment",
+      "group_key": "203106608191463",
+      "group_url": "https://www.facebook.com/groups/203106608191463/",
+      "record_url": "https://www.facebook.com/groups/203106608191463/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 95000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Foot Pain Relief /Pain Solutions and Treatment",
+      "group_key": "footpainreliefpainsolutionsandtreatment",
+      "group_url": "https://www.facebook.com/groups/footpainreliefpainsolutionsandtreatment/",
+      "record_url": "https://www.facebook.com/groups/footpainreliefpainsolutionsandtreatment/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 91000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Health",
+      "group_key": "802885439779785",
+      "group_url": "https://www.facebook.com/groups/802885439779785/",
+      "record_url": "https://www.facebook.com/groups/802885439779785/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 77000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "USA Health & fitness",
+      "group_key": "ushealthandfitness",
+      "group_url": "https://www.facebook.com/groups/ushealthandfitness/",
+      "record_url": "https://www.facebook.com/groups/ushealthandfitness/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 76000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Diabetes Cure without Medicine",
+      "group_key": "716380275128285",
+      "group_url": "https://www.facebook.com/groups/716380275128285/",
+      "record_url": "https://www.facebook.com/groups/716380275128285/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 76000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Health Tips | healthy living tips | healthy foods ideas",
+      "group_key": "3883926378598338",
+      "group_url": "https://www.facebook.com/groups/3883926378598338/",
+      "record_url": "https://www.facebook.com/groups/3883926378598338/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 74000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "World Medical group Questions and answers",
+      "group_key": "1892223354402374",
+      "group_url": "https://www.facebook.com/groups/1892223354402374/",
+      "record_url": "https://www.facebook.com/groups/1892223354402374/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 314000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Healthcare-group",
+      "group_key": "536159883836492",
+      "group_url": "https://www.facebook.com/groups/536159883836492/",
+      "record_url": "https://www.facebook.com/groups/536159883836492/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 144000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Vitamin-C & Zinc for Flawless skin",
+      "group_key": "3423052391338738",
+      "group_url": "https://www.facebook.com/groups/3423052391338738/",
+      "record_url": "https://www.facebook.com/groups/3423052391338738/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 82000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Thyroid Care",
+      "group_key": "1986895278049777",
+      "group_url": "https://www.facebook.com/groups/1986895278049777/",
+      "record_url": "https://www.facebook.com/groups/1986895278049777/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 78000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "HEALTH",
+      "group_key": "1727139920842274",
+      "group_url": "https://www.facebook.com/groups/1727139920842274/",
+      "record_url": "https://www.facebook.com/groups/1727139920842274/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 69000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "USA Daily Health & Weight Loss",
+      "group_key": "721672921779018",
+      "group_url": "https://www.facebook.com/groups/721672921779018/",
+      "record_url": "https://www.facebook.com/groups/721672921779018/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 66000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Public Health",
+      "group_key": "1724959247722610",
+      "group_url": "https://www.facebook.com/groups/1724959247722610/",
+      "record_url": "https://www.facebook.com/groups/1724959247722610/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 64000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    },
+    {
+      "group": "Public Health Education, Promotion and Awareness",
+      "group_key": "1609663609103044",
+      "group_url": "https://www.facebook.com/groups/1609663609103044/",
+      "record_url": "https://www.facebook.com/groups/1609663609103044/my_posted_content/",
+      "identity": "LLA Page",
+      "members_last_recorded": 85000,
+      "last_recorded_status": "Published",
+      "record_date": "2026-09-17",
+      "current_status": null,
+      "post_permalink": null,
+      "likes": null,
+      "other_reactions": null,
+      "comments_received": null,
+      "shares": null
+    }
+  ],
+  "groups": [
+    {
+      "name": "World Medical group Questions and answers",
+      "key": "1892223354402374",
+      "url": "https://www.facebook.com/groups/1892223354402374/",
+      "members_last_recorded": 314000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Health Tips",
+      "key": "moshealthtips",
+      "url": "https://www.facebook.com/groups/moshealthtips/",
+      "members_last_recorded": 190000,
+      "personal_posts_last_recorded": 1,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "MTHFR - Gene Mutations & Epigenetics",
+      "key": "MTHFRGROUP",
+      "url": "https://www.facebook.com/groups/MTHFRGROUP/",
+      "members_last_recorded": 187000,
+      "personal_posts_last_recorded": 1,
+      "page_posts_last_recorded": 0
+    },
+    {
+      "name": "Healthcare-group",
+      "key": "536159883836492",
+      "url": "https://www.facebook.com/groups/536159883836492/",
+      "members_last_recorded": 144000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "MEDICAL LEARNING GROUP",
+      "key": "310427566418861",
+      "url": "https://www.facebook.com/groups/310427566418861/",
+      "members_last_recorded": 141000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Health and Fitness Tips",
+      "key": "dailyhealthandfitnesstips",
+      "url": "https://www.facebook.com/groups/dailyhealthandfitnesstips/",
+      "members_last_recorded": 140000,
+      "personal_posts_last_recorded": 1,
+      "page_posts_last_recorded": 0
+    },
+    {
+      "name": "Health and Fitness Guide",
+      "key": "HealthAndFitnessGuide",
+      "url": "https://www.facebook.com/groups/HealthAndFitnessGuide/",
+      "members_last_recorded": 123000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Health and Wellness",
+      "key": "205657133675884",
+      "url": "https://www.facebook.com/groups/205657133675884/",
+      "members_last_recorded": 118000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Healthy Food and Nutrition Benefit",
+      "key": "270942806411526",
+      "url": "https://www.facebook.com/groups/270942806411526/",
+      "members_last_recorded": 118000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Food and Nutrition - DIETETICS",
+      "key": "709153936610432",
+      "url": "https://www.facebook.com/groups/709153936610432/",
+      "members_last_recorded": 108000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Health, Fitness & Weight loss USA new 2022",
+      "key": "323216902349590",
+      "url": "https://www.facebook.com/groups/323216902349590/",
+      "members_last_recorded": 101000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Basic knowledge medical/ medicine 💊💉",
+      "key": "4162244577172439",
+      "url": "https://www.facebook.com/groups/4162244577172439/",
+      "members_last_recorded": 96000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Diabetes treatment",
+      "key": "203106608191463",
+      "url": "https://www.facebook.com/groups/203106608191463/",
+      "members_last_recorded": 95000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Health and Fitness",
+      "key": "Healthfitness86",
+      "url": "https://www.facebook.com/groups/Healthfitness86/",
+      "members_last_recorded": 91000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Foot Pain Relief /Pain Solutions and Treatment",
+      "key": "footpainreliefpainsolutionsandtreatment",
+      "url": "https://www.facebook.com/groups/footpainreliefpainsolutionsandtreatment/",
+      "members_last_recorded": 91000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Aging Gracefully",
+      "key": "2108845589941566",
+      "url": "https://www.facebook.com/groups/2108845589941566/",
+      "members_last_recorded": 87000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Public Health Education, Promotion and Awareness",
+      "key": "1609663609103044",
+      "url": "https://www.facebook.com/groups/1609663609103044/",
+      "members_last_recorded": 85000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Vitamin-C & Zinc for Flawless skin",
+      "key": "3423052391338738",
+      "url": "https://www.facebook.com/groups/3423052391338738/",
+      "members_last_recorded": 82000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Thyroid Care",
+      "key": "1986895278049777",
+      "url": "https://www.facebook.com/groups/1986895278049777/",
+      "members_last_recorded": 78000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Health",
+      "key": "802885439779785",
+      "url": "https://www.facebook.com/groups/802885439779785/",
+      "members_last_recorded": 77000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Blood Pressure / Hypertension Treatment, Natural Remedy, Solution Supp",
+      "key": "bloodpressurehypertensiontreatmentsolution",
+      "url": "https://www.facebook.com/groups/bloodpressurehypertensiontreatmentsolution/",
+      "members_last_recorded": 76000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "USA Health & fitness",
+      "key": "ushealthandfitness",
+      "url": "https://www.facebook.com/groups/ushealthandfitness/",
+      "members_last_recorded": 76000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Diabetes Cure without Medicine",
+      "key": "716380275128285",
+      "url": "https://www.facebook.com/groups/716380275128285/",
+      "members_last_recorded": 76000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Health Tips | healthy living tips | healthy foods ideas",
+      "key": "3883926378598338",
+      "url": "https://www.facebook.com/groups/3883926378598338/",
+      "members_last_recorded": 74000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Old men and women of 45 above U.S.A",
+      "key": "2949220398566737",
+      "url": "https://www.facebook.com/groups/2949220398566737/",
+      "members_last_recorded": 69000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "HEALTH",
+      "key": "1727139920842274",
+      "url": "https://www.facebook.com/groups/1727139920842274/",
+      "members_last_recorded": 69000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "USA Daily Health & Weight Loss",
+      "key": "721672921779018",
+      "url": "https://www.facebook.com/groups/721672921779018/",
+      "members_last_recorded": 66000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Weight loss exercise for woman",
+      "key": "353107757817520",
+      "url": "https://www.facebook.com/groups/353107757817520/",
+      "members_last_recorded": 64000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Public Health",
+      "key": "1724959247722610",
+      "url": "https://www.facebook.com/groups/1724959247722610/",
+      "members_last_recorded": 64000,
+      "personal_posts_last_recorded": 0,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Biohackers - Peptides, TRT & Zepbound",
+      "key": "1004823345283515",
+      "url": "https://www.facebook.com/groups/1004823345283515/",
+      "members_last_recorded": 59000,
+      "personal_posts_last_recorded": 1,
+      "page_posts_last_recorded": 0
+    },
+    {
+      "name": "Mobility is Longevity",
+      "key": "4377300339259627",
+      "url": "https://www.facebook.com/groups/4377300339259627/",
+      "members_last_recorded": 22000,
+      "personal_posts_last_recorded": 1,
+      "page_posts_last_recorded": 0
+    },
+    {
+      "name": "Lifeboat Foundation",
+      "key": "lifeboatfoundation",
+      "url": "https://www.facebook.com/groups/lifeboatfoundation/",
+      "members_last_recorded": 16600,
+      "personal_posts_last_recorded": 1,
+      "page_posts_last_recorded": 1
+    },
+    {
+      "name": "Bryan Johnson's Blueprint & Other Solutions",
+      "key": "1347791319465570",
+      "url": "https://www.facebook.com/groups/1347791319465570/",
+      "members_last_recorded": 12000,
+      "personal_posts_last_recorded": 1,
+      "page_posts_last_recorded": 0
+    },
+    {
+      "name": "Longevity Lifestyle and Science-Based Supplements",
+      "key": "NMNfans",
+      "url": "https://www.facebook.com/groups/NMNfans/",
+      "members_last_recorded": 11800,
+      "personal_posts_last_recorded": 1,
+      "page_posts_last_recorded": 0
+    },
+    {
+      "name": "Gary Brecka’s Biohacking Community",
+      "key": "321426973698172",
+      "url": "https://www.facebook.com/groups/321426973698172/",
+      "members_last_recorded": 10300,
+      "personal_posts_last_recorded": 1,
+      "page_posts_last_recorded": 0
+    },
+    {
+      "name": "Nutrition for Health & Longevity",
+      "key": "196637290400579",
+      "url": "https://www.facebook.com/groups/196637290400579/",
+      "members_last_recorded": 9500,
+      "personal_posts_last_recorded": 1,
+      "page_posts_last_recorded": 0
+    },
+    {
+      "name": "End Aging Now",
+      "key": "endagingnow",
+      "url": "https://www.facebook.com/groups/endagingnow/",
+      "members_last_recorded": 7700,
+      "personal_posts_last_recorded": 1,
+      "page_posts_last_recorded": 0
+    },
+    {
+      "name": "International Longevity Alliance",
+      "key": "longevity.alliance",
+      "url": "https://www.facebook.com/groups/longevity.alliance/",
+      "members_last_recorded": 7100,
+      "personal_posts_last_recorded": 1,
+      "page_posts_last_recorded": 0
+    },
+    {
+      "name": "Longevity",
+      "key": "107981169600612",
+      "url": "https://www.facebook.com/groups/107981169600612/",
+      "members_last_recorded": 5400,
+      "personal_posts_last_recorded": 1,
+      "page_posts_last_recorded": 0
+    }
+  ],
+  "queue_conflict": {
+    "other_thread_reported_posts": 142,
+    "website_summary_reported_posts": 34,
+    "website_summary_reported_members": 8101900,
+    "website_listed_page_rows": 108,
+    "website_listed_page_members": 18233500,
+    "reconciled_current_total": null
+  },
+  "pending_rows_last_recorded": [
+    {
+      "group": "Aging Gracefully (1.9M)",
+      "members": 1900000
+    },
+    {
+      "group": "Aging Gracefully (1.4M)",
+      "members": 1400000
+    },
+    {
+      "group": "Aging With Attitude",
+      "members": 812000
+    },
+    {
+      "group": "Aging Gracefully (460K)",
+      "members": 460000
+    },
+    {
+      "group": "Healthy Holistic Friends",
+      "members": 446000
+    },
+    {
+      "group": "Fitness & Hormone Health",
+      "members": 430000
+    },
+    {
+      "group": "Health and Fitness Tips",
+      "members": 140000
+    },
+    {
+      "group": "Bryan Johnson's Blueprint",
+      "members": 12000
+    },
+    {
+      "group": "Nutrition for Health & Longevity",
+      "members": 9500
+    },
+    {
+      "group": "Recipes For Health",
+      "members": 212000
+    },
+    {
+      "group": "HEALTH TIPS & HELPFUL ADVICE",
+      "members": 155000
+    },
+    {
+      "group": "FOOD, HEALTH & GENERAL TIPS",
+      "members": 151000
+    },
+    {
+      "group": "60 and over group",
+      "members": 146000
+    },
+    {
+      "group": "50 plus",
+      "members": 145000
+    },
+    {
+      "group": "Health Tips (132K)",
+      "members": 132000
+    },
+    {
+      "group": "health Tips (109K)",
+      "members": 109000
+    },
+    {
+      "group": "Natural Health Tips",
+      "members": 94000
+    },
+    {
+      "group": "HEALTHY HOLISTIC LIFESTYLE",
+      "members": 186000
+    },
+    {
+      "group": "Health & Wellness",
+      "members": 87000
+    },
+    {
+      "group": "Healthy Living",
+      "members": 77000
+    },
+    {
+      "group": "Anti-Inflammatory High Protein",
+      "members": 406000
+    },
+    {
+      "group": "medicinal plants",
+      "members": 293000
+    },
+    {
+      "group": "Strictly Over 60s Plus",
+      "members": 277000
+    },
+    {
+      "group": "High Protein Low Carbs",
+      "members": 361000
+    },
+    {
+      "group": "Older Woman Singles 50+",
+      "members": 194000
+    },
+    {
+      "group": "Healthy life 405K",
+      "members": 405000
+    },
+    {
+      "group": "Health Diet lifestyle",
+      "members": 264000
+    },
+    {
+      "group": "MEDICAL INFORMATION",
+      "members": 258000
+    },
+    {
+      "group": "senior citizen friends group",
+      "members": 241000
+    },
+    {
+      "group": "Benefits of clove water for women's health",
+      "members": 182000
+    },
+    {
+      "group": "Diabetes support group",
+      "members": 169000
+    },
+    {
+      "group": "Praying and Fasting women",
+      "members": 165000
+    },
+    {
+      "group": "Healthy Life 159K",
+      "members": 159000
+    },
+    {
+      "group": "Hypothyroidism Hashimoto’s Support Group | Symptoms, Diet Plan & Treat",
+      "members": 135000
+    },
+    {
+      "group": "Weight Loss For Beginners",
+      "members": 131000
+    },
+    {
+      "group": "Weight Loss USA 🇺🇸",
+      "members": 113000
+    },
+    {
+      "group": "Reverse Fatty Liver Disease Support Group",
+      "members": 112000
+    },
+    {
+      "group": "Global Yoga Community",
+      "members": 110000
+    },
+    {
+      "group": "Anti-inflammatory Diet* (Healthy Foods For All)",
+      "members": 98000
+    },
+    {
+      "group": "Medical Tips For All",
+      "members": 98000
+    },
+    {
+      "group": "Baby Boomers Old Souls 1946 to 1964",
+      "members": 95000
+    },
+    {
+      "group": "Medicine news",
+      "members": 91000
+    },
+    {
+      "group": "Healthy Weight Loss & Dieting Tips",
+      "members": 90000
+    },
+    {
+      "group": "Muscle and Fitness for Men 50+",
+      "members": 90000
+    },
+    {
+      "group": "Sassy Senior Society",
+      "members": 89000
+    },
+    {
+      "group": "Internal Medicine - Latest Updates , Clinical Guidelines , Protocols",
+      "members": 89000
+    },
+    {
+      "group": "Vitamin c and zinc let's glow",
+      "members": 86000
+    },
+    {
+      "group": "Type 2 Diabetes : Information, Support & Sharing",
+      "members": 85000
+    },
+    {
+      "group": "Health Tips 84K",
+      "members": 84000
+    },
+    {
+      "group": "Baby Boomers (1946 to 1964)",
+      "members": 83000
+    },
+    {
+      "group": "Reverse Fatty Liver ✅ Support Group",
+      "members": 79000
+    },
+    {
+      "group": "Short Haircuts for Ladies over 50",
+      "members": 76000
+    },
+    {
+      "group": "Home Natural Remedie (Secrets & Tips)",
+      "members": 76000
+    },
+    {
+      "group": "Diabetic treatment",
+      "members": 75000
+    },
+    {
+      "group": "Neuroscience News",
+      "members": 75000
+    },
+    {
+      "group": "SENIOR CITIZENS HUB",
+      "members": 68000
+    },
+    {
+      "group": "Gut Health + Reset for Black People",
+      "members": 65000
+    },
+    {
+      "group": "High Blood Pressure - Health tips",
+      "members": 64000
+    },
+    {
+      "group": "HEALTH IS WEALTH",
+      "members": 63000
+    },
+    {
+      "group": "Diabetes Type 2 Support Group",
+      "members": 61000
+    },
+    {
+      "group": "SEASONED SENIORS CITIZENS CLUB",
+      "members": 60000
+    },
+    {
+      "group": "Older women over 60",
+      "members": 60000
+    },
+    {
+      "group": "Health Care USA",
+      "members": 59000
+    },
+    {
+      "group": "High Cholesterol Cure Treatment / Natural Remedies",
+      "members": 59000
+    },
+    {
+      "group": "Medical Knowledge",
+      "members": 301000
+    },
+    {
+      "group": "Seniors & Strength Training",
+      "members": 191000
+    },
+    {
+      "group": "International Medical Group {𝗤𝘂𝗲𝘀𝘁𝗶𝗼𝗻𝘀 & 𝗔𝗻𝘀𝘄𝗲𝗿}🩺🚑",
+      "members": 187000
+    },
+    {
+      "group": "Cardiology",
+      "members": 159000
+    },
+    {
+      "group": "Senior Health & Natural Vitality",
+      "members": 153000
+    },
+    {
+      "group": "GROUP FOR HEALTH CARE AND MEDICAL KNOWLEDGE",
+      "members": 132000
+    },
+    {
+      "group": "Neuroscience",
+      "members": 132000
+    },
+    {
+      "group": "Women for Fitness",
+      "members": 127000
+    },
+    {
+      "group": "Medical World",
+      "members": 122000
+    },
+    {
+      "group": "High Blood Pressure Support Group",
+      "members": 99000
+    },
+    {
+      "group": "Medical Knowledge Notes",
+      "members": 96000
+    },
+    {
+      "group": "SHEHU IDRIS COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY MAKARFI",
+      "members": 95000
+    },
+    {
+      "group": "SENIOR CITIZENS FRIENDSHIP GROUP",
+      "members": 94000
+    },
+    {
+      "group": "FOOD SCIENCE TRAINING & RESEARCH CENTER",
+      "members": 72000
+    },
+    {
+      "group": "♥️💉💊Medical group ♥️💉💊",
+      "members": 68000
+    },
+    {
+      "group": "Cardiobeat",
+      "members": 65000
+    },
+    {
+      "group": "Medical Notes",
+      "members": 60000
+    },
+    {
+      "group": "Medical world 💊💉",
+      "members": 55000
+    },
+    {
+      "group": "Senior Older Women",
+      "members": 53000
+    },
+    {
+      "group": "Career in Public Health",
+      "members": 49000
+    },
+    {
+      "group": "Menopause Symptoms",
+      "members": 49000
+    },
+    {
+      "group": "Health & Wellness Coaching Community",
+      "members": 48000
+    },
+    {
+      "group": "MEDICAL CASES DISCUSSION",
+      "members": 48000
+    },
+    {
+      "group": "Anti-diabetes - Recetas para diabéticos",
+      "members": 48000
+    },
+    {
+      "group": "Cardiology Group",
+      "members": 48000
+    },
+    {
+      "group": "High Blood Pressure Natural Healing",
+      "members": 45000
+    },
+    {
+      "group": "Ivermectin & Wellness Alternatives Protocols",
+      "members": 453000
+    },
+    {
+      "group": "Dr.Barbara o'neill health tips",
+      "members": 92000
+    },
+    {
+      "group": "herb miracles",
+      "members": 244000
+    },
+    {
+      "group": "healthy diet food",
+      "members": 206000
+    },
+    {
+      "group": "Rheumatoid Arthritis Support Group",
+      "members": 144000
+    },
+    {
+      "group": "High Blood Pressure Control / Treatment",
+      "members": 138000
+    },
+    {
+      "group": "Black Seed Oil For Natural Healing",
+      "members": 115000
+    },
+    {
+      "group": "OMAD(One Meal A Day)",
+      "members": 96000
+    },
+    {
+      "group": "Holistic Health and Healing",
+      "members": 95000
+    },
+    {
+      "group": "Remedios Naturales",
+      "members": 88000
+    },
+    {
+      "group": "Reversing High BP Without Drugs",
+      "members": 71000
+    },
+    {
+      "group": "Dr. Eric Berg DC Health Tips",
+      "members": 141000
+    },
+    {
+      "group": "Osteoporosis Treatment and Natural Remedies Support Group USA",
+      "members": 137000
+    },
+    {
+      "group": "Fatty Liver Disease Symptoms, Diet Plan, Remedy, Treatment - Support G",
+      "members": 134000
+    },
+    {
+      "group": "Health And Fitness USA Group",
+      "members": 82000
+    },
+    {
+      "group": "Dr Sebi Food List (Nutritional Guide)",
+      "members": 65000
+    },
+    {
+      "group": "Osteoporosis Treatment Options - Exercises, Natural Remedies Group",
+      "members": 64000
+    },
+    {
+      "group": "Neuropathy or Nerve Pain, Nerve Damage Treatment, Remedies - Support Group",
+      "members": 176000
+    }
+  ],
+  "collection_configuration": {
+    "gtm_container": "GTM-PMRKXXJV",
+    "gtm_version": 22,
+    "ga4_measurement_id": "G-PDT6DPCBQN",
+    "pixel_id": "1440305917310328",
+    "on_page_events_configured": [
+      "scroll_depth",
+      "time_on_page_15s",
+      "time_on_page_30s",
+      "Clicked_on_enroll_now",
+      "Clicked_on_curriculum",
+      "Filled_application_form",
+      "Filled_biological_age_form",
+      "Clicked_on_Reserve_my_cohort"
+    ],
+    "ga4_source_filtered_results_retrieved": false,
+    "gtm_changed_this_update": false,
+    "pixel_changed_this_update": false
+  },
+  "evidence_limits": [
+    "Facebook Page read failed with missing pages_read_engagement permission.",
+    "Alternative Page-token published_posts read succeeded with an empty timeline result for this window; this does not establish group-post status.",
+    "Local authenticated browser was not reachable during this update.",
+    "GTM account discovery returned an empty array.",
+    "GA4 property discovery returned a connector TypeError.",
+    "Public deployed GTM configuration is readable; historical GA4 rows are a separate data source.",
+    "No event-level test, identity or browser-session join was returned by Meta aggregate counters."
+  ]
+}

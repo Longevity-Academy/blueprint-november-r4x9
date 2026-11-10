@@ -1,0 +1,130 @@
+[
+  {
+    "selector": "section.hero",
+    "label": "Fold 01 — Hero",
+    "sub": "Headline, subheader, and primary CTAs",
+    "maxH": 1800,
+    "file": "/home/user/workspace/eteacher-longevity/screenshots-overhaul/ceo-walkthrough/fold-01-raw.png",
+    "height": 900
+  },
+  {
+    "selector": "section.trust-strip",
+    "label": "Fold 02 — Trusted By Strip",
+    "sub": "Microsoft, Intel, National Geographic Learning, 25 Years Teaching Online",
+    "maxH": 800,
+    "file": "/home/user/workspace/eteacher-longevity/screenshots-overhaul/ceo-walkthrough/fold-02-raw.png",
+    "height": 126
+  },
+  {
+    "selector": "section#about",
+    "label": "Fold 03 — About Us",
+    "sub": "eTeacher descriptor and global reach stats (400k+ students, 197 countries)",
+    "maxH": 1800,
+    "file": "/home/user/workspace/eteacher-longevity/screenshots-overhaul/ceo-walkthrough/fold-03-raw.png",
+    "height": 1102
+  },
+  {
+    "selector": "section.topics",
+    "label": "Fold 04 — Six Pillars",
+    "sub": "Topic cards with hero videos covering the core domains",
+    "maxH": 1800,
+    "file": "/home/user/workspace/eteacher-longevity/screenshots-overhaul/ceo-walkthrough/fold-04-raw.png",
+    "height": 1411
+  },
+  {
+    "selector": "section#skills",
+    "label": "Fold 05 — Deep Dives",
+    "sub": "What your doctor doesn’t have time to teach you",
+    "maxH": 1800,
+    "file": "/home/user/workspace/eteacher-longevity/screenshots-overhaul/ceo-walkthrough/fold-05-raw.png",
+    "height": 1168
+  },
+  {
+    "selector": "section#syllabus",
+    "label": "Fold 06 — Curriculum",
+    "sub": "18 live sessions across 4 phases",
+    "maxH": 1800,
+    "file": "/home/user/workspace/eteacher-longevity/screenshots-overhaul/ceo-walkthrough/fold-06-raw.png",
+    "height": 1258
+  },
+  {
+    "selector": "section.deepdive",
+    "label": "Fold 07 — The Operating System",
+    "sub": "Six interconnected systems hex chart",
+    "maxH": 1800,
+    "file": "/home/user/workspace/eteacher-longevity/screenshots-overhaul/ceo-walkthrough/fold-07-raw.png",
+    "height": 1666
+  },
+  {
+    "selector": "section.bioquiz",
+    "label": "Fold 08 — Bio-Age Quiz",
+    "sub": "Engagement and lead-capture entry point",
+    "maxH": 1800,
+    "file": "/home/user/workspace/eteacher-longevity/screenshots-overhaul/ceo-walkthrough/fold-08-raw.png",
+    "height": 722
+  },
+  {
+    "selector": "section#how",
+    "label": "Fold 09 — How It Works",
+    "sub": "Step-by-step program walkthrough",
+    "maxH": 1800,
+    "file": "/home/user/workspace/eteacher-longevity/screenshots-overhaul/ceo-walkthrough/fold-09-raw.png",
+    "height": 1129
+  },
+  {
+    "selector": "section#teachers",
+    "label": "Fold 10 — Instructors",
+    "sub": "Faculty showcase",
+    "maxH": 1800,
+    "file": "/home/user/workspace/eteacher-longevity/screenshots-overhaul/ceo-walkthrough/fold-10-raw.png",
+    "height": 976
+  },
+  {
+    "selector": "section.value",
+    "label": "Fold 11 — Value Proposition",
+    "sub": "What students get and why now",
+    "maxH": 1800,
+    "file": "/home/user/workspace/eteacher-longevity/screenshots-overhaul/ceo-walkthrough/fold-11-raw.png",
+    "height": 745
+  },
+  {
+    "selector": "section.testimonials",
+    "label": "Fold 12 — Testimonials",
+    "sub": "Student outcomes and proof",
+    "maxH": 1800,
+    "file": "/home/user/workspace/eteacher-longevity/screenshots-overhaul/ceo-walkthrough/fold-12-raw.png",
+    "height": 1001
+  },
+  {
+    "selector": "section#lead-gen",
+    "label": "Fold 13 — Lead Gen Form",
+    "sub": "Two-column conversion form",
+    "maxH": 1800,
+    "file": "/home/user/workspace/eteacher-longevity/screenshots-overhaul/ceo-walkthrough/fold-13-raw.png",
+    "height": 1200
+  },
+  {
+    "selector": "section#faq",
+    "label": "Fold 14 — FAQ",
+    "sub": "8 frequently asked questions with details",
+    "maxH": 2200,
+    "file": "/home/user/workspace/eteacher-longevity/screenshots-overhaul/ceo-walkthrough/fold-14-raw.png",
+    "height": 1879
+  },
+  {
+    "selector": "section#apply",
+    "label": "Fold 15 — Final CTA",
+    "sub": "Closing apply call-to-action",
+    "maxH": 1800,
+    "file": "/home/user/workspace/eteacher-longevity/screenshots-overhaul/ceo-walkthrough/fold-15-raw.png",
+    "height": 720
+  },
+  {
+    "selector": "footer.footer",
+    "label": "Fold 16 — Footer",
+    "sub": "Brand footer and legal links",
+    "maxH": 800,
+    "file": "/home/user/workspace/eteacher-longevity/screenshots-overhaul/ceo-walkthrough/fold-16-raw.png",
+    "height": 406
+  }
+]

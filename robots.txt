@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /enroll-staging.html
+Disallow: /lp/
+Disallow: /thank-you.html
+Disallow: /blueprint/checkout.html
+Disallow: /store/longevity-blueprint/checkout.html
+
+Sitemap: https://www.longevitylifeacademy.com/sitemap.xml

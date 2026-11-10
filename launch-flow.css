@@ -1,0 +1,30 @@
+html body#lpRoot{padding-bottom:84px!important}
+html body#lpRoot #mockBar{display:flex!important;visibility:visible!important;transform:none!important;position:fixed!important;bottom:0!important;left:0!important;right:0!important;z-index:9990!important;height:auto!important;min-height:68px!important;padding:10px 18px calc(10px + env(safe-area-inset-bottom))!important}
+html body#lpRoot #mockBar .l b{font:700 18px/1.3 Inter,sans-serif!important;white-space:nowrap}
+html body#lpRoot #mockBar a{min-height:48px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;border-radius:14px!important;min-width:142px!important;background:#006eff!important;box-shadow:0 12px 28px -14px rgba(0,110,255,.8)!important;font-family:Inter,sans-serif!important;font-weight:700!important;letter-spacing:-.01em!important}
+html body#lpRoot #mockBar a:hover{background:#0a5fd9!important}
+html.guest-form-focused body#lpRoot #mockBar,html.guest-form-visible body#lpRoot #mockBar,html.guest-menu-open body#lpRoot #mockBar,body:has(#enrollModal.open) #mockBar{display:none!important}
+#heroCouponNote{font:500 15px/1.6 Inter,sans-serif!important;color:#c9dcf8!important;margin:16px 0 0!important;max-width:480px}
+#hero .lla-tp{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:10px 14px!important}
+#hero .lla-tp-text{display:inline!important;font:500 15px/1.5 Inter,sans-serif!important;color:#dceaff!important}
+html body#lpRoot #mockBar a{font-style:normal!important}
+html body#lpRoot #et-bumpyard-widget{bottom:calc(86px + env(safe-area-inset-bottom))!important}
+@media(max-width:600px){html body#lpRoot #mockBar .l i{display:none!important}#heroCouponNote{font-size:15px!important}html body#lpRoot #mockBar{gap:10px!important;padding-left:16px!important;padding-right:16px!important}}
+
+/* 2 Nov 2026 proportion pass: VIP fold restored, CGM fold compact, faculty in one row */
+#vip{padding:72px 0 80px!important}
+#vip .lla-vip-portrait{max-width:420px!important}
+#vip .lla-vip-list li{font-size:17px!important;line-height:1.55!important}
+#cgm .container{padding-top:64px!important;padding-bottom:64px!important}
+#cgm .cgm-fold-header{margin-bottom:28px!important;max-width:820px}
+#cgm .cgm-fold-sub{font-size:18px!important;line-height:1.5!important}
+#cgm .cgm-fold-images{gap:16px!important;margin-bottom:28px!important}
+#cgm .cgm-fold-img{aspect-ratio:4/3!important;height:auto!important;max-height:240px!important;overflow:hidden!important;border-radius:18px!important}
+#cgm .cgm-fold-img img{width:100%!important;height:100%!important;object-fit:cover!important;display:block}
+@media (min-width:900px){#cgm .cgm-fold-bullets{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:12px!important}#cgm .cgm-fold-bullet{position:relative!important;display:block!important;padding:14px 16px 14px 40px!important;font-size:16px!important;line-height:1.45!important;margin:0!important}#cgm .cgm-fold-bullet::before{left:16px!important;top:1.35em!important}}
+#cgm .cgm-fold-cta-wrap{margin-top:28px!important}
+#teachers .container{padding-top:64px!important;padding-bottom:64px!important}
+#teachers .hp-instructors-header{margin-bottom:32px!important}
+@media (min-width:900px){#teachers .hp-teachers-grid-live{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:16px!important;overflow:visible!important}#teachers .hp-teacher-card-live{width:auto!important;min-width:0!important;flex:none!important;padding:12px!important;border-radius:18px!important}#teachers .hp-teacher-card-live-photo{aspect-ratio:1/1!important;height:auto!important;border-radius:14px!important}#teachers .hp-teacher-card-live-name{font-size:clamp(18px,1.6vw,22px)!important;margin-top:14px!important;line-height:1.15!important}#teachers .hp-teacher-card-live-role{font-size:15px!important;line-height:1.35!important}#teachers .hp-teacher-card-live-bio{font-size:15px!important;line-height:1.5!important}#teachers .rail-dots{display:none!important}}
+#teachers .hp-instructors-cta{margin-top:28px!important}
+@media (max-width:900px){#vip .lla-vip-grid{display:grid!important;grid-template-columns:1fr!important;gap:28px!important;overflow:visible!important}#vip .lla-vip-portrait{position:static!important;max-width:100%!important;width:100%!important}#vip .lla-vip-portrait img{width:100%!important;height:auto!important;border-radius:18px}#vip .lla-vip-copy{width:100%!important;min-width:0!important;max-width:100%!important;flex:none!important}#vip .lla-vip-grid+.rail-dots{display:none!important}}

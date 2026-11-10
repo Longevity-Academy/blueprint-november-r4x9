@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="robots" content="noindex,nofollow">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PMRKXXJV');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nutrition & Longevity, Longevity Life Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/codec-pro" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --accent: #006EFF;
+    --text: #111111;
+    --bg: #FFFFFF;
+    --surface: #F5F7FA;
+    --text-muted: #555E6B;
+    --border: #E2E6EA;
+    --font-display: 'Codec Pro', 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 0 24px;
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-back {
+    font-size: 14px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.15s;
+  }
+  .nav-back:hover { opacity: 0.75; }
+
+  /* HERO */
+  .hero {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 72px 24px 64px;
+    text-align: center;
+  }
+  .hero-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    max-width: 700px;
+    margin: 0 auto 24px;
+  }
+  .hero p {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+
+  /* ARTICLES */
+  .articles-section {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 72px 24px;
+  }
+
+  .article-card {
+    margin-bottom: 72px;
+    padding-bottom: 72px;
+    border-bottom: 1px solid var(--border);
+  }
+  .article-card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .article-number {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .article-card h2 {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+
+  .article-card p {
+    color: var(--text);
+    margin-bottom: 20px;
+    line-height: 1.75;
+  }
+
+  .article-card h3 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 36px 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  /* CTA BLOCK */
+  .cta-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 48px 40px;
+    text-align: center;
+    margin: 72px 0 0;
+  }
+  .cta-block h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .cta-block p {
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    font-size: 16px;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+  .cta-btn:hover { opacity: 0.88; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 48px 20px 40px; }
+    .articles-section { padding: 48px 20px; }
+    .cta-block { padding: 36px 24px; }
+  }
+
+/* --- Standardized brand logo (by eTeacher Group lockup) --- */
+.nav-logo-img{display:block;height:72px;width:auto;max-width:380px;image-rendering:auto}
+.nav-logo{display:inline-flex;align-items:center;padding:0;margin:0;line-height:0}
+@media (max-width:768px){.nav-logo-img{height:54px;max-width:300px}}
+
+/* Navy nav to match site + logo readability */
+nav, .nav{background:linear-gradient(180deg,#0e1f48 0%,#081634 100%) !important;border-bottom:1px solid rgba(120,170,255,0.22) !important}
+.nav-back{color:#6BB6FF !important}
+
+/* Full site nav menu on topic pages */
+nav .nav-inner{max-width:1200px;gap:40px;padding:14px 28px;height:auto;justify-content:flex-start;}
+.nav-logo{flex-shrink:0;}
+.nav-menu{display:flex;align-items:center;gap:28px;margin-left:auto;}
+.nav-menu a{font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:rgba(255,255,255,0.86);text-decoration:none;letter-spacing:-0.01em;transition:color .15s;}
+.nav-menu a:hover{color:#6BB6FF;}
+.nav-menu a.nav-cta{background:#006EFF;color:#fff;padding:10px 22px;border-radius:999px;box-shadow:0 4px 16px rgba(0,110,255,0.4);}
+.nav-menu a.nav-cta:hover{background:#0059D6;}
+.nav-mobile-btn{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:6px;margin-left:auto;}
+@media (max-width:960px){.nav-menu{display:none;}.nav-mobile-btn{display:inline-flex;}}
+.nav-drawer{position:fixed;inset:0;z-index:200;background:linear-gradient(180deg,#0e1f48 0%,#081634 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;opacity:0;pointer-events:none;transition:opacity .2s;}
+.nav-drawer.open{opacity:1;pointer-events:auto;}
+.nav-drawer a{font-family:'Inter',sans-serif;font-size:24px;font-weight:700;color:#fff;text-decoration:none;}
+.nav-drawer a.nav-cta{background:#006EFF;padding:14px 40px;border-radius:999px;font-size:20px;}
+.nav-drawer-close{position:absolute;top:22px;right:24px;background:none;border:none;color:#fff;cursor:pointer;}
+</style>
+<script src="/blueprint-november-r4x9/assets/ai-attribution.js"></script>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMRKXXJV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="/blueprint-november-r4x9/" aria-label="Longevity Life Academy home"><img src="../assets/lla-logo-exact-transparent@2x.png?v=9" alt="Longevity Life Academy" class="nav-logo-img" width="1314" height="596"></a>
+    <div class="nav-menu">
+      <a href="/blueprint-november-r4x9/about.html">About</a>
+      <a href="/blueprint-november-r4x9/index.html#syllabus">Curriculum</a>
+      <a href="/blueprint-november-r4x9/cgm.html">CGM</a>
+      <a href="/blueprint-november-r4x9/biological-age-light.html">Bio-Age Quiz</a>
+      <a href="/blueprint-november-r4x9/blog.html">Blog</a>
+      <a href="/blueprint-november-r4x9/index.html#faq">FAQ</a>
+      <a href="/blueprint-november-r4x9/pricing.html" class="nav-pricing">Pricing</a>
+      <a href="/blueprint-november-r4x9/index.html#lead-gen" class="nav-cta">Apply Now</a>
+    </div>
+    <button class="nav-mobile-btn" id="navMobileBtn" aria-label="Open menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <button class="nav-drawer-close" id="navDrawerClose" aria-label="Close menu"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  <a href="/blueprint-november-r4x9/about.html">About</a>
+  <a href="/blueprint-november-r4x9/index.html#syllabus">Curriculum</a>
+  <a href="/blueprint-november-r4x9/cgm.html">CGM</a>
+  <a href="/blueprint-november-r4x9/biological-age-light.html">Bio-Age Quiz</a>
+  <a href="/blueprint-november-r4x9/blog.html">Blog</a>
+  <a href="/blueprint-november-r4x9/index.html#faq">FAQ</a>
+  <a href="/blueprint-november-r4x9/pricing.html">Pricing</a>
+  <a href="/blueprint-november-r4x9/index.html#lead-gen" class="nav-cta">Apply Now</a>
+</div>
+<script>(function(){var b=document.getElementById('navMobileBtn'),d=document.getElementById('navDrawer'),c=document.getElementById('navDrawerClose');if(b&&d)b.addEventListener('click',function(){d.classList.add('open');});if(c&&d)c.addEventListener('click',function(){d.classList.remove('open');});if(d)d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){d.classList.remove('open');});});})();</script>
+
+<section class="hero">
+  <span class="hero-tag">Topic Series</span>
+  <h1>Nutrition &amp; Longevity</h1>
+  <p>What you eat shapes more than your waistline, it shapes how your cells age, how your blood sugar behaves, and how much energy you carry into your 70s and 80s. These three articles cover the fundamentals of eating for a longer healthspan.</p>
+</section>
+
+<main class="articles-section">
+
+  <!-- ARTICLE 1 -->
+  <article class="article-card">
+    <span class="article-number">Article 01</span>
+    <h2>How Much Protein You Actually Need as You Get Older</h2>
+
+    <p>Most people eating a reasonably healthy diet get enough protein to survive. The question for longevity isn't about survival, it's about maintaining muscle mass, metabolic rate, and physical function across decades. And on that count, the standard dietary recommendations fall short for most adults over 50.</p>
+
+    <p>The widely cited recommendation of 0.8 grams of protein per kilogram of body weight was designed to prevent deficiency, not to support active aging. Research in the past decade consistently points toward higher intakes, in the range of 1.2 to 1.6 grams per kilogram, as more protective for muscle preservation, immune function, and recovery from illness or injury in older adults.</p>
+
+    <h3>The Muscle Problem Nobody Talks About Soon Enough</h3>
+
+    <p>After age 40, adults lose roughly 1% of their muscle mass per year if they're not actively working to maintain it. This process, called sarcopenia, accelerates in the 60s and 70s. Muscle isn't just cosmetic, it's a major site of glucose disposal, a buffer against falls and fractures, and a predictor of how well people recover from surgery or hospitalization. Keeping it requires both resistance training and adequate dietary protein.</p>
+
+    <p>What makes protein particularly important with age is that older muscles become less responsive to protein signals. It takes more protein per meal to trigger the same muscle-building response that younger adults get from a smaller dose. This "anabolic resistance" means that spreading protein intake across three to four meals, rather than consuming most of it at dinner, tends to produce better results.</p>
+
+    <h3>What This Looks Like in Practice</h3>
+
+    <p>A 70-kilogram adult aiming for 1.4 grams per kilogram would target about 98 grams of protein daily. Over three meals, that's roughly 30 to 35 grams per sitting, achievable with a palm-sized portion of chicken, fish, eggs, or legumes combined with dairy or soy. The source matters less than the consistency. Variety in protein sources also brings broader micronutrient coverage: fish contributes omega-3s, legumes add fiber and potassium, eggs supply choline.</p>
+
+    <p>Plant-based eaters can absolutely meet these targets, though it requires more planning. Leucine, the amino acid most critical for muscle protein synthesis, is lower in most plant proteins, which means total intake needs to be somewhat higher to compensate. Combining sources like rice and peas, or tofu with edamame, improves the amino acid profile of a plant-forward diet.</p>
+
+    <p>Protein isn't a magic lever, but it's one of the most modifiable variables in long-term physical health. Getting it right, consistently, across the years, makes a material difference in how capable you feel as you age.</p>
+  </article>
+
+  <!-- ARTICLE 2 -->
+  <article class="article-card">
+    <span class="article-number">Article 02</span>
+    <h2>What Fiber Actually Does (and Why Most People Don't Eat Enough of It)</h2>
+
+    <p>Dietary fiber has been discussed in health circles for decades, usually in the context of digestion. But the picture emerging from research is considerably broader. Fiber intake is associated with lower rates of cardiovascular disease, type 2 diabetes, colorectal cancer, and all-cause mortality. It modulates blood sugar. It feeds the gut microbiome. And most adults in industrialized countries consume less than half the recommended amount.</p>
+
+    <p>Current recommendations are around 25 grams daily for women and 38 grams for men. Average intake in the US hovers around 15 grams. That gap represents billions of skipped opportunities for the gut microbiome to produce the short-chain fatty acids that support gut lining integrity, reduce systemic inflammation, and influence metabolic health.</p>
+
+    <h3>Soluble vs. Insoluble: Both Matter</h3>
+
+    <p>Fiber comes in two broad categories, each with distinct effects. Soluble fiber, found in oats, legumes, apples, and psyllium, dissolves in water and forms a gel that slows gastric emptying. This slowing effect is what blunts post-meal blood sugar spikes and contributes to satiety. It also binds cholesterol in the digestive tract, which helps explain the LDL-lowering effects of oat-based diets seen in clinical studies.</p>
+
+    <p>Insoluble fiber, found in whole grains, vegetables, and bran, adds bulk and speeds transit time through the colon. It's what keeps bowel movements regular and reduces the time potentially harmful compounds spend in contact with the colon wall. Both types feed beneficial gut bacteria, though soluble fiber is particularly favored by species like Bifidobacterium and Lactobacillus.</p>
+
+    <h3>Rebuilding a High-Fiber Diet Without Dramatic Changes</h3>
+
+    <p>The most common reason fiber intake stays low is that ultra-processed foods have crowded out whole foods that naturally contain fiber. Refined bread, packaged snacks, and fast food are the main culprits. Swapping one ingredient at a time is more sustainable than a complete diet overhaul: whole grain pasta instead of refined, skin-on potatoes instead of peeled, beans added to soups and salads.</p>
+
+    <p>Increasing fiber gradually matters, especially for people starting from a low baseline. Sudden large increases can cause bloating and discomfort as the gut microbiome adapts. Drinking sufficient water alongside helps. Most people who increase fiber intake slowly and consistently find within a few weeks that their digestion feels noticeably different, and more stable.</p>
+
+    <p>One practical framework: aim for five different plant foods per day, prioritizing those with the highest fiber content. Lentils, black beans, berries, flaxseeds, and artichokes are all dense sources. Getting to that five-food mark most days will naturally bring most people close to the recommended range.</p>
+  </article>
+
+  <!-- ARTICLE 3 -->
+  <article class="article-card">
+    <span class="article-number">Article 03</span>
+    <h2>The Case Against Ultra-Processed Food Has Nothing to Do with Willpower</h2>
+
+    <p>The public conversation about ultra-processed food tends to veer into personal responsibility territory, as if the problem were simply a matter of choosing differently. But the research portrait of ultra-processed food is more structural than that. These products are specifically engineered to override normal satiety signals, and understanding how they do that is more useful than advice to simply try harder.</p>
+
+    <p>Ultra-processed foods (UPFs) are defined not just by their ingredients but by the industrial processes used to create them. They typically contain multiple additives, emulsifiers, artificial flavors, colorants, stabilizers, that have no equivalent in home cooking. The NOVA classification system, developed by Brazilian nutrition researchers and now widely used in epidemiological studies, categorizes them as Group 4 foods: "formulations mostly of cheap industrial sources of dietary energy and nutrients plus additives."</p>
+
+    <h3>What the Research Shows</h3>
+
+    <p>A randomized controlled trial published in Cell Metabolism in 2019 gave participants two weeks of either ultra-processed or unprocessed food, matched for calories, sugar, fat, and fiber, and found that the ultra-processed group consumed about 500 more calories per day and gained weight. When switched to the unprocessed diet, they ate less and lost weight, even with food freely available. The mechanism appears to involve the disruption of normal appetite signaling by soft food textures, rapid caloric absorption, and the reward properties of combinations like fat, salt, and sugar.</p>
+
+    <p>Large prospective studies have linked high UPF consumption with increased risk of cardiovascular disease, type 2 diabetes, colorectal cancer, depression, and dementia. Causality is difficult to establish from observational studies alone, but the consistency across populations and outcomes is notable. A 2023 umbrella review of 45 meta-analyses found associations between UPF intake and 32 health parameters, the majority of which pointed toward harm.</p>
+
+    <h3>A Useful Reframe</h3>
+
+    <p>Rather than framing UPF reduction as a restriction, a more useful lens is substitution and crowding out. Real foods, whole grains, vegetables, legumes, fruit, meat, fish, dairy, are not inferior in palatability to UPFs when prepared with care. Cooking skills, meal prep habits, and accessible whole-food ingredients matter more than motivation.</p>
+
+    <p>The practical starting point for most people is not a full elimination of processed foods but an honest accounting of how many UPFs make up the structure of daily eating. Breakfast cereals, packaged bread, flavored yogurt, ready meals, and sweet beverages are the most common high-volume sources. Addressing those categories first, replacing them with minimally processed alternatives that you actually enjoy eating, produces meaningful reductions without requiring a lifestyle overhaul.</p>
+
+    <p>The goal is not dietary purity. It is building a foundation of eating that works with your biology rather than against it.</p>
+  </article>
+
+  <div class="cta-block">
+    <h3>Ready to build your longevity protocol?</h3>
+    <p>The Longevity Life Academy course covers nutrition, metabolism, sleep, movement, and more, in a structured 18-session program led by experienced instructors.</p>
+    <a class="cta-btn" href="/blueprint-november-r4x9/">Explore the Course</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Longevity Life Academy &nbsp;·&nbsp; <a href="/blueprint-november-r4x9/">Back to Home</a></p>
+</footer>
+
+</body>
+</html>

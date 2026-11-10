@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Longevity Life Academy</title>
+<meta name="description" content="Articles on the science of longevity: biomarkers, exercise, mental health, metabolic health, nutrition, sleep, and the daily protocols that move the needle.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #060e1a; color: #e8eaed; line-height: 1.65; font-size: 17px; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+.container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+@media (max-width: 640px) { .container { padding: 0 20px; } }
+.nav { position: sticky; top: 0; z-index: 50; background: rgba(6,14,26,0.85); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid rgba(255,255,255,0.07); }
+.nav-inner { max-width: 1240px; margin: 0 auto; padding: 16px 28px; display: flex; align-items: center; justify-content: space-between; }
+.nav-brand { font-weight: 800; font-size: 16px; letter-spacing: -0.01em; color: #fff; }
+.nav-back { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #6BB6FF; padding: 9px 16px; border-radius: 999px; border: 1px solid rgba(107,182,255,0.32); transition: all 0.2s ease; }
+.nav-back:hover { background: rgba(107,182,255,0.12); border-color: rgba(107,182,255,0.55); }
+
+.blog-hero { padding: 72px 0 36px; text-align: center; }
+.blog-eyebrow { color: #4DA3FF; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 14px; display: block; }
+.blog-h1 { font-size: clamp(36px, 5vw, 58px); font-weight: 800; line-height: 1.06; letter-spacing: -0.02em; margin: 0 0 14px; color: #fff; }
+.blog-sub { color: rgba(255,255,255,0.72); font-size: 18px; line-height: 1.65; max-width: 680px; margin: 0 auto; }
+
+.blog-grid { padding: 32px 0 96px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+@media (max-width: 980px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
+
+.blog-card { background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.08); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column; transition: all 0.3s ease; }
+.blog-card:hover { border-color: rgba(0,110,255,0.35); transform: translateY(-2px); box-shadow: 0 22px 50px -28px rgba(0,110,255,0.45); }
+.blog-card-cover { aspect-ratio: 16 / 10; background: linear-gradient(135deg, #0a1830 0%, #051023 100%); overflow: hidden; position: relative; }
+.blog-card-cover img { width: 100%; height: 100%; object-fit: cover; }
+.blog-card-body { padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1; }
+.blog-card-title { color: #fff; font-size: 19px; font-weight: 700; line-height: 1.3; margin: 0 0 10px; letter-spacing: -0.01em; }
+.blog-card-excerpt { color: rgba(255,255,255,0.7); font-size: 14.5px; line-height: 1.6; margin: 0 0 18px; flex: 1; }
+.blog-card-more { color: #6BB6FF; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
+
+/* In the press (ported 1:1 from /blueprint/ news fold) */
+.lla-news{--blue:#006EFF;--ink:#0B1B33;--ink-2:#29385A;--ink-3:#5B6B8C;--ink-4:#8B97B3;--silver-2:#E6ECF5;--r-md:22px;--ease:cubic-bezier(.22,1,.36,1);--shadow-card:0 1px 0 rgba(255,255,255,.7) inset,0 30px 70px -34px rgba(10,34,64,.4),0 2px 8px -2px rgba(10,34,64,.08);
+  padding:clamp(64px,9vw,128px) 0;background:linear-gradient(180deg,#F1F5FB,#FFFFFF);font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-style:italic;font-weight:400;color:var(--ink-2);line-height:1.6}
+.lla-news .lla-films-head{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(28px,4vw,48px);text-align:left}
+.lla-news .section-title{font-size:clamp(38px,5vw,70px);line-height:1.03;margin:0 0 20px;color:var(--ink);letter-spacing:-.012em;font-weight:400;font-style:italic;position:relative;padding-top:22px}
+.lla-news .section-title::before{content:"";position:absolute;left:0;top:0;width:52px;height:5px;border-radius:3px;background:linear-gradient(90deg,#006EFF,#22C4F5);box-shadow:0 0 14px rgba(34,196,245,.6)}
+.lla-news .section-title em{color:var(--blue);background:linear-gradient(90deg,#006EFF,#22C4F5);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-style:italic}
+.lla-news .section-subtitle{font-size:clamp(18px,1.55vw,22px);line-height:1.55;color:var(--ink-3);margin:0;max-width:none}
+.lla-news-grid{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:24px;scroll-snap-type:x mandatory;padding:10px 4px 26px;scrollbar-width:thin;scrollbar-color:rgba(0,110,255,.5) transparent;align-items:flex-start}
+.lla-news-grid::-webkit-scrollbar{height:6px}.lla-news-grid::-webkit-scrollbar-thumb{background:rgba(0,110,255,.5);border-radius:3px}
+.lla-news-card{flex:0 0 calc((100% - 48px) / 3);scroll-snap-align:start;position:relative;display:flex;flex-direction:column;border-radius:var(--r-md);overflow:hidden;background:#fff;border:1px solid rgba(10,34,64,.08);box-shadow:var(--shadow-card);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.lla-news-card::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;z-index:2;background:linear-gradient(90deg,#006EFF,#7DE5FF);box-shadow:0 0 16px rgba(125,229,255,.7)}
+.lla-news-card:nth-child(3n+2)::before{background:linear-gradient(90deg,#22C4F5,#338BFF)}
+.lla-news-card:nth-child(3n)::before{background:linear-gradient(90deg,#3348D6,#7DE5FF)}
+.lla-news-card:hover{transform:translateY(-6px);box-shadow:0 36px 70px -36px rgba(10,34,64,.5),0 0 0 1px rgba(0,110,255,.18),0 0 40px -14px rgba(0,110,255,.45)}
+.lla-news-media{display:block;aspect-ratio:16/10;overflow:hidden;background:var(--silver-2);position:relative}
+.lla-news-media img,.lla-news-media video{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
+.lla-news-media img.is-harel{object-position:50% 12%}
+.lla-news-body{display:flex;flex-direction:column;flex:1;padding:20px 22px 18px;gap:10px}
+.lla-news-outlet{font-size:15px;color:var(--blue);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.lla-news-outlet i{color:var(--ink-4);position:relative;padding-left:12px}
+.lla-news-outlet i::before{content:"";position:absolute;left:0;top:50%;width:4px;height:4px;border-radius:50%;background:var(--ink-4);transform:translateY(-50%)}
+.lla-news-card h3{font-size:23px;line-height:1.28;color:var(--ink);font-weight:400;font-style:italic;letter-spacing:-.012em;text-wrap:balance}
+.lla-news-sub{font-size:16.5px;line-height:1.55;color:var(--ink-3)}
+.lla-news-meta{margin-top:auto;padding-top:14px;border-top:1px solid rgba(10,34,64,.08);display:flex;justify-content:space-between;align-items:center;font-size:15px;color:var(--ink-4)}
+.lla-news-meta em{color:var(--blue);display:inline-flex;align-items:center;gap:6px;font-style:italic}
+.lla-news-meta em::after{content:"";width:14px;height:1px;background:currentColor;transition:width .3s var(--ease)}
+.lla-news-card:hover .lla-news-meta em::after{width:24px}
+@media (max-width:900px){.lla-news .lla-films-head{grid-template-columns:1fr;gap:14px}.lla-news .section-title{font-size:clamp(34px,9.6vw,40px);margin-bottom:14px}.lla-news .section-subtitle{font-size:17px}
+  .lla-news-grid{gap:14px;padding:10px 20px 26px;margin:0 -20px;scrollbar-width:none}.lla-news-grid::-webkit-scrollbar{display:none}.lla-news-card{flex:0 0 min(84%,360px)}
+  .lla-news-media{aspect-ratio:2/1}.lla-news-media img.is-harel{object-position:50% 18%}.lla-news-card h3{font-size:20px;line-height:1.3}.lla-news-sub{font-size:15.5px}}
+@media (max-width:720px){.lla-news-grid{display:grid;grid-template-columns:1fr;overflow:visible;margin:0;padding:10px 0 0;scroll-snap-type:none}.lla-news-card{flex:none}.lla-news-body{padding:16px 16px 14px}}
+
+footer { padding: 32px 0; border-top: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.55); font-size: 13px; text-align: center; }
+</style>
+
+  <link rel="stylesheet" href="assets/lla-nav.css?v=4">
+<script src="/blueprint-november-r4x9/assets/ai-attribution.js"></script>
+</head>
+<body class="has-shared-nav">
+<!-- LLA_SHARED_NAV -->
+<nav class="lla-shared-nav" id="llaSharedNav" aria-label="Site navigation">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Longevity Life Academy home">
+      <img src="assets/lla-logo-exact-transparent@2x.png?v=9" alt="Longevity Life Academy" class="nav-logo-img" width="1314" height="596">
+    </a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="index.html#syllabus">Curriculum</a>
+      <a href="cgm.html">CGM</a>
+      <a href="biological-age-light.html">Bio-Age Quiz</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="pricing.html" class="nav-pricing">Pricing</a>
+      <a href="index.html#lead-gen" class="nav-cta">Apply Now</a>
+    </div>
+    <button class="mobile-menu-btn" id="llaMobileMenuBtn" aria-label="Open navigation menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</nav>
+<div class="lla-mobile-nav-overlay" id="llaMobileNavOverlay" aria-hidden="true">
+  <button class="lla-mobile-nav-close" id="llaMobileNavClose" aria-label="Close navigation menu">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <nav class="lla-mobile-nav-links">
+    <a href="about.html" class="lla-mobile-nav-link">About</a>
+    <a href="index.html#syllabus" class="lla-mobile-nav-link">Curriculum</a>
+    <a href="cgm.html" class="lla-mobile-nav-link">CGM</a>
+    <a href="biological-age-light.html" class="lla-mobile-nav-link">Bio-Age Quiz</a>
+    <a href="blog.html" class="lla-mobile-nav-link">Blog</a>
+    <a href="index.html#faq" class="lla-mobile-nav-link">FAQ</a>
+    <a href="pricing.html" class="lla-mobile-nav-link">Pricing</a>
+    <a href="index.html#lead-gen" class="lla-mobile-nav-link lla-mobile-nav-cta">Apply Now</a>
+  </nav>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/blueprint-november-r4x9/" class="nav-brand">Longevity Life Academy</a>
+    <a href="index.html" class="nav-back">&larr; Home</a>
+  </div>
+</nav>
+
+<section class="blog-hero">
+  <div class="container">
+    <span class="blog-eyebrow">Articles</span>
+    <h1 class="blog-h1">The Longevity Blog</h1>
+    <p class="blog-sub">Practical, evidence-based writing on the six pillars of healthy aging, from biomarkers to behavior change.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="blog-grid">
+      <a class="blog-card" href="guides/bryan-johnson-blueprint-alternative.html">
+        <div class="blog-card-cover"><img src="assets/img-blueprint-protocol.jpg" alt="Bryan Johnsons Blueprint, on a normal budget" loading="lazy"></div>
+        <div class="blog-card-body">
+          <h2 class="blog-card-title">Bryan Johnson&rsquo;s Blueprint, on a normal budget</h2>
+          <p class="blog-card-excerpt">What the Blueprint protocol actually costs, which parts carry most of the measured benefit, and how to reproduce those parts without a seven-figure budget.</p>
+        </div>
+      </a>
+      <a class="blog-card" href="guides/epigenetic-age-test-explained.html">
+        <div class="blog-card-cover"><img src="assets/img-epigenetic-age.jpg" alt="Epigenetic age tests explained" loading="lazy"></div>
+        <div class="blog-card-body">
+          <h2 class="blog-card-title">Epigenetic age tests explained</h2>
+          <p class="blog-card-excerpt">What DNA-methylation clocks measure, how first-generation, second-generation and pace-of-aging measures differ, and how to read a single score sensibly.</p>
+        </div>
+      </a>
+      <a class="blog-card" href="guides/cgm-for-non-diabetics.html">
+        <div class="blog-card-cover"><img src="assets/img-cgm.jpg" alt="CGM for non-diabetics: useful data, not a verdict" loading="lazy"></div>
+        <div class="blog-card-body">
+          <h2 class="blog-card-title">CGM for non-diabetics: useful data, not a verdict</h2>
+          <p class="blog-card-excerpt">What two weeks of continuous glucose data can genuinely tell a metabolically healthy person, and what the published evidence does not support.</p>
+        </div>
+      </a>
+      <a class="blog-card" href="guides/best-longevity-course.html">
+        <div class="blog-card-cover"><img src="assets/img-course-guide.jpg" alt="Best longevity course: an honest buyers guide" loading="lazy"></div>
+        <div class="blog-card-body">
+          <h2 class="blog-card-title">Best longevity course: an honest buyer&rsquo;s guide</h2>
+          <p class="blog-card-excerpt">Live cohorts, professional certificates, university programs and self-paced courses compared by what you actually do in them.</p>
+        </div>
+      </a>
+      <a class="blog-card" href="topics/biomarkers-testing.html">
+        <div class="blog-card-cover"><img src="assets/img-biomarkers-testing.jpg" alt="Biomarkers and testing" loading="lazy"></div>
+        <div class="blog-card-body">
+          <h2 class="blog-card-title">Biomarkers &amp; Testing</h2>
+          <p class="blog-card-excerpt">Measuring your health is not the same as managing it, but it's a necessary starting point. Which biomarkers actually matter for longevity, and how to read them.</p>
+          <span class="blog-card-more">Read more &rarr;</span>
+        </div>
+      </a>
+      <a class="blog-card" href="topics/exercise-movement.html">
+        <div class="blog-card-cover"><img src="assets/img-movement.jpg" alt="Exercise and movement" loading="lazy"></div>
+        <div class="blog-card-body">
+          <h2 class="blog-card-title">Exercise &amp; Movement</h2>
+          <p class="blog-card-excerpt">Physical activity is among the most potent tools in the longevity toolkit. The specific mechanisms that make movement a high-return investment in long-term health.</p>
+          <span class="blog-card-more">Read more &rarr;</span>
+        </div>
+      </a>
+      <a class="blog-card" href="topics/mental-emotional-health.html">
+        <div class="blog-card-cover"><img src="assets/img-stress.jpg" alt="Mental and emotional health" loading="lazy"></div>
+        <div class="blog-card-body">
+          <h2 class="blog-card-title">Mental &amp; Emotional Health</h2>
+          <p class="blog-card-excerpt">The boundary between psychological health and physical health is less distinct than it once appeared. How stress, connection, and emotion shape inflammation and aging.</p>
+          <span class="blog-card-more">Read more &rarr;</span>
+        </div>
+      </a>
+      <a class="blog-card" href="topics/metabolic-health-blood-sugar.html">
+        <div class="blog-card-cover"><img src="assets/img-metabolic.jpg" alt="Metabolic health and blood sugar" loading="lazy"></div>
+        <div class="blog-card-body">
+          <h2 class="blog-card-title">Metabolic Health &amp; Blood Sugar</h2>
+          <p class="blog-card-excerpt">Blood sugar is one of the most actionable signals your body produces. The fundamentals and their practical implications for aging well.</p>
+          <span class="blog-card-more">Read more &rarr;</span>
+        </div>
+      </a>
+      <a class="blog-card" href="topics/nutrition-longevity.html">
+        <div class="blog-card-cover"><img src="assets/img-nutrition.jpg" alt="Nutrition and longevity" loading="lazy"></div>
+        <div class="blog-card-body">
+          <h2 class="blog-card-title">Nutrition &amp; Longevity</h2>
+          <p class="blog-card-excerpt">What you eat shapes how your cells age, how your blood sugar behaves, and how much energy you carry into your 70s and 80s. The fundamentals of eating for a longer healthspan.</p>
+          <span class="blog-card-more">Read more &rarr;</span>
+        </div>
+      </a>
+      <a class="blog-card" href="topics/sleep-circadian-health.html">
+        <div class="blog-card-cover"><img src="assets/img-sleep.jpg" alt="Sleep and circadian health" loading="lazy"></div>
+        <div class="blog-card-body">
+          <h2 class="blog-card-title">Sleep &amp; Circadian Health</h2>
+          <p class="blog-card-excerpt">Sleep is not passive recovery time. It's when the brain clears metabolic waste, hormones reset, and cellular repair takes place. The science of sleep through a longevity lens.</p>
+          <span class="blog-card-more">Read more &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="lla-journal lla-news" id="press" aria-label="In the press">
+  <div class="container">
+    <div class="lla-films-head">
+      <h2 class="section-title">In the <em>press.</em></h2>
+      <p class="section-subtitle">Press coverage in AP News and Yahoo Finance, and three deep dives from The Longevity Blog.</p>
+    </div>
+    <div class="lla-news-grid">
+      <a class="lla-news-card lla-news-card--press" href="https://apnews.com/press-release/ein-presswire-newsmatics/press-release-df2283f31104321eae816839632a3c48" target="_blank" rel="noopener"><span class="lla-news-media"><img class="is-harel" src="assets/press/ceo-harel-tayeb.jpg" alt="Harel Tayeb, CEO of eTeacher Group" loading="lazy"></span><span class="lla-news-body"><span class="lla-news-outlet">AP News <i>eTeacher Group</i></span><h3>eTeacher Group Launches Longevity Life Academy to Teach the Longevity Protocol the Wealthy Pay Millions For</h3><span class="lla-news-meta"><span>July 20, 2026</span><em>Read the article</em></span></span></a>
+      <a class="lla-news-card lla-news-card--press lla-news-card--blog" href="topics/supplements-health-tech.html"><span class="lla-news-media"><video preload="none" poster="assets/press/v2-supplements-meds.jpg" src="assets/press/v2-supplements-meds.mp4" muted loop playsinline></video></span><span class="lla-news-body"><span class="lla-news-outlet">The Longevity Blog <i>Supplements and Therapies</i></span><h3>Know What You're Actually Taking</h3><p class="lla-news-sub">NAD precursors, Vitamin D, omega-3s, creatine, senolytics, the short list of supplements with real human data, and the long list of marketing dressed up as science.</p><span class="lla-news-meta"><span>Deep dive</span><em>Read the article</em></span></span></a>
+      <a class="lla-news-card lla-news-card--press lla-news-card--blog" href="topics/mental-emotional-health.html"><span class="lla-news-media"><video preload="none" poster="assets/press/v2-mental-bubbles.jpg" src="assets/press/v2-mental-bubbles.mp4" muted loop playsinline></video></span><span class="lla-news-body"><span class="lla-news-outlet">The Longevity Blog <i>The Longevity Toolkit</i></span><h3>Five Habits That Move the Needle</h3><p class="lla-news-sub">Zone 2 cardio for mitochondrial health, VO2 max as the strongest predictor of all-cause mortality, CGM-driven metabolic tracking, ApoB management, and the sleep architecture that drives recovery.</p><span class="lla-news-meta"><span>Deep dive</span><em>Read the article</em></span></span></a>
+      <a class="lla-news-card lla-news-card--press" href="https://finance.yahoo.com/healthcare/articles/julie-gibson-clark-2nd-slowest-195800053.html" target="_blank" rel="noopener"><span class="lla-news-media"><img src="assets/press/julie-gibson-clark.jpg" alt="Julie Gibson Clark" loading="lazy"></span><span class="lla-news-body"><span class="lla-news-outlet">Yahoo Finance <i>Julie Gibson Clark</i></span><h3>Julie Gibson Clark, 2nd Slowest-Aging Woman on Earth, Joins Longevity Life Academy by eTeacher Group</h3><span class="lla-news-meta"><span>July 27, 2026</span><em>Read the article</em></span></span></a>
+      <a class="lla-news-card lla-news-card--press lla-news-card--blog" href="topics/protocols-habits.html"><span class="lla-news-media"><video preload="none" poster="assets/press/skill-skin.jpg" src="assets/press/skill-skin.mp4" muted loop playsinline></video></span><span class="lla-news-body"><span class="lla-news-outlet">The Longevity Blog <i>Aging on the Outside</i></span><h3>The Visible Edge of Aging</h3><p class="lla-news-sub">Skin as a real-time marker of systemic aging, collagen turnover, oxidative stress, glycation, UV damage, and the topical and oral interventions with actual clinical evidence behind them.</p><span class="lla-news-meta"><span>Deep dive</span><em>Read the article</em></span></span></a>
+    </div>
+  </div>
+</section>
+<script>(function(){var vids=document.querySelectorAll('.lla-news-media video');vids.forEach(function(v){v.muted=true;v.defaultMuted=true;v.setAttribute('muted','');v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','')});function go(v){if(v.preload==='none'){v.preload='auto';v.load()}var p=v.play();if(p&&p.catch)p.catch(function(){})}if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){go(v)}else if(!v.paused){v.pause()}})},{rootMargin:'300px 0px',threshold:.01});vids.forEach(function(v){io.observe(v)})}else{vids.forEach(go)}})();</script>
+
+<footer><div class="container">&copy; Longevity Life Academy by eTeacher Group</div></footer>
+
+  <!-- Global Floating Enroll CTA -->
+  <style>
+    .lla-float-cta{
+      position:fixed;top:96px;right:32px;z-index:9999;
+      display:inline-flex;align-items:stretch;cursor:pointer;text-decoration:none;
+      font-family:'Inter','Codec Pro',sans-serif;
+      border-radius:18px;overflow:hidden;
+      background:linear-gradient(180deg,#0F2D52 0%,#0A2240 100%);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:
+        0 0 0 1px rgba(120,180,255,.18),
+        0 14px 36px rgba(8,30,60,.28),
+        0 0 28px rgba(120,190,255,.18);
+      opacity:0;transform:translateY(-12px);pointer-events:none;
+      transition:opacity .45s ease, transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .25s ease;
+    }
+    .lla-float-cta.is-visible{opacity:1;transform:translateY(0);pointer-events:auto}
+    .lla-float-cta:hover{
+      transform:translateY(-2px);
+      box-shadow:
+        0 0 0 1px rgba(140,200,255,.35),
+        0 18px 44px rgba(8,30,60,.34),
+        0 0 44px rgba(120,190,255,.42);
+    }
+    .lla-float-cta .lla-cta-text{
+      display:flex;flex-direction:column;justify-content:center;
+      padding:14px 18px 14px 20px;gap:4px;
+    }
+    .lla-float-cta .lla-cta-eyebrow{
+      display:flex;align-items:center;gap:8px;
+      font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+      color:#8FB9F0;
+    }
+    .lla-float-cta .lla-cta-eyebrow::before{
+      content:"";width:6px;height:6px;border-radius:50%;
+      background:#5EB6FF;box-shadow:0 0 8px #5EB6FF,0 0 14px rgba(94,182,255,.7);
+      animation:llaDot 2.2s ease-in-out infinite;
+    }
+    .lla-float-cta .lla-cta-title{
+      font-family:'Codec Pro','Inter',sans-serif;
+      font-size:15.5px;font-weight:700;color:#fff;letter-spacing:.1px;line-height:1.1;
+    }
+    .lla-float-cta .lla-cta-pill{
+      display:flex;align-items:center;gap:8px;
+      padding:0 22px;margin:8px 8px 8px 6px;border-radius:12px;
+      background:linear-gradient(180deg,#5EB6FF 0%,#2E8BE6 100%);
+      color:#06243F;font-weight:800;font-size:14.5px;letter-spacing:.1px;
+      box-shadow:0 1px 0 rgba(255,255,255,.55) inset, 0 8px 20px rgba(46,139,230,.32);
+    }
+    .lla-float-cta .lla-cta-pill .price{font-size:15.5px;font-weight:900}
+    .lla-float-cta .lla-cta-pill .mo{font-size:11px;font-weight:700;color:#0A2240;opacity:.78;letter-spacing:.06em}
+    .lla-float-cta .lla-cta-arrow{width:16px;height:16px;color:#06243F;transition:transform .25s ease}
+    .lla-float-cta:hover .lla-cta-arrow{transform:translateX(3px)}
+    @keyframes llaDot{
+      0%,100%{box-shadow:0 0 8px #5EB6FF,0 0 14px rgba(94,182,255,.7)}
+      50%{box-shadow:0 0 14px #5EB6FF,0 0 24px rgba(94,182,255,1)}
+    }
+    @media (max-width:720px){
+      .lla-float-cta{top:12px;right:12px;left:12px;border-radius:14px}
+      .lla-float-cta .lla-cta-text{padding:10px 12px 10px 14px;flex:1;min-width:0}
+      .lla-float-cta .lla-cta-title{font-size:14px}
+      .lla-float-cta .lla-cta-eyebrow{font-size:9.5px}
+      .lla-float-cta .lla-cta-pill{padding:0 14px;margin:6px 6px 6px 4px;border-radius:10px}
+      .lla-float-cta .lla-cta-pill .price{font-size:14px}
+      .lla-float-cta .lla-cta-pill .mo{font-size:10px}
+    }
+  </style>
+  <a href="/blueprint-november-r4x9/#lead-gen" class="lla-float-cta" id="llaFloatCta" aria-label="Enroll Now in The Longevity Blueprint — $289 per month">
+    <span class="lla-cta-text">
+      <span class="lla-cta-eyebrow">Enroll Now</span>
+      <span class="lla-cta-title">The Longevity Blueprint</span>
+    </span>
+    <span class="lla-cta-pill">
+      <span class="price">$289</span><span class="mo">/ MO</span>
+      <svg class="lla-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+    </span>
+  </a>
+  <script>
+    (function(){
+      var cta=document.getElementById('llaFloatCta');
+      if(!cta) return;
+      function onScroll(){if(window.scrollY>140){cta.classList.add('is-visible')}else{cta.classList.remove('is-visible')}}
+      window.addEventListener('scroll',onScroll,{passive:true});
+      // Always show after a short delay even without scroll, so users on short pages see it
+      setTimeout(function(){cta.classList.add('is-visible')},800);
+      onScroll();
+      var path=(location.pathname||'').toLowerCase();
+      var isHome = path==='/blueprint-november-r4x9/' || path==='' || /(^|\/)(index(\.html)?|index-light\.html)$/.test(path);
+      var isBio = /biological-age-light\.html$/.test(path);
+      cta.addEventListener('click',function(e){
+        // Same-page handler for the homepage
+        if(isHome){
+          e.preventDefault();
+          var lead=document.getElementById('lead-gen')||document.getElementById('leadGenV2Form');
+          if(lead){lead.scrollIntoView({behavior:'smooth',block:'start'});
+            var first=lead.querySelector('input,select,textarea');
+            if(first){setTimeout(function(){try{first.focus({preventScroll:true})}catch(_){}},700);}
+          }
+          return;
+        }
+        // Bio-age internal page: reveal embedded lead-gen and scroll to it
+        if(isBio){
+          e.preventDefault();
+          var rc=document.getElementById('resultCard');
+          var blead=document.getElementById('bioLeadGenForm');
+          if(rc) rc.classList.add('visible');
+          if(blead) blead.classList.add('visible');
+          var t=blead||rc;
+          if(t){
+            requestAnimationFrame(function(){
+              t.scrollIntoView({behavior:'smooth',block:'start'});
+              var first=blead&&blead.querySelector('input,select,textarea');
+              if(first){setTimeout(function(){try{first.focus({preventScroll:true})}catch(_){}},700);}
+            });
+          }
+          return;
+        }
+        // Other pages: default href "/#lead-gen" navigates to homepage anchor
+      });
+    })();
+  </script>
+
+  <script src="assets/lla-nav.js?v=1" defer></script>
+</body>
+</html>
