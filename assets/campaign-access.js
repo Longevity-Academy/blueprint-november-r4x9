@@ -17,6 +17,7 @@
   document.addEventListener('click', function (event) {
     var a = event.target && event.target.closest ? event.target.closest('a[href]') : null;
     if (!a) return;
+    if ((a.getAttribute('href') || '').charAt(0) === '#') return;
     try {
       var u = new URL(a.href, location.href);
       if (u.origin === location.origin && u.pathname.indexOf(base) === 0) {
