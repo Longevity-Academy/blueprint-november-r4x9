@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="js mf">
 <head>
-<script>/* campaign-only page: default CRM campaign 118854 when the link carries no cid */(function(){try{if(!/(?:^|[?&])cid=[1-9]\d*(?:&|$)/.test(location.search)){var s=location.search;s=(s&&s.length>1?s+"&":"?")+"cid=118854";history.replaceState(null,"",location.pathname+s+location.hash);}}catch(e){}})();</script>
+<script src="assets/campaign-access.js?v=20261111-restricted1"></script>
 <script>
 /* Enroll must never fall through to the application form while deferred assets load. */
 (function(){
@@ -15577,7 +15577,7 @@ a.lg-buy:hover{transform:translateY(-2px);box-shadow:0 18px 46px rgba(16,185,129
   /* 2 Nov 2026: prices come from /nov/lla-promo.js ($79 month 1 with JULIE249 / MASTERCLASS-VIP, then 4 x $169; regular $169 x 5). */
 </script>
 <script src="/blueprint-november-r4x9/nov/lla-promo.js?v=20261109-x2"></script>
-<script src="/blueprint-november-r4x9/nov/eteacher-ecomm.js?v=20261111-campaign1" defer></script>
+<script src="/blueprint-november-r4x9/nov/eteacher-ecomm.js?v=20261111-restricted1" defer></script>
 <script>
 
       /* Dial-code badge follows the selected country (was hardcoded "US +1"). */
@@ -15874,6 +15874,7 @@ a.lg-buy:hover{transform:translateY(-2px);box-shadow:0 18px 46px rgba(16,185,129
       /* 2026-09-21 15:50: the redirect sat behind in-flight video/image downloads (measured 34 s on a saturated line, 13 s on Omri's desktop).
          Free every connection first, then navigate. Pixel/relay events were already sent (keepalive). */
       try{ document.querySelectorAll('video').forEach(function(v){ try{ v.pause(); v.removeAttribute('src'); v.querySelectorAll('source').forEach(function(x){x.removeAttribute('src');}); v.load(); }catch(e){} }); }catch(e){} /* 2026-11-06: cancel the downloads, not only pause (checkout request was queued behind ~29 MB of video) */
+      href += '&cid=' + encodeURIComponent(window.LLA_CAMPAIGN_ACCESS.cid);
       var destination=window.__llaDecorateCheckout?window.__llaDecorateCheckout(href):href;
       if(window.__llaNavigateTracked){ try{ window.__llaNavigateTracked(destination); }catch(e){} } /* flushes the queued relay sends (keepalive) */ window.location.href=destination; /* 2026-11-09: leave at once; the relay's own timer-based navigate was observed firing 6-9 s late under timer throttling */
       }

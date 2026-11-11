@@ -23,7 +23,7 @@ var BLUEPRINT_CLASSES = [{"courseId":170275,"semesterId":2395,"start":"2026-11-2
   CFG.workerBase = CFG.workerBase || 'https://eteacher-leads-proxy.gitter-omri.workers.dev';
   CFG.env = CFG.env || 'production';          // 'staging' | 'production'
   CFG.mode = CFG.mode || 'lead';              // 'lead' (proven AddNewLead path) | 'ecomm' (3-route spec)
-  CFG.campaignId = CFG.campaignId || '118854'; // Dedicated November campaign fallback, including direct checkout entries.
+  CFG.campaignId = ''; // No fallback: access requires an approved explicit campaign.
   CFG.googleCampaignId = CFG.googleCampaignId || '116641'; // LGV_EN_GGL_Search_US_2026-05-05_#116641 — matches homepage payload
   // Final CRM course identity per eTeacher dev team, Aug 4 2026:
   // MainAbroadCourseID 258 = The Longevity Blueprint, LanguageID 101 = English.
@@ -463,6 +463,7 @@ var BLUEPRINT_CLASSES = [{"courseId":170275,"semesterId":2395,"start":"2026-11-2
         total:first+left, env:CFG.env, scheduleVersion:2, currency:'USD', source:'crm-existing-order' };
     },
     stageLead: function(fields){
+      if (!window.LLA_CAMPAIGN_ACCESS || !window.LLA_CAMPAIGN_ACCESS.allowed) return { ok: false, error: 'campaign_not_allowed' };
       try {
         // Check before payload construction updates the tracking identity.
         if (attemptInFlight()) return { ok: false, error: 'order_confirmation_pending' };
@@ -496,6 +497,7 @@ var BLUEPRINT_CLASSES = [{"courseId":170275,"semesterId":2395,"start":"2026-11-2
     },
     hasPendingLead: function(){ return !!readPending(); },
     createStagedOrder: function(){
+      if (!window.LLA_CAMPAIGN_ACCESS || !window.LLA_CAMPAIGN_ACCESS.allowed) return Promise.reject(new Error('CAMPAIGN_NOT_ALLOWED'));
       var ids = readIds();
       if (ids) return Promise.resolve(ids);
       if (_creating) return _creating;
