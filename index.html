@@ -15443,6 +15443,13 @@ a.lg-buy:hover{transform:translateY(-2px);box-shadow:0 18px 46px rgba(16,185,129
         <input class="em-in" id="emPhone" name="tel" type="tel" inputmode="tel" placeholder="Mobile number" autocomplete="tel" />
       </div>
 
+      <div id="emStateField">
+        <label class="em-lb" for="emState">State</label>
+        <select class="em-in" id="emState" name="buyer_state" autocomplete="address-level1" data-lla-country-done="1">
+          <option value="">Select your state</option>
+        </select>
+      </div>
+
       <div class="em-err" id="emErr" role="alert"></div>
       <button class="em-go" type="button" id="emGo1">Continue</button>
       <p class="em-refund">Fully refundable within 14 days from registration.</p>
@@ -15750,6 +15757,7 @@ a.lg-buy:hover{transform:translateY(-2px);box-shadow:0 18px 46px rgba(16,185,129
       email:document.getElementById('emEmail').value,
       phone:document.getElementById('emPhone').value,
       countryIso:document.getElementById('emCountry').value || 'US',
+      stateIso:(document.getElementById('emState')||{}).value || '',
       smsConsent:document.getElementById('emSms').checked,
       startDate:(document.getElementById('emDate')||{}).value||'',
       promoCode:(window.LLA_PROMO&&window.LLA_PROMO.active)?window.LLA_PROMO.code:''
@@ -15787,7 +15795,7 @@ a.lg-buy:hover{transform:translateY(-2px);box-shadow:0 18px 46px rgba(16,185,129
       return; }
     var r=window.LLA_ECOMM.stageLead(f);
     if(!r.ok){ emErr(ERR_MSG[r.error]||'Something went wrong , please try again in a moment.'); return; }
-    try{sessionStorage.setItem('lla_checkout_contact_v1',JSON.stringify({fullName:f.fullName,email:f.email,phone:f.phone,countryIso:f.countryIso}));}catch(e){}
+    try{sessionStorage.setItem('lla_checkout_contact_v1',JSON.stringify({fullName:f.fullName,email:f.email,phone:f.phone,countryIso:f.countryIso,stateIso:f.stateIso}));}catch(e){}
     try{ if(window.LLA_FUNNEL) window.LLA_FUNNEL.addToCart(); }catch(e){}
     step(2);
     /* Prepare only the CRM order while the buyer chooses plan and date.
@@ -16034,6 +16042,7 @@ a.lg-buy:hover{transform:translateY(-2px);box-shadow:0 18px 46px rgba(16,185,129
 
 </script>
   <script src="assets/lla-country.js" defer></script>
+  <script src="assets/campaign-state.js?v=20261111-1" defer></script>
 
 <!-- WhatsApp floater (eTeacher IIBS button look; opens the LLA WhatsApp channel directly) -->
 <div id="et-bumpyard-widget" class="active"><div class="et-bump-btn-holder"><a class="widget-trigger-btn" href="https://wa.me/12015023701" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><img src="assets/wa/whatsapp.svg" alt=""> <span class="label">Available on&nbsp;WhatsApp</span></a></div></div>
