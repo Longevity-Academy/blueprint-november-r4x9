@@ -23,7 +23,7 @@ var BLUEPRINT_CLASSES = [{"courseId":170275,"semesterId":2395,"start":"2026-11-2
   CFG.workerBase = CFG.workerBase || 'https://eteacher-leads-proxy.gitter-omri.workers.dev';
   CFG.env = CFG.env || 'production';          // 'staging' | 'production'
   CFG.mode = CFG.mode || 'lead';              // 'lead' (proven AddNewLead path) | 'ecomm' (3-route spec)
-  CFG.campaignId = CFG.campaignId || '';      // eTeacher internal CampaignID (integer) — eTeacher to provide for self-service checkout
+  CFG.campaignId = CFG.campaignId || '118854'; // Dedicated November campaign fallback, including direct checkout entries.
   CFG.googleCampaignId = CFG.googleCampaignId || '116641'; // LGV_EN_GGL_Search_US_2026-05-05_#116641 — matches homepage payload
   // Final CRM course identity per eTeacher dev team, Aug 4 2026:
   // MainAbroadCourseID 258 = The Longevity Blueprint, LanguageID 101 = English.
@@ -271,12 +271,17 @@ var BLUEPRINT_CLASSES = [{"courseId":170275,"semesterId":2395,"start":"2026-11-2
     // The campaign is read from QueryString only, as cid=<id>.
     delete payload.CampaignID;
     (function () {
-      var qs = payload.QueryString || '';
+      var qs = (payload.QueryString || '').replace(/\?/g, '&');
       var currentCid = new URLSearchParams(qs).get('cid') || '';
       var cid = /^[1-9]\d*$/.test(currentCid) ? currentCid : (/^[1-9]\d*$/.test(String(attr.cid || '')) ? String(attr.cid) : (/^[1-9]\d*$/.test(String(CFG.campaignId || '')) ? String(CFG.campaignId) : (isGoogle ? String(CFG.googleCampaignId || '') : '')));
       // Remove only invalid cid parameters; leave raw click IDs byte-for-byte intact.
       qs = qs.split('&').filter(function(pair){ return !/^cid=/.test(pair) || /^[1-9]\d*$/.test(pair.slice(4)); }).join('&');
-      if (/^[1-9]\d*$/.test(cid) && !/(^|&)cid=/.test(qs)) qs = qs ? qs + '&cid=' + cid : 'cid=' + cid;
+      // Keep the campaign first and unique, including when a long email query
+      // is truncated. Leave all other values (especially click IDs) untouched.
+      if (/^[1-9]\d*$/.test(cid)) {
+        qs = qs.split('&').filter(function(pair){ return pair && !/^cid=/.test(pair); }).join('&');
+        qs = 'cid=' + cid + (qs ? '&' + qs : '');
+      }
       if (/^[1-9]\d*$/.test(String(attr.adGroupID || '')) && !/(^|&)adGroupID=/.test(qs)) qs += (qs ? '&' : '') + 'adGroupID=' + attr.adGroupID;
       payload.QueryString = qs.slice(0, 2000);
     })();
@@ -393,6 +398,10 @@ var BLUEPRINT_CLASSES = [{"courseId":170275,"semesterId":2395,"start":"2026-11-2
     // Local consistency evidence, not an authorization or server-side discount.
     // Bind it to the created order rather than today's mutable promo state.
     try {
+      sessionStorage.setItem('lla_vip_base_v2', JSON.stringify({
+        studentId: String(stid), orderId: String(orderid), env: CFG.env,
+        payload: JSON.parse(JSON.stringify(payload))
+      }));
       sessionStorage.setItem('lla_order_quote_v1', JSON.stringify({
         stid: String(stid), orderid: String(orderid),
         firstPayment: Number(payload.FirstPayment),
